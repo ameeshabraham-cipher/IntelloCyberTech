@@ -17,6 +17,9 @@ import CybersecurityFrameworksPage from "@/pages/solutions/CybersecurityFramewor
 import EmailSecurityPage from "@/pages/solutions/EmailSecurity";
 import EdrPage from "@/pages/solutions/Edr";
 
+// Component Demo Pages
+import TooltipDemo from "@/pages/components/TooltipDemo";
+
 // Service Pages
 // GRC Services
 import Iso27001Page from "@/pages/services/Iso27001";
@@ -91,6 +94,9 @@ function Router() {
           <Route path="/services/cloud-security" component={CloudSecurityPage} />
           <Route path="/services/vciso" component={VcisoPage} />
           <Route path="/services/data-privacy" component={DataPrivacyPage} />
+          
+          {/* Component Demo Pages */}
+          <Route path="/components/tech-tooltips" component={TooltipDemo} />
           
           {/* 404 Page */}
           <Route component={NotFound} />
