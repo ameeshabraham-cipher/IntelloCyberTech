@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useNavbarScroll } from '@/lib/animations';
 import { 
@@ -30,6 +30,14 @@ const Navbar = () => {
   
   // Apply navbar background change on scroll
   useNavbarScroll();
+  
+  // Get current theme to apply proper contrast colors
+  const isMounted = useRef(false);
+  
+  useEffect(() => {
+    isMounted.current = true;
+    return () => { isMounted.current = false; };
+  }, []);
   
   // Close mobile menu on route change
   useEffect(() => {
