@@ -1,188 +1,239 @@
 import { 
   FileText, 
+  CheckSquare, 
   ClipboardList, 
-  BookOpen, 
-  CheckCircle,
-  Users,
-  Clipboard
+  Book,
+  FileEdit,
+  FilePlus
 } from 'lucide-react';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
 const PolicyDevelopmentPage = () => {
   return (
     <ServicePageLayout
-      title="Policy Development"
-      category="IT Security & Audit Services"
-      description="Establish a strong security foundation with our comprehensive security policy development services tailored to your organization's unique needs."
+      title="Policy Development & Implementation"
+      category="GRC Services"
+      description="Develop comprehensive security policies, procedures, and standards that align with your business objectives and regulatory requirements."
       heroIcon={<FileText className="h-8 w-8" />}
-      overview="Our Security Policy Development service provides comprehensive support for creating, updating, and implementing effective security policies, standards, and procedures. We help you establish a robust security governance framework that aligns with industry standards, meets regulatory requirements, and reflects your organization's unique risk profile and operational needs."
+      overview="Our Policy Development & Implementation service helps organizations establish a structured information security policy framework that provides clear guidance for protecting sensitive data and systems. We create customized, practical policies aligned with industry standards and regulatory requirements while ensuring they are effectively implemented across your organization with appropriate awareness, training, and governance mechanisms."
       steps={[
         {
-          title: "Current State Assessment",
-          description: "Evaluation of existing policies, procedures, and documentation to identify gaps, inconsistencies, and improvement opportunities."
+          title: "Policy Needs Assessment",
+          description: "Comprehensive evaluation of your organization's regulatory obligations, industry requirements, and business needs to define the appropriate policy scope and structure."
         },
         {
-          title: "Requirements Analysis",
-          description: "Identification of regulatory, contractual, and business requirements that should guide your security policy framework."
-        },
-        {
-          title: "Policy Architecture Design",
-          description: "Development of a structured policy architecture that establishes clear hierarchies between policies, standards, procedures, and guidelines."
+          title: "Policy Framework Design",
+          description: "Development of a multi-tiered policy architecture including high-level policies, detailed procedures, standards, and guidelines with clear hierarchical relationships."
         },
         {
           title: "Policy Content Development",
-          description: "Creation of comprehensive, clear, and enforceable security policies tailored to your organization's size, industry, and risk profile."
-        },
-        {
-          title: "Standards & Procedures Creation",
-          description: "Development of detailed standards and procedures that provide specific guidance on implementing policy requirements."
+          description: "Creation of customized policy content that addresses your specific organizational requirements while incorporating industry best practices and compliance obligations."
         },
         {
           title: "Stakeholder Review & Approval",
-          description: "Facilitation of stakeholder review, feedback incorporation, and formal approval processes to ensure organizational alignment."
+          description: "Facilitation of stakeholder review and feedback processes to ensure policies are practical, enforceable, and aligned with business operations and requirements."
         },
         {
-          title: "Implementation & Socialization",
-          description: "Support for policy rollout, including communication planning, training materials, and awareness activities to drive adoption."
+          title: "Implementation Planning",
+          description: "Development of a structured rollout strategy with clear timelines, responsibilities, and change management considerations for effective policy implementation."
+        },
+        {
+          title: "Awareness & Training",
+          description: "Design of targeted awareness and training materials to ensure stakeholders understand policy requirements and their individual responsibilities."
+        },
+        {
+          title: "Governance & Maintenance",
+          description: "Establishment of ongoing policy management processes including periodic review, exception handling, and continuous improvement mechanisms."
         }
       ]}
       benefits={[
         {
           title: "Regulatory Compliance",
-          content: "Meet documentation requirements for various regulatory frameworks, including ISO 27001, SOC 2, GDPR, and industry-specific regulations."
+          content: "Meet regulatory and contractual obligations with comprehensive policies that address specific requirements across multiple frameworks and standards."
         },
         {
-          title: "Clear Security Expectations",
-          content: "Establish consistent, clear expectations for security practices across your organization, reducing confusion and improving adherence."
+          title: "Consistent Security Practices",
+          content: "Establish clear, standardized security requirements and practices across your organization, reducing variability and strengthening your security posture."
+        },
+        {
+          title: "Operational Clarity",
+          content: "Provide clear guidance to employees and stakeholders regarding acceptable practices, roles, and responsibilities for information security."
         },
         {
           title: "Risk Reduction",
-          content: "Decrease security incidents caused by undefined processes, unclear responsibilities, or inconsistent security practices."
+          content: "Reduce security incidents caused by unclear expectations or inconsistent practices through well-defined policies and procedures."
         },
         {
-          title: "Operational Efficiency",
-          content: "Streamline security operations with well-defined, documented processes that eliminate ambiguity and unnecessary variations."
-        },
-        {
-          title: "Foundation for Improvement",
-          content: "Create a solid documentation foundation that can evolve with your security program, supporting ongoing maturity and continuous improvement."
+          title: "Certification Readiness",
+          content: "Prepare for security certifications such as ISO 27001 with a structured policy framework that meets key documentation requirements."
         }
       ]}
       deliverables={[
         {
-          title: "Information Security Policy",
-          description: "Comprehensive overarching security policy that establishes high-level security principles, requirements, and governance structures."
+          title: "Information Security Policy Framework",
+          description: "Comprehensive policy architecture documentation outlining the hierarchical structure, scope, and governance model for your policy program."
         },
         {
-          title: "Domain-Specific Policies",
-          description: "Detailed policies for key security domains, such as access control, data protection, incident management, and acceptable use."
+          title: "Core Security Policies",
+          description: "Full set of high-level security policies covering key domains such as access control, data protection, incident management, and acceptable use."
         },
         {
-          title: "Security Standards",
-          description: "Specific, measurable security requirements that define how policies are implemented across different technologies and systems."
+          title: "Supporting Procedures & Standards",
+          description: "Detailed process documents, technical standards, and implementation guidelines that support the practical application of security policies."
         },
         {
-          title: "Procedures & Guidelines",
-          description: "Step-by-step instructions and best practice guidance for implementing security requirements consistently throughout the organization."
+          title: "Policy Implementation Roadmap",
+          description: "Structured implementation plan with prioritized timelines, resource requirements, and stakeholder engagement strategies."
         },
         {
-          title: "Policy Management Framework",
-          description: "Structured approach for maintaining, reviewing, and updating security documentation to ensure ongoing relevance and effectiveness."
+          title: "Policy Awareness Materials",
+          description: "Customized communication and training materials designed to promote policy understanding and adoption across different stakeholder groups."
         },
         {
-          title: "Communication & Training Materials",
-          description: "Resources to support policy rollout, including executive summaries, training presentations, and awareness materials."
+          title: "Policy Management Toolkit",
+          description: "Templates and workflows for ongoing policy maintenance, exception management, compliance tracking, and continuous improvement."
         }
       ]}
       animationSvg={
         <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Policy Document Stack */}
-          <rect x="240" y="110" width="120" height="150" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
-          <rect x="250" y="120" width="100" height="130" rx="3" fill="#0A1024" stroke="#00E5FF" strokeWidth="1" strokeDasharray="3 2"/>
+          {/* Policy Document */}
+          <rect x="200" y="120" width="200" height="250" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
           
-          {/* Document Title */}
-          <text x="300" y="140" textAnchor="middle" fontSize="12" fill="#00E5FF">Security Policy</text>
+          {/* Document Header */}
+          <rect x="220" y="140" width="160" height="30" rx="3" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
+          <text x="300" y="160" textAnchor="middle" fontSize="12" fill="#00E5FF">Security Policy</text>
           
-          {/* Document Content Lines */}
-          <line x1="260" y1="155" x2="340" y2="155" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="165" x2="340" y2="165" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="175" x2="340" y2="175" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="185" x2="340" y2="185" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="195" x2="320" y2="195" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="205" x2="330" y2="205" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="215" x2="310" y2="215" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="225" x2="340" y2="225" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <line x1="260" y1="235" x2="300" y2="235" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
+          {/* Document Sections */}
+          <line x1="220" y1="190" x2="380" y2="190" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="240" y="210" fontSize="10" fill="#00E5FF">1. Introduction</text>
           
-          {/* Policy Hierarchy */}
-          <rect x="150" y="280" width="300" height="40" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
-          <text x="300" y="305" textAnchor="middle" fontSize="14" fill="#00E5FF">Policies</text>
+          <line x1="220" y1="225" x2="380" y2="225" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="240" y="245" fontSize="10" fill="#00E5FF">2. Scope & Objectives</text>
           
-          <rect x="170" y="330" width="260" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
-          <text x="300" y="350" textAnchor="middle" fontSize="12" fill="#00E5FF">Standards</text>
+          <line x1="220" y1="260" x2="380" y2="260" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="240" y="280" fontSize="10" fill="#00E5FF">3. Roles & Responsibilities</text>
           
-          <rect x="190" y="370" width="220" height="20" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
-          <text x="300" y="385" textAnchor="middle" fontSize="10" fill="#00E5FF">Procedures & Guidelines</text>
+          <line x1="220" y1="295" x2="380" y2="295" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="240" y="315" fontSize="10" fill="#00E5FF">4. Policy Requirements</text>
           
-          {/* Connected Elements */}
-          <rect x="130" y="170" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="160" y="190" textAnchor="middle" fontSize="9" fill="#00E5FF">Requirements</text>
+          <line x1="220" y1="330" x2="380" y2="330" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="240" y="350" fontSize="10" fill="#00E5FF">5. Compliance & Enforcement</text>
           
-          <rect x="130" y="210" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="160" y="230" textAnchor="middle" fontSize="9" fill="#00E5FF">Regulations</text>
+          {/* Animation Elements */}
+          <rect x="220" y="190" width="160" height="35" rx="2" fill="#00B2A9" fillOpacity="0.1" opacity="0">
+            <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+          </rect>
           
-          <rect x="410" y="170" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="440" y="190" textAnchor="middle" fontSize="9" fill="#00E5FF">Stakeholders</text>
+          <rect x="220" y="225" width="160" height="35" rx="2" fill="#00B2A9" fillOpacity="0.1" opacity="0">
+            <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+          </rect>
           
-          <rect x="410" y="210" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="440" y="230" textAnchor="middle" fontSize="9" fill="#00E5FF">Implementation</text>
+          <rect x="220" y="260" width="160" height="35" rx="2" fill="#00B2A9" fillOpacity="0.1" opacity="0">
+            <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+          </rect>
+          
+          <rect x="220" y="295" width="160" height="35" rx="2" fill="#00B2A9" fillOpacity="0.1" opacity="0">
+            <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="2s" repeatCount="indefinite"/>
+          </rect>
+          
+          <rect x="220" y="330" width="160" height="35" rx="2" fill="#00B2A9" fillOpacity="0.1" opacity="0">
+            <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="2.5s" repeatCount="indefinite"/>
+          </rect>
+          
+          {/* Policy Structure */}
+          <rect x="450" y="150" width="100" height="30" rx="3" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="500" y="170" textAnchor="middle" fontSize="10" fill="#00E5FF">Policies</text>
+          
+          <rect x="450" y="200" width="100" height="30" rx="3" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="500" y="220" textAnchor="middle" fontSize="10" fill="#00E5FF">Standards</text>
+          
+          <rect x="450" y="250" width="100" height="30" rx="3" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="500" y="270" textAnchor="middle" fontSize="10" fill="#00E5FF">Procedures</text>
+          
+          <rect x="450" y="300" width="100" height="30" rx="3" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="500" y="320" textAnchor="middle" fontSize="10" fill="#00E5FF">Guidelines</text>
           
           {/* Connection Lines */}
-          <line x1="190" y1="185" x2="240" y2="185" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
-          <line x1="190" y1="225" x2="240" y2="225" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
-          <line x1="360" y1="185" x2="410" y2="185" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
-          <line x1="360" y1="225" x2="410" y2="225" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="500" y1="180" x2="500" y2="200" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="500" y1="230" x2="500" y2="250" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="500" y1="280" x2="500" y2="300" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
           
-          {/* Animated Elements */}
-          <circle cx="215" cy="185" r="3" fill="#00E5FF">
-            <animate attributeName="cx" values="190;240" dur="2s" repeatCount="indefinite"/>
+          {/* Animation Elements */}
+          <circle cx="500" cy="190" r="3" fill="#00E5FF">
+            <animate attributeName="cy" values="180;200" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="215" cy="225" r="3" fill="#00E5FF">
-            <animate attributeName="cx" values="190;240" dur="2.5s" repeatCount="indefinite"/>
+          <circle cx="500" cy="240" r="3" fill="#00E5FF">
+            <animate attributeName="cy" values="230;250" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="385" cy="185" r="3" fill="#00E5FF">
-            <animate attributeName="cx" values="410;360" dur="2s" repeatCount="indefinite"/>
+          <circle cx="500" cy="290" r="3" fill="#00E5FF">
+            <animate attributeName="cy" values="280;300" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="385" cy="225" r="3" fill="#00E5FF">
-            <animate attributeName="cx" values="410;360" dur="2.5s" repeatCount="indefinite"/>
+          {/* Policy Categories */}
+          <circle cx="130" cy="150" r="25" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="130" y="150" textAnchor="middle" fontSize="10" fill="#00E5FF">Access</text>
+          <text x="130" y="160" textAnchor="middle" fontSize="10" fill="#00E5FF">Control</text>
+          
+          <circle cx="130" cy="210" r="25" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="130" y="210" textAnchor="middle" fontSize="10" fill="#00E5FF">Data</text>
+          <text x="130" y="220" textAnchor="middle" fontSize="10" fill="#00E5FF">Protection</text>
+          
+          <circle cx="130" cy="270" r="25" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="130" y="270" textAnchor="middle" fontSize="10" fill="#00E5FF">Incident</text>
+          <text x="130" y="280" textAnchor="middle" fontSize="10" fill="#00E5FF">Response</text>
+          
+          <circle cx="130" cy="330" r="25" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="130" y="330" textAnchor="middle" fontSize="10" fill="#00E5FF">Acceptable</text>
+          <text x="130" y="340" textAnchor="middle" fontSize="10" fill="#00E5FF">Use</text>
+          
+          {/* Connection Lines */}
+          <line x1="155" y1="150" x2="200" y2="150" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="155" y1="210" x2="200" y2="210" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="155" y1="270" x2="200" y2="270" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="155" y1="330" x2="200" y2="330" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          
+          {/* Animation Elements */}
+          <circle cx="180" cy="150" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="155;200" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          {/* Document Flow */}
-          <path d="M300 260 L300 280" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="3 2"/>
-          <path d="M300 320 L300 330" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="3 2"/>
-          <path d="M300 360 L300 370" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="3 2"/>
+          <circle cx="180" cy="210" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="155;200" dur="2s" repeatCount="indefinite"/>
+          </circle>
           
-          {/* Document Glow */}
-          <rect x="240" y="110" width="120" height="150" rx="5" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3">
-            <animate attributeName="stroke-opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
-          </rect>
+          <circle cx="180" cy="270" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="155;200" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="180" cy="330" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="155;200" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          
+          {/* Connection to Structure */}
+          <line x1="400" y1="220" x2="450" y2="220" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          
+          <circle cx="425" cy="220" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="400;450" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          
+          {/* Main Title */}
+          <text x="300" y="90" textAnchor="middle" fontSize="16" fill="#00E5FF">Policy Development & Implementation</text>
         </svg>
       }
       relatedServices={[
         {
-          title: "IT Security Audit",
-          link: "/services/it-security-audit"
+          title: "ISO 27001 Certification",
+          link: "/services/iso27001"
+        },
+        {
+          title: "Security Assessment",
+          link: "/services/security-assessment"
         },
         {
           title: "vCISO Services",
           link: "/services/vciso"
-        },
-        {
-          title: "ISO 27001 Certification",
-          link: "/services/iso27001"
         }
       ]}
     />
