@@ -68,6 +68,10 @@ const Navbar = () => {
                     <li><Link href="/services/uae-pdpl" className="hover:text-[hsl(var(--secondary))] transition">UAE PDPL Compliance</Link></li>
                     <li><Link href="/services/uae-ia" className="hover:text-[hsl(var(--secondary))] transition">UAE IA Compliance</Link></li>
                     <li><Link href="/services/uae-nesa" className="hover:text-[hsl(var(--secondary))] transition">UAE NESA Compliance</Link></li>
+                    <li><Link href="/services/pci-dss" className="hover:text-[hsl(var(--secondary))] transition">PCI DSS Compliance</Link></li>
+                    <li><Link href="/services/hipaa" className="hover:text-[hsl(var(--secondary))] transition">HIPAA Compliance</Link></li>
+                    <li><Link href="/services/internal-audit" className="hover:text-[hsl(var(--secondary))] transition">Internal Audit & Gap Analysis</Link></li>
+                    <li><Link href="/services/risk-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Frameworks</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -75,8 +79,13 @@ const Navbar = () => {
                   <ul className="space-y-2">
                     <li><Link href="/services/it-security-audit" className="hover:text-[hsl(var(--secondary))] transition">IT Security Audit</Link></li>
                     <li><Link href="/services/security-assessment" className="hover:text-[hsl(var(--secondary))] transition">Security Assessment</Link></li>
-                    <li><Link href="/services/penetration-testing" className="hover:text-[hsl(var(--secondary))] transition">Penetration Testing</Link></li>
                     <li><Link href="/services/policy-development" className="hover:text-[hsl(var(--secondary))] transition">Policy Development</Link></li>
+                  </ul>
+                  <h4 className="text-[hsl(var(--secondary))] mt-5 mb-3 font-semibold">Offensive Security</h4>
+                  <ul className="space-y-2">
+                    <li><Link href="/services/penetration-testing" className="hover:text-[hsl(var(--secondary))] transition">Penetration Testing</Link></li>
+                    <li><Link href="/services/web-pen-testing" className="hover:text-[hsl(var(--secondary))] transition">Web App Penetration Testing</Link></li>
+                    <li><Link href="/services/network-pentesting" className="hover:text-[hsl(var(--secondary))] transition">Network Penetration Testing</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -85,6 +94,8 @@ const Navbar = () => {
                     <li><Link href="/services/cloud-security" className="hover:text-[hsl(var(--secondary))] transition">Cloud Security</Link></li>
                     <li><Link href="/services/vciso" className="hover:text-[hsl(var(--secondary))] transition">vCISO Services</Link></li>
                     <li><Link href="/services/data-privacy" className="hover:text-[hsl(var(--secondary))] transition">Data Privacy Consultation</Link></li>
+                    <li><Link href="/solutions/email-security" className="hover:text-[hsl(var(--secondary))] transition">Email Security</Link></li>
+                    <li><Link href="/solutions/edr" className="hover:text-[hsl(var(--secondary))] transition">Endpoint Detection & Response</Link></li>
                   </ul>
                 </div>
               </div>
@@ -104,6 +115,11 @@ const Navbar = () => {
                     <li><Link href="/solutions/risk-management" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Tools</Link></li>
                     <li><Link href="/solutions/vulnerability-management" className="hover:text-[hsl(var(--secondary))] transition">Vulnerability Management</Link></li>
                     <li><Link href="/solutions/cybersecurity-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Cybersecurity Frameworks</Link></li>
+                  </ul>
+                  <h4 className="text-[hsl(var(--secondary))] mt-4 mb-1 font-semibold">Security Technology Solutions</h4>
+                  <ul className="space-y-2">
+                    <li><Link href="/solutions/email-security" className="hover:text-[hsl(var(--secondary))] transition">Email Security Solutions</Link></li>
+                    <li><Link href="/solutions/edr" className="hover:text-[hsl(var(--secondary))] transition">Endpoint Detection & Response</Link></li>
                   </ul>
                 </div>
               </div>
@@ -175,17 +191,27 @@ const Navbar = () => {
                 <Link href="/services/uae-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE PDPL Compliance</Link>
                 <Link href="/services/uae-ia" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE IA Compliance</Link>
                 <Link href="/services/uae-nesa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
+                <Link href="/services/pci-dss" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">PCI DSS Compliance</Link>
+                <Link href="/services/hipaa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">HIPAA Compliance</Link>
+                <Link href="/services/internal-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Internal Audit & Gap Analysis</Link>
+                <Link href="/services/risk-frameworks" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Management Frameworks</Link>
+                <Link href="/services/policy-development" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy Development</Link>
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">IT Security & Audit</p>
                 <Link href="/services/it-security-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">IT Security Audit</Link>
                 <Link href="/services/security-assessment" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Security Assessment</Link>
+                
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Offensive Security</p>
                 <Link href="/services/penetration-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
-                <Link href="/services/policy-development" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy Development</Link>
+                <Link href="/services/web-pen-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Web App Penetration Testing</Link>
+                <Link href="/services/network-pentesting" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Network Penetration Testing</Link>
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Cybersecurity Solutions</p>
                 <Link href="/services/cloud-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security</Link>
                 <Link href="/services/vciso" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">vCISO Services</Link>
                 <Link href="/services/data-privacy" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Privacy Consultation</Link>
+                <Link href="/solutions/email-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Email Security</Link>
+                <Link href="/solutions/edr" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Endpoint Detection & Response</Link>
               </div>
             </div>
             
@@ -197,11 +223,16 @@ const Navbar = () => {
                 Solutions <ChevronDown className={`h-5 w-5 transition-transform ${openSubmenu === 'solutions' ? 'rotate-180' : ''}`} />
               </button>
               <div className={`pl-4 space-y-2 py-2 ${openSubmenu === 'solutions' ? 'block' : 'hidden'}`}>
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-1 pb-1">AI-Powered Solutions</p>
                 <Link href="/solutions/ai-compliance" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">AI-Driven Compliance Tools</Link>
                 <Link href="/solutions/grc-automation" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">GRC Automation Platforms</Link>
                 <Link href="/solutions/risk-management" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Management Tools</Link>
                 <Link href="/solutions/vulnerability-management" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Vulnerability Management</Link>
                 <Link href="/solutions/cybersecurity-frameworks" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cybersecurity Frameworks</Link>
+                
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Security Technology Solutions</p>
+                <Link href="/solutions/email-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Email Security Solutions</Link>
+                <Link href="/solutions/edr" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Endpoint Detection & Response</Link>
               </div>
             </div>
             
