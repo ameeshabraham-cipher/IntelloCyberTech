@@ -21,6 +21,7 @@ import {
   Truck
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navbar = () => {
   const [location] = useLocation();
@@ -152,6 +153,7 @@ const Navbar = () => {
           
           {/* CTA Button (Desktop) */}
           <div className="hidden lg:flex items-center space-x-4">
+            <ThemeToggle />
             <Link href="/assessment">
               <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-2 px-6 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
                 Get Assessment
@@ -262,6 +264,11 @@ const Navbar = () => {
             <Link href="/about" className="text-white py-2 border-b border-[hsl(var(--secondary))]/20">About Us</Link>
             <Link href="/insights" className="text-white py-2 border-b border-[hsl(var(--secondary))]/20">Insights</Link>
             <Link href="/contact" className="text-white py-2 border-b border-[hsl(var(--secondary))]/20">Contact</Link>
+            
+            <div className="flex items-center justify-between py-2 border-b border-[hsl(var(--secondary))]/20">
+              <span className="text-white">Theme</span>
+              <ThemeToggle />
+            </div>
             
             <Link href="/assessment" className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-6 rounded-full text-center mt-2">
               Get Assessment

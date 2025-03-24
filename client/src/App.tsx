@@ -7,6 +7,8 @@ import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/hooks/use-theme";
+import { ThemeInitializer } from "@/components/ThemeToggle";
 
 // Solution Pages
 import AiCompliancePage from "@/pages/solutions/AiCompliance";
@@ -116,8 +118,11 @@ function Router() {
 function App() {
   return (
     <>
-      <Router />
-      <Toaster />
+      <ThemeInitializer />
+      <ThemeProvider>
+        <Router />
+        <Toaster />
+      </ThemeProvider>
     </>
   );
 }
