@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import HeroSection from '@/components/HeroSection';
+import NewHeroSection from '@/components/NewHeroSection';
 import PainPointsSection from '@/components/PainPointsSection';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import AISolutionsSection from '@/components/AISolutionsSection';
@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <HeroSection />
+      <NewHeroSection />
       <PainPointsSection />
       <ServicesShowcase />
       <AISolutionsSection />
