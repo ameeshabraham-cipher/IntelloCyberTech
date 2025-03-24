@@ -92,10 +92,7 @@ export function HelpBubble({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             transition={{ type: "spring", duration: 0.4 }}
-            className={`absolute z-50 ${containerStyles()} w-64 p-3 rounded-lg border cyber-border backdrop-blur-sm shadow-lg`}
-            style={{ 
-              background: 'linear-gradient(135deg, rgba(10, 16, 36, 0.95), rgba(15, 23, 42, 0.98))'
-            }}
+            className={`absolute z-50 ${containerStyles()} w-64 p-3 rounded-lg help-bubble-border backdrop-blur-sm shadow-lg`}
           >
             <div className="relative">
               {/* Cyber-themed decorative elements */}

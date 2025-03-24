@@ -659,4 +659,48 @@
   .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
   }
+  
+  /* Enhanced cyber-border for help bubbles */
+  .help-bubble-border {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .help-bubble-border::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(
+      transparent, 
+      rgba(235, 52, 67, 0.1), 
+      transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+  }
+  
+  .help-bubble-border::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 2px;
+    top: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: linear-gradient(135deg, rgba(10, 16, 36, 0.95), rgba(15, 23, 42, 0.98));
+    border-radius: inherit;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
 }
