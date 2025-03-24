@@ -1,35 +1,28 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light';
+// Only using dark theme now
+type Theme = 'dark';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
-  defaultTheme?: Theme;
-  storageKey?: string;
 };
 
 type ThemeProviderState = {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: 'dark',
-  setTheme: () => null,
-  toggleTheme: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'dark',
-  storageKey = 'intello-theme',
   ...props
 }: ThemeProviderProps) {
   // Always use dark theme
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme] = useState<Theme>('dark');
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -44,17 +37,11 @@ export function ThemeProvider({
     root.setAttribute('data-theme', 'dark');
     
     // Also store the theme in localStorage to keep consistent
-    localStorage.setItem(storageKey, 'dark');
-  }, [storageKey]);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+    localStorage.setItem('intello-theme', 'dark');
+  }, []);
 
   const value = {
     theme,
-    setTheme,
-    toggleTheme,
   };
 
   return (
