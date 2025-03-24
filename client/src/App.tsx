@@ -17,12 +17,19 @@ import CybersecurityFrameworksPage from "@/pages/solutions/CybersecurityFramewor
 
 // Service Pages
 import Iso27001Page from "@/pages/services/Iso27001";
+import Iso42001Page from "@/pages/services/Iso42001";
 import Soc2Page from "@/pages/services/Soc2";
 import GdprPage from "@/pages/services/Gdpr";
 import UaePdplPage from "@/pages/services/UaePdpl";
+import UaeIaPage from "@/pages/services/UaeIa";
+import UaeNesaPage from "@/pages/services/UaeNesa";
 import PenetrationTestingPage from "@/pages/services/PenetrationTesting";
 import SecurityAssessmentPage from "@/pages/services/SecurityAssessment";
 import CloudSecurityPage from "@/pages/services/CloudSecurity";
+import ItSecurityAuditPage from "@/pages/services/ItSecurityAudit";
+import PolicyDevelopmentPage from "@/pages/services/PolicyDevelopment";
+import VcisoPage from "@/pages/services/Vciso";
+import DataPrivacyPage from "@/pages/services/DataPrivacy";
 
 function Router() {
   return (
@@ -44,13 +51,25 @@ function Router() {
           <Route path="/solutions/cybersecurity-frameworks" component={CybersecurityFrameworksPage} />
           
           {/* Service Pages */}
+          {/* GRC Services */}
           <Route path="/services/iso27001" component={Iso27001Page} />
+          <Route path="/services/iso42001" component={Iso42001Page} />
           <Route path="/services/soc2" component={Soc2Page} />
           <Route path="/services/gdpr" component={GdprPage} />
           <Route path="/services/uae-pdpl" component={UaePdplPage} />
-          <Route path="/services/penetration-testing" component={PenetrationTestingPage} />
+          <Route path="/services/uae-ia" component={UaeIaPage} />
+          <Route path="/services/uae-nesa" component={UaeNesaPage} />
+          
+          {/* IT Security & Audit Services */}
+          <Route path="/services/it-security-audit" component={ItSecurityAuditPage} />
           <Route path="/services/security-assessment" component={SecurityAssessmentPage} />
+          <Route path="/services/penetration-testing" component={PenetrationTestingPage} />
+          <Route path="/services/policy-development" component={PolicyDevelopmentPage} />
+          
+          {/* Cybersecurity Solutions */}
           <Route path="/services/cloud-security" component={CloudSecurityPage} />
+          <Route path="/services/vciso" component={VcisoPage} />
+          <Route path="/services/data-privacy" component={DataPrivacyPage} />
           
           {/* 404 Page */}
           <Route component={NotFound} />
