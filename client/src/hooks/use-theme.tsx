@@ -28,25 +28,24 @@ export function ThemeProvider({
   storageKey = 'intello-theme',
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  // Always use dark theme
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Remove the old theme class
-    root.classList.remove('dark', 'light');
+    // Remove the light theme class if somehow present
+    root.classList.remove('light');
     
-    // Add the new theme class
-    root.classList.add(theme);
+    // Ensure dark theme is applied
+    root.classList.add('dark');
     
     // Update the data-theme attribute for the futuristic animations
-    root.setAttribute('data-theme', theme);
+    root.setAttribute('data-theme', 'dark');
     
-    // Also store the theme in localStorage
-    localStorage.setItem(storageKey, theme);
-  }, [theme, storageKey]);
+    // Also store the theme in localStorage to keep consistent
+    localStorage.setItem(storageKey, 'dark');
+  }, [storageKey]);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
