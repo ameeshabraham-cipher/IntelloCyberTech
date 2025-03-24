@@ -129,8 +129,8 @@ const AiCompliancePage = () => {
           link: "/solutions/risk-management"
         },
         {
-          title: "AI for Financial Reconciliation",
-          link: "/solutions/ai-financial-reconciliation"
+          title: "Cybersecurity Frameworks",
+          link: "/solutions/cybersecurity-frameworks"
         }
       ]}
     />
