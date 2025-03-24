@@ -115,6 +115,12 @@ function Router() {
   );
 }
 
+// Initialize dark mode on app load
+if (typeof document !== 'undefined') {
+  document.documentElement.classList.add('dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
 function App() {
   return (
     <>
