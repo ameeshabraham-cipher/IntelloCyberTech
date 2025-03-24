@@ -1,10 +1,10 @@
 import { 
-  TargetIcon, 
-  Code, 
-  Server, 
-  Smartphone,
-  Shield,
-  Network
+  Search, 
+  Bug, 
+  Shield, 
+  Terminal,
+  AlertTriangle,
+  CheckSquare
 } from 'lucide-react';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
@@ -12,194 +12,204 @@ const PenetrationTestingPage = () => {
   return (
     <ServicePageLayout
       title="Penetration Testing"
-      category="Cybersecurity Services"
-      description="Identify and remediate security vulnerabilities before they can be exploited with our comprehensive penetration testing services."
-      heroIcon={<TargetIcon className="h-8 w-8" />}
-      overview="Penetration testing, or ethical hacking, simulates real-world attacks on your systems, applications, and infrastructure to identify security vulnerabilities that could be exploited by malicious actors. Our comprehensive penetration testing services combine advanced automated tools with expert manual testing to deliver actionable insights that help you strengthen your security posture and protect your critical assets."
+      category="IT Security & Audit Services"
+      description="Identify and address exploitable security vulnerabilities before attackers can with our comprehensive penetration testing services."
+      heroIcon={<Bug className="h-8 w-8" />}
+      overview="Our Penetration Testing services simulate real-world attacks to identify exploitable vulnerabilities in your systems, applications, and infrastructure. Led by certified ethical hackers who leverage the latest attack techniques and methodologies, our penetration tests provide clear visibility into your security weaknesses along with actionable recommendations to strengthen your defenses against actual attackers."
       steps={[
         {
           title: "Scoping & Planning",
-          description: "Collaborative definition of testing scope, objectives, and constraints to ensure alignment with your security goals and regulatory requirements."
+          description: "Collaborative definition of test scope, objectives, and rules of engagement to align with your security priorities and risk concerns."
         },
         {
           title: "Reconnaissance & Discovery",
-          description: "Comprehensive information gathering to identify potential entry points, assets, and attack vectors within the defined scope."
+          description: "Thorough information gathering and target discovery to identify potential entry points and vulnerabilities for further exploitation."
         },
         {
-          title: "Vulnerability Scanning",
-          description: "Automated scanning using industry-leading tools to identify known vulnerabilities across systems, networks, and applications."
+          title: "Vulnerability Assessment",
+          description: "Systematic identification of security weaknesses across in-scope systems, networks, applications, and configurations."
         },
         {
-          title: "Manual Penetration Testing",
-          description: "Expert-led exploitation attempts to validate vulnerabilities, explore attack chains, and identify complex security issues that automated tools miss."
+          title: "Exploitation Testing",
+          description: "Controlled exploitation of discovered vulnerabilities to validate their exploitability and potential business impact."
         },
         {
-          title: "Privilege Escalation Testing",
-          description: "Attempts to escalate access privileges to assess the potential impact if initial defenses are breached."
+          title: "Privilege Escalation",
+          description: "Attempts to escalate privileges and move laterally within the environment to simulate a sophisticated attack chain."
         },
         {
           title: "Post-Exploitation Analysis",
-          description: "Assessment of what critical assets and data could be compromised if vulnerabilities are successfully exploited."
+          description: "Assessment of potential impact had the exploitation been conducted by a malicious attacker, including data access and business disruption."
         },
         {
-          title: "Reporting & Remediation Planning",
-          description: "Detailed documentation of findings with clear, prioritized remediation recommendations and technical guidance."
+          title: "Remediation Planning",
+          description: "Development of prioritized, actionable recommendations to address identified vulnerabilities based on risk and technical complexity."
         }
       ]}
       benefits={[
         {
-          title: "Proactive Vulnerability Identification",
-          content: "Discover and address security weaknesses before they can be exploited by malicious actors, reducing your overall risk exposure."
+          title: "Proactive Vulnerability Discovery",
+          content: "Identify security weaknesses before malicious actors can discover and exploit them, reducing your attack surface and potential breach risk."
         },
         {
-          title: "Regulatory Compliance",
-          content: "Meet penetration testing requirements for various compliance standards, including PCI DSS, ISO 27001, and SOC 2."
+          title: "Real-World Risk Validation",
+          content: "Verify the actual exploitability of vulnerabilities rather than relying on theoretical assessments, enabling risk-based prioritization."
         },
         {
-          title: "Independent Security Validation",
-          content: "Gain unbiased verification of your security controls' effectiveness from experts with an attacker's perspective."
+          title: "Defense Validation",
+          content: "Test the effectiveness of your security controls, monitoring, and incident response capabilities against sophisticated attack techniques."
         },
         {
-          title: "Reduced Security Incident Costs",
-          content: "Minimize the potential financial impact of security breaches by addressing vulnerabilities before they can be exploited."
+          title: "Compliance Support",
+          content: "Meet penetration testing requirements for various regulatory standards and frameworks, including PCI DSS, ISO 27001, and SOC 2."
         },
         {
-          title: "Security Awareness Improvement",
-          content: "Enhance your team's security awareness through concrete examples of vulnerabilities in your own environment."
+          title: "Security Awareness",
+          content: "Increase organizational awareness of security risks and attack vectors through practical demonstrations and realistic exploitation scenarios."
         }
       ]}
       deliverables={[
         {
           title: "Executive Summary Report",
-          description: "High-level overview of testing results, key findings, and risk assessment designed for executive stakeholders."
+          description: "High-level overview of penetration test findings, key risks, and strategic recommendations designed for executive stakeholders."
         },
         {
           title: "Detailed Technical Report",
-          description: "Comprehensive documentation of all identified vulnerabilities, including proof-of-concept details, supporting evidence, and technical impact."
+          description: "Comprehensive documentation of all identified vulnerabilities, including technical details, exploitation methods, and supporting evidence."
+        },
+        {
+          title: "Risk-Rated Vulnerability Register",
+          description: "Prioritized inventory of discovered vulnerabilities with severity ratings, exploitation difficulty, and potential business impact."
+        },
+        {
+          title: "Attack Path Analysis",
+          description: "Detailed documentation of successful attack paths, demonstrating how multiple vulnerabilities can be chained for maximum impact."
         },
         {
           title: "Remediation Roadmap",
-          description: "Prioritized recommendations for addressing identified vulnerabilities, including specific technical guidance for remediation."
+          description: "Structured implementation plan with short, medium, and long-term security improvements prioritized by risk reduction value."
         },
         {
           title: "Retest Validation",
-          description: "Follow-up testing to verify that identified vulnerabilities have been properly remediated (available as an optional service)."
-        },
-        {
-          title: "Security Posture Scorecard",
-          description: "Comparative assessment of your security posture against industry benchmarks and best practices."
-        },
-        {
-          title: "Technical Debrief Session",
-          description: "Interactive walkthrough of findings with your technical team to ensure clear understanding of vulnerabilities and remediation approaches."
+          description: "Optional follow-up testing to verify successful remediation of previously identified vulnerabilities and effectiveness of implemented fixes."
         }
       ]}
       animationSvg={
         <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Network Topology */}
-          <rect x="275" y="175" width="50" height="50" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
-          <text x="300" y="205" textAnchor="middle" fontSize="12" fill="#00E5FF">Server</text>
+          {/* Network Structure */}
+          <rect x="250" y="150" width="100" height="150" rx="10" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
           
-          <rect x="200" y="125" width="40" height="40" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
-          <text x="220" y="150" textAnchor="middle" fontSize="10" fill="#00E5FF">Web</text>
-          
-          <rect x="200" y="235" width="40" height="40" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
-          <text x="220" y="260" textAnchor="middle" fontSize="10" fill="#00E5FF">DB</text>
-          
-          <rect x="360" y="125" width="40" height="40" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
-          <text x="380" y="150" textAnchor="middle" fontSize="10" fill="#00E5FF">API</text>
-          
-          <rect x="360" y="235" width="40" height="40" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
-          <text x="380" y="260" textAnchor="middle" fontSize="10" fill="#00E5FF">App</text>
-          
-          {/* Connection Lines */}
-          <line x1="240" y1="145" x2="275" y2="175" stroke="#00B2A9" strokeWidth="1.5"/>
-          <line x1="240" y1="255" x2="275" y2="225" stroke="#00B2A9" strokeWidth="1.5"/>
-          <line x1="325" y1="175" x2="360" y2="145" stroke="#00B2A9" strokeWidth="1.5"/>
-          <line x1="325" y1="225" x2="360" y2="255" stroke="#00B2A9" strokeWidth="1.5"/>
-          
-          {/* Penetration Testing Elements */}
-          <rect x="130" y="180" width="40" height="40" rx="5" fill="#0A1024" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1.5"/>
-          <text x="150" y="205" textAnchor="middle" fontSize="10" fill="#00E5FF">Tester</text>
+          {/* Server Elements */}
+          <rect x="270" y="170" width="60" height="20" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="270" y="200" width="60" height="20" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="270" y="230" width="60" height="20" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="270" y="260" width="60" height="20" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
           
           {/* Attack Vectors */}
-          <path d="M170 190 Q200 180 240 145" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="5 3"/>
-          <path d="M170 210 Q200 220 240 255" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="5 3"/>
-          <path d="M170 200 L275 200" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="5 3"/>
-          <path d="M170 195 Q220 170 380 145" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="5 3"/>
-          <path d="M170 205 Q220 230 380 255" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="5 3"/>
+          <path d="M150 150 L250 180" stroke="#FF5252" strokeWidth="1.5" strokeDasharray="5 3">
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </path>
           
-          {/* Target Icons */}
-          <circle cx="240" cy="145" r="10" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="240" cy="145" r="5" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="240" cy="145" r="2" fill="#FF0000" fillOpacity="0.5"/>
+          <path d="M150 200 L250 210" stroke="#FF5252" strokeWidth="1.5" strokeDasharray="5 3">
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+          </path>
           
-          <circle cx="240" cy="255" r="10" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="240" cy="255" r="5" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="240" cy="255" r="2" fill="#FF0000" fillOpacity="0.5"/>
+          <path d="M150 250 L250 240" stroke="#FF5252" strokeWidth="1.5" strokeDasharray="5 3">
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
+          </path>
           
-          <circle cx="300" cy="200" r="10" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="300" cy="200" r="5" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="300" cy="200" r="2" fill="#FF0000" fillOpacity="0.5"/>
+          <path d="M150 300 L250 270" stroke="#FF5252" strokeWidth="1.5" strokeDasharray="5 3">
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="3.5s" repeatCount="indefinite"/>
+          </path>
           
-          <circle cx="380" cy="145" r="10" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="380" cy="145" r="5" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="380" cy="145" r="2" fill="#FF0000" fillOpacity="0.5"/>
+          {/* Attack Source */}
+          <circle cx="150" cy="150" r="15" fill="#0A1024" stroke="#FF5252" strokeWidth="1.5"/>
+          <text x="150" y="153" textAnchor="middle" fontSize="8" fill="#FF5252">Web App</text>
+          <text x="150" y="163" textAnchor="middle" fontSize="8" fill="#FF5252">Attack</text>
           
-          <circle cx="380" cy="255" r="10" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="380" cy="255" r="5" fill="none" stroke="#FF0000" strokeOpacity="0.5" strokeWidth="1"/>
-          <circle cx="380" cy="255" r="2" fill="#FF0000" fillOpacity="0.5"/>
+          <circle cx="150" cy="200" r="15" fill="#0A1024" stroke="#FF5252" strokeWidth="1.5"/>
+          <text x="150" y="203" textAnchor="middle" fontSize="8" fill="#FF5252">Network</text>
+          <text x="150" y="213" textAnchor="middle" fontSize="8" fill="#FF5252">Exploit</text>
           
-          {/* Security Shield */}
-          <path d="M440 180 Q480 190 480 220 Q480 250 440 260 Q400 250 400 220 Q400 190 440 180" fill="none" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="5 3"/>
-          <text x="440" y="225" textAnchor="middle" fontSize="12" fill="#00E5FF">Security</text>
-          <text x="440" y="240" textAnchor="middle" fontSize="12" fill="#00E5FF">Controls</text>
+          <circle cx="150" cy="250" r="15" fill="#0A1024" stroke="#FF5252" strokeWidth="1.5"/>
+          <text x="150" y="253" textAnchor="middle" fontSize="8" fill="#FF5252">API</text>
+          <text x="150" y="263" textAnchor="middle" fontSize="8" fill="#FF5252">Hack</text>
           
-          {/* Animated Scanning */}
-          <circle cx="150" cy="195" r="25" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3">
-            <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+          <circle cx="150" cy="300" r="15" fill="#0A1024" stroke="#FF5252" strokeWidth="1.5"/>
+          <text x="150" y="303" textAnchor="middle" fontSize="8" fill="#FF5252">Social</text>
+          <text x="150" y="313" textAnchor="middle" fontSize="8" fill="#FF5252">Engineer</text>
+          
+          {/* Vulnerability Targets */}
+          <circle cx="300" cy="180" r="5" fill="#FF5252">
+            <animate attributeName="r" values="5;7;5" dur="1s" repeatCount="indefinite"/>
           </circle>
           
-          {/* Animated Attack Paths */}
-          <circle cx="185" cy="185" r="3" fill="#FF0000" fillOpacity="0.5">
-            <animate attributeName="cx" values="170;240" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="190;145" dur="2s" repeatCount="indefinite"/>
+          <circle cx="300" cy="210" r="5" fill="#FF5252">
+            <animate attributeName="r" values="5;7;5" dur="1.5s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="185" cy="215" r="3" fill="#FF0000" fillOpacity="0.5">
-            <animate attributeName="cx" values="170;240" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="210;255" dur="3s" repeatCount="indefinite"/>
+          {/* Defense Elements */}
+          <rect x="400" y="150" width="80" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="440" y="170" textAnchor="middle" fontSize="10" fill="#00E5FF">Identify</text>
+          
+          <rect x="400" y="190" width="80" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="440" y="210" textAnchor="middle" fontSize="10" fill="#00E5FF">Exploit</text>
+          
+          <rect x="400" y="230" width="80" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="440" y="250" textAnchor="middle" fontSize="10" fill="#00E5FF">Report</text>
+          
+          <rect x="400" y="270" width="80" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="440" y="290" textAnchor="middle" fontSize="10" fill="#00E5FF">Remediate</text>
+          
+          {/* Connection Lines */}
+          <line x1="350" y1="165" x2="400" y2="165" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="350" y1="205" x2="400" y2="205" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="350" y1="245" x2="400" y2="245" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="350" y1="285" x2="400" y2="285" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          
+          {/* Animated Scan */}
+          <rect x="250" y="150" width="100" height="150" rx="10" fill="none" stroke="#00B2A9" strokeWidth="1" strokeOpacity="0.3">
+            <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+          </rect>
+          
+          <line x1="290" y1="100" x2="290" y2="140" stroke="#00B2A9" strokeWidth="1" fill="none"/>
+          <line x1="310" y1="100" x2="310" y2="140" stroke="#00B2A9" strokeWidth="1" fill="none"/>
+          <rect x="275" y="85" width="50" height="15" rx="2" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
+          <text x="300" y="96" textAnchor="middle" fontSize="8" fill="#00E5FF">TARGET</text>
+          
+          {/* Title */}
+          <text x="300" y="65" textAnchor="middle" fontSize="16" fill="#00E5FF">Penetration Testing</text>
+          
+          {/* Animated Elements */}
+          <circle cx="375" cy="165" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="350;400" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="222" cy="200" r="3" fill="#FF0000" fillOpacity="0.5">
-            <animate attributeName="cx" values="170;275" dur="2.5s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="200;200" dur="2.5s" repeatCount="indefinite"/>
+          <circle cx="375" cy="205" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="350;400" dur="2.5s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="275" cy="170" r="3" fill="#FF0000" fillOpacity="0.5">
-            <animate attributeName="cx" values="170;380" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="195;145" dur="4s" repeatCount="indefinite"/>
+          <circle cx="375" cy="245" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="350;400" dur="3s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="275" cy="230" r="3" fill="#FF0000" fillOpacity="0.5">
-            <animate attributeName="cx" values="170;380" dur="3.5s" repeatCount="indefinite"/>
-            <animate attributeName="cy" values="205;255" dur="3.5s" repeatCount="indefinite"/>
+          <circle cx="375" cy="285" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="350;400" dur="3.5s" repeatCount="indefinite"/>
           </circle>
         </svg>
       }
       relatedServices={[
         {
-          title: "Vulnerability Management",
-          link: "/solutions/vulnerability-management"
-        },
-        {
           title: "Security Assessment",
           link: "/services/security-assessment"
         },
         {
-          title: "Cloud Security Assessment",
-          link: "/services/cloud-security"
+          title: "Vulnerability Management",
+          link: "/solutions/vulnerability-management"
+        },
+        {
+          title: "IT Security Audit",
+          link: "/services/it-security-audit"
         }
       ]}
     />

@@ -1,178 +1,214 @@
 import { 
-  ListChecks, 
-  ShieldCheck, 
-  FileCheck, 
-  Users,
-  Network,
-  Table
+  ClipboardCheck, 
+  Shield, 
+  AlertTriangle, 
+  CheckCircle,
+  BarChart2,
+  FileText
 } from 'lucide-react';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
 const SecurityAssessmentPage = () => {
   return (
     <ServicePageLayout
-      title="Information Security Assessment"
-      category="Cybersecurity Services"
-      description="Evaluate your organization's security posture with our comprehensive information security assessment to identify risks and prioritize improvements."
-      heroIcon={<ListChecks className="h-8 w-8" />}
-      overview="Our Information Security Assessment provides a structured evaluation of your organization's security posture across people, process, and technology domains. Using industry-standard frameworks and best practices, we identify security gaps, assess your risk exposure, and develop a prioritized roadmap for security improvements, helping you allocate resources effectively to strengthen your security defenses."
+      title="Security Assessment"
+      category="IT Security & Audit Services"
+      description="Gain comprehensive visibility into your security posture with our detailed security assessment services targeting technology, people, and processes."
+      heroIcon={<ClipboardCheck className="h-8 w-8" />}
+      overview="Our Security Assessment provides a holistic evaluation of your organization's security posture across people, processes, and technology dimensions. Using a comprehensive methodology based on industry standards and best practices, we identify security gaps, vulnerabilities, and control weaknesses, delivering actionable recommendations to strengthen your security program and reduce organizational risk."
       steps={[
         {
           title: "Assessment Scoping",
-          description: "Collaborative definition of assessment scope, objectives, and methodology to align with your business priorities and regulatory requirements."
+          description: "Collaborative definition of assessment scope, including systems, applications, facilities, and business processes to be evaluated."
+        },
+        {
+          title: "Control Framework Selection",
+          description: "Selection of appropriate security frameworks (e.g., NIST CSF, ISO 27001, CIS Controls) to guide the assessment process and provide benchmarking."
         },
         {
           title: "Documentation Review",
-          description: "Thorough review of existing security policies, procedures, standards, and documentation to evaluate governance effectiveness."
+          description: "Analysis of existing security policies, procedures, standards, and guidelines to evaluate governance effectiveness and documentation completeness."
         },
         {
-          title: "Technical Controls Review",
-          description: "Evaluation of implemented technical security controls across network, systems, applications, and data protection domains."
+          title: "Technical Control Assessment",
+          description: "Evaluation of implemented technical controls across network security, access management, endpoint protection, and data security domains."
         },
         {
-          title: "Interviews & Observations",
-          description: "Structured interviews with key stakeholders and observation of operational practices to assess security awareness and control implementation."
+          title: "Process & Operational Review",
+          description: "Review of security operational processes, including incident management, vulnerability management, and security monitoring activities."
         },
         {
-          title: "Gap Analysis",
-          description: "Identification of security gaps against selected frameworks (ISO 27001, NIST CSF, CIS Controls) and industry best practices."
+          title: "People & Awareness Assessment",
+          description: "Evaluation of security awareness, training programs, and organizational security culture to identify human-factor risks."
         },
         {
-          title: "Risk Assessment",
-          description: "Evaluation of identified gaps in terms of risk exposure, considering likelihood, impact, and existing mitigating controls."
-        },
-        {
-          title: "Recommendations & Roadmap",
-          description: "Development of prioritized recommendations and a phased implementation roadmap to address identified security gaps."
+          title: "Risk Analysis & Reporting",
+          description: "Analysis of identified gaps against selected frameworks with risk-based prioritization and detailed remediation recommendations."
         }
       ]}
       benefits={[
         {
           title: "Comprehensive Security Visibility",
-          content: "Gain a holistic view of your security posture across all domains, including strengths, weaknesses, and priority improvement areas."
+          content: "Gain complete visibility into your security posture across people, processes, and technology to understand your overall security maturity level."
         },
         {
-          title: "Risk-Based Decision Making",
-          content: "Make informed security investment decisions based on actual risk exposure rather than perceived threats or vendor pressure."
+          title: "Risk-Based Prioritization",
+          content: "Receive prioritized recommendations based on risk impact and implementation complexity to focus resources on the most critical improvements."
         },
         {
-          title: "Resource Optimization",
-          content: "Focus limited security resources on the most critical improvements that deliver the greatest risk reduction for your organization."
+          title: "Security Roadmap Development",
+          content: "Establish a clear security improvement roadmap with short, medium, and long-term initiatives aligned with business objectives and risk tolerance."
         },
         {
-          title: "Compliance Readiness",
-          content: "Understand your current compliance status against key frameworks and standards, laying groundwork for future certification efforts."
+          title: "Framework Alignment",
+          content: "Benchmark your security practices against industry standards and best practices to identify gaps and measure progress over time."
         },
         {
-          title: "Executive Security Awareness",
-          content: "Enhance leadership understanding of your security posture, challenges, and resource requirements through clear, business-focused reporting."
+          title: "Regulatory Readiness",
+          content: "Prepare for regulatory compliance requirements by identifying control gaps and establishing a path to meeting compliance obligations."
         }
       ]}
       deliverables={[
         {
           title: "Executive Summary Report",
-          description: "Business-focused overview of key findings, risk assessment, and strategic recommendations designed for executive stakeholders."
+          description: "High-level overview of assessment findings, key risks, and strategic recommendations designed for executive stakeholders."
         },
         {
           title: "Detailed Assessment Report",
-          description: "Comprehensive documentation of assessment methodology, findings, and evidence across all evaluated security domains."
+          description: "Comprehensive documentation of all assessment findings, including technical details, risk ratings, and supporting evidence."
         },
         {
-          title: "Security Maturity Scorecard",
-          description: "Quantitative measurement of your security program maturity across key domains, with comparative industry benchmarking."
+          title: "Security Control Matrix",
+          description: "Detailed mapping of evaluated controls against selected frameworks with maturity ratings and improvement opportunities."
         },
         {
-          title: "Gap Analysis Matrix",
-          description: "Detailed mapping of identified gaps against selected framework requirements with current state assessment."
+          title: "Risk Register",
+          description: "Prioritized inventory of identified security risks with severity ratings, potential impacts, and remediation guidance."
         },
         {
-          title: "Prioritized Remediation Roadmap",
+          title: "Maturity Scorecard",
+          description: "Visual representation of security maturity across different domains, providing benchmarking against industry standards."
+        },
+        {
+          title: "Remediation Roadmap",
           description: "Structured implementation plan with short, medium, and long-term security improvements prioritized by risk reduction value."
-        },
-        {
-          title: "Security Metrics Dashboard",
-          description: "Recommended metrics and KPIs for ongoing measurement of security program effectiveness and improvement tracking."
         }
       ]}
       animationSvg={
         <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Security Assessment Radar */}
-          <circle cx="300" cy="200" r="120" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3"/>
-          <circle cx="300" cy="200" r="90" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
-          <circle cx="300" cy="200" r="60" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.7"/>
-          <circle cx="300" cy="200" r="30" fill="none" stroke="#00E5FF" strokeWidth="1"/>
+          {/* Assessment Shield */}
+          <path d="M300 100 Q360 120 360 190 Q360 260 300 300 Q240 260 240 190 Q240 120 300 100" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
           
-          {/* Radar Axes */}
-          <line x1="300" y1="80" x2="300" y2="320" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
-          <line x1="180" y1="200" x2="420" y2="200" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
-          <line x1="214" y1="114" x2="386" y2="286" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
-          <line x1="214" y1="286" x2="386" y2="114" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          {/* Radar Sweep */}
+          <circle cx="300" cy="200" r="80" fill="none" stroke="#00B2A9" strokeWidth="1" strokeOpacity="0.2"/>
+          <circle cx="300" cy="200" r="60" fill="none" stroke="#00B2A9" strokeWidth="1" strokeOpacity="0.3"/>
+          <circle cx="300" cy="200" r="40" fill="none" stroke="#00B2A9" strokeWidth="1" strokeOpacity="0.4"/>
+          <circle cx="300" cy="200" r="20" fill="none" stroke="#00B2A9" strokeWidth="1" strokeOpacity="0.5"/>
           
-          {/* Domain Labels */}
-          <text x="300" y="70" textAnchor="middle" fontSize="12" fill="#00E5FF">Governance</text>
-          <text x="300" y="335" textAnchor="middle" fontSize="12" fill="#00E5FF">Operations</text>
-          <text x="170" y="200" textAnchor="end" fontSize="12" fill="#00E5FF">Technology</text>
-          <text x="430" y="200" textAnchor="start" fontSize="12" fill="#00E5FF">People</text>
-          <text x="205" y="110" textAnchor="middle" fontSize="12" fill="#00E5FF">Physical</text>
-          <text x="395" y="290" textAnchor="middle" fontSize="12" fill="#00E5FF">Data</text>
-          <text x="205" y="290" textAnchor="middle" fontSize="12" fill="#00E5FF">Network</text>
-          <text x="395" y="110" textAnchor="middle" fontSize="12" fill="#00E5FF">Applications</text>
+          <path d="M300 200 L380 200" stroke="#00B2A9" strokeWidth="1.5" strokeOpacity="0.8">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 300 200"
+              to="360 300 200"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          </path>
           
-          {/* Maturity Scale */}
-          <text x="300" y="140" textAnchor="middle" fontSize="8" fill="#00E5FF">Optimized</text>
-          <text x="300" y="170" textAnchor="middle" fontSize="8" fill="#00E5FF">Managed</text>
-          <text x="300" y="200" textAnchor="middle" fontSize="8" fill="#00E5FF">Defined</text>
-          <text x="300" y="230" textAnchor="middle" fontSize="8" fill="#00E5FF">Repeatable</text>
-          <text x="300" y="260" textAnchor="middle" fontSize="8" fill="#00E5FF">Initial</text>
+          {/* Assessment Domains */}
+          <rect x="140" y="150" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="175" y="170" textAnchor="middle" fontSize="10" fill="#00E5FF">Technology</text>
           
-          {/* Current State Assessment */}
-          <path d="M300 110 L350 150 L370 200 L340 260 L300 280 L260 260 L230 200 L250 150 Z" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1.5"/>
+          <rect x="140" y="190" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="175" y="210" textAnchor="middle" fontSize="10" fill="#00E5FF">People</text>
           
-          {/* Assessment Points */}
-          <circle cx="300" cy="110" r="5" fill="#00E5FF"/>
-          <circle cx="350" cy="150" r="5" fill="#00E5FF"/>
-          <circle cx="370" cy="200" r="5" fill="#00E5FF"/>
-          <circle cx="340" cy="260" r="5" fill="#00E5FF"/>
-          <circle cx="300" cy="280" r="5" fill="#00E5FF"/>
-          <circle cx="260" cy="260" r="5" fill="#00E5FF"/>
-          <circle cx="230" cy="200" r="5" fill="#00E5FF"/>
-          <circle cx="250" cy="150" r="5" fill="#00E5FF"/>
-          
-          {/* Target State */}
-          <path d="M300 90 L365 135 L390 200 L365 265 L300 310 L235 265 L210 200 L235 135 Z" fill="none" stroke="#00B2A9" strokeWidth="1.5" strokeDasharray="5 3"/>
+          <rect x="140" y="230" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="175" y="250" textAnchor="middle" fontSize="10" fill="#00E5FF">Process</text>
           
           {/* Assessment Elements */}
-          <rect x="120" y="130" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="150" y="150" textAnchor="middle" fontSize="8" fill="#00E5FF">Gap Analysis</text>
+          <rect x="390" y="150" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="425" y="170" textAnchor="middle" fontSize="10" fill="#00E5FF">Controls</text>
           
-          <rect x="120" y="170" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="150" y="190" textAnchor="middle" fontSize="8" fill="#00E5FF">Risk Assessment</text>
+          <rect x="390" y="190" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="425" y="210" textAnchor="middle" fontSize="10" fill="#00E5FF">Risks</text>
           
-          <rect x="120" y="210" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="150" y="230" textAnchor="middle" fontSize="8" fill="#00E5FF">Control Testing</text>
+          <rect x="390" y="230" width="70" height="30" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="425" y="250" textAnchor="middle" fontSize="10" fill="#00E5FF">Maturity</text>
           
-          <rect x="120" y="250" width="60" height="30" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1"/>
-          <text x="150" y="270" textAnchor="middle" fontSize="8" fill="#00E5FF">Recommendations</text>
+          {/* Connection Lines */}
+          <line x1="210" y1="165" x2="240" y2="165" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="210" y1="205" x2="240" y2="205" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="210" y1="245" x2="240" y2="245" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="360" y1="165" x2="390" y2="165" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="360" y1="205" x2="390" y2="205" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
+          <line x1="360" y1="245" x2="390" y2="245" stroke="#00B2A9" strokeWidth="1" strokeDasharray="5 3"/>
           
-          {/* Animated Scanning */}
-          <circle cx="300" cy="200" r="140" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.2">
-            <animate attributeName="r" values="140;150;140" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" values="0.2;0.1;0.2" dur="4s" repeatCount="indefinite"/>
+          {/* Risk Points */}
+          <circle cx="290" cy="150" r="5" fill="#FF5252" fillOpacity="0.8"/>
+          <circle cx="330" cy="170" r="5" fill="#FF5252" fillOpacity="0.8"/>
+          <circle cx="270" cy="210" r="5" fill="#FF5252" fillOpacity="0.8"/>
+          <circle cx="310" cy="230" r="5" fill="#FF5252" fillOpacity="0.8"/>
+          <circle cx="290" cy="260" r="5" fill="#FF5252" fillOpacity="0.8"/>
+          
+          {/* Control Points */}
+          <circle cx="290" cy="150" r="8" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          <circle cx="330" cy="170" r="8" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          <circle cx="270" cy="210" r="8" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          <circle cx="310" cy="230" r="8" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          <circle cx="290" cy="260" r="8" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.5"/>
+          
+          {/* Maturity Chart */}
+          <path d="M240 330 L360 330" stroke="#00B2A9" strokeWidth="1"/>
+          <path d="M240 330 L240 370" stroke="#00B2A9" strokeWidth="1"/>
+          
+          <rect x="250" y="350" width="15" height="20" fill="#00B2A9" fillOpacity="0.3" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="275" y="340" width="15" height="30" fill="#00B2A9" fillOpacity="0.3" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="300" y="355" width="15" height="15" fill="#00B2A9" fillOpacity="0.3" stroke="#00E5FF" strokeWidth="1"/>
+          <rect x="325" y="335" width="15" height="35" fill="#00B2A9" fillOpacity="0.3" stroke="#00E5FF" strokeWidth="1"/>
+          
+          <text x="257" y="345" textAnchor="middle" fontSize="6" fill="#00E5FF">T</text>
+          <text x="282" y="335" textAnchor="middle" fontSize="6" fill="#00E5FF">P</text>
+          <text x="307" y="350" textAnchor="middle" fontSize="6" fill="#00E5FF">P</text>
+          <text x="332" y="330" textAnchor="middle" fontSize="6" fill="#00E5FF">G</text>
+          
+          {/* Title */}
+          <text x="300" y="85" textAnchor="middle" fontSize="16" fill="#00E5FF">Security Assessment</text>
+          
+          {/* Animated Elements */}
+          <circle cx="225" cy="165" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="210;240" dur="2s" repeatCount="indefinite"/>
           </circle>
           
-          <circle cx="300" cy="200" r="5" fill="#00E5FF" fillOpacity="0.5">
-            <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/>
+          <circle cx="225" cy="205" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="210;240" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="225" cy="245" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="210;240" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="375" cy="165" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="390;360" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="375" cy="205" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="390;360" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="375" cy="245" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="390;360" dur="3s" repeatCount="indefinite"/>
           </circle>
         </svg>
       }
       relatedServices={[
         {
-          title: "Penetration Testing",
-          link: "/services/penetration-testing"
+          title: "IT Security Audit",
+          link: "/services/it-security-audit"
         },
         {
-          title: "Cloud Security Assessment",
-          link: "/services/cloud-security"
+          title: "Penetration Testing",
+          link: "/services/penetration-testing"
         },
         {
           title: "ISO 27001 Certification",
