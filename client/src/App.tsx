@@ -16,6 +16,8 @@ import VulnerabilityManagementPage from "@/pages/solutions/VulnerabilityManageme
 import CybersecurityFrameworksPage from "@/pages/solutions/CybersecurityFrameworks";
 import EmailSecurityPage from "@/pages/solutions/EmailSecurity";
 import EdrPage from "@/pages/solutions/Edr";
+import SiemPage from "@/pages/solutions/Siem";
+import DlpPage from "@/pages/solutions/Dlp";
 
 // Component Demo Pages
 import TooltipDemo from "@/pages/components/TooltipDemo";
@@ -41,6 +43,7 @@ import SecurityAssessmentPage from "@/pages/services/SecurityAssessment";
 import PenetrationTestingPage from "@/pages/services/PenetrationTesting";
 import WebPenTestingPage from "@/pages/services/WebPenTesting";
 import NetworkPentestingPage from "@/pages/services/NetworkPentesting";
+import VaptPage from "@/pages/services/Vapt";
 
 // Cybersecurity Solutions
 import CloudSecurityPage from "@/pages/services/CloudSecurity";
@@ -67,6 +70,8 @@ function Router() {
           <Route path="/solutions/cybersecurity-frameworks" component={CybersecurityFrameworksPage} />
           <Route path="/solutions/email-security" component={EmailSecurityPage} />
           <Route path="/solutions/edr" component={EdrPage} />
+          <Route path="/solutions/siem" component={SiemPage} />
+          <Route path="/solutions/dlp" component={DlpPage} />
           
           {/* Service Pages */}
           {/* GRC Services */}
@@ -89,6 +94,7 @@ function Router() {
           <Route path="/services/penetration-testing" component={PenetrationTestingPage} />
           <Route path="/services/web-pen-testing" component={WebPenTestingPage} />
           <Route path="/services/network-pentesting" component={NetworkPentestingPage} />
+          <Route path="/services/vapt" component={VaptPage} />
           
           {/* Cybersecurity Solutions */}
           <Route path="/services/cloud-security" component={CloudSecurityPage} />
