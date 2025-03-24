@@ -57,22 +57,32 @@ const Navbar = () => {
               <button className="text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center">
                 Services <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-[600px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-card border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-6 grid grid-cols-2 gap-4">
+              <div className="absolute left-0 mt-2 w-[700px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-card border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-6 grid grid-cols-3 gap-4">
                 <div>
-                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">Compliance Services</h4>
+                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">GRC Services</h4>
                   <ul className="space-y-2">
-                    <li><Link href="/services/iso-27001" className="hover:text-[hsl(var(--secondary))] transition">ISO 27001 Compliance</Link></li>
-                    <li><Link href="/services/soc-2" className="hover:text-[hsl(var(--secondary))] transition">SOC 2 Compliance</Link></li>
+                    <li><Link href="/services/iso27001" className="hover:text-[hsl(var(--secondary))] transition">ISO 27001 Certification</Link></li>
+                    <li><Link href="/services/iso42001" className="hover:text-[hsl(var(--secondary))] transition">ISO 42001 AI Management</Link></li>
+                    <li><Link href="/services/soc2" className="hover:text-[hsl(var(--secondary))] transition">SOC 2 Compliance</Link></li>
                     <li><Link href="/services/gdpr" className="hover:text-[hsl(var(--secondary))] transition">GDPR Compliance</Link></li>
                     <li><Link href="/services/uae-pdpl" className="hover:text-[hsl(var(--secondary))] transition">UAE PDPL Compliance</Link></li>
                     <li><Link href="/services/uae-ia" className="hover:text-[hsl(var(--secondary))] transition">UAE IA Compliance</Link></li>
+                    <li><Link href="/services/uae-nesa" className="hover:text-[hsl(var(--secondary))] transition">UAE NESA Compliance</Link></li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">Security Services</h4>
+                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">IT Security & Audit</h4>
                   <ul className="space-y-2">
-                    <li><Link href="/services/security-audit" className="hover:text-[hsl(var(--secondary))] transition">IT Security Audit</Link></li>
+                    <li><Link href="/services/it-security-audit" className="hover:text-[hsl(var(--secondary))] transition">IT Security Audit</Link></li>
+                    <li><Link href="/services/security-assessment" className="hover:text-[hsl(var(--secondary))] transition">Security Assessment</Link></li>
+                    <li><Link href="/services/penetration-testing" className="hover:text-[hsl(var(--secondary))] transition">Penetration Testing</Link></li>
                     <li><Link href="/services/policy-development" className="hover:text-[hsl(var(--secondary))] transition">Policy Development</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">Cybersecurity Solutions</h4>
+                  <ul className="space-y-2">
+                    <li><Link href="/services/cloud-security" className="hover:text-[hsl(var(--secondary))] transition">Cloud Security</Link></li>
                     <li><Link href="/services/vciso" className="hover:text-[hsl(var(--secondary))] transition">vCISO Services</Link></li>
                     <li><Link href="/services/data-privacy" className="hover:text-[hsl(var(--secondary))] transition">Data Privacy Consultation</Link></li>
                   </ul>
@@ -93,6 +103,7 @@ const Navbar = () => {
                     <li><Link href="/solutions/grc-automation" className="hover:text-[hsl(var(--secondary))] transition">GRC Automation Platforms</Link></li>
                     <li><Link href="/solutions/risk-management" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Tools</Link></li>
                     <li><Link href="/solutions/vulnerability-management" className="hover:text-[hsl(var(--secondary))] transition">Vulnerability Management</Link></li>
+                    <li><Link href="/solutions/cybersecurity-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Cybersecurity Frameworks</Link></li>
                   </ul>
                 </div>
               </div>
@@ -156,11 +167,25 @@ const Navbar = () => {
                 Services <ChevronDown className={`h-5 w-5 transition-transform ${openSubmenu === 'services' ? 'rotate-180' : ''}`} />
               </button>
               <div className={`pl-4 space-y-2 py-2 ${openSubmenu === 'services' ? 'block' : 'hidden'}`}>
-                <Link href="/services/iso-27001" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 27001 Compliance</Link>
-                <Link href="/services/soc-2" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SOC 2 Compliance</Link>
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-1 pb-1">GRC Services</p>
+                <Link href="/services/iso27001" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 27001 Certification</Link>
+                <Link href="/services/iso42001" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 42001 AI Management</Link>
+                <Link href="/services/soc2" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SOC 2 Compliance</Link>
                 <Link href="/services/gdpr" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">GDPR Compliance</Link>
                 <Link href="/services/uae-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE PDPL Compliance</Link>
-                <Link href="/services/security-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">IT Security Audit</Link>
+                <Link href="/services/uae-ia" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE IA Compliance</Link>
+                <Link href="/services/uae-nesa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
+                
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">IT Security & Audit</p>
+                <Link href="/services/it-security-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">IT Security Audit</Link>
+                <Link href="/services/security-assessment" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Security Assessment</Link>
+                <Link href="/services/penetration-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
+                <Link href="/services/policy-development" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy Development</Link>
+                
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Cybersecurity Solutions</p>
+                <Link href="/services/cloud-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security</Link>
+                <Link href="/services/vciso" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">vCISO Services</Link>
+                <Link href="/services/data-privacy" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Privacy Consultation</Link>
               </div>
             </div>
             
@@ -176,6 +201,7 @@ const Navbar = () => {
                 <Link href="/solutions/grc-automation" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">GRC Automation Platforms</Link>
                 <Link href="/solutions/risk-management" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Management Tools</Link>
                 <Link href="/solutions/vulnerability-management" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Vulnerability Management</Link>
+                <Link href="/solutions/cybersecurity-frameworks" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cybersecurity Frameworks</Link>
               </div>
             </div>
             
