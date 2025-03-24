@@ -86,6 +86,7 @@ const Navbar = () => {
                     <li><Link href="/services/penetration-testing" className="hover:text-[hsl(var(--secondary))] transition">Penetration Testing</Link></li>
                     <li><Link href="/services/web-pen-testing" className="hover:text-[hsl(var(--secondary))] transition">Web App Penetration Testing</Link></li>
                     <li><Link href="/services/network-pentesting" className="hover:text-[hsl(var(--secondary))] transition">Network Penetration Testing</Link></li>
+                    <li><Link href="/services/vapt" className="hover:text-[hsl(var(--secondary))] transition">Vulnerability Assessment & Pen Testing</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -120,6 +121,8 @@ const Navbar = () => {
                   <ul className="space-y-2">
                     <li><Link href="/solutions/email-security" className="hover:text-[hsl(var(--secondary))] transition">Email Security Solutions</Link></li>
                     <li><Link href="/solutions/edr" className="hover:text-[hsl(var(--secondary))] transition">Endpoint Detection & Response</Link></li>
+                    <li><Link href="/solutions/siem" className="hover:text-[hsl(var(--secondary))] transition">SIEM Solutions</Link></li>
+                    <li><Link href="/solutions/dlp" className="hover:text-[hsl(var(--secondary))] transition">Data Loss Prevention</Link></li>
                   </ul>
                 </div>
               </div>
@@ -205,6 +208,7 @@ const Navbar = () => {
                 <Link href="/services/penetration-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
                 <Link href="/services/web-pen-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Web App Penetration Testing</Link>
                 <Link href="/services/network-pentesting" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Network Penetration Testing</Link>
+                <Link href="/services/vapt" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Vulnerability Assessment & Pen Testing</Link>
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Cybersecurity Solutions</p>
                 <Link href="/services/cloud-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security</Link>
@@ -233,6 +237,8 @@ const Navbar = () => {
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Security Technology Solutions</p>
                 <Link href="/solutions/email-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Email Security Solutions</Link>
                 <Link href="/solutions/edr" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Endpoint Detection & Response</Link>
+                <Link href="/solutions/siem" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SIEM Solutions</Link>
+                <Link href="/solutions/dlp" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Loss Prevention</Link>
               </div>
             </div>
             
@@ -248,6 +254,8 @@ const Navbar = () => {
                 <Link href="/industries/healthcare" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Healthcare</Link>
                 <Link href="/industries/government" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Government</Link>
                 <Link href="/industries/ecommerce" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">E-Commerce</Link>
+                <Link href="/industries/sme" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SMEs & Enterprises</Link>
+                <Link href="/industries/logistics" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Logistics</Link>
               </div>
             </div>
             
