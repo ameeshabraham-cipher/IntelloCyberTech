@@ -4,7 +4,6 @@ import { useScrollReveal } from '@/lib/animations';
 import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HelpBubble } from '@/components/ui/help-bubble';
-import { intelloLogoPng } from '@/lib/images';
 
 const NewHeroSection = () => {
   useScrollReveal();
@@ -32,7 +31,7 @@ const NewHeroSection = () => {
             {/* Intello Logo */}
             <div className="mb-6">
               <img 
-                src={intelloLogoPng}
+                src="/intello-logo-new.png"
                 alt="Intello Cyber Technologies" 
                 className="h-16 md:h-20 w-auto mb-8 mt-4" 
                 style={{ maxWidth: '400px', objectFit: 'contain' }}
