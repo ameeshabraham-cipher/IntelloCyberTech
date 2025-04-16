@@ -27,6 +27,7 @@ import DlpPage from "@/pages/solutions/Dlp";
 
 // Component Demo Pages
 import TooltipDemo from "@/pages/components/TooltipDemo";
+import FormSubmissionsPage from "@/pages/components/FormSubmissions";
 
 // Service Pages
 // GRC Services
@@ -131,6 +132,7 @@ function Router() {
           
           {/* Component Demo Pages */}
           <Route path="/components/tech-tooltips" component={TooltipDemo} />
+          <Route path="/admin/submissions" component={FormSubmissionsPage} />
           
           {/* 404 Page */}
           <Route component={NotFound} />
