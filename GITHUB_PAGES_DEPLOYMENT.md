@@ -83,7 +83,14 @@ Check that:
 If the GitHub Action build fails:
 1. Check the Actions tab on GitHub for error details
 2. Verify that the repository has proper permissions for GitHub Actions
-3. Try a manual build to identify any issues
+3. Common errors and solutions:
+   - **Module resolution issues**: Make sure all import paths in HTML files use relative paths (`./src/main.tsx` instead of `/src/main.tsx`)
+   - **Base path issues**: Ensure the `base` option in `vite.static.config.ts` matches your repository name
+4. Try a manual build to identify any issues:
+   ```bash
+   # Test build locally
+   npx vite build --config vite.static.config.ts
+   ```
 
 ### Custom Domain
 

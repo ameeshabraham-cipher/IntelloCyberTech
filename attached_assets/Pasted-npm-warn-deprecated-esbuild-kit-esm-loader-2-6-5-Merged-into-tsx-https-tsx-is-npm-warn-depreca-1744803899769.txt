@@ -1,0 +1,35 @@
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 476 packages, and audited 477 packages in 11s
+
+60 packages are looking for funding
+  run `npm fund` for details
+
+8 moderate severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+vite v5.4.14 building for production...
+transforming...
+✓ 2 modules transformed.
+x Build failed in 274ms
+error during build:
+[vite]: Rollup failed to resolve import "/src/main.tsx" from "/home/runner/work/IntelloCyberTech/IntelloCyberTech/client/index.html".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteWarn (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:65747:17)
+    at onwarn (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/@vitejs/plugin-react/dist/index.mjs:280:9)
+    at onRollupWarning (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:65777:5)
+    at onwarn (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:65442:7)
+    at file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/rollup/dist/es/shared/node-entry.js:19452:13
+    at Object.logger [as onLog] (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/rollup/dist/es/shared/node-entry.js:21178:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/rollup/dist/es/shared/node-entry.js:20067:26)
+    at file:///home/runner/work/IntelloCyberTech/IntelloCyberTech/node_modules/rollup/dist/es/shared/node-entry.js:20025:26
+Error: Process completed with exit code 1.
