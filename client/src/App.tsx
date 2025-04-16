@@ -3,6 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/Home";
 import AboutUs from "@/pages/AboutUs";
 import Services from "@/pages/Services";
+import Solutions from "@/pages/Solutions";
+import Assessment from "@/pages/Assessment";
 import Contact from "@/pages/Contact";
 import Insights from "@/pages/Insights";
 import InsightPost from "@/pages/InsightPost";
@@ -73,6 +75,8 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/about" component={AboutUs} />
           <Route path="/services" component={Services} />
+          <Route path="/solutions" component={Solutions} />
+          <Route path="/assessment" component={Assessment} />
           <Route path="/contact" component={Contact} />
           <Route path="/insights" component={Insights} />
           <Route path="/insights/:slug" component={InsightPost} />
