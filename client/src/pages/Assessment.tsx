@@ -87,10 +87,21 @@ const AssessmentPage = () => {
       return;
     }
     
+    // Ensure there's a message for the form submission
+    // If no custom message is provided, create one from the form data
+    const dataToSubmit = { 
+      ...formData,
+      message: formData.message || `Assessment request from ${formData.name} at ${formData.company}.
+Industry: ${formData.industry || 'Not specified'}
+Company Size: ${formData.companySize || 'Not specified'}
+Primary Concern: ${formData.primaryConcern || 'Not specified'}
+Requirements: ${formData.specificRequirements || 'Not specified'}`
+    };
+    
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest('POST', '/api/contact', formData);
+      const response = await apiRequest('POST', '/api/contact', dataToSubmit);
       
       if (response.ok) {
         toast({
@@ -102,6 +113,7 @@ const AssessmentPage = () => {
         setStep(4);
       }
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Error Submitting Form",
         description: "Please try again later.",
