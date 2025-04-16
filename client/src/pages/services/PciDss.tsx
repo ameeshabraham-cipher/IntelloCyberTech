@@ -15,83 +15,115 @@ const PciDssPage = () => {
       category="GRC Services"
       description="Secure your payment card data and meet Payment Card Industry Data Security Standard (PCI DSS) requirements with our comprehensive compliance services."
       heroIcon={<CreditCard className="h-8 w-8" />}
-      overview="Our PCI DSS compliance services help organizations that process, store, or transmit credit card information implement the necessary controls to protect cardholder data. We guide you through the complex requirements of the Payment Card Industry Data Security Standard, ensuring your systems and processes meet the rigorous security standards required by major card brands while reducing the risk of data breaches and financial penalties."
+      overview="The Payment Card Industry Data Security Standard (PCI DSS) represents a critical compliance mandate for any organization that processes, stores, or transmits payment card data—establishing comprehensive security requirements that protect cardholder information and reduce fraud risk across the payment ecosystem. Beyond mere compliance, effective PCI DSS implementation delivers tangible business benefits including reduced breach likelihood, enhanced customer trust, streamlined operations, and avoidance of significant financial penalties. Our comprehensive PCI DSS compliance service provides a structured approach to navigating this complex standard—delivering expert guidance from initial scoping through successful certification. We combine deep technical expertise with practical implementation experience to optimize your cardholder data environment, implement appropriate controls, prepare thorough documentation, and validate compliance through the appropriate assessment method. Our approach focuses on right-sizing compliance efforts to your specific merchant level and processing environment while creating sustainable, efficient controls that protect cardholder data without unnecessarily burdening your operations or technology infrastructure."
       steps={[
         {
-          title: "PCI DSS Gap Assessment",
-          description: "Comprehensive evaluation of your current cardholder data environment against PCI DSS requirements to identify compliance gaps and prioritize remediation efforts."
+          title: "Merchant Level Determination & Compliance Strategy",
+          description: "We begin by accurately classifying your organization's PCI DSS merchant level based on transaction volume and processing methods—analyzing card brand requirements, acquiring bank obligations, and business risk factors to determine appropriate validation requirements (SAQ vs. ROC) and establish a tailored compliance approach that aligns with your specific payment ecosystem while meeting all applicable compliance obligations."
         },
         {
-          title: "Scoping & Segmentation Analysis",
-          description: "Expert guidance on properly defining your cardholder data environment to minimize scope and implement effective network segmentation strategies."
+          title: "Comprehensive Cardholder Data Environment Discovery",
+          description: "Our experts perform thorough discovery of your complete cardholder data environment through detailed data flow mapping, system component inventory, network architecture analysis, and payment process examination—identifying all locations where cardholder data is processed, transmitted, or stored, revealing hidden compliance scope, and establishing precise boundaries for PCI DSS applicability."
         },
         {
-          title: "Control Implementation",
-          description: "Development and implementation of technical and procedural controls to address PCI DSS requirements, including vulnerability management, access control, and monitoring systems."
+          title: "Strategic Scope Optimization & Segmentation",
+          description: "We develop and implement targeted scope reduction strategies that minimize your PCI DSS compliance footprint—designing effective network segmentation architectures, implementing tokenization solutions, evaluating third-party processing options, and restructuring payment flows to isolate cardholder data components, significantly reducing compliance burden while maintaining operational effectiveness."
         },
         {
-          title: "Policy & Procedure Development",
-          description: "Creation of comprehensive PCI DSS-compliant policies, procedures, and standards tailored to your organization's environment and processes."
+          title: "Detailed Gap Assessment & Risk Analysis",
+          description: "Our team conducts a comprehensive evaluation of your current environment against all applicable PCI DSS requirements—performing detailed technical testing, document reviews, personnel interviews, and process evaluations to identify specific control gaps, vulnerabilities, and compliance deficiencies with severity ratings and business impact analysis that prioritizes remediation based on risk."
         },
         {
-          title: "Self-Assessment Questionnaire (SAQ) Support",
-          description: "Expert guidance on selecting the appropriate SAQ type and assistance with completing the self-assessment process accurately and efficiently."
+          title: "Customized Policy & Standards Development",
+          description: "We create a complete suite of PCI DSS-required documentation tailored to your specific business environment—including information security policies, operational procedures, configuration standards, and governance frameworks that satisfy documentation requirements while providing practical guidance for your teams and establishing sustainable compliance governance structures."
         },
         {
-          title: "Remediation Planning",
-          description: "Development of a structured remediation roadmap with prioritized actions to address identified gaps and achieve PCI DSS compliance within your timeline."
+          title: "Technical Security Control Implementation",
+          description: "Our specialists implement critical security controls across your cardholder data environment—including network firewall configurations, vulnerability management systems, secure system builds, encryption solutions, access control mechanisms, file integrity monitoring, logging configurations, and other essential technical safeguards that both satisfy PCI DSS requirements and materially enhance payment security."
         },
         {
-          title: "Pre-Audit Assessment",
-          description: "Thorough evaluation of your environment prior to a formal PCI assessment to identify and address any remaining compliance gaps before certification."
+          title: "Operational Process Enhancement",
+          description: "We establish and optimize essential security processes that address PCI DSS operational requirements—including patch management procedures, change control workflows, security awareness training, vendor management programs, incident response mechanisms, vulnerability management cycles, and user access reviews that create sustainable, repeatable security operations aligned with compliance requirements."
+        },
+        {
+          title: "Compliance Documentation & Evidence Collection",
+          description: "Our team develops comprehensive documentation packages and evidence collection mechanisms tailored to your specific validation method—creating detailed evidence repositories, control documentation, testing results, attestation materials, and other supporting artifacts that clearly demonstrate compliance with all applicable requirements during assessments."
+        },
+        {
+          title: "Self-Assessment Questionnaire (SAQ) or Report on Compliance (ROC) Support",
+          description: "We provide end-to-end guidance through the appropriate validation process for your merchant level—assisting with SAQ selection and completion, facilitating formal assessments with Qualified Security Assessors (QSAs), managing documentation requests, coordinating control demonstrations, addressing assessor questions, and ensuring successful validation with minimal business disruption."
+        },
+        {
+          title: "Continuous Compliance Program Development",
+          description: "Beyond initial certification, we establish sustainable compliance monitoring and maintenance programs—implementing automated control monitoring, creating compliance calendars, developing ongoing testing procedures, establishing verification mechanisms, and building efficient processes that ensure ongoing adherence to PCI DSS requirements between formal validation cycles."
         }
       ]}
       benefits={[
         {
-          title: "Reduced Breach Risk",
-          content: "Implement security controls that protect cardholder data and significantly reduce the risk of payment data breaches and associated costs."
+          title: "Comprehensive Payment Data Protection",
+          content: "Implement robust, multi-layered security controls across your entire cardholder data environment—including network security, encryption, access restrictions, monitoring systems, and secure development practices that significantly reduce the likelihood of payment card breaches, prevent fraud losses, and protect sensitive financial information from unauthorized access through both technical and administrative safeguards."
         },
         {
-          title: "Avoid Financial Penalties",
-          content: "Meet card brand requirements to avoid non-compliance fees, higher transaction costs, and potential financial penalties from payment processors."
+          title: "Avoidance of Severe Financial Penalties",
+          content: "Eliminate financial risks associated with PCI DSS non-compliance—including non-compliance fees (ranging from $5,000 to $100,000 monthly), increased transaction fees, costly forensic investigations following breaches, damage to banking relationships, potential card processing privilege suspension, regulatory fines, and legal costs from cardholder lawsuits that can collectively amount to catastrophic financial impact."
         },
         {
-          title: "Streamlined Compliance",
-          content: "Optimize your cardholder data environment to minimize scope and reduce the complexity and cost of achieving and maintaining PCI DSS compliance."
+          title: "Enhanced Brand Reputation & Customer Trust",
+          content: "Build powerful trust relationships with customers by demonstrating tangible commitment to payment card security—differentiating your organization from competitors, maintaining consumer confidence during transactions, avoiding the severe reputational damage of payment breaches, and creating the opportunity to promote your security excellence through PCI compliance attestations."
         },
         {
-          title: "Enhanced Customer Trust",
-          content: "Demonstrate your commitment to protecting customer payment information, building trust and confidence in your payment processing systems."
+          title: "Optimized Security Investment & Scope Reduction",
+          content: "Maximize security return-on-investment through strategic scope reduction approaches—implementing network segmentation, tokenization, and third-party processing solutions that minimize PCI DSS compliance boundaries, reduce assessment costs, decrease implementation complexity, and focus security investment on truly critical assets while maintaining appropriate protection."
         },
         {
-          title: "Expert Guidance",
-          content: "Leverage our specialized PCI DSS knowledge to navigate complex requirements and implement practical, effective compliance solutions."
+          title: "Streamlined Regulatory Compliance",
+          content: "Address multiple compliance requirements simultaneously through PCI DSS implementation—leveraging substantial overlap with other regulatory frameworks (GDPR, CCPA, HIPAA, SOX, GLBA) to create an integrated compliance approach, reduce duplicative efforts, streamline assessment processes, and create unified security governance across various regulatory domains."
+        },
+        {
+          title: "Improved Security Operations & Incident Readiness",
+          content: "Transform security operations through structured processes, clear responsibilities, and effective controls that address common vulnerabilities—implementing comprehensive monitoring, systematic patch management, regular testing, change control disciplines, and incident response capabilities that not only satisfy compliance requirements but genuinely strengthen security practices."
+        },
+        {
+          title: "Facilitated Business Relationships & Market Access",
+          content: "Unlock new business opportunities by meeting increasingly common PCI DSS requirements in partner and customer contracts—satisfying security requirements in RFPs, expanding into markets with strict payment security mandates, easing vendor security assessments, and creating competitive advantage through ready demonstration of payment security excellence."
         }
       ]}
       deliverables={[
         {
-          title: "PCI DSS Gap Assessment Report",
-          description: "Detailed analysis of your current compliance status with prioritized recommendations for addressing identified gaps in your cardholder data environment."
+          title: "Comprehensive PCI DSS Diagnostic Assessment & Strategy Report",
+          description: "Detailed evaluation of your current cardholder data environment against all PCI DSS requirements, featuring comprehensive gap analysis, risk scoring, compliance maturity assessment, control effectiveness evaluation, and strategic recommendations—providing executive leadership with clear understanding of compliance posture, precise remediation priorities, and an optimal implementation strategy tailored to your specific merchant level, processing methods, and business constraints."
         },
         {
-          title: "Cardholder Data Environment Diagram",
-          description: "Comprehensive documentation of your cardholder data environment, including data flows, system components, and network segmentation controls."
+          title: "Detailed Cardholder Data Environment Documentation Package",
+          description: "Meticulously developed documentation of your complete payment ecosystem, including detailed data flow diagrams, system inventory documentation, network architecture maps, segmentation controls, component-level documentation, and processing pathway analysis—creating essential scoping documentation required by PCI DSS assessors while providing clear visibility into your cardholder data environment for ongoing management."
         },
         {
-          title: "PCI DSS Policies & Procedures",
-          description: "Complete set of customized policies, procedures, and standards addressing all applicable PCI DSS requirements for your organization."
+          title: "Customized PCI DSS Policy & Standards Framework",
+          description: "Complete suite of tailored PCI DSS documentation including information security policy, data protection standards, access control procedures, network security requirements, change management processes, incident response protocols, vendor management procedures, system hardening standards, and secure coding guidelines—all customized to your specific business environment and written in clear, actionable language for practical implementation."
         },
         {
-          title: "PCI DSS Control Matrix",
-          description: "Structured documentation mapping implemented controls to specific PCI DSS requirements with evidence guidance for compliance validation."
+          title: "Comprehensive PCI DSS Requirements Matrix & Evidence Repository",
+          description: "Exhaustive mapping of implemented controls to specific PCI DSS requirements (12 requirements and over 300 sub-requirements), with implementation details, responsibility assignments, testing procedures, evidence collection guidance, and secure evidence storage—creating a centralized compliance management system that streamlines assessments, documents control effectiveness, and maintains continuous compliance documentation."
         },
         {
-          title: "Self-Assessment Questionnaire",
-          description: "Completed SAQ documentation appropriately aligned with your organization's merchant level and processing environment."
+          title: "Completed Self-Assessment Questionnaire or ROC Preparation Package",
+          description: "Fully prepared validation documentation aligned with your specific merchant level—including completed Self-Assessment Questionnaire (SAQ) with appropriate scoping documentation and evidence attachments for lower merchant levels, or comprehensive Report on Compliance (ROC) preparation materials for Level 1 merchants, ensuring successful validation with minimal business disruption."
         },
         {
-          title: "Remediation Roadmap",
-          description: "Prioritized implementation plan with detailed tasks, timelines, and resource requirements for achieving full PCI DSS compliance."
+          title: "Technical Security Implementation & Configuration Guides",
+          description: "Detailed technical implementation guides for critical PCI DSS security controls—including firewall configuration templates, network segmentation designs, system hardening procedures, encryption implementation guides, logging configurations, file integrity monitoring setup, vulnerability scanning frameworks, and access control models with specific configuration parameters tailored to your technology environment."
+        },
+        {
+          title: "Strategic Remediation Roadmap & Project Implementation Plan",
+          description: "Comprehensive execution plan with detailed remediation activities, precise timelines, resource requirements, responsibility assignments, interdependency mapping, milestone tracking, and budget estimates—providing a clearly structured implementation path with sequenced activities that address the highest-risk issues first while creating a manageable approach to achieving full compliance."
+        },
+        {
+          title: "Continuous Compliance Monitoring Framework & Evidence Collection System",
+          description: "Sustainable ongoing compliance management system including monitoring dashboards, compliance calendars, automated control testing scripts, evidence collection workflows, responsibility matrices, and quarterly review processes—creating an efficient, largely automated approach to maintaining continuous compliance between formal assessments while significantly reducing the resource burden of ongoing PCI DSS maintenance."
+        },
+        {
+          title: "PCI DSS Training & Awareness Program Materials",
+          description: "Comprehensive training resources for various stakeholder groups—including executive awareness materials, technical implementation training for IT staff, security awareness content for general employees, specific role-based modules for developers and administrators, and specialized guidance for payment handlers—creating the security awareness foundation required by PCI DSS while ensuring all personnel understand their specific security responsibilities."
         }
       ]}
       animationSvg={
