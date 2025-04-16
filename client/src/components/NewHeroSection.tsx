@@ -28,6 +28,14 @@ const NewHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="reveal">
+            {/* Intello Logo */}
+            <div className="mb-6">
+              <img 
+                src="/images/intello-logo.png" 
+                alt="Intello Cyber Technologies" 
+                className="h-16 md:h-20 w-auto mb-2" 
+              />
+            </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
               <span className="text-[hsl(var(--secondary))] font-medium">Cybersecurity & Compliance Experts</span>
             </div>
@@ -197,13 +205,20 @@ const NewHeroSection = () => {
                           <animate attributeName="r" values="35;40;35" dur="2s" repeatCount="indefinite" />
                         </circle>
                         
-                        {/* Intello "I" Logo */}
-                        <path d="M-10 -15 H10 V-8 H4 V8 H10 V15 H-10 V8 H-4 V-8 H-10 Z" 
-                          fill="rgba(235, 52, 67, 0.9)" 
-                          strokeWidth="0.5" 
-                          stroke="white">
-                          <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
-                        </path>
+                        {/* Intello Red Dot Logo */}
+                        <circle 
+                          cx="0" 
+                          cy="0" 
+                          r="15" 
+                          fill="#eb3443">
+                          <animateTransform 
+                            attributeName="transform" 
+                            type="scale" 
+                            values="1;1.1;1" 
+                            dur="3s" 
+                            repeatCount="indefinite" 
+                          />
+                        </circle>
                       </g>
                       
                       {/* Data Particles */}
@@ -264,9 +279,7 @@ const NewHeroSection = () => {
                   <g transform="translate(340, 50)">
                     <rect width="150" height="28" rx="6" fill="#0A1024" stroke="rgba(235, 52, 67, 0.5)" strokeWidth="1" />
                     <text x="10" y="18" fill="rgba(235, 52, 67, 0.9)" fontSize="12">Threats Mitigated</text>
-                    <text x="140" y="18" fill="white" fontSize="10" textAnchor="end">
-                      <animate attributeName="textContent" from="0" to="2,547" dur="2s" begin="1s" fill="freeze" />
-                    </text>
+                    <text x="140" y="18" fill="white" fontSize="10" textAnchor="end">2,547</text>
                   </g>
                   
                   {/* Binary Code Background */}
@@ -295,8 +308,8 @@ const NewHeroSection = () => {
                       <span className="text-xs font-medium">Compliance Status</span>
                     </div>
                     <div className="h-2 bg-[hsl(var(--primary))]/20 rounded-full mt-1">
-                      <div className="h-2 bg-[hsl(var(--primary))] rounded-full w-0">
-                        <animate attributeName="width" from="0%" to="95%" dur="2s" begin="1s" fill="freeze" />
+                      <div className="h-2 bg-[hsl(var(--primary))] rounded-full w-[95%] transition-all duration-1000 ease-in-out" 
+                        style={{ width: '95%', transitionDelay: '1s' }}>
                       </div>
                     </div>
                   </div>
