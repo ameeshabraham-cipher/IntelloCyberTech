@@ -55,12 +55,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-white">
-              <img 
-                src="/images/intello-logo.png"
-                alt="Intello Cyber Technologies" 
-                className="h-10 w-auto" 
-                style={{ maxWidth: '200px', maxHeight: '40px', objectFit: 'contain' }}
-              />
+              <div className="flex items-center space-x-2">
+                <span className="text-lg font-bold">INTELLO CYBER</span>
+                <span className="text-xs bg-[hsl(var(--primary))] text-white px-1 rounded">TECHNOLOGIES</span>
+              </div>
             </Link>
           </div>
           
