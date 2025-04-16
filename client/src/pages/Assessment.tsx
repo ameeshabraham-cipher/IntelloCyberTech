@@ -87,21 +87,39 @@ const AssessmentPage = () => {
       return;
     }
     
-    // Ensure there's a message for the form submission
-    // If no custom message is provided, create one from the form data
-    const dataToSubmit = { 
-      ...formData,
-      message: formData.message || `Assessment request from ${formData.name} at ${formData.company}.
+    // Prepare message for external form service
+    const message = formData.message || `Assessment request from ${formData.name} at ${formData.company}.
 Industry: ${formData.industry || 'Not specified'}
 Company Size: ${formData.companySize || 'Not specified'}
 Primary Concern: ${formData.primaryConcern || 'Not specified'}
-Requirements: ${formData.specificRequirements || 'Not specified'}`
-    };
+Requirements: ${formData.specificRequirements || 'Not specified'}`;
     
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest('POST', '/api/contact', dataToSubmit);
+      // For static site deployment, you would use an external form service like Formspree
+      // Replace this URL with your actual Formspree form ID when you set it up
+      const formspreeEndpoint = 'https://formspree.io/f/your-form-id';
+      
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          industry: formData.industry,
+          companySize: formData.companySize,
+          primaryConcern: formData.primaryConcern,
+          specificRequirements: formData.specificRequirements,
+          message: message,
+          service: 'assessment'
+        })
+      });
       
       if (response.ok) {
         toast({
@@ -111,12 +129,16 @@ Requirements: ${formData.specificRequirements || 'Not specified'}`
         
         // Reset form and go to thank you step
         setStep(4);
+      } else {
+        throw new Error('Form submission failed');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // For static deployment without backend, provide alternative contact method
       toast({
-        title: "Error Submitting Form",
-        description: "Please try again later.",
+        title: "Form Submission Error",
+        description: "Please email us directly at contact@intellocyber.com with your assessment request.",
         variant: "destructive"
       });
     } finally {
