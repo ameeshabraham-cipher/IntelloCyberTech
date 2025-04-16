@@ -9,6 +9,8 @@ export default defineConfig({
   plugins: [
     react(),
   ],
+  root: 'client', // Set the root to the client directory
+  publicDir: '../public', // Set the public directory relative to the root
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './client/src'),
@@ -16,12 +18,10 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: '../dist',  // Output to the root dist folder
     sourcemap: false,
     minify: 'esbuild', // Faster than terser
     assetsDir: 'assets',
-    rollupOptions: {
-      input: path.resolve(__dirname, 'client/index.html')
-    }
+    emptyOutDir: true
   },
 });
