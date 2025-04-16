@@ -31,10 +31,10 @@ const NewHeroSection = () => {
             {/* Intello Logo */}
             <div className="mb-6">
               <img 
-                src="/assets/logo.png"
+                src="/assets/intello-logo-white.png"
                 alt="Intello Cyber Technologies" 
                 className="h-16 md:h-20 w-auto mb-8 mt-4" 
-                style={{ maxWidth: '400px', objectFit: 'contain' }}
+                style={{ maxWidth: '350px', objectFit: 'contain' }}
               />
             </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
