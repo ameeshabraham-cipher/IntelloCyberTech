@@ -13,7 +13,8 @@ const blogPosts = [
     author: 'Ahmed Hassan',
     category: 'GRC Services',
     tags: ['ISO 27001', 'Information Security', 'Compliance', 'ISMS'],
-    slug: 'navigating-complex-landscape-iso-27001-2022'
+    slug: 'navigating-complex-landscape-iso-27001-2022',
+    image: '/images/blog/iso-27001.svg'
   },
   {
     id: '2',
@@ -23,7 +24,8 @@ const blogPosts = [
     author: 'Maria Rodriguez',
     category: 'GRC Services',
     tags: ['GDPR', 'Data Protection', 'Privacy', 'Compliance'],
-    slug: 'gdpr-four-years-later-lessons-challenges'
+    slug: 'gdpr-four-years-later-lessons-challenges',
+    image: '/images/blog/gdpr.svg'
   },
   {
     id: '3',
@@ -33,7 +35,8 @@ const blogPosts = [
     author: 'Fatima Al-Mansouri',
     category: 'GRC Services',
     tags: ['UAE PDPL', 'Data Protection', 'Compliance', 'Privacy'],
-    slug: 'uae-pdpl-strategic-approaches-effective-implementation'
+    slug: 'uae-pdpl-strategic-approaches-effective-implementation',
+    image: '/images/blog/uae-pdpl.svg'
   },
   {
     id: '4',
@@ -43,7 +46,8 @@ const blogPosts = [
     author: 'Michael Chen',
     category: 'GRC Services',
     tags: ['SOC 2', 'Compliance', 'Auditing', 'Information Security'],
-    slug: 'preparing-soc2-type-2-beyond-certification'
+    slug: 'preparing-soc2-type-2-beyond-certification',
+    image: '/images/blog/soc2.svg'
   },
   {
     id: '5',
@@ -53,7 +57,8 @@ const blogPosts = [
     author: 'James Wilson',
     category: 'IT Security & Audit Services',
     tags: ['APT', 'Threat Detection', 'Cybersecurity', 'Incident Response'],
-    slug: 'advanced-persistent-threats-detection-strategies'
+    slug: 'advanced-persistent-threats-detection-strategies',
+    image: '/images/blog/threat-detection.svg'
   },
   {
     id: '6',
@@ -63,7 +68,8 @@ const blogPosts = [
     author: 'Sarah Johnson',
     category: 'IT Security & Audit Services',
     tags: ['Cloud Security', 'CSPM', 'DevSecOps', 'Infrastructure'],
-    slug: 'cloud-security-posture-management-beyond-prevention'
+    slug: 'cloud-security-posture-management-beyond-prevention',
+    image: '/images/blog/cloud-security.svg'
   },
   {
     id: '7',
@@ -73,7 +79,8 @@ const blogPosts = [
     author: 'Rajiv Patel',
     category: 'IT Security & Audit Services',
     tags: ['Security Assessment', 'Hybrid Cloud', 'Risk Management', 'Compliance'],
-    slug: 'effective-security-assessment-frameworks-hybrid'
+    slug: 'effective-security-assessment-frameworks-hybrid',
+    image: '/images/blog/security-assessment.svg'
   },
   {
     id: '8',
@@ -83,7 +90,8 @@ const blogPosts = [
     author: 'Elena Petrova',
     category: 'IT Security & Audit Services',
     tags: ['Web3', 'Blockchain', 'Penetration Testing', 'Smart Contracts'],
-    slug: 'web3-security-pentesting-blockchain-applications'
+    slug: 'web3-security-pentesting-blockchain-applications',
+    image: '/images/blog/web3-security.svg'
   },
   {
     id: '9',
@@ -93,7 +101,8 @@ const blogPosts = [
     author: 'David Thompson',
     category: 'Cybersecurity Solutions',
     tags: ['vCISO', 'Security Leadership', 'Strategy', 'Program Management'],
-    slug: 'building-effective-vciso-program-beyond-advisory'
+    slug: 'building-effective-vciso-program-beyond-advisory',
+    image: '/images/blog/vciso.svg'
   },
   {
     id: '10',
@@ -103,7 +112,8 @@ const blogPosts = [
     author: 'Omar Al-Nasser',
     category: 'Cybersecurity Solutions',
     tags: ['Zero Trust', 'Financial Security', 'Architecture', 'Authentication'],
-    slug: 'zero-trust-architecture-implementation-financial'
+    slug: 'zero-trust-architecture-implementation-financial',
+    image: '/images/blog/zero-trust.svg'
   },
   {
     id: '11',
