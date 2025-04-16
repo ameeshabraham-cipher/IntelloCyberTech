@@ -78,23 +78,31 @@ Check that:
 2. The SPA routing script is properly included in `index.html`
 3. Your repository name matches the `base` property in `vite.static.config.ts`
 
-### Build Issues
+### Build Configuration
 
-If the GitHub Action build fails:
-1. Check the Actions tab on GitHub for error details
-2. Verify that the repository has proper permissions for GitHub Actions
-3. Common errors and solutions:
-   - **Module resolution issues**: The workflow now includes a custom build script that automatically handles path modifications for GitHub Pages
-   - **Base path issues**: Ensure the `base` option in `vite.static.config.ts` matches your repository name
-4. How the custom build works:
-   - The GitHub Actions workflow creates a temporary copy of index.html with adjusted paths
-   - It then builds the project and restores the original file
-   - This approach allows maintaining development-friendly paths while ensuring GitHub Pages compatibility
-5. Try a manual build to identify any issues:
-   ```bash
-   # Test build locally
-   npx vite build --config vite.static.config.ts
-   ```
+This project uses a special Vite configuration for GitHub Pages deployment:
+
+1. **Root Directory Configuration**:
+   - The build process uses the `client` directory as the root
+   - Public assets are properly included from the `public` directory
+   - Output is directed to the `dist` directory at the project root
+
+2. **Path Resolution**:
+   - All paths are automatically resolved relative to the configured root
+   - No manual path adjustments are needed in HTML files
+   - The `base` path in the config is set to match your repository name
+
+3. **Troubleshooting Build Issues**:
+   - If the GitHub Action build fails, check the Actions tab for error details
+   - Verify that the repository has proper permissions for GitHub Actions
+   - Common errors and solutions:
+     - **Base path issues**: Ensure the `base` option in `vite.static.config.ts` matches your repository name
+     - **Missing assets**: Check that all referenced assets exist in the public directory
+   - Try a manual build to identify issues:
+     ```bash
+     # Test build locally
+     npx vite build --config vite.static.config.ts
+     ```
 
 ### Custom Domain
 
