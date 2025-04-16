@@ -15,83 +15,95 @@ const Iso27001Page = () => {
       category="GRC Services"
       description="Achieve ISO 27001 certification with our comprehensive implementation and advisory services, demonstrating your commitment to information security."
       heroIcon={<Shield className="h-8 w-8" />}
-      overview="ISO 27001 is the international standard for information security management systems (ISMS). Our ISO 27001 certification service provides a structured approach to implementing the standard, from gap assessment to certification readiness, ensuring your organization establishes robust security controls while meeting all certification requirements."
+      overview="ISO 27001 is the internationally recognized gold standard for information security management systems (ISMS), providing a comprehensive framework for protecting your organization's most valuable asset—information. Our ISO 27001 certification service delivers a strategic, risk-based approach to security that goes beyond technology to address people, processes, and governance. We guide you through the entire certification journey, from initial gap assessment to successful certification, ensuring you not only achieve compliance but also significantly enhance your security posture, build stakeholder trust, and create sustainable competitive advantage through demonstrated security excellence."
       steps={[
         {
-          title: "Initial Gap Analysis",
-          description: "Comprehensive assessment of your current security posture against ISO 27001 requirements to identify gaps and develop a tailored implementation roadmap."
+          title: "Initial Gap Analysis & Scoping",
+          description: "We conduct a comprehensive assessment of your current security posture against all 114 ISO 27001 controls, identifying specific gaps, evaluating maturity levels, and establishing the optimal scope for your ISMS to maximize certification value while minimizing implementation complexity."
         },
         {
           title: "ISMS Framework Development",
-          description: "Design and implementation of an Information Security Management System framework aligned with your business processes and ISO 27001 requirements."
+          description: "Our experts design a customized Information Security Management System framework tailored to your organization's unique risk profile, business processes, and operational environment—creating a foundation that aligns security with your strategic objectives."
         },
         {
-          title: "Risk Assessment & Treatment",
-          description: "Structured identification, analysis, and treatment of information security risks according to ISO 27001 methodology."
+          title: "Risk Assessment & Treatment Planning",
+          description: "Using ISO 27005-aligned methodologies, we perform systematic information security risk assessment, creating a comprehensive risk register with clear risk ratings, ownership assignments, and detailed treatment plans that prioritize critical risks for immediate action."
         },
         {
-          title: "Controls Implementation",
-          description: "Practical implementation of required security controls across people, processes, and technology domains."
+          title: "Security Controls Implementation",
+          description: "We collaborate with your team to implement robust technical, administrative, and physical controls across your organization, focusing on practical, sustainable measures that address key risks while minimizing operational disruption and excessive costs."
         },
         {
-          title: "Documentation Development",
-          description: "Creation of all required policies, procedures, and records to support your ISMS and meet documentation requirements."
+          title: "Documentation & Process Development",
+          description: "Our specialists develop a complete suite of ISO 27001-required documentation including information security policies, procedures, work instructions, and records—creating clear, actionable guidance that drives consistent security practices throughout your organization."
         },
         {
-          title: "Internal Audit & Management Review",
-          description: "Thorough internal audit and management review to validate ISMS effectiveness and identify improvement opportunities."
+          title: "Internal Audit & Continuous Improvement",
+          description: "We establish and execute comprehensive internal audit procedures, management review processes, and performance metrics that validate your ISMS effectiveness, identify improvement opportunities, and foster a culture of ongoing security enhancement."
         },
         {
-          title: "Certification Support",
-          description: "Expert guidance through the certification audit process, including pre-audit preparation and remediation support."
+          title: "Certification Audit Support",
+          description: "Our certification experts provide end-to-end support throughout your Stage 1 and Stage 2 certification audits, managing auditor communications, preparing your team through mock audits, addressing audit findings in real-time, and ensuring a smooth path to successful certification."
         }
       ]}
       benefits={[
         {
           title: "Enhanced Security Posture",
-          content: "Implement a comprehensive set of security controls that protect your critical information assets and reduce the risk of security incidents."
+          content: "Implement a comprehensive set of security controls based on international best practices that protect your critical information assets, significantly reduce breach likelihood, and establish continuous monitoring capabilities for early threat detection and response."
         },
         {
-          title: "Competitive Advantage",
-          content: "Gain a market edge by demonstrating your commitment to information security, particularly when bidding for contracts with security-conscious clients."
+          title: "Competitive Advantage & Market Access",
+          content: "Gain substantial competitive differentiation through certified security excellence, winning more contracts where ISO 27001 is required or preferred (increasingly common in enterprise RFPs), and accessing regulated markets and industries where certification is becoming mandatory."
         },
         {
-          title: "Regulatory Compliance",
-          content: "Meet multiple regulatory and contractual requirements through implementation of a globally recognized security framework."
+          title: "Streamlined Regulatory Compliance",
+          content: "Meet multiple regulatory and contractual requirements simultaneously through ISO 27001's unified controls framework, creating significant efficiency by reducing duplicate compliance work across GDPR, SOC 2, PCI DSS, HIPAA, and other frameworks with overlapping requirements."
         },
         {
-          title: "Process Optimization",
-          content: "Improve operational efficiency by implementing structured security processes and clear responsibilities across the organization."
+          title: "Operational Excellence & Efficiency",
+          content: "Transform your security operations with structured processes, clear responsibilities, and optimized resource allocation—reducing redundancies, eliminating ad-hoc security practices, and integrating security into everyday business operations for minimal disruption."
         },
         {
-          title: "Customer Trust",
-          content: "Build trust with your customers by obtaining independent verification of your information security practices."
+          title: "Enhanced Stakeholder Trust",
+          content: "Build powerful trust relationships with customers, partners, and regulators by obtaining independent verification of your security practices from accredited certification bodies, demonstrating transparency and commitment to security excellence that attracts and retains security-conscious clients."
+        },
+        {
+          title: "Reduced Security Incident Costs",
+          content: "Significantly reduce both the likelihood and impact of security incidents through preventative controls and effective response capabilities, avoiding costly breaches that average $4.35 million in direct costs plus immeasurable reputational damage and business disruption."
         }
       ]}
       deliverables={[
         {
-          title: "Gap Assessment Report",
-          description: "Detailed analysis of your current security posture against ISO 27001 requirements with prioritized recommendations for remediation."
+          title: "Comprehensive Gap Assessment Report",
+          description: "Detailed control-by-control analysis of your current security posture against all 114 ISO 27001 controls, with maturity scoring, compliance heat maps, and clearly prioritized recommendations for addressing critical gaps first."
         },
         {
-          title: "ISMS Documentation Suite",
-          description: "Complete set of policies, procedures, work instructions, and templates required for ISO 27001 compliance."
+          title: "Complete ISMS Documentation Suite",
+          description: "Fully customized set of ISO 27001-required documentation including information security policy, 18 mandatory procedures, work instructions, forms, and templates—all tailored to your specific organizational context and written in clear, practical language."
         },
         {
-          title: "Risk Assessment Methodology",
-          description: "Tailored risk assessment approach and comprehensive risk register documenting identified risks and treatment plans."
+          title: "Enterprise Risk Assessment Framework",
+          description: "Comprehensive risk management methodology aligned with ISO 27005, including customized risk assessment tools, risk acceptance criteria, detailed risk register with clear ownership assignments, and actionable treatment plans."
         },
         {
-          title: "Statement of Applicability",
-          description: "Formal documentation of control objectives and controls selected for implementation from Annex A of ISO 27001."
+          title: "Customized Statement of Applicability",
+          description: "Meticulously crafted Statement of Applicability documenting your specific implementation decisions for all 114 Annex A controls, including justifications for control selections, implementation status, and implementation responsibility assignments."
         },
         {
-          title: "Implementation Roadmap",
-          description: "Detailed project plan for implementing the ISMS, including timelines, responsibilities, and resource requirements."
+          title: "Detailed Implementation Roadmap",
+          description: "Actionable project plan with precise timelines, resource requirements, technical specifications, milestone tracking, and responsibility assignments across all implementation phases—providing clear visibility and accountability."
         },
         {
-          title: "Internal Audit Program",
-          description: "Structured internal audit methodology and schedule to maintain ongoing ISMS effectiveness and prepare for surveillance audits."
+          title: "Sustainable Internal Audit Program",
+          description: "Comprehensive internal audit framework including audit schedules, checklists, methodologies, reporting templates, and training materials—enabling you to maintain ongoing compliance and continual improvement after certification."
+        },
+        {
+          title: "ISO 27001 Certification",
+          description: "Successfully achieving ISO 27001 certification from an accredited certification body, with formal certification documentation and digital badge for use in marketing materials, websites, and client communications."
+        },
+        {
+          title: "Post-Certification Support Plan",
+          description: "Structured 12-month support program that includes surveillance audit preparation, quarterly check-ins, control effectiveness reviews, and on-demand advisory support to ensure your certified ISMS remains effective and continuously improves."
         }
       ]}
       animationSvg={

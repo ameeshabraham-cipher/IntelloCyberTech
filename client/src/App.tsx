@@ -52,6 +52,14 @@ import CloudSecurityPage from "@/pages/services/CloudSecurity";
 import VcisoPage from "@/pages/services/Vciso";
 import DataPrivacyPage from "@/pages/services/DataPrivacy";
 
+// Industry Pages
+import BfsiPage from "@/pages/industries/Bfsi";
+import HealthcarePage from "@/pages/industries/Healthcare";
+import GovernmentPage from "@/pages/industries/Government";
+import EcommercePage from "@/pages/industries/Ecommerce";
+import SmePage from "@/pages/industries/Sme";
+import LogisticsPage from "@/pages/industries/Logistics";
+
 function Router() {
   return (
     <div className="relative">
@@ -102,6 +110,14 @@ function Router() {
           <Route path="/services/cloud-security" component={CloudSecurityPage} />
           <Route path="/services/vciso" component={VcisoPage} />
           <Route path="/services/data-privacy" component={DataPrivacyPage} />
+          
+          {/* Industry Pages */}
+          <Route path="/industries/bfsi" component={BfsiPage} />
+          <Route path="/industries/healthcare" component={HealthcarePage} />
+          <Route path="/industries/government" component={GovernmentPage} />
+          <Route path="/industries/ecommerce" component={EcommercePage} />
+          <Route path="/industries/sme" component={SmePage} />
+          <Route path="/industries/logistics" component={LogisticsPage} />
           
           {/* Component Demo Pages */}
           <Route path="/components/tech-tooltips" component={TooltipDemo} />
