@@ -31,7 +31,7 @@ const NewHeroSection = () => {
             {/* Intello Logo */}
             <div className="mb-6">
               <img 
-                src="/assets/intello-logo-white.png"
+                src="/images/logo-white.png"
                 alt="Intello Cyber Technologies" 
                 className="h-16 md:h-20 w-auto mb-8 mt-4" 
                 style={{ maxWidth: '350px', objectFit: 'contain' }}
