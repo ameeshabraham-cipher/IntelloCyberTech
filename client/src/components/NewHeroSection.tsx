@@ -4,7 +4,6 @@ import { useScrollReveal } from '@/lib/animations';
 import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HelpBubble } from '@/components/ui/help-bubble';
-import { intelloLogoSvg } from '@/lib/images';
 
 const NewHeroSection = () => {
   useScrollReveal();
@@ -31,10 +30,11 @@ const NewHeroSection = () => {
           <div className="reveal">
             {/* Intello Logo */}
             <div className="mb-6">
-              <div 
-                dangerouslySetInnerHTML={{ __html: intelloLogoSvg }}
-                className="mb-8 mt-4" 
-                style={{ width: '350px', height: 'auto' }}
+              <img 
+                src="/images/logo-white.png"
+                alt="Intello Cyber Technologies" 
+                className="h-16 md:h-20 w-auto mb-8 mt-4" 
+                style={{ maxWidth: '350px', objectFit: 'contain' }}
               />
             </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
