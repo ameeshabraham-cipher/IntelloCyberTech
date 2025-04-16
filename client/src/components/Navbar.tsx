@@ -54,8 +54,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-white font-montserrat font-bold text-2xl">
-              <span className="text-[hsl(var(--secondary))]">INTELLO</span> CYBER
+            <Link href="/" className="text-white">
+              <img 
+                src="/intello-logo.png" 
+                alt="Intello Cyber Technologies" 
+                className="h-10 w-auto" 
+              />
             </Link>
           </div>
           
