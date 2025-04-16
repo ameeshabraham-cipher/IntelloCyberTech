@@ -56,10 +56,10 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link href="/" className="text-white">
               <img 
-                src="/images/logo-white.png"
+                src="/images/intello-logo.png"
                 alt="Intello Cyber Technologies" 
                 className="h-10 w-auto" 
-                style={{ maxWidth: '200px' }}
+                style={{ maxWidth: '200px', maxHeight: '40px', objectFit: 'contain' }}
               />
             </Link>
           </div>
