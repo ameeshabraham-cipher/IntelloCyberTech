@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useScrollReveal } from '@/lib/animations';
-import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -455,7 +455,9 @@ const AssessmentPage = () => {
                   <p className="text-sm text-muted-foreground">Tailored advice specific to your business and industry requirements</p>
                 </div>
                 <div className="p-6">
-                  <Lock className="h-10 w-10 text-[hsl(var(--secondary))] mx-auto mb-4" />
+                  <div className="h-10 w-10 text-[hsl(var(--secondary))] mx-auto mb-4">
+                    <Lock />
+                  </div>
                   <h3 className="font-semibold mb-2">Confidential Analysis</h3>
                   <p className="text-sm text-muted-foreground">All information is kept strictly confidential with secure handling</p>
                 </div>

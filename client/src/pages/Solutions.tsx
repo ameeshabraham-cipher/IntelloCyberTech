@@ -3,7 +3,6 @@ import { Link } from 'wouter';
 import { useScrollReveal } from '@/lib/animations';
 import { ArrowRight, Lock, Shield, Zap, Server, Database, Cloud, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import CallToAction from '@/components/CallToAction';
 
 const SolutionsPage = () => {
   useScrollReveal();
@@ -152,12 +151,25 @@ const SolutionsPage = () => {
       </section>
       
       {/* Call to Action Section */}
-      <CallToAction 
-        title="Ready to Strengthen Your Security Posture?"
-        description="Get a personalized assessment of your security needs and discover how our solutions can help protect your organization."
-        buttonText="Request Free Assessment"
-        buttonLink="/contact?service=assessment"
-      />
+      <section className="py-20 bg-card/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/20 to-background/50"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Strengthen Your Security Posture?</h2>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              Get a personalized assessment of your security needs and discover how our solutions can help protect your organization.
+            </p>
+            <Link href="/contact?service=assessment">
+              <Button 
+                className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center mx-auto"
+              >
+                <span>Request Free Assessment</span>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
