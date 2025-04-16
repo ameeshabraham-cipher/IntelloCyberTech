@@ -2,6 +2,16 @@
 // This approach ensures images will always render without path issues
 
 // Intello Cyber Technologies logo in PNG format (white logo on transparent background)
+// Create a simple SVG logo for Intello Cyber Technologies
+export const intelloLogoSvg = `<svg width="300" height="60" viewBox="0 0 300 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="40" fill="white" font-family="Arial" font-weight="bold" font-size="30">INTELLO</text>
+  <text x="142" y="40" fill="#eb3443" font-family="Arial" font-weight="bold" font-size="30">CYBER</text>
+  <circle cx="280" cy="30" r="15" fill="#eb3443" />
+</svg>`;
+
+// Fallback text logo if needed
+export const intelloLogoText = 'INTELLO CYBER';
+
 export const intelloLogoPng = 'data:image/png;base64,' + 
 `iVBORw0KGgoAAAANSUhEUgAAAoAAAAGQCAYAAAA+89ElAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAE1NJREFUeNrs3U1y28YCgFG47Mr3
