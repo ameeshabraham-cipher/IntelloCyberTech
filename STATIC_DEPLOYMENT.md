@@ -83,12 +83,18 @@ The website uses Formspree for form handling:
 
 #### Option 3: GitHub Pages
 
+For detailed GitHub Pages deployment instructions, see `GITHUB_PAGES_DEPLOYMENT.md`.
+
+Summary steps:
 1. Create a new GitHub repository
-2. Push your code to the repository
-3. Enable GitHub Pages in the repository settings
-4. Configure the GitHub Pages to build from the `/docs` folder
-5. Copy all files from the `dist` directory to a `/docs` directory
-6. Commit and push the changes
+2. Push your code to the repository (including the GitHub Action workflow)
+3. Enable GitHub Pages in the repository settings (use GitHub Actions source)
+4. The site will automatically build and deploy when you push to the main branch
+
+**Note:** We've already configured the necessary files for GitHub Pages deployment:
+- GitHub Actions workflow (`.github/workflows/deploy.yml`)
+- SPA routing fix for GitHub Pages (`public/404.html` and script in `index.html`)
+- Base path configuration in `vite.static.config.ts`
 
 ### 4. Post-Deployment Configuration
 
