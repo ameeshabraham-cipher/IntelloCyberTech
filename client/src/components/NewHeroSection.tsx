@@ -4,6 +4,7 @@ import { useScrollReveal } from '@/lib/animations';
 import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HelpBubble } from '@/components/ui/help-bubble';
+import { intelloLogoPng } from '@/lib/images';
 
 const NewHeroSection = () => {
   useScrollReveal();
