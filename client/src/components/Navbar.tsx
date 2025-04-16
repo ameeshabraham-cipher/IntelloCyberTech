@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useNavbarScroll } from '@/lib/animations';
-import { intelloLogoSvg } from '@/lib/images';
 import { 
   ChevronDown, 
   Menu, 
@@ -56,9 +55,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-white">
-              <div 
-                dangerouslySetInnerHTML={{ __html: intelloLogoSvg }}
-                style={{ width: '180px', height: 'auto' }}
+              <img 
+                src="/images/logo-white.png"
+                alt="Intello Cyber Technologies" 
+                className="h-10 w-auto" 
+                style={{ maxWidth: '200px' }}
               />
             </Link>
           </div>
