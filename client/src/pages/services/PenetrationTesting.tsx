@@ -15,83 +15,103 @@ const PenetrationTestingPage = () => {
       category="IT Security & Audit Services"
       description="Identify and address exploitable security vulnerabilities before attackers can with our comprehensive penetration testing services."
       heroIcon={<Bug className="h-8 w-8" />}
-      overview="Our Penetration Testing services simulate real-world attacks to identify exploitable vulnerabilities in your systems, applications, and infrastructure. Led by certified ethical hackers who leverage the latest attack techniques and methodologies, our penetration tests provide clear visibility into your security weaknesses along with actionable recommendations to strengthen your defenses against actual attackers."
+      overview="In today's sophisticated threat landscape, theoretical security assessments are no longer sufficient to protect your critical assets. Our advanced Penetration Testing services go beyond automated scanning to simulate real-world cyberattacks, uncovering exploitable vulnerabilities in your systems, applications, networks, and infrastructure that automated tools often miss. Led by certified ethical hackers with extensive offensive security experience, our team leverages the same advanced tactics, techniques, and procedures (TTPs) as malicious threat actors—including zero-day vulnerability exploitation, advanced persistent threats, social engineering, and complex attack chaining—to provide a true measure of your security resilience. We deliver actionable, prioritized remediation guidance that transforms vulnerability discoveries into concrete security improvements, significantly strengthening your defenses against the constantly evolving threat landscape while providing the necessary documentation for compliance and assurance requirements."
       steps={[
         {
-          title: "Scoping & Planning",
-          description: "Collaborative definition of test scope, objectives, and rules of engagement to align with your security priorities and risk concerns."
+          title: "Strategic Scoping & Rules of Engagement",
+          description: "We begin with a collaborative planning process to precisely define testing boundaries, objectives, excluded systems, notification requirements, and emergency protocols—ensuring the penetration test aligns with your strategic security priorities while minimizing operational disruption and unintended consequences during testing activities."
         },
         {
-          title: "Reconnaissance & Discovery",
-          description: "Thorough information gathering and target discovery to identify potential entry points and vulnerabilities for further exploitation."
+          title: "Advanced Reconnaissance & Intelligence Gathering",
+          description: "Our security researchers employ sophisticated open-source intelligence (OSINT) techniques and advanced discovery tools to gather comprehensive information about your digital footprint, including domains, IP ranges, exposed services, technology stack, potential entry points, and even publicly leaked credentials—mimicking the initial reconnaissance phase of sophisticated threat actors."
         },
         {
-          title: "Vulnerability Assessment",
-          description: "Systematic identification of security weaknesses across in-scope systems, networks, applications, and configurations."
+          title: "Comprehensive Vulnerability Scanning & Enumeration",
+          description: "We deploy a combination of commercial, open-source, and custom-built vulnerability scanning tools to systematically identify potential security weaknesses across in-scope assets, followed by manual verification and enumeration to eliminate false positives and develop a comprehensive vulnerability profile of your environment."
         },
         {
-          title: "Exploitation Testing",
-          description: "Controlled exploitation of discovered vulnerabilities to validate their exploitability and potential business impact."
+          title: "Advanced Manual Exploitation",
+          description: "Our certified ethical hackers execute controlled exploitation of discovered vulnerabilities using both public and proprietary exploitation techniques to validate their real-world exploitability—determining which vulnerabilities represent theoretical risks versus those that can be actively leveraged by attackers to compromise your systems and data."
         },
         {
-          title: "Privilege Escalation",
-          description: "Attempts to escalate privileges and move laterally within the environment to simulate a sophisticated attack chain."
+          title: "Privilege Escalation & Lateral Movement",
+          description: "After establishing initial access, we attempt to elevate privileges, compromise additional credentials, bypass security controls, and move laterally throughout your network—demonstrating how sophisticated attackers can chain multiple lower-severity vulnerabilities to achieve significant security breaches and gain unauthorized access to critical systems and data."
         },
         {
-          title: "Post-Exploitation Analysis",
-          description: "Assessment of potential impact had the exploitation been conducted by a malicious attacker, including data access and business disruption."
+          title: "Objective Achievement & Business Impact Analysis",
+          description: "We thoroughly document the potential business consequences of successful exploitation, including unauthorized data access, intellectual property exposure, operational disruption potential, financial impact, and reputation damage—translating technical vulnerabilities into clear business risks that executive stakeholders can understand and prioritize."
         },
         {
-          title: "Remediation Planning",
-          description: "Development of prioritized, actionable recommendations to address identified vulnerabilities based on risk and technical complexity."
+          title: "Detailed Evidence Collection & Documentation",
+          description: "Throughout the testing process, we meticulously document all findings with screenshots, logs, and step-by-step exploitation procedures—creating comprehensive evidence packages that clearly demonstrate vulnerability existence, exploitation methods, and potential impact while providing your security team with the precise information needed for effective remediation."
+        },
+        {
+          title: "Risk-Based Remediation Planning",
+          description: "We develop detailed, actionable remediation recommendations for each identified vulnerability, prioritized by risk level, exploitation difficulty, potential business impact, and remediation complexity—providing both strategic guidance for leadership and technical implementation details for security teams to effectively address vulnerabilities based on your specific risk profile."
         }
       ]}
       benefits={[
         {
-          title: "Proactive Vulnerability Discovery",
-          content: "Identify security weaknesses before malicious actors can discover and exploit them, reducing your attack surface and potential breach risk."
+          title: "Critical Vulnerability Prevention",
+          content: "Identify and remediate high-risk security vulnerabilities before malicious actors can discover and exploit them—significantly reducing your organization's attack surface, eliminating potential breach pathways, and potentially saving millions in breach costs, which average $4.35 million per incident according to IBM's Cost of a Data Breach Report."
         },
         {
-          title: "Real-World Risk Validation",
-          content: "Verify the actual exploitability of vulnerabilities rather than relying on theoretical assessments, enabling risk-based prioritization."
+          title: "Evidence-Based Risk Prioritization",
+          content: "Transform security remediation from a theoretical checklist exercise to a focused, high-impact program by definitively validating which vulnerabilities are practically exploitable in your unique environment—enabling your security team to address the most dangerous weaknesses first and achieve maximum risk reduction with limited resources."
         },
         {
-          title: "Defense Validation",
-          content: "Test the effectiveness of your security controls, monitoring, and incident response capabilities against sophisticated attack techniques."
+          title: "Security Control Effectiveness Validation",
+          content: "Rigorously test your entire security ecosystem—including preventative controls, detection capabilities, and incident response procedures—against real-world attack techniques, identifying control gaps and blind spots that would otherwise remain undiscovered until exploited in an actual breach scenario."
         },
         {
-          title: "Compliance Support",
-          content: "Meet penetration testing requirements for various regulatory standards and frameworks, including PCI DSS, ISO 27001, and SOC 2."
+          title: "Streamlined Regulatory Compliance",
+          content: "Meet explicit penetration testing requirements for multiple regulatory standards and frameworks simultaneously—including PCI DSS, ISO 27001, SOC 2, HIPAA, GDPR, NIS2, and industry-specific regulations—with properly scoped, documented tests that satisfy auditor requirements and demonstrate due diligence in security practices."
         },
         {
-          title: "Security Awareness",
-          content: "Increase organizational awareness of security risks and attack vectors through practical demonstrations and realistic exploitation scenarios."
+          title: "Cyber Insurance Optimization",
+          content: "Strengthen your cyber insurance application, potentially reduce premiums, and avoid coverage exclusions by demonstrating proactive security testing and remediation—as insurers increasingly require evidence of penetration testing and vulnerability management before providing coverage or paying claims."
+        },
+        {
+          title: "Enhanced Security Awareness & Culture",
+          content: "Transform abstract security concepts into concrete realities for technical and non-technical stakeholders through practical vulnerability demonstrations and attack simulations—dramatically increasing organizational awareness of security risks and motivating improved security practices across all levels of your organization."
+        },
+        {
+          title: "Third-Party Risk Reduction",
+          content: "Extend penetration testing to critical vendor integrations and third-party components to identify security weaknesses in your supply chain and extended ecosystem—addressing the growing threat vector of vendor compromise that traditional security assessments often overlook."
         }
       ]}
       deliverables={[
         {
-          title: "Executive Summary Report",
-          description: "High-level overview of penetration test findings, key risks, and strategic recommendations designed for executive stakeholders."
+          title: "Strategic Executive Summary Report",
+          description: "Comprehensive executive-focused report that translates technical findings into business terms—including overall risk posture assessment, critical vulnerability summary, attack scenario impacts, remediation priorities, and concrete recommendations for security improvement—presented in language that enables informed executive decision-making without requiring technical expertise."
         },
         {
-          title: "Detailed Technical Report",
-          description: "Comprehensive documentation of all identified vulnerabilities, including technical details, exploitation methods, and supporting evidence."
+          title: "Comprehensive Technical Assessment Report",
+          description: "Exhaustive technical documentation of all identified vulnerabilities with detailed descriptions, CVSS scoring, risk ratings, precise exploitation methodologies, impacted components, and affected systems—including screenshots, logs, and command sequences that provide complete transparency into vulnerability validation procedures and findings."
         },
         {
-          title: "Risk-Rated Vulnerability Register",
-          description: "Prioritized inventory of discovered vulnerabilities with severity ratings, exploitation difficulty, and potential business impact."
+          title: "Multi-Dimensional Risk Analysis Matrix",
+          description: "Sophisticated risk prioritization framework that evaluates each vulnerability across multiple dimensions—including exploitation complexity, potential business impact, required attacker skill level, affected data sensitivity, and remediation difficulty—enabling truly risk-informed remediation planning beyond simple CVSS scores."
         },
         {
-          title: "Attack Path Analysis",
-          description: "Detailed documentation of successful attack paths, demonstrating how multiple vulnerabilities can be chained for maximum impact."
+          title: "Attack Chain Visualization & Analysis",
+          description: "Detailed documentation and visual mapping of successful attack paths, demonstrating how multiple seemingly low-risk vulnerabilities can be chained together to achieve significant security breaches—providing crucial context for understanding the holistic security posture beyond individual vulnerabilities in isolation."
         },
         {
-          title: "Remediation Roadmap",
-          description: "Structured implementation plan with short, medium, and long-term security improvements prioritized by risk reduction value."
+          title: "Customized Remediation Strategy & Roadmap",
+          description: "Structured, practical implementation plan organized into immediate/critical (0-30 days), short-term (30-90 days), and long-term (90+ days) security improvements—with each recommendation including specific technical guidance, implementation complexity assessment, and resource requirements tailored to your environment."
         },
         {
-          title: "Retest Validation",
-          description: "Optional follow-up testing to verify successful remediation of previously identified vulnerabilities and effectiveness of implemented fixes."
+          title: "Security Control Gap Analysis",
+          description: "Detailed assessment of your existing security controls measured against successful penetration testing activities—identifying specific detection and prevention gaps in your security architecture and providing recommendations for control improvements to prevent similar attack vectors in the future."
+        },
+        {
+          title: "Remediation Verification Testing",
+          description: "Follow-up targeted testing focused specifically on previously identified vulnerabilities to validate remediation effectiveness—ensuring that implemented fixes truly resolve the underlying security issues rather than just masking symptoms, with comprehensive documentation suitable for compliance evidence."
+        },
+        {
+          title: "Compliance-Ready Documentation Package",
+          description: "Complete documentation set prepared specifically to satisfy the penetration testing requirements of relevant regulatory frameworks (PCI DSS, ISO 27001, SOC 2, HIPAA, etc.)—including all necessary attestations, methodologies, scope definitions, and findings summaries presented in audit-ready format."
         }
       ]}
       animationSvg={
