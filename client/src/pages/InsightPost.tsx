@@ -123,7 +123,8 @@ const blogPosts = [
     author: 'Layla Ibrahim',
     category: 'Cybersecurity Solutions',
     tags: ['Data Privacy', 'Cross-Border', 'MENA', 'Compliance'],
-    slug: 'cross-border-data-transfers-regulatory-complexity-mena'
+    slug: 'cross-border-data-transfers-regulatory-complexity-mena',
+    image: '/images/blog/data-privacy.svg'
   },
   {
     id: '12',
@@ -133,7 +134,8 @@ const blogPosts = [
     author: 'Thomas Anderson',
     category: 'Cybersecurity Solutions',
     tags: ['Multi-Cloud', 'Cloud Security', 'DevSecOps', 'Governance'],
-    slug: 'secure-multi-cloud-strategy-diverse-ecosystems'
+    slug: 'secure-multi-cloud-strategy-diverse-ecosystems',
+    image: '/images/blog/multi-cloud.svg'
   },
   {
     id: '13',
@@ -143,7 +145,8 @@ const blogPosts = [
     author: 'Sophia Martinez',
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Compliance', 'Automation', 'Machine Learning'],
-    slug: 'ai-compliance-automation-beyond-rule-based'
+    slug: 'ai-compliance-automation-beyond-rule-based',
+    image: '/images/blog/ai-compliance.svg'
   },
   {
     id: '14',
@@ -153,7 +156,8 @@ const blogPosts = [
     author: 'Karim Nasser',
     category: 'AI-Powered Solutions',
     tags: ['AI Ethics', 'Governance', 'Compliance', 'Risk Management'],
-    slug: 'ethical-ai-governance-regulated-industries'
+    slug: 'ethical-ai-governance-regulated-industries',
+    image: '/images/blog/ai-ethics.svg'
   },
   {
     id: '15',
@@ -163,7 +167,8 @@ const blogPosts = [
     author: 'Alex Rivera',
     category: 'AI-Powered Solutions',
     tags: ['Machine Learning', 'Threat Detection', 'SIEM', 'Security Operations'],
-    slug: 'machine-learning-threat-detection-false-positives'
+    slug: 'machine-learning-threat-detection-false-positives',
+    image: '/images/blog/machine-learning.svg'
   },
   {
     id: '16',
@@ -173,7 +178,8 @@ const blogPosts = [
     author: 'Nadia Malik',
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Incident Response', 'Automation', 'Security Operations'],
-    slug: 'autonomous-security-response-ai-incident-containment'
+    slug: 'autonomous-security-response-ai-incident-containment',
+    image: '/images/blog/incident-response.svg'
   },
   {
     id: '17',
@@ -183,7 +189,8 @@ const blogPosts = [
     author: 'Jennifer Lee',
     category: 'Industry Insights',
     tags: ['Healthcare', 'Cybersecurity', 'HIPAA', 'Patient Data'],
-    slug: 'healthcare-cybersecurity-patient-care-data-protection'
+    slug: 'healthcare-cybersecurity-patient-care-data-protection',
+    image: '/images/blog/healthcare.svg'
   },
   {
     id: '18',
@@ -193,7 +200,8 @@ const blogPosts = [
     author: 'Hassan Al-Farsi',
     category: 'Industry Insights',
     tags: ['Financial Services', 'Digital Banking', 'Cybersecurity', 'Fraud Prevention'],
-    slug: 'digital-banking-security-threats-defensive-strategies'
+    slug: 'digital-banking-security-threats-defensive-strategies',
+    image: '/images/blog/banking.svg'
   },
   {
     id: '19',
@@ -203,7 +211,8 @@ const blogPosts = [
     author: 'Amira Saeed',
     category: 'Industry Insights',
     tags: ['Government', 'Cybersecurity', 'Frameworks', 'MENA'],
-    slug: 'government-cybersecurity-frameworks-mena'
+    slug: 'government-cybersecurity-frameworks-mena',
+    image: '/images/blog/government.svg'
   },
   {
     id: '20',
@@ -213,7 +222,8 @@ const blogPosts = [
     author: 'Mark Johnson',
     category: 'Industry Insights',
     tags: ['E-Commerce', 'Customer Data', 'Security', 'PCI DSS'],
-    slug: 'ecommerce-security-protecting-customer-data'
+    slug: 'ecommerce-security-protecting-customer-data',
+    image: '/images/blog/ecommerce.svg'
   }
 ];
 
