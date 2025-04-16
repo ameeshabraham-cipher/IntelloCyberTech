@@ -4,6 +4,8 @@ import Home from "@/pages/Home";
 import AboutUs from "@/pages/AboutUs";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
+import Insights from "@/pages/Insights";
+import InsightPost from "@/pages/InsightPost";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -71,6 +73,8 @@ function Router() {
           <Route path="/about" component={AboutUs} />
           <Route path="/services" component={Services} />
           <Route path="/contact" component={Contact} />
+          <Route path="/insights" component={Insights} />
+          <Route path="/insights/:slug" component={InsightPost} />
           
           {/* Solution Pages */}
           <Route path="/solutions/ai-compliance" component={AiCompliancePage} />
