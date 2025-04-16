@@ -103,7 +103,7 @@ After deploying your static site, make sure to:
 
 ### Configure _redirects for SPA Routing
 
-For hosting services like Netlify, create a `_redirects` file in the `public` directory with:
+For hosting services like Netlify, we've already created a `_redirects` file in the `public` directory with:
 
 ```
 /* /index.html 200
@@ -113,7 +113,7 @@ This ensures that client-side routing works correctly.
 
 ### For Vercel
 
-Create a `vercel.json` file in the project root:
+We've included a `vercel.json` file in the project root with:
 
 ```json
 {
@@ -128,7 +128,10 @@ Create a `vercel.json` file in the project root:
 To update your website after deployment:
 
 1. Make your changes to the source code
-2. Build the project again: `npm run build`
+2. Build the static version again:
+   ```
+   npx vite build --config vite.static.config.ts
+   ```
 3. Deploy the new build to your hosting service
 
 ## Troubleshooting
