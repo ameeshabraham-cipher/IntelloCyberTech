@@ -84,9 +84,13 @@ If the GitHub Action build fails:
 1. Check the Actions tab on GitHub for error details
 2. Verify that the repository has proper permissions for GitHub Actions
 3. Common errors and solutions:
-   - **Module resolution issues**: Make sure all import paths in HTML files use relative paths (`./src/main.tsx` instead of `/src/main.tsx`)
+   - **Module resolution issues**: The workflow now includes a custom build script that automatically handles path modifications for GitHub Pages
    - **Base path issues**: Ensure the `base` option in `vite.static.config.ts` matches your repository name
-4. Try a manual build to identify any issues:
+4. How the custom build works:
+   - The GitHub Actions workflow creates a temporary copy of index.html with adjusted paths
+   - It then builds the project and restores the original file
+   - This approach allows maintaining development-friendly paths while ensuring GitHub Pages compatibility
+5. Try a manual build to identify any issues:
    ```bash
    # Test build locally
    npx vite build --config vite.static.config.ts
