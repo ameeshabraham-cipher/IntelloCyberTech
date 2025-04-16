@@ -51,6 +51,7 @@ import VaptPage from "@/pages/services/Vapt";
 
 // Cybersecurity Solutions
 import CloudSecurityPage from "@/pages/services/CloudSecurity";
+import CloudSecurityAssessmentPage from "@/pages/services/CloudSecurityAssessment";
 import VcisoPage from "@/pages/services/Vciso";
 import DataPrivacyPage from "@/pages/services/DataPrivacy";
 
@@ -112,6 +113,7 @@ function Router() {
           
           {/* Cybersecurity Solutions */}
           <Route path="/services/cloud-security" component={CloudSecurityPage} />
+          <Route path="/services/cloud-security-assessment" component={CloudSecurityAssessmentPage} />
           <Route path="/services/vciso" component={VcisoPage} />
           <Route path="/services/data-privacy" component={DataPrivacyPage} />
           

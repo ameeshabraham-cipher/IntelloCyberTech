@@ -224,6 +224,7 @@ const Navbar = () => {
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Cybersecurity Solutions</p>
                 <Link href="/services/cloud-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security</Link>
+                <Link href="/services/cloud-security-assessment" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security Assessment</Link>
                 <Link href="/services/vciso" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">vCISO Services</Link>
                 <Link href="/services/data-privacy" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Privacy Consultation</Link>
                 <Link href="/solutions/email-security" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Email Security</Link>
