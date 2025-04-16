@@ -51,7 +51,18 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest('POST', '/api/contact', formData);
+      // For static site deployment, you would use an external form service like Formspree
+      // Replace this URL with your actual Formspree form ID when you set it up
+      const formspreeEndpoint = 'https://formspree.io/f/your-form-id';
+      
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
       
       if (response.ok) {
         toast({
@@ -68,11 +79,16 @@ const Contact = () => {
           subject: '',
           message: ''
         });
+      } else {
+        throw new Error('Form submission failed');
       }
     } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // For static deployment without backend, provide alternative contact method
       toast({
-        title: "Error Submitting Form",
-        description: "Please try again later.",
+        title: "Form Submission Error",
+        description: "Please email us directly at contact@intellocyber.com",
         variant: "destructive"
       });
     } finally {
