@@ -19,7 +19,14 @@ jobs:
           
       - name: Install and Build 🔧
         run: |
+          # Install dependencies (including terser)
           npm ci
+          npm install terser
+          
+          # Fix for relative paths in development vs production
+          sed -i 's|/src/main.tsx|./src/main.tsx|g' client/index.html
+          
+          # Build with static configuration
           npx vite build --config vite.static.config.ts
         
       - name: Deploy 🚀
