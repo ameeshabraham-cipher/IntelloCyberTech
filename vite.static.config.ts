@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Base path for GitHub Pages - use your repo name here
+  // Base path for GitHub Pages - IMPORTANT: must match your repository name
   base: '/IntelloCyberTech/', 
   plugins: [
     react(),
