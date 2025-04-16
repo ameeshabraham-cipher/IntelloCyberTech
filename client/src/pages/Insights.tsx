@@ -38,7 +38,7 @@ const blogPosts: BlogPost[] = [
     author: 'Ahmed Hassan',
     category: 'GRC Services',
     tags: ['ISO 27001', 'Information Security', 'Compliance', 'ISMS'],
-    image: '/images/blog/iso-27001.webp',
+    image: '/images/blog/iso-27001.svg',
     slug: 'navigating-complex-landscape-iso-27001-2022'
   },
   {
