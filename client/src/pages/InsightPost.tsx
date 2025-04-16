@@ -241,6 +241,7 @@ const InsightPost: React.FC = () => {
         category={post.category}
         tags={post.tags}
         content={post.content}
+        image={post.image}
       />
     </div>
   );
