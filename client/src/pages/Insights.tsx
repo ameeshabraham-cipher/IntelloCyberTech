@@ -434,9 +434,17 @@ const InsightsPage: React.FC = () => {
               <div className="mb-12">
                 <div className="group relative">
                   <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden">
-                    <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
-                      <span className="text-lg">Featured Image</span>
-                    </div>
+                    {filteredPosts[0].image ? (
+                      <img 
+                        src={filteredPosts[0].image} 
+                        alt={filteredPosts[0].title} 
+                        className="h-full w-full object-cover" 
+                      />
+                    ) : (
+                      <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
+                        <span className="text-lg">Featured Image</span>
+                      </div>
+                    )}
                   </div>
                   <div className="mt-4">
                     <Badge variant="outline" className="mb-2">{filteredPosts[0].category}</Badge>
