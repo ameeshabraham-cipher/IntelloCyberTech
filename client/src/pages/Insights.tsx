@@ -485,9 +485,17 @@ const InsightsPage: React.FC = () => {
                 {filteredPosts.slice(1).map((post) => (
                   <div key={post.id} className="group">
                     <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden mb-4">
-                      <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
-                        <span>Blog Image</span>
-                      </div>
+                      {post.image ? (
+                        <img 
+                          src={post.image} 
+                          alt={post.title} 
+                          className="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-300" 
+                        />
+                      ) : (
+                        <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
+                          <span>Blog Image</span>
+                        </div>
+                      )}
                     </div>
                     <Badge variant="outline" className="mb-2">{post.category}</Badge>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
