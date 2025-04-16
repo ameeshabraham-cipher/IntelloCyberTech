@@ -12,6 +12,7 @@ interface BlogPostProps {
   category: string;
   tags: string[];
   content: string;
+  image?: string;
 }
 
 const BlogPost: React.FC<BlogPostProps> = ({
@@ -20,7 +21,8 @@ const BlogPost: React.FC<BlogPostProps> = ({
   author,
   category,
   tags,
-  content
+  content,
+  image
 }) => {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
@@ -43,9 +45,17 @@ const BlogPost: React.FC<BlogPostProps> = ({
       </div>
 
       <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden mb-8">
-        <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
-          <span className="text-lg">Featured Image</span>
-        </div>
+        {image ? (
+          <img 
+            src={image} 
+            alt={title} 
+            className="h-full w-full object-cover" 
+          />
+        ) : (
+          <div className="bg-background-dark h-full w-full flex items-center justify-center text-muted-foreground">
+            <span className="text-lg">Featured Image</span>
+          </div>
+        )}
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
