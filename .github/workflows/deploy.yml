@@ -19,15 +19,36 @@ jobs:
           
       - name: Install and Build 🔧
         run: |
-          # Install dependencies (including terser)
+          # Install dependencies
           npm ci
-          npm install terser
           
-          # Fix for relative paths in development vs production
-          sed -i 's|/src/main.tsx|./src/main.tsx|g' client/index.html
+          # Create a GitHub Pages specific build script
+          cat > github-pages-build.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const { execSync } = require('child_process');
           
-          # Build with static configuration
-          npx vite build --config vite.static.config.ts
+          // 1. Create a temporary index.html file for building
+          const originalIndex = fs.readFileSync('./client/index.html', 'utf8');
+          const ghPagesIndex = originalIndex.replace('src="/src/main.tsx"', 'src="./assets/index.js"');
+          fs.writeFileSync('./client/index.html.temp', ghPagesIndex);
+          fs.renameSync('./client/index.html', './client/index.html.bak');
+          fs.renameSync('./client/index.html.temp', './client/index.html');
+          
+          // 2. Run the build
+          try {
+            execSync('npx vite build --config vite.static.config.ts', { stdio: 'inherit' });
+          } catch (error) {
+            console.error('Build failed:', error);
+          }
+          
+          // 3. Restore the original index.html
+          fs.renameSync('./client/index.html', './client/index.html.temp');
+          fs.renameSync('./client/index.html.bak', './client/index.html');
+          EOF
+          
+          # Run the GitHub Pages build script
+          node github-pages-build.js
         
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
