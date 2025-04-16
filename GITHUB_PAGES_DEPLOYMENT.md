@@ -26,6 +26,9 @@ This project includes an automated GitHub Actions workflow file:
   - Builds the static site using Vite
   - Deploys to the `gh-pages` branch
   - Automatically runs when you push to main/master branch
+  - Uses proper GitHub token permissions for deployment
+  
+> **IMPORTANT**: Make sure GitHub Actions has proper permissions in your repository. Go to Settings > Actions > General > Workflow permissions and select "Read and write permissions".
 
 ### 3. SPA Routing Configuration (Already Set Up)
 

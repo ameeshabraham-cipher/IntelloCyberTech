@@ -1,0 +1,68 @@
+1s
+Run JamesIves/github-pages-deploy-action@v4
+
+    ╭━━━╮╭╮╭╮╱╭╮╱╱╭╮╱╱╭━━━╮
+    ┃╭━╮┣╯╰┫┃╱┃┃╱╱┃┃╱╱┃╭━╮┃
+    ┃┃╱╰╋╮╭┫╰━╯┣╮╭┫╰━╮┃╰━╯┣━━┳━━┳━━┳━━╮
+    ┃┃╭━╋┫┃┃╭━╮┃┃┃┃╭╮┃┃╭━━┫╭╮┃╭╮┃┃━┫━━┫
+    ┃╰┻━┃┃╰┫┃╱┃┃╰╯┃╰╯┃┃┃╱╱┃╭╮┃╰╯┃┃━╋━━┃
+    ╰━━━┻┻━┻╯╱╰┻━━┻━━╯╰╯╱╱╰╯╰┻━╮┣━━┻━━╯
+    ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+    ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+    ╭━━━╮╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╭━━━╮╱╱╭╮
+    ╰╮╭╮┃╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱┃╭━╮┃╱╭╯╰╮
+    ╱┃┃┃┣━━┳━━┫┃╭━━┳╮╱╭╮┃┃╱┃┣━┻╮╭╋┳━━┳━╮
+    ╱┃┃┃┃┃━┫╭╮┃┃┃╭╮┃┃╱┃┃┃╰━╯┃╭━┫┃┣┫╭╮┃╭╮╮
+    ╭╯╰╯┃┃━┫╰╯┃╰┫╰╯┃╰━╯┃┃╭━╮┃╰━┫╰┫┃╰╯┃┃┃┃
+    ╰━━━┻━━┫╭━┻━┻━━┻━╮╭╯╰╯╱╰┻━━┻━┻┻━━┻╯╰╯
+    ╱╱╱╱╱╱╱┃┃╱╱╱╱╱╱╭━╯┃
+    ╱╱╱╱╱╱╱╰╯╱╱╱╱╱╱╰━━╯
+    
+
+    💖 Support: https://github.com/sponsors/JamesIves
+    📣 Maintained by James Ives: https://jamesiv.es
+
+    🚀 Getting Started Guide: https://github.com/JamesIves/github-pages-deploy-action
+    ❓ Discussions / Q&A: https://github.com/JamesIves/github-pages-deploy-action/discussions
+    🔧 Report a Bug: https://github.com/JamesIves/github-pages-deploy-action/issues
+Checking configuration and starting deployment… 🚦
+Deploying using Deploy Token… 🔑
+Configuring git…
+/usr/bin/git config --global --add safe.directory /home/runner/work/IntelloCyberTech/IntelloCyberTech
+/usr/bin/git config user.name ameeshabraham-cipher
+/usr/bin/git config user.email ameeshabraham-cipher@users.noreply.github.com
+/usr/bin/git config core.ignorecase false
+/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+/usr/bin/git remote rm origin
+/usr/bin/git remote add origin ***github.com/ameeshabraham-cipher/IntelloCyberTech.git
+Git configured… 🔧
+Starting to commit changes…
+/usr/bin/git ls-remote --heads ***github.com/ameeshabraham-cipher/IntelloCyberTech.git refs/heads/gh-pages
+Creating worktree…
+/usr/bin/git worktree add --no-checkout --detach github-pages-deploy-action-temp-deployment-folder
+Preparing worktree (detached HEAD 2a1fa3b)
+/usr/bin/git checkout --orphan gh-pages
+Switched to a new branch 'gh-pages'
+Created the gh-pages branch… 🔧
+/usr/bin/git reset --hard
+/usr/bin/git commit --no-verify --allow-empty -m Initial gh-pages commit
+[gh-pages (root-commit) 055ad29] Initial gh-pages commit
+/usr/bin/git config --global --add safe.directory /home/runner/work/IntelloCyberTech/IntelloCyberTech/github-pages-deploy-action-temp-deployment-folder
+/usr/bin/chmod -R +rw /home/runner/work/IntelloCyberTech/IntelloCyberTech/dist
+/usr/bin/rsync -q -av --checksum --progress /home/runner/work/IntelloCyberTech/IntelloCyberTech/dist/. github-pages-deploy-action-temp-deployment-folder --delete --exclude CNAME --exclude .nojekyll --exclude .ssh --exclude .git --exclude .github
+Checking if there are files to commit…
+/usr/bin/git add --all .
+/usr/bin/git checkout -b github-pages-deploy-action/i9v1kfz24
+Switched to a new branch 'github-pages-deploy-action/i9v1kfz24'
+/usr/bin/git commit -m Deploying to gh-pages from @ ameeshabraham-cipher/IntelloCyberTech@2a1fa3b372a20d2bd15cac22bf83cb69588d1d35 🚀 --quiet --no-verify
+Force-pushing changes...
+/usr/bin/git push --force ***github.com/ameeshabraham-cipher/IntelloCyberTech.git github-pages-deploy-action/i9v1kfz24:gh-pages
+remote: Permission to ameeshabraham-cipher/IntelloCyberTech.git denied to github-actions[bot].
+fatal: unable to access 'https://github.com/ameeshabraham-cipher/IntelloCyberTech.git/': The requested URL returned error: 403
+Running post deployment cleanup jobs… 🗑️
+/usr/bin/git checkout -B github-pages-deploy-action/i9v1kfz24
+Reset branch 'github-pages-deploy-action/i9v1kfz24'
+/usr/bin/chmod -R +rw github-pages-deploy-action-temp-deployment-folder
+/usr/bin/git worktree remove github-pages-deploy-action-temp-deployment-folder --force
+Error: The deploy step encountered an error: The process '/usr/bin/git' failed with exit code 128 ❌
+Notice: Deployment failed! ❌
