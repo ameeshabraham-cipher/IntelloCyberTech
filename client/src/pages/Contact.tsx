@@ -88,7 +88,7 @@ const Contact = () => {
       // For static deployment without backend, provide alternative contact method
       toast({
         title: "Form Submission Error",
-        description: "Please email us directly at contact@intellocyber.com",
+        description: "Please email us directly at info@intellome.com",
         variant: "destructive"
       });
     } finally {
@@ -243,8 +243,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-montserrat font-semibold mb-2">Office Location</h3>
                       <p className="text-muted-foreground">
-                        123 Business Bay,<br />
-                        Dubai, United Arab Emirates
+                        Office 26, First Gulf Business Center,<br />
+                        Madina Mall, Dubai, UAE
                       </p>
                     </div>
                   </div>
@@ -256,8 +256,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-montserrat font-semibold mb-2">Phone Numbers</h3>
                       <p className="text-muted-foreground">
-                        Main: +971 4 123 4567<br />
-                        Support: +971 4 123 4568
+                        Main: +971 55 355 6787
                       </p>
                     </div>
                   </div>
@@ -269,8 +268,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-montserrat font-semibold mb-2">Email Addresses</h3>
                       <p className="text-muted-foreground">
-                        General Inquiries: info@intellocyber.com<br />
-                        Support: support@intellocyber.com
+                        General Inquiries: info@intellome.com
                       </p>
                     </div>
                   </div>

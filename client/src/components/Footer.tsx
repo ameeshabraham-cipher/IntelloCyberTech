@@ -72,15 +72,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="text-[hsl(var(--secondary))] h-5 w-5 mt-1 mr-3" />
-                <span className="text-muted-foreground">123 Business Bay, Dubai, UAE</span>
+                <span className="text-muted-foreground">Office 26, First Gulf Business Center, Madina Mall, Dubai, UAE</span>
               </li>
               <li className="flex items-center">
                 <Phone className="text-[hsl(var(--secondary))] h-5 w-5 mr-3" />
-                <span className="text-muted-foreground">+971 4 123 4567</span>
+                <span className="text-muted-foreground">+971 55 355 6787</span>
               </li>
               <li className="flex items-center">
                 <Mail className="text-[hsl(var(--secondary))] h-5 w-5 mr-3" />
-                <span className="text-muted-foreground">info@intellocyber.com</span>
+                <span className="text-muted-foreground">info@intellome.com</span>
               </li>
             </ul>
           </div>
