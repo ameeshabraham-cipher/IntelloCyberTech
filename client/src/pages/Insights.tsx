@@ -336,6 +336,94 @@ const blogPosts: BlogPost[] = [
     tags: ['E-Commerce', 'Customer Data', 'Security', 'PCI DSS'],
     image: 'ecommerce-security.svg',
     slug: 'ecommerce-security-protecting-customer-data'
+  },
+  // Custom blog post with custom image example
+  {
+    id: '21',
+    title: 'Your Custom Blog Post: Implementing a Comprehensive Cybersecurity Strategy',
+    excerpt: 'A step-by-step guide to developing and implementing a comprehensive cybersecurity strategy that aligns with your business objectives and regulatory requirements.',
+    content: `
+      <h2>Introduction to Modern Cybersecurity Strategy</h2>
+      <p>In today's rapidly evolving threat landscape, organizations need a comprehensive, 
+      adaptable cybersecurity strategy that goes beyond traditional perimeter defenses. 
+      This article outlines a practical approach to developing and implementing a cybersecurity 
+      strategy that balances security requirements with business objectives.</p>
+      
+      <h2>Risk Assessment: The Foundation of Your Strategy</h2>
+      <p>Before implementing any security controls, it's essential to understand your specific risks. 
+      Begin with a thorough assessment that identifies:</p>
+      
+      <ul>
+        <li>Critical business assets and their value</li>
+        <li>Potential threats to those assets</li>
+        <li>Existing vulnerabilities in your systems and processes</li>
+        <li>Potential business impact of security incidents</li>
+      </ul>
+      
+      <p>This risk-based approach ensures you focus your resources on the areas that matter most 
+      to your organization.</p>
+      
+      <h2>Strategy Development: Key Components</h2>
+      <p>An effective cybersecurity strategy should include these core elements:</p>
+      
+      <h3>1. Governance Framework</h3>
+      <p>Establish clear roles, responsibilities, and reporting structures for security. 
+      This includes defining who makes security decisions and how they align with overall 
+      business governance.</p>
+      
+      <h3>2. Security Architecture</h3>
+      <p>Design a security architecture that implements defense-in-depth across your organization's 
+      technology stack, from endpoints to cloud environments.</p>
+      
+      <h3>3. Operational Security</h3>
+      <p>Define day-to-day security operations, including monitoring, incident response, 
+      and vulnerability management processes.</p>
+      
+      <h3>4. Compliance Management</h3>
+      <p>Map your security controls to relevant regulatory requirements and industry standards, 
+      ensuring your approach satisfies your compliance obligations.</p>
+      
+      <h2>Implementation Roadmap</h2>
+      <p>Turn your strategy into action with a phased implementation plan:</p>
+      
+      <h3>Phase 1: Quick Wins (1-3 Months)</h3>
+      <p>Address high-risk areas with relatively simple solutions, such as implementing 
+      multi-factor authentication, endpoint protection, and security awareness training.</p>
+      
+      <h3>Phase 2: Core Infrastructure (3-6 Months)</h3>
+      <p>Strengthen your security foundation by implementing robust identity management, 
+      network segmentation, and security monitoring capabilities.</p>
+      
+      <h3>Phase 3: Advanced Capabilities (6-12 Months)</h3>
+      <p>Build more sophisticated defenses, including threat intelligence integration, 
+      security automation, and adaptive access controls.</p>
+      
+      <h2>Measuring Success</h2>
+      <p>Define key performance indicators (KPIs) to measure the effectiveness of your 
+      cybersecurity strategy, such as:</p>
+      
+      <ul>
+        <li>Reduction in security incidents and their impact</li>
+        <li>Improvement in vulnerability remediation time</li>
+        <li>Security program maturity scores</li>
+        <li>Compliance status across relevant frameworks</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>A successful cybersecurity strategy is never "finished" – it should evolve continuously 
+      as your business and the threat landscape change. Regular review and refinement ensure 
+      your security approach remains effective and aligned with your organizational objectives.</p>
+      
+      <p>At Intello Cyber Technologies, we help organizations develop and implement customized 
+      cybersecurity strategies that balance protection with business enablement. Contact us to learn 
+      how we can support your security journey.</p>
+    `,
+    date: 'April 17, 2025',
+    author: 'Your Name',
+    category: 'Cybersecurity Solutions',
+    tags: ['Strategy', 'Risk Management', 'Implementation', 'Governance'],
+    image: 'custom-blog-image.png', // Using your own custom image
+    slug: 'implementing-comprehensive-cybersecurity-strategy'
   }
 ];
 
