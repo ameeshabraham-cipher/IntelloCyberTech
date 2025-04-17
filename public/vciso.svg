@@ -1,0 +1,70 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#0A1025" />
+  
+  <!-- Background Elements -->
+  <circle cx="300" cy="200" r="120" fill="#111530" stroke="#00E5FF" strokeWidth="1" opacity="0.2"/>
+  <circle cx="300" cy="200" r="150" fill="none" stroke="#00E5FF" strokeWidth="1" opacity="0.1"/>
+  
+  <!-- CISO Figure -->
+  <g transform="translate(300, 180)">
+    <!-- Head -->
+    <circle cx="0" cy="-30" r="20" fill="#111530" stroke="#FFFFFF" strokeWidth="2"/>
+    
+    <!-- Body -->
+    <path d="M0 -10 L0 30" stroke="#FFFFFF" strokeWidth="2"/>
+    <path d="M0 0 L-20 20" stroke="#FFFFFF" strokeWidth="2"/>
+    <path d="M0 0 L20 20" stroke="#FFFFFF" strokeWidth="2"/>
+    <path d="M0 30 L-15 60" stroke="#FFFFFF" strokeWidth="2"/>
+    <path d="M0 30 L15 60" stroke="#FFFFFF" strokeWidth="2"/>
+    
+    <!-- CISO Shield -->
+    <path d="M0 -5 Q20 0 20 20 Q20 40 0 50 Q-20 40 -20 20 Q-20 0 0 -5" fill="#111530" stroke="#EB3443" strokeWidth="2"/>
+    <text x="0" y="8" fill="#EB3443" font-size="14" text-anchor="middle" font-family="Arial" font-weight="bold">CISO</text>
+    <path d="M-10 20 L-5 25 L5 15" stroke="#EB3443" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </g>
+  
+  <!-- Security Domains -->
+  <g opacity="0.9">
+    <!-- Governance -->
+    <circle cx="180" cy="120" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="180" cy="120" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Governance</text>
+    <path d="M205 135 L265 160" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Risk Management -->
+    <circle cx="170" cy="200" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="170" cy="195" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Risk</text>
+    <text x="170" cy="205" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Management</text>
+    <path d="M195 200 L265 180" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Compliance -->
+    <circle cx="180" cy="280" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="180" cy="280" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Compliance</text>
+    <path d="M205 275 L265 200" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Security Ops -->
+    <circle cx="420" cy="120" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="420" cy="115" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Security</text>
+    <text x="420" cy="125" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Operations</text>
+    <path d="M395 135 L335 160" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Incident Response -->
+    <circle cx="430" cy="200" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="430" cy="195" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Incident</text>
+    <text x="430" cy="205" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Response</text>
+    <path d="M405 200 L335 180" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Training -->
+    <circle cx="420" cy="280" r="25" fill="#111530" stroke="#00E5FF" strokeWidth="1.5"/>
+    <text x="420" cy="275" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Security</text>
+    <text x="420" cy="285" fill="#FFFFFF" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="Arial">Training</text>
+    <path d="M395 275 L335 200" stroke="#00E5FF" strokeWidth="1" strokeDasharray="5 3"/>
+    
+    <!-- Virtual Element -->
+    <rect x="270" y="90" width="60" height="20" rx="5" fill="#111530" stroke="#EB3443" strokeWidth="1.5"/>
+    <text x="300" y="103" fill="#FFFFFF" font-size="12" text-anchor="middle" font-family="Arial">VIRTUAL</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="300" y="350" fill="#FFFFFF" font-size="24" text-anchor="middle" font-family="Arial">Virtual CISO</text>
+  <text x="300" y="375" fill="#EB3443" font-size="16" text-anchor="middle" font-family="Arial">Strategic Security Leadership</text>
+</svg>
