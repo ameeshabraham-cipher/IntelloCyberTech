@@ -11,20 +11,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-// Client logos data with actual images
-// These are sample images. Replace with your own client logos as needed.
-const clientLogos = [
-  { name: "BANK UAE", imagePath: "/images/clients/client1.png" },
-  { name: "TECH CORP", imagePath: "/images/clients/client2.png" },
-  { name: "HEALTH SYSTEMS", imagePath: "/images/clients/client3.png" },
-  { name: "GOV SERVICES", imagePath: null },
-  { name: "RETAIL GROUP", imagePath: null },
-  { name: "LOGISTICS INC", imagePath: null }
-];
+import { useClientLogos } from '@/hooks/use-client-logos';
 
 // Client Logos Carousel Component
 const ClientLogosCarousel = () => {
+  // Use our custom hook to fetch client logos from the client-images directory
+  const logos = useClientLogos();
+  
   const [api, setApi] = useState<any>(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -50,8 +43,8 @@ const ClientLogosCarousel = () => {
       }}
     >
       <CarouselContent className="py-4">
-        {clientLogos.map((logo, index) => (
-          <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 pl-4">
+        {logos.map((logo, index) => (
+          <CarouselItem key={index} className="basis-1/3 pl-4">
             <div className="relative h-32 rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm flex flex-col items-center justify-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/5">
               {logo.imagePath ? (
                 <img 

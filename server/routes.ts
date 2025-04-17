@@ -83,7 +83,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get all client logo images from the client-images directory
   app.get('/api/client-logos', (req, res) => {
     try {
-      const clientImagesDir = path.join(__dirname, '../client/public/images/client-images');
+      // In Node.js environment with ES modules, __dirname is not directly available
+      const rootDir = process.cwd();
+      const clientImagesDir = path.join(rootDir, 'client/public/images/client-images');
       
       // Check if directory exists
       if (!fs.existsSync(clientImagesDir)) {
