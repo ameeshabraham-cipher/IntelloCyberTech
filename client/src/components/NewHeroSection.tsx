@@ -1,9 +1,91 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { useScrollReveal } from '@/lib/animations';
-import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server } from 'lucide-react';
+import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server, ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HelpBubble } from '@/components/ui/help-bubble';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+// Client logos data with placeholder for actual client logos
+// Replace these with your actual client logo images
+const clientLogos = [
+  { name: "BANK UAE", imagePath: null },
+  { name: "TECH CORP", imagePath: null },
+  { name: "HEALTH SYSTEMS", imagePath: null },
+  { name: "GOV SERVICES", imagePath: null },
+  { name: "RETAIL GROUP", imagePath: null },
+  { name: "LOGISTICS INC", imagePath: null }
+];
+
+// Client Logos Carousel Component
+const ClientLogosCarousel = () => {
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  return (
+    <Carousel
+      className="w-full max-w-4xl mx-auto"
+      setApi={setApi}
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+    >
+      <CarouselContent className="py-4">
+        {clientLogos.map((logo, index) => (
+          <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 pl-4">
+            <div className="relative h-32 rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm flex flex-col items-center justify-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/5">
+              {logo.imagePath ? (
+                <img 
+                  src={logo.imagePath} 
+                  alt={`${logo.name} logo`} 
+                  className="h-16 object-contain mb-2"
+                />
+              ) : (
+                <div className="text-primary font-semibold text-xl text-center mb-2">
+                  {logo.name}
+                </div>
+              )}
+              <div className="text-muted-foreground text-xs text-center">Trusted Partner</div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <div className="flex items-center justify-center mt-4 gap-2">
+        <CarouselPrevious variant="outline" size="sm" className="static" />
+        <div className="flex items-center justify-center gap-1">
+          {Array.from({ length: count }).map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 w-1.5 rounded-full ${
+                current === i ? "bg-primary" : "bg-primary/30"
+              }`}
+            />
+          ))}
+        </div>
+        <CarouselNext variant="outline" size="sm" className="static" />
+      </div>
+    </Carousel>
+  );
+};
 
 const NewHeroSection = () => {
   useScrollReveal();
@@ -335,28 +417,12 @@ const NewHeroSection = () => {
           </div>
         </div>
         
-        {/* Client Logos */}
+        {/* Client Logos Carousel */}
         <div className="mt-20 reveal" data-delay="600">
           <p className="text-center text-muted-foreground text-sm uppercase tracking-wider mb-6">Trusted by Leading Organizations</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70">
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">BANK UAE</div>
-            </div>
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">TECH CORP</div>
-            </div>
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">HEALTH SYSTEMS</div>
-            </div>
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">GOV SERVICES</div>
-            </div>
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">RETAIL GROUP</div>
-            </div>
-            <div className="h-8">
-              <div className="text-muted-foreground font-semibold">LOGISTICS INC</div>
-            </div>
+          
+          <div className="w-full px-4 md:px-8 lg:px-12">
+            <ClientLogosCarousel />
           </div>
         </div>
       </div>
