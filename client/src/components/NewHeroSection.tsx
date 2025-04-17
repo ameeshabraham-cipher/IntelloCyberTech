@@ -12,8 +12,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Client logos data with placeholder for actual client logos
-// Replace these with your actual client logo images
+// Client logos data with placeholder for actual client logo images
+// To add your own logo images:
+// 1. Create PNG or SVG logo images (PNG with transparent background recommended)
+// 2. Upload them to the /public/images/clients/ directory
+// 3. Replace null with the path like: "/images/clients/your-logo.png"
 const clientLogos = [
   { name: "BANK UAE", imagePath: null },
   { name: "TECH CORP", imagePath: null },
