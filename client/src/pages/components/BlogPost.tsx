@@ -118,9 +118,9 @@ const BlogPost: React.FC<BlogPostProps> = ({
       </div>
       
       <div className="bg-card rounded-lg border border-border p-6">
-        <h3 className="text-lg font-semibold mb-2">About the Author</h3>
+        <h3 className="text-lg font-semibold mb-2">About Intello</h3>
         <p className="text-muted-foreground">
-          {author} is a cybersecurity expert with extensive experience in helping organizations navigate complex security and compliance challenges. Their expertise spans across multiple domains including risk management, governance, and technical security controls.
+          Intello Cyber is a leading cybersecurity and compliance firm with extensive experience in helping organizations navigate complex security and compliance challenges. Our expertise spans across multiple domains including risk management, governance, and technical security controls.
         </p>
       </div>
     </div>

@@ -257,11 +257,13 @@ const InsightPost: React.FC = () => {
       <BlogPost
         title={post.title}
         date={post.date}
-        author={post.author}
+        author="Intello"
         category={post.category}
         tags={post.tags}
         content={post.content}
-        image={post.image}
+        image={post.image && post.image.endsWith('.svg') 
+          ? `/blog/${post.image.replace('.svg', '.png')}` 
+          : post.image}
       />
     </div>
   );

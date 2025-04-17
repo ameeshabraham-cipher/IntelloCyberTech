@@ -436,7 +436,9 @@ const InsightsPage: React.FC = () => {
                   <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden">
                     {filteredPosts[0].image ? (
                       <img 
-                        src={filteredPosts[0].image} 
+                        src={filteredPosts[0].image && filteredPosts[0].image.endsWith('.svg') 
+                          ? `/blog/${filteredPosts[0].image.replace('.svg', '.png')}` 
+                          : filteredPosts[0].image} 
                         alt={filteredPosts[0].title} 
                         className="h-full w-full object-cover" 
                       />
@@ -487,7 +489,9 @@ const InsightsPage: React.FC = () => {
                     <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden mb-4">
                       {post.image ? (
                         <img 
-                          src={post.image} 
+                          src={post.image && post.image.endsWith('.svg') 
+                            ? `/blog/${post.image.replace('.svg', '.png')}` 
+                            : post.image} 
                           alt={post.title} 
                           className="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-300" 
                         />
