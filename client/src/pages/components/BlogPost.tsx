@@ -47,7 +47,9 @@ const BlogPost: React.FC<BlogPostProps> = ({
       <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden mb-8">
         {image ? (
           <img 
-            src={image} 
+            src={image && image.endsWith('.svg') 
+              ? `/blog/${image.replace('.svg', '.png')}` 
+              : image} 
             alt={title} 
             className="h-full w-full object-cover" 
           />
