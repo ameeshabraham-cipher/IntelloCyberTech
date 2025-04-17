@@ -12,7 +12,11 @@ import {
   Database,
   UserCog,
   FileSearch,
-  Bot
+  Bot,
+  Search as SearchIcon,
+  Smartphone as SmartphoneIcon,
+  Laptop as LaptopIcon,
+  Phone
 } from 'lucide-react';
 
 const PainPointsSection = () => {
@@ -227,6 +231,146 @@ const PainPointsSection = () => {
             <div className="flex items-center">
               <Link href="/contact" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
                 <span>Request Consultation</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Additional Cybersecurity Pain Points Row */}
+        <div className="text-center mt-20 mb-10 reveal" data-delay="1000">
+          <h2 className="text-2xl md:text-3xl font-montserrat font-bold mb-4">
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Cybersecurity</span> Solutions
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Beyond compliance, our advanced cybersecurity testing and protection solutions safeguard your organization against evolving threats.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 reveal" data-delay="1100">
+          {/* Security Testing Pain Point */}
+          <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300">
+            <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+              <SearchIcon className="text-[hsl(var(--secondary))] h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Security Testing & Assessment</h3>
+            <p className="text-muted-foreground mb-6">
+              Identify vulnerabilities before attackers do with our comprehensive security testing services that provide actionable remediation plans.
+            </p>
+            <div className="flex flex-col gap-2 mb-6">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/penetration-testing" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/vapt" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">VAPT (Vulnerability Assessment)</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/red-team" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Red Team Exercises</Link>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <Link href="/services/security-testing" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore Security Testing</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          
+          {/* Data Protection Pain Point */}
+          <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300">
+            <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+              <Database className="text-[hsl(var(--secondary))] h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Data Loss Prevention</h3>
+            <p className="text-muted-foreground mb-6">
+              Prevent unauthorized data exfiltration and secure sensitive information with comprehensive DLP solutions that provide visibility and control.
+            </p>
+            <div className="flex flex-col gap-2 mb-6">
+              <div className="flex items-center gap-2">
+                <Database className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/dlp" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Loss Prevention (DLP)</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/data-classification" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Classification</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/data-encryption" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Encryption Solutions</Link>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <Link href="/solutions/data-protection" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore Data Protection</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          
+          {/* Endpoint & Email Security Pain Point */}
+          <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300">
+            <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+              <Shield className="text-[hsl(var(--secondary))] h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Email & Web Security</h3>
+            <p className="text-muted-foreground mb-6">
+              Protect against phishing, malware, and web-based threats with advanced email security and web filtering solutions.
+            </p>
+            <div className="flex flex-col gap-2 mb-6">
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/email-security" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Email Security</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/web-filtering" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Web URL Filtering</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/phishing-protection" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Anti-Phishing Solutions</Link>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <Link href="/solutions/email-web-security" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore Email & Web Security</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          
+          {/* Mobile & Endpoint Security Pain Point */}
+          <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300 xl:col-span-3">
+            <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+              <SmartphoneIcon className="text-[hsl(var(--secondary))] h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Mobile & Endpoint Security</h3>
+            <p className="text-muted-foreground mb-6">
+              Secure your mobile workforce and endpoints with comprehensive device management and protection solutions.
+            </p>
+            <div className="flex flex-wrap gap-6 mb-6">
+              <div className="flex items-center gap-2">
+                <SmartphoneIcon className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/mdm" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Mobile Device Management (MDM)</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <LaptopIcon className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/endpoint-protection" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Endpoint Protection</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileText className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/byod-policy" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">BYOD Policy Development</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/mobile-threat-defense" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Mobile Threat Defense</Link>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <Link href="/solutions/mobile-security" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore Mobile & Endpoint Security</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
