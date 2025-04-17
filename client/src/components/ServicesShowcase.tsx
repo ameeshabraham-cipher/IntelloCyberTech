@@ -59,45 +59,45 @@ const ServicesShowcase = () => {
       description: "Navigate the requirements of the UAE Personal Data Protection Law with our specialized regional expertise.",
       tags: [
         { name: "Data Mapping" },
-        { name: "Risk Assessment" },
+        { name: "Privacy Framework" },
         { name: "Compliance Program" }
       ],
       link: "/services/uae-pdpl",
       delay: 400
     },
     {
-      icon: <Search className="h-6 w-6" />,
-      title: "IT Security Audit",
-      description: "Identify vulnerabilities and security gaps with our comprehensive security assessments and penetration testing.",
+      icon: <FileText className="h-6 w-6" />,
+      title: "Regulatory Compliance",
+      description: "Meet industry-specific regulatory requirements with our expertise in GDPR, HIPAA, PCI DSS, and other global compliance standards.",
       tags: [
-        { name: "Pen Testing" },
-        { name: "Vulnerability Assessment" },
-        { name: "Risk Analysis" }
+        { name: "Gap Assessment" },
+        { name: "Implementation" },
+        { name: "Certification Support" }
       ],
-      link: "/services/security-audit"
+      link: "/services/regulatory-compliance"
     },
     {
       icon: <FileText className="h-6 w-6" />,
-      title: "Policy Development",
-      description: "Create robust security policies and procedures tailored to your organization's specific requirements and risks.",
+      title: "Compliance Automation",
+      description: "Streamline compliance processes with our AI-powered tools that reduce manual effort and accelerate certification readiness.",
       tags: [
-        { name: "Custom Policies" },
-        { name: "Procedures" },
-        { name: "Implementation" }
+        { name: "Evidence Collection" },
+        { name: "Control Monitoring" },
+        { name: "Dashboard Reporting" }
       ],
-      link: "/services/policy-development",
+      link: "/services/compliance-automation",
       delay: 200
     },
     {
-      icon: <UserCheck className="h-6 w-6" />,
-      title: "vCISO Services",
-      description: "Get expert security leadership without the full-time cost with our Virtual Chief Information Security Officer services.",
+      icon: <Search className="h-6 w-6" />,
+      title: "Security Assessment",
+      description: "Identify vulnerabilities and security gaps with our comprehensive security assessments that support your compliance objectives.",
       tags: [
-        { name: "Strategy Development" },
-        { name: "Program Management" },
-        { name: "Board Reporting" }
+        { name: "Vulnerability Testing" },
+        { name: "Risk Analysis" },
+        { name: "Remediation Planning" }
       ],
-      link: "/services/vciso",
+      link: "/services/security-assessment",
       delay: 400
     }
   ];
@@ -110,11 +110,11 @@ const ServicesShowcase = () => {
             <span className="text-[hsl(var(--secondary))] font-medium">Our Expertise</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
-            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Security & Compliance</span> Solutions
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Compliance & Security</span> Solutions
           </h2>
           <p className="text-muted-foreground text-lg">
-            From regulatory compliance to advanced threat protection, our tailored services secure your 
-            business against evolving cyber threats.
+            From complex regulatory frameworks to strategic security controls, our expert services ensure your 
+            business meets compliance requirements while maintaining strong protection.
           </p>
         </div>
         
