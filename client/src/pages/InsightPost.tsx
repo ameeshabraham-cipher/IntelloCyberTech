@@ -14,7 +14,7 @@ const blogPosts = [
     category: 'GRC Services',
     tags: ['ISO 27001', 'Information Security', 'Compliance', 'ISMS'],
     slug: 'navigating-complex-landscape-iso-27001-2022',
-    image: './images/blog/iso-27001.svg'
+    image: '/images/blog/iso-27001.svg'
   },
   {
     id: '2',
@@ -25,7 +25,7 @@ const blogPosts = [
     category: 'GRC Services',
     tags: ['GDPR', 'Data Protection', 'Privacy', 'Compliance'],
     slug: 'gdpr-four-years-later-lessons-challenges',
-    image: './images/blog/gdpr.svg'
+    image: '/images/blog/gdpr.svg'
   },
   {
     id: '3',
@@ -36,7 +36,7 @@ const blogPosts = [
     category: 'GRC Services',
     tags: ['UAE PDPL', 'Data Protection', 'Compliance', 'Privacy'],
     slug: 'uae-pdpl-strategic-approaches-effective-implementation',
-    image: './images/blog/uae-pdpl.svg'
+    image: '/images/blog/uae-pdpl.svg'
   },
   {
     id: '4',
@@ -47,7 +47,7 @@ const blogPosts = [
     category: 'GRC Services',
     tags: ['SOC 2', 'Compliance', 'Auditing', 'Information Security'],
     slug: 'preparing-soc2-type-2-beyond-certification',
-    image: './images/blog/soc2.svg'
+    image: '/images/blog/soc2.svg'
   },
   {
     id: '5',
@@ -58,7 +58,7 @@ const blogPosts = [
     category: 'IT Security & Audit Services',
     tags: ['APT', 'Threat Detection', 'Cybersecurity', 'Incident Response'],
     slug: 'advanced-persistent-threats-detection-strategies',
-    image: './images/blog/threat-detection.svg'
+    image: '/images/blog/threat-detection.svg'
   },
   {
     id: '6',
@@ -69,7 +69,7 @@ const blogPosts = [
     category: 'IT Security & Audit Services',
     tags: ['Cloud Security', 'CSPM', 'DevSecOps', 'Infrastructure'],
     slug: 'cloud-security-posture-management-beyond-prevention',
-    image: './images/blog/cloud-security.svg'
+    image: '/images/blog/cloud-security.svg'
   },
   {
     id: '7',
@@ -80,7 +80,7 @@ const blogPosts = [
     category: 'IT Security & Audit Services',
     tags: ['Security Assessment', 'Hybrid Cloud', 'Risk Management', 'Compliance'],
     slug: 'effective-security-assessment-frameworks-hybrid',
-    image: './images/blog/security-assessment.svg'
+    image: '/images/blog/security-assessment.svg'
   },
   {
     id: '8',
@@ -91,7 +91,7 @@ const blogPosts = [
     category: 'IT Security & Audit Services',
     tags: ['Web3', 'Blockchain', 'Penetration Testing', 'Smart Contracts'],
     slug: 'web3-security-pentesting-blockchain-applications',
-    image: './images/blog/web3-security.svg'
+    image: '/images/blog/web3-security.svg'
   },
   {
     id: '9',
@@ -102,7 +102,7 @@ const blogPosts = [
     category: 'Cybersecurity Solutions',
     tags: ['vCISO', 'Security Leadership', 'Strategy', 'Program Management'],
     slug: 'building-effective-vciso-program-beyond-advisory',
-    image: './images/blog/vciso.svg'
+    image: '/images/blog/vciso.svg'
   },
   {
     id: '10',
@@ -113,7 +113,7 @@ const blogPosts = [
     category: 'Cybersecurity Solutions',
     tags: ['Zero Trust', 'Financial Security', 'Architecture', 'Authentication'],
     slug: 'zero-trust-architecture-implementation-financial',
-    image: './images/blog/zero-trust.svg'
+    image: '/images/blog/zero-trust.svg'
   },
   {
     id: '11',
@@ -124,7 +124,7 @@ const blogPosts = [
     category: 'Cybersecurity Solutions',
     tags: ['Data Privacy', 'Cross-Border', 'MENA', 'Compliance'],
     slug: 'cross-border-data-transfers-regulatory-complexity-mena',
-    image: './images/blog/data-privacy.svg'
+    image: '/images/blog/data-privacy.svg'
   },
   {
     id: '12',
@@ -135,7 +135,7 @@ const blogPosts = [
     category: 'Cybersecurity Solutions',
     tags: ['Multi-Cloud', 'Cloud Security', 'DevSecOps', 'Governance'],
     slug: 'secure-multi-cloud-strategy-diverse-ecosystems',
-    image: './images/blog/multi-cloud.svg'
+    image: '/images/blog/multi-cloud.svg'
   },
   {
     id: '13',
@@ -146,7 +146,7 @@ const blogPosts = [
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Compliance', 'Automation', 'Machine Learning'],
     slug: 'ai-compliance-automation-beyond-rule-based',
-    image: './images/blog/ai-compliance.svg'
+    image: '/images/blog/ai-compliance.svg'
   },
   {
     id: '14',
@@ -157,7 +157,7 @@ const blogPosts = [
     category: 'AI-Powered Solutions',
     tags: ['AI Ethics', 'Governance', 'Compliance', 'Risk Management'],
     slug: 'ethical-ai-governance-regulated-industries',
-    image: './images/blog/ai-ethics.svg'
+    image: '/images/blog/ai-ethics.svg'
   },
   {
     id: '15',
@@ -168,7 +168,7 @@ const blogPosts = [
     category: 'AI-Powered Solutions',
     tags: ['Machine Learning', 'Threat Detection', 'SIEM', 'Security Operations'],
     slug: 'machine-learning-threat-detection-false-positives',
-    image: './images/blog/machine-learning.svg'
+    image: '/images/blog/machine-learning.svg'
   },
   {
     id: '16',
@@ -179,7 +179,7 @@ const blogPosts = [
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Incident Response', 'Automation', 'Security Operations'],
     slug: 'autonomous-security-response-ai-incident-containment',
-    image: './images/blog/incident-response.svg'
+    image: '/images/blog/incident-response.svg'
   },
   {
     id: '17',
@@ -190,7 +190,7 @@ const blogPosts = [
     category: 'Industry Insights',
     tags: ['Healthcare', 'Cybersecurity', 'HIPAA', 'Patient Data'],
     slug: 'healthcare-cybersecurity-patient-care-data-protection',
-    image: './images/blog/healthcare.svg'
+    image: '/images/blog/healthcare.svg'
   },
   {
     id: '18',
@@ -201,7 +201,7 @@ const blogPosts = [
     category: 'Industry Insights',
     tags: ['Financial Services', 'Digital Banking', 'Cybersecurity', 'Fraud Prevention'],
     slug: 'digital-banking-security-threats-defensive-strategies',
-    image: './images/blog/banking.svg'
+    image: '/images/blog/banking.svg'
   },
   {
     id: '19',
@@ -212,7 +212,7 @@ const blogPosts = [
     category: 'Industry Insights',
     tags: ['Government', 'Cybersecurity', 'Frameworks', 'MENA'],
     slug: 'government-cybersecurity-frameworks-mena',
-    image: './images/blog/government.svg'
+    image: '/images/blog/government.svg'
   },
   {
     id: '20',
@@ -223,7 +223,7 @@ const blogPosts = [
     category: 'Industry Insights',
     tags: ['E-Commerce', 'Customer Data', 'Security', 'PCI DSS'],
     slug: 'ecommerce-security-protecting-customer-data',
-    image: './images/blog/ecommerce.svg'
+    image: '/images/blog/ecommerce.svg'
   }
 ];
 
