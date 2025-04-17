@@ -201,23 +201,23 @@ const PainPointsSection = () => {
             </div>
           </div>
           
-          {/* Pain Point 6 - Integrated Security */}
+          {/* Pain Point 6 - Integrated GRC */}
           <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300 reveal" data-delay="1000">
             <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
               <Lock className="text-[hsl(var(--secondary))] h-6 w-6" />
             </div>
-            <h3 className="text-xl font-montserrat font-semibold mb-4">Fragmented Security Approach</h3>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Fragmented Compliance & Governance</h3>
             <p className="text-muted-foreground mb-6">
-              Replace siloed security tools and disjointed processes with our integrated cybersecurity framework and unified risk management approach.
+              Replace siloed compliance tools and disjointed governance processes with our integrated GRC framework and unified risk management approach.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <div className="flex items-center gap-2">
                 <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/solutions/cybersecurity-frameworks" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Cybersecurity Frameworks</Link>
+                <Link href="/solutions/integrated-grc" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Integrated GRC Framework</Link>
               </div>
               <div className="flex items-center gap-2">
                 <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/solutions/risk-management" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Management Solutions</Link>
+                <Link href="/solutions/compliance-management" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Compliance Management</Link>
               </div>
               <div className="flex items-center gap-2">
                 <Database className="text-[hsl(var(--secondary))] h-4 w-4" />

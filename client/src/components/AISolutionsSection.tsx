@@ -51,8 +51,8 @@ const AISolutionsSection = () => {
                   <Network className="text-[hsl(var(--secondary))] h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-montserrat font-semibold mb-2">Predictive Risk Analytics</h3>
-                  <p className="text-muted-foreground">Identify potential security incidents before they occur with machine learning algorithms that detect anomalies.</p>
+                  <h3 className="font-montserrat font-semibold mb-2">Regulatory Change Management</h3>
+                  <p className="text-muted-foreground">Stay ahead of evolving compliance requirements with AI that monitors regulatory changes and automatically updates your compliance programs.</p>
                 </div>
               </div>
               
@@ -69,7 +69,7 @@ const AISolutionsSection = () => {
             
             <Link href="/solutions/ai">
               <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
-                Explore AI Solutions
+                Explore AI Compliance Solutions
               </Button>
             </Link>
           </div>
