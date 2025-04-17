@@ -25,11 +25,11 @@ const PainPointsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 reveal">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
-            Facing <span className="text-[hsl(var(--secondary))]">Cybersecurity Challenges?</span> We Have Solutions
+            Facing <span className="text-[hsl(var(--secondary))]">Compliance Challenges?</span> We Have Solutions
           </h2>
           <p className="text-muted-foreground text-lg">
-            In today's digital landscape, businesses face increasingly complex security threats and compliance requirements. 
-            We help you navigate these challenges with tailored solutions that address your specific pain points.
+            In today's regulatory landscape, businesses face increasingly complex compliance requirements and security demands. 
+            We help you navigate this regulatory maze with tailored solutions that address your specific compliance and security pain points.
           </p>
         </div>
         
@@ -69,71 +69,71 @@ const PainPointsSection = () => {
             </div>
           </div>
           
-          {/* Pain Point 2 - Security Vulnerabilities */}
+          {/* Pain Point 2 - Compliance Gaps & Security Controls */}
           <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300 reveal" data-delay="200">
             <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
               <ShieldAlert className="text-[hsl(var(--secondary))] h-6 w-6" />
             </div>
-            <h3 className="text-xl font-montserrat font-semibold mb-4">Security Vulnerabilities & Threats</h3>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Compliance Gaps & Controls Assessment</h3>
             <p className="text-muted-foreground mb-6">
-              Identify and remediate security gaps before they can be exploited with our comprehensive assessment and testing services.
+              Identify and remediate compliance gaps and control weaknesses before they impact your certification readiness or regulatory standing.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <div className="flex items-center gap-2">
+                <FileSearch className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/compliance-gap-analysis" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Compliance Gap Analysis</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileSearch className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/controls-assessment" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Controls Assessment</Link>
+              </div>
+              <div className="flex items-center gap-2">
                 <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/penetration-testing" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <FileSearch className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/security-assessment" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Security Assessment</Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <FileSearch className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/it-security-audit" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">IT Security Audit</Link>
+                <Link href="/services/risk-assessment" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Assessment</Link>
               </div>
               <div className="flex items-center gap-2">
                 <Cloud className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/cloud-security" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Security</Link>
+                <Link href="/services/cloud-compliance" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Cloud Compliance</Link>
               </div>
             </div>
             <div className="flex items-center">
-              <Link href="/solutions/vulnerability-management" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
-                <span>Explore Vulnerability Management</span>
+              <Link href="/solutions/compliance-management" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore Compliance Management</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
           
-          {/* Pain Point 3 - Security Expertise Gap */}
+          {/* Pain Point 3 - Compliance & Security Expertise Gap */}
           <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300 reveal" data-delay="400">
             <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
               <UserCog className="text-[hsl(var(--secondary))] h-6 w-6" />
             </div>
-            <h3 className="text-xl font-montserrat font-semibold mb-4">Security Expertise & Resource Gap</h3>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">Compliance & Governance Expertise Gap</h3>
             <p className="text-muted-foreground mb-6">
-              Access top-tier cybersecurity talent and expertise without the cost of a full-time security team or executive.
+              Access top-tier compliance and governance expertise without the cost of a full-time compliance officer or dedicated GRC team.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <div className="flex items-center gap-2">
                 <UserCog className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/vciso" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Virtual CISO Services</Link>
+                <Link href="/services/virtual-compliance-officer" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Virtual Compliance Officer</Link>
               </div>
               <div className="flex items-center gap-2">
                 <FileText className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/policy-development" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy Development</Link>
+                <Link href="/services/policy-development" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy & Process Development</Link>
               </div>
               <div className="flex items-center gap-2">
                 <Lock className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/data-privacy" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Privacy Consultation</Link>
+                <Link href="/services/data-privacy" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Data Privacy Framework</Link>
               </div>
               <div className="flex items-center gap-2">
                 <Bot className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/iso42001" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 42001 AI Management</Link>
+                <Link href="/services/iso42001" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 42001 AI Governance</Link>
               </div>
             </div>
             <div className="flex items-center">
-              <Link href="/solutions/risk-management" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
-                <span>Explore Risk Management Solutions</span>
+              <Link href="/solutions/grc-consulting" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore GRC Consulting Services</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>

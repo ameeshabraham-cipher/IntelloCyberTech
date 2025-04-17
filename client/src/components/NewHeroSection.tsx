@@ -36,14 +36,14 @@ const NewHeroSection = () => {
               </div>
             </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
-              <span className="text-[hsl(var(--secondary))] font-medium">Cybersecurity & Compliance Experts</span>
+              <span className="text-[hsl(var(--secondary))] font-medium">Compliance & Cybersecurity Experts</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Cyber Solutions</span> for Modern Enterprises
+              Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Compliance Solutions</span> for Modern Enterprises
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Intello Cyber Technologies combines AI-powered analytics with expert consultancy to deliver 
-              comprehensive cybersecurity and compliance solutions.
+              Intello Cyber Technologies combines regulatory expertise with AI-powered analytics to deliver 
+              comprehensive compliance and security solutions for today's complex regulatory landscape.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/assessment">
