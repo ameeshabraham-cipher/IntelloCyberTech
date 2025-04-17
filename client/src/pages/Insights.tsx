@@ -50,7 +50,7 @@ const blogPosts: BlogPost[] = [
     author: 'Maria Rodriguez',
     category: 'GRC Services',
     tags: ['GDPR', 'Data Protection', 'Privacy', 'Compliance'],
-    image: '/images/blog/gdpr.svg',
+    image: './images/blog/gdpr.svg',
     slug: 'gdpr-four-years-later-lessons-challenges'
   },
   {
@@ -62,7 +62,7 @@ const blogPosts: BlogPost[] = [
     author: 'Fatima Al-Mansouri',
     category: 'GRC Services',
     tags: ['UAE PDPL', 'Data Protection', 'Compliance', 'Privacy'],
-    image: '/images/blog/uae-pdpl.svg',
+    image: './images/blog/uae-pdpl.svg',
     slug: 'uae-pdpl-strategic-approaches-effective-implementation'
   },
   {
@@ -74,7 +74,7 @@ const blogPosts: BlogPost[] = [
     author: 'Michael Chen',
     category: 'GRC Services',
     tags: ['SOC 2', 'Compliance', 'Auditing', 'Information Security'],
-    image: '/images/blog/soc2.svg',
+    image: './images/blog/soc2.svg',
     slug: 'preparing-soc2-type-2-beyond-certification'
   },
   
@@ -88,7 +88,7 @@ const blogPosts: BlogPost[] = [
     author: 'James Wilson',
     category: 'IT Security & Audit Services',
     tags: ['APT', 'Threat Detection', 'Cybersecurity', 'Incident Response'],
-    image: '/images/blog/apt.svg',
+    image: './images/blog/apt.svg',
     slug: 'advanced-persistent-threats-detection-strategies'
   },
   {
@@ -100,7 +100,7 @@ const blogPosts: BlogPost[] = [
     author: 'Sarah Johnson',
     category: 'IT Security & Audit Services',
     tags: ['Cloud Security', 'CSPM', 'DevSecOps', 'Infrastructure'],
-    image: '/images/blog/cloud-security.svg',
+    image: './images/blog/cloud-security.svg',
     slug: 'cloud-security-posture-management-beyond-prevention'
   },
   {
@@ -112,7 +112,7 @@ const blogPosts: BlogPost[] = [
     author: 'Rajiv Patel',
     category: 'IT Security & Audit Services',
     tags: ['Security Assessment', 'Hybrid Cloud', 'Risk Management', 'Compliance'],
-    image: '/images/blog/security-assessment.svg',
+    image: './images/blog/security-assessment.svg',
     slug: 'effective-security-assessment-frameworks-hybrid'
   },
   {
@@ -124,7 +124,7 @@ const blogPosts: BlogPost[] = [
     author: 'Elena Petrova',
     category: 'IT Security & Audit Services',
     tags: ['Web3', 'Blockchain', 'Penetration Testing', 'Smart Contracts'],
-    image: '/images/blog/web3-security.svg',
+    image: './images/blog/web3-security.svg',
     slug: 'web3-security-pentesting-blockchain-applications'
   },
   
@@ -138,7 +138,7 @@ const blogPosts: BlogPost[] = [
     author: 'David Thompson',
     category: 'Cybersecurity Solutions',
     tags: ['vCISO', 'Security Leadership', 'Strategy', 'Program Management'],
-    image: '/images/blog/vciso.svg',
+    image: './images/blog/vciso.svg',
     slug: 'building-effective-vciso-program-beyond-advisory'
   },
   {
@@ -150,7 +150,7 @@ const blogPosts: BlogPost[] = [
     author: 'Omar Al-Nasser',
     category: 'Cybersecurity Solutions',
     tags: ['Zero Trust', 'Financial Security', 'Architecture', 'Authentication'],
-    image: '/images/blog/zero-trust.svg',
+    image: './images/blog/zero-trust.svg',
     slug: 'zero-trust-architecture-implementation-financial'
   },
   {
@@ -162,7 +162,7 @@ const blogPosts: BlogPost[] = [
     author: 'Layla Ibrahim',
     category: 'Cybersecurity Solutions',
     tags: ['Data Privacy', 'Cross-Border', 'MENA', 'Compliance'],
-    image: '/images/blog/data-transfers.svg',
+    image: './images/blog/data-transfers.svg',
     slug: 'cross-border-data-transfers-regulatory-complexity-mena'
   },
   {
@@ -174,7 +174,7 @@ const blogPosts: BlogPost[] = [
     author: 'Thomas Anderson',
     category: 'Cybersecurity Solutions',
     tags: ['Multi-Cloud', 'Cloud Security', 'DevSecOps', 'Governance'],
-    image: '/images/blog/multi-cloud.svg',
+    image: './images/blog/multi-cloud.svg',
     slug: 'secure-multi-cloud-strategy-diverse-ecosystems'
   },
   
@@ -188,7 +188,7 @@ const blogPosts: BlogPost[] = [
     author: 'Sophia Martinez',
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Compliance', 'Automation', 'Machine Learning'],
-    image: '/images/blog/ai-compliance.svg',
+    image: './images/blog/ai-compliance.svg',
     slug: 'ai-compliance-automation-beyond-rule-based'
   },
   {
@@ -200,7 +200,7 @@ const blogPosts: BlogPost[] = [
     author: 'Karim Nasser',
     category: 'AI-Powered Solutions',
     tags: ['AI Ethics', 'Governance', 'Compliance', 'Risk Management'],
-    image: '/images/blog/ethical-ai.svg',
+    image: './images/blog/ethical-ai.svg',
     slug: 'ethical-ai-governance-regulated-industries'
   },
   {
@@ -212,7 +212,7 @@ const blogPosts: BlogPost[] = [
     author: 'Alex Rivera',
     category: 'AI-Powered Solutions',
     tags: ['Machine Learning', 'Threat Detection', 'SIEM', 'Security Operations'],
-    image: '/images/blog/ml-threat-detection.svg',
+    image: './images/blog/ml-threat-detection.svg',
     slug: 'machine-learning-threat-detection-false-positives'
   },
   {
@@ -224,7 +224,7 @@ const blogPosts: BlogPost[] = [
     author: 'Nadia Malik',
     category: 'AI-Powered Solutions',
     tags: ['AI', 'Incident Response', 'Automation', 'Security Operations'],
-    image: '/images/blog/autonomous-security.svg',
+    image: './images/blog/autonomous-security.svg',
     slug: 'autonomous-security-response-ai-incident-containment'
   },
   
@@ -238,7 +238,7 @@ const blogPosts: BlogPost[] = [
     author: 'Jennifer Lee',
     category: 'Industry Insights',
     tags: ['Healthcare', 'Cybersecurity', 'HIPAA', 'Patient Data'],
-    image: '/images/blog/healthcare-security.svg',
+    image: './images/blog/healthcare-security.svg',
     slug: 'healthcare-cybersecurity-patient-care-data-protection'
   },
   {
@@ -250,7 +250,7 @@ const blogPosts: BlogPost[] = [
     author: 'Hassan Al-Farsi',
     category: 'Industry Insights',
     tags: ['Financial Services', 'Digital Banking', 'Cybersecurity', 'Fraud Prevention'],
-    image: '/images/blog/digital-banking.svg',
+    image: './images/blog/digital-banking.svg',
     slug: 'digital-banking-security-threats-defensive-strategies'
   },
   {
@@ -262,7 +262,7 @@ const blogPosts: BlogPost[] = [
     author: 'Amira Saeed',
     category: 'Industry Insights',
     tags: ['Government', 'Cybersecurity', 'Frameworks', 'MENA'],
-    image: '/images/blog/government-security.svg',
+    image: './images/blog/government-security.svg',
     slug: 'government-cybersecurity-frameworks-mena'
   },
   {
@@ -274,7 +274,7 @@ const blogPosts: BlogPost[] = [
     author: 'Mark Johnson',
     category: 'Industry Insights',
     tags: ['E-Commerce', 'Customer Data', 'Security', 'PCI DSS'],
-    image: '/images/blog/ecommerce-security.svg',
+    image: './images/blog/ecommerce-security.svg',
     slug: 'ecommerce-security-protecting-customer-data'
   }
 ];
