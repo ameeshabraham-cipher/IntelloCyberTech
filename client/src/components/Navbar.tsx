@@ -58,7 +58,7 @@ const Navbar = () => {
               <div className="flex items-center">
                 <img 
                   src="/images/intello-logo.png" 
-                  alt="Intello Cyber Technologies" 
+                  alt="Intello." 
                   className="h-12 w-auto"
                 />
               </div>
