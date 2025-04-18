@@ -20,7 +20,7 @@ const audienceData: AudienceTabProps[] = [
   {
     id: 'executives',
     icon: <Users className="h-5 w-5" />,
-    title: 'For Business Executives',
+    title: 'For Business Owners',
     painPoints: [
       'Balancing innovation with security and compliance requirements',
       'Navigating complex regulatory landscapes in the GCC region',
