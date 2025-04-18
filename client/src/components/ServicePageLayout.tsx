@@ -52,7 +52,7 @@ const ServicePageLayout = ({
 
   // Set page title on mount
   useEffect(() => {
-    document.title = `${title} | Intello Cyber Technologies`;
+    document.title = `${title} | Intello.`;
   }, [title]);
 
   // Default animation if none provided

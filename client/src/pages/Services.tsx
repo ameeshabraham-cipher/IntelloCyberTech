@@ -33,7 +33,7 @@ const Services = () => {
   
   // Set page title on mount
   useEffect(() => {
-    document.title = 'Our Services | Intello Cyber Technologies';
+    document.title = 'Our Services | Intello.';
   }, []);
 
   // Service categories data

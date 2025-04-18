@@ -14,7 +14,7 @@ const Contact = () => {
   
   // Set page title on mount
   useEffect(() => {
-    document.title = 'Contact Us | Intello Cyber Technologies';
+    document.title = 'Contact Us | Intello.';
   }, []);
 
   const [formData, setFormData] = useState({
@@ -108,7 +108,7 @@ const Contact = () => {
               <span className="text-[hsl(var(--secondary))] font-medium">Get In Touch</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-montserrat font-bold mb-6">
-              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Intello Cyber</span> Technologies
+              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Intello.</span>
             </h1>
             <p className="text-muted-foreground text-lg mb-8">
               Reach out to our cybersecurity experts for personalized guidance on securing your business and ensuring compliance.
@@ -299,7 +299,7 @@ const Contact = () => {
                     style={{ border: 0 }} 
                     allowFullScreen={true} 
                     loading="lazy"
-                    title="Intello Cyber Technologies Office Location"
+                    title="Intello. Office Location"
                   ></iframe>
                 </div>
               </div>

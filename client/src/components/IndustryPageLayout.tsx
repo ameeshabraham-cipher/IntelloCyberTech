@@ -69,7 +69,7 @@ const IndustryPageLayout = ({
 
   // Set page title on mount
   useEffect(() => {
-    document.title = `${title} Industry Solutions | Intello Cyber Technologies`;
+    document.title = `${title} Industry Solutions | Intello.`;
   }, [title]);
 
   // Default animation if none provided
