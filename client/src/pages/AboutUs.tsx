@@ -24,28 +24,46 @@ const AboutUs = () => {
   // Team members data
   const teamMembers = [
     {
-      name: "Sarah Thompson",
-      position: "Chief Executive Officer",
-      bio: "With over 20 years in cybersecurity leadership, Sarah has helped numerous enterprises implement robust security frameworks.",
-      certifications: ["CISSP", "CISM"]
+      name: "Sajeev Varghese",
+      position: "CEO",
+      bio: "A seasoned technology leader with over two decades of experience, specializing in Banking and Finance, Governance, Risk & Compliance (GRC), Process Re-engineering, and Regulatory Technology (RegTech).",
+      certifications: ["GRC Specialist", "RegTech Expert"]
     },
     {
-      name: "Ahmed Al-Farsi",
-      position: "Chief Technology Officer",
-      bio: "Ahmed specializes in AI-driven security solutions and has led the development of our innovative compliance automation platform.",
-      certifications: ["CISSP", "CEH", "AI Specialist"]
+      name: "Emmanuel Fernandez",
+      position: "Operations Manager",
+      bio: "Emmanuel leads the operations driving efficiency and excellence in cybersecurity service delivery. He is experienced in managing teams, optimizing workflows, and ensuring SLA compliance.",
+      certifications: ["Operations Management", "Service Delivery"]
     },
     {
-      name: "James Wilson",
-      position: "Lead Security Consultant",
-      bio: "James brings extensive experience in security auditing and penetration testing from his work with global financial institutions.",
-      certifications: ["OSCP", "CISA"]
+      name: "Ameesh Abraham",
+      position: "Head of GRC & Audit",
+      bio: "With extensive experience in IT Governance, Risk, and Compliance (GRC), Ameesh specializes in helping organizations navigate complex regulatory landscapes while strengthening their cybersecurity posture.",
+      certifications: ["ISO 27001", "SOC", "GDPR", "NESA", "UAE-PDPL"]
     },
     {
-      name: "Priya Sharma",
-      position: "Compliance Director",
-      bio: "Priya is an expert in international regulatory frameworks including ISO 27001, SOC 2, GDPR, and regional compliance requirements.",
-      certifications: ["ISO 27001 LA", "GDPR Practitioner"]
+      name: "Kanika Gandhi",
+      position: "GRC & Cybersecurity Consultant",
+      bio: "A cybersecurity professional with a robust background in offensive security, Governance, Risk, and Compliance (GRC), and AI research.",
+      certifications: ["Penetration Testing", "Risk Management"]
+    },
+    {
+      name: "Surbhi Aggarwal",
+      position: "InfoSec Auditor",
+      bio: "Lead auditor/consultant for Management System. Skilled in ISO 27001, Quality Management, Quality Assurance, ISO 22301, ISO 20000-1, ISO 18788, ISO 14001, ISO 39001, Risk Management and other Management Systems.",
+      certifications: ["ISO 27001", "Risk Management"]
+    },
+    {
+      name: "Rakesh K P",
+      position: "Network Security Engineer",
+      bio: "Comes with extensive experience in Network Security and enterprise infrastructure. Skilled in firewalls, intrusion detection systems, threat mitigation and penetration testing.",
+      certifications: ["Network Security", "Penetration Testing"]
+    },
+    {
+      name: "Dhanaraman Gopalakrishnan",
+      position: "Microsoft Solution Engineer",
+      bio: "Specializes in Microsoft Solution Architecture designing scalable, cloud-first solutions. Expert in Azure, Microsoft 365, and enterprise application integration.",
+      certifications: ["Azure", "Microsoft 365"]
     }
   ];
 
@@ -151,11 +169,11 @@ const AboutUs = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-card p-6 rounded-xl border border-[hsl(var(--secondary))]/10 reveal"
+                className="bg-card p-6 rounded-xl border border-[hsl(var(--secondary))]/10 reveal h-full flex flex-col"
                 data-delay={index * 100}
               >
                 <div className="w-20 h-20 bg-background rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -166,7 +184,7 @@ const AboutUs = () => {
                 <h3 className="text-xl font-montserrat font-semibold mb-2 text-center">{member.name}</h3>
                 <p className="text-[hsl(var(--secondary))] text-sm mb-4 text-center">{member.position}</p>
                 <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {member.certifications.map((cert, i) => (
                     <span key={i} className="bg-[hsl(var(--secondary))]/10 text-[hsl(var(--secondary))] text-xs px-2 py-1 rounded-full">
                       {cert}
