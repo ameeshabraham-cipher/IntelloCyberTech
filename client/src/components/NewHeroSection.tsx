@@ -35,7 +35,7 @@ const ClientLogosCarousel = () => {
 
   return (
     <Carousel
-      className="w-full max-w-5xl mx-auto"
+      className="w-full max-w-6xl mx-auto"
       setApi={setApi}
       opts={{
         align: "start",
@@ -44,20 +44,20 @@ const ClientLogosCarousel = () => {
     >
       <CarouselContent className="py-4">
         {logos.map((logo, index) => (
-          <CarouselItem key={index} className="basis-1/4 pl-4">
-            <div className="relative h-32 rounded-lg border border-gray-200 bg-white flex flex-col items-center justify-center p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-md group">
+          <CarouselItem key={index} className="basis-1/6 pl-4">
+            <div className="relative h-28 rounded-lg border border-gray-200 bg-white flex flex-col items-center justify-center p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-md group">
               {logo.imagePath ? (
                 <img 
                   src={logo.imagePath} 
                   alt={`${logo.name} logo`} 
-                  className="h-16 object-contain mb-2 filter grayscale group-hover:filter-none transition-all duration-300"
+                  className="h-14 object-contain mb-1 filter grayscale group-hover:filter-none transition-all duration-300"
                 />
               ) : (
-                <div className="text-gray-600 font-semibold text-xl text-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div className="text-gray-600 font-semibold text-lg text-center mb-1 grayscale group-hover:grayscale-0 transition-all duration-300">
                   {logo.name}
                 </div>
               )}
-              <div className="text-gray-500 text-xs text-center">Trusted Partner</div>
+              <div className="text-gray-500 text-[10px] text-center">Trusted Partner</div>
             </div>
           </CarouselItem>
         ))}
