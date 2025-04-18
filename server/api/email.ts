@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
+import { db } from '../db';
+import { contactForms, assessmentRequests } from '@shared/schema';
 
 // Define validation schemas
 const contactFormSchema = z.object({
@@ -26,11 +28,6 @@ const assessmentRequestSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 type AssessmentRequestData = z.infer<typeof assessmentRequestSchema>;
 
-// Simple in-memory storage for form submissions (no database needed)
-// This will reset on server restart, but emails will still be sent
-const contactFormSubmissions: ContactFormData[] = [];
-const assessmentRequests: AssessmentRequestData[] = [];
-
 // Function to log email (to be replaced with SendGrid integration later)
 async function sendEmail(to: string, subject: string, body: string): Promise<boolean> {
   // For now, we'll just log form submissions to the console
@@ -56,8 +53,16 @@ router.post('/contact', async (req, res) => {
     // Validate the request body
     const formData = contactFormSchema.parse(req.body);
     
-    // Store the submission (for demo purposes)
-    contactFormSubmissions.push(formData);
+    // Store in database
+    await db.insert(contactForms).values({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      company: formData.company || null,
+      subject: formData.subject || null,
+      message: formData.message,
+      service: formData.service || null,
+    });
     
     // Format email body
     const emailBody = `
@@ -107,8 +112,16 @@ router.post('/assessment-request', async (req, res) => {
     // Validate the request body
     const requestData = assessmentRequestSchema.parse(req.body);
     
-    // Store the submission (for demo purposes)
-    assessmentRequests.push(requestData);
+    // Store in database
+    await db.insert(assessmentRequests).values({
+      name: requestData.name,
+      email: requestData.email,
+      phone: requestData.phone || null,
+      company: requestData.company,
+      industry: requestData.industry || null,
+      message: requestData.message || null,
+      service: requestData.service || 'assessment',
+    });
     
     // Format email body
     const emailBody = `
