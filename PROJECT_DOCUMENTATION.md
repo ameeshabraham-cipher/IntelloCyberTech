@@ -1,8 +1,8 @@
-# Intello Cyber Technologies Website Documentation
+# Intello. Website Documentation
 
 ## Project Overview
 
-This is a modern, professional website for Intello Cyber Technologies, showcasing their expertise in cybersecurity services, governance, risk management, compliance (GRC), audit, AI-powered compliance automation, and more.
+This is a modern, professional website for Intello., showcasing their expertise in cybersecurity services, governance, risk management, compliance (GRC), audit, AI-powered compliance automation, and more.
 
 ### Key Features
 
