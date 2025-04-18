@@ -52,7 +52,7 @@ const MoneyExchangesPage = () => {
         },
         {
           title: "Secure Payment Infrastructure",
-          description: "Build robust, multi-layered security for payment processing systems, ensuring data protection throughout the transaction lifecycle.",
+          description: "Establish robust, multi-layered security for payment processing systems, ensuring data protection throughout the transaction lifecycle.",
           icon: <DollarSign className="h-10 w-10 text-[hsl(var(--primary))]" />
         },
         {
