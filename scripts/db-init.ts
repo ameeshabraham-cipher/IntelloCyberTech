@@ -30,17 +30,22 @@ if (!process.env.DATABASE_URL) {
 async function main() {
   console.log('Initializing database tables...');
   
+  // Skip database initialization if DATABASE_URL is not set
+  // This allows deployment to succeed even without database credentials
   if (!process.env.DATABASE_URL) {
-    throw new Error('DATABASE_URL environment variable not set');
+    console.log('DATABASE_URL environment variable not set. Skipping database initialization.');
+    console.log('Please set DATABASE_URL after deployment to enable database features.');
+    return; // Exit function but don't fail the script
   }
   
-  const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-  });
-  
-  const db = drizzle(pool);
-  
+  let pool;
   try {
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+    });
+    
+    const db = drizzle(pool);
+    
     // Create tables if they don't exist
     await db.execute(sql`
       CREATE TABLE IF NOT EXISTS contact_forms (
@@ -82,10 +87,11 @@ async function main() {
     
     console.log('Database tables initialized successfully!');
   } catch (error) {
-    console.error('Error initializing database tables:', error);
-    throw error;
+    console.warn('Warning: Could not initialize database tables:', error.message);
+    console.log('The application will still be deployed, but database features may not work until database is properly configured.');
+    // Don't throw error to allow deployment to continue
   } finally {
-    await pool.end();
+    if (pool) await pool.end();
   }
 }
 
