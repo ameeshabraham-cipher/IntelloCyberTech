@@ -28,7 +28,7 @@ const HeroSection = () => {
               Empowering Businesses with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Future-Proof</span> Security Solutions
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Intello Cyber Technologies delivers cutting-edge GRC, Audit, and AI-Powered Compliance Automation 
+              Intello. delivers cutting-edge GRC, Audit, and AI-Powered Compliance Automation 
               services tailored to your business needs.
             </p>
             <div className="flex flex-wrap gap-4">

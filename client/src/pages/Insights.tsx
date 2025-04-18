@@ -90,7 +90,7 @@ const blogPosts: BlogPost[] = [
       By adopting a structured implementation approach and addressing common obstacles proactively, 
       organizations can enhance their security posture while achieving compliance with the updated standard.</p>
       
-      <p>At Intello Cyber Technologies, we provide comprehensive ISO 27001:2022 implementation services, 
+      <p>At Intello., we provide comprehensive ISO 27001:2022 implementation services, 
       guiding organizations through each stage of the certification process. Contact our team to learn 
       how we can support your compliance journey.</p>
     `,
@@ -414,7 +414,7 @@ const blogPosts: BlogPost[] = [
       as your business and the threat landscape change. Regular review and refinement ensure 
       your security approach remains effective and aligned with your organizational objectives.</p>
       
-      <p>At Intello Cyber Technologies, we help organizations develop and implement customized 
+      <p>At Intello., we help organizations develop and implement customized 
       cybersecurity strategies that balance protection with business enablement. Contact us to learn 
       how we can support your security journey.</p>
     `,
@@ -487,7 +487,7 @@ const InsightsPage: React.FC = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-background-dark to-background py-20 px-4 sm:px-6 lg:px-8 border-b border-border">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Intello Cyber Insights</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Intello. Insights</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Expert perspectives on cybersecurity, compliance, and emerging technologies in the digital landscape
           </p>
