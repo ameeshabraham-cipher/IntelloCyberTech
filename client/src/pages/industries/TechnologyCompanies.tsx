@@ -23,8 +23,8 @@ const TechnologyCompaniesPage = () => {
           severity: "high"
         },
         {
-          title: "Secure Development",
-          description: "Integrating security throughout the software development lifecycle without impeding innovation or speed.",
+          title: "Secure Operations",
+          description: "Integrating security throughout technology operations without impeding innovation or speed.",
           severity: "high"
         },
         {
@@ -41,8 +41,8 @@ const TechnologyCompaniesPage = () => {
       
       solutions={[
         {
-          title: "Secure SDLC Implementation",
-          description: "Integrate security throughout the software development lifecycle with automated testing, code analysis, and security gates.",
+          title: "SDLC Security Assessment",
+          description: "Evaluate and enhance security practices in the software development lifecycle through assessment of existing processes and security controls.",
           icon: <Code className="h-10 w-10 text-[hsl(var(--primary))]" />
         },
         {
@@ -69,13 +69,13 @@ const TechnologyCompaniesPage = () => {
       
       caseStudy={{
         clientType: "Enterprise SaaS Provider",
-        challenge: "A rapidly growing SaaS company needed to strengthen their product security and achieve compliance certifications to enter enterprise markets without slowing their development pace.",
-        solution: "Intello implemented a comprehensive product security program, including secure SDLC practices, cloud security architecture, and automated compliance controls.",
+        challenge: "A rapidly growing SaaS company needed to strengthen their product security and achieve compliance certifications to enter enterprise markets without affecting their operational efficiency.",
+        solution: "Intello implemented a comprehensive product security program, including security assessment practices, cloud security architecture, and automated compliance controls.",
         results: [
           "Achieved SOC 2 Type II certification in just 4 months",
           "Security vulnerabilities in product reduced by 87%",
           "Successfully entered enterprise market with proven security posture",
-          "Security automation integrated into CI/CD pipeline with minimal impact on development velocity"
+          "Security automation integrated into operational processes with minimal impact on business efficiency"
         ]
       }}
       
