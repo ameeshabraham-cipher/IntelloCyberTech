@@ -18,7 +18,7 @@ const GovernmentPage = () => {
       title="Government"
       subtitle="& Public Sector"
       description="Specialized cybersecurity and compliance solutions for government entities, public institutions, and regulatory bodies facing nation-state threats and critical infrastructure protection requirements."
-      overview="Government and public sector organizations face unique cybersecurity challenges with high-profile threat actors, critical infrastructure protection responsibilities, and stringent regulatory requirements. As digital government initiatives expand, agencies must balance security, privacy, and accessibility while managing diverse technology landscapes that often include legacy systems. Intello Cyber Technologies provides specialized government security solutions that address these complex requirements, helping public sector entities protect citizen data and critical services from sophisticated attacks."
+      overview="Government and public sector organizations face unique cybersecurity challenges with high-profile threat actors, critical infrastructure protection responsibilities, and stringent regulatory requirements. As digital government initiatives expand, agencies must balance security, privacy, and accessibility while managing diverse technology landscapes that often include legacy systems. Intello. provides specialized government security solutions that address these complex requirements, helping public sector entities protect citizen data and critical services from sophisticated attacks."
       challenges={[
         {
           title: "Nation-State Threats",
@@ -86,7 +86,7 @@ const GovernmentPage = () => {
       caseStudy={{
         clientType: "National Government Ministry",
         challenge: "The ministry faced increasing cybersecurity threats to their critical systems while undergoing digital transformation of citizen services. They needed to implement comprehensive security controls that would protect sensitive government data and critical infrastructure while enabling modern digital services for citizens.",
-        solution: "Intello Cyber implemented a government-specific security program based on national cybersecurity framework requirements, including secure digital services architecture, advanced threat protection for critical systems, and comprehensive data protection controls. We also provided specialized security training for government personnel.",
+        solution: "Intello. implemented a government-specific security program based on national cybersecurity framework requirements, including secure digital services architecture, advanced threat protection for critical systems, and comprehensive data protection controls. We also provided specialized security training for government personnel.",
         results: [
           "Successfully achieved compliance with national government cybersecurity framework",
           "Secured critical infrastructure systems with zero security incidents over 18-month period",

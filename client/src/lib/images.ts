@@ -1,8 +1,8 @@
 // This file contains base64 encoded images for direct use in components
 // This approach ensures images will always render without path issues
 
-// Intello Cyber Technologies logo in PNG format (white logo on transparent background)
-// Create a simple SVG logo for Intello Cyber Technologies
+// Intello. logo in PNG format (white logo on transparent background)
+// Create a simple SVG logo for Intello.
 export const intelloLogoSvg = `<svg width="300" height="60" viewBox="0 0 300 60" fill="none" xmlns="http://www.w3.org/2000/svg">
   <text x="10" y="40" fill="white" font-family="Arial" font-weight="bold" font-size="30">INTELLO</text>
   <text x="142" y="40" fill="#eb3443" font-family="Arial" font-weight="bold" font-size="30">CYBER</text>
@@ -10,7 +10,7 @@ export const intelloLogoSvg = `<svg width="300" height="60" viewBox="0 0 300 60"
 </svg>`;
 
 // Fallback text logo if needed
-export const intelloLogoText = 'INTELLO CYBER';
+export const intelloLogoText = 'INTELLO.';
 
 export const intelloLogoPng = 'data:image/png;base64,' + 
 `iVBORw0KGgoAAAANSUhEUgAAAoAAAAGQCAYAAAA+89ElAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA

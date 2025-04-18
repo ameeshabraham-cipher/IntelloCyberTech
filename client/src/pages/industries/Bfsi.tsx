@@ -18,7 +18,7 @@ const BfsiPage = () => {
       title="Banking & Financial Services"
       subtitle="Security"
       description="Comprehensive security and compliance solutions tailored specifically for banks, financial institutions, and insurance companies operating in a highly regulated digital environment."
-      overview="The banking, financial services, and insurance (BFSI) sector faces unique cybersecurity challenges due to the sensitive nature of financial data, stringent regulatory requirements, and being a prime target for sophisticated threat actors. Intello Cyber Technologies provides specialized security solutions that address the complex needs of financial institutions, combining regulatory compliance expertise with advanced threat protection capabilities to safeguard both digital assets and customer trust."
+      overview="The banking, financial services, and insurance (BFSI) sector faces unique cybersecurity challenges due to the sensitive nature of financial data, stringent regulatory requirements, and being a prime target for sophisticated threat actors. Intello. provides specialized security solutions that address the complex needs of financial institutions, combining regulatory compliance expertise with advanced threat protection capabilities to safeguard both digital assets and customer trust."
       challenges={[
         {
           title: "Advanced Persistent Threats",
@@ -86,7 +86,7 @@ const BfsiPage = () => {
       caseStudy={{
         clientType: "Leading Regional Bank with 50+ branches",
         challenge: "The bank faced increasing regulatory pressure and sophisticated cyber threats while undergoing digital transformation. They needed a comprehensive security and compliance solution that would enable innovation while maintaining strict security controls and regulatory compliance.",
-        solution: "Intello Cyber designed a comprehensive security program that included PCI DSS compliance implementation, secure digital banking architecture, real-time fraud detection systems, and a tailored third-party risk management framework. We provided ongoing security assessment and 24/7 monitoring to maintain a strong security posture.",
+        solution: "Intello. designed a comprehensive security program that included PCI DSS compliance implementation, secure digital banking architecture, real-time fraud detection systems, and a tailored third-party risk management framework. We provided ongoing security assessment and 24/7 monitoring to maintain a strong security posture.",
         results: [
           "Achieved full PCI DSS compliance certification with zero critical findings",
           "Successfully launched new digital banking platform with enhanced security features",
