@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CalendlyPopup } from './CalendlyBooking';
 import { apiRequest } from '@/lib/queryClient';
 
 import {
@@ -24,7 +23,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowRight, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 // Form validation schema
 const assessmentRequestSchema = z.object({
@@ -41,14 +40,13 @@ type AssessmentRequestValues = z.infer<typeof assessmentRequestSchema>;
 
 // Props definition
 interface AssessmentRequestFormProps {
-  calendlyUrl: string;
+  className?: string;
 }
 
-export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequestFormProps) {
+export default function AssessmentRequestForm({ className = "" }: AssessmentRequestFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showCalendly, setShowCalendly] = useState(false);
 
   // Initialize form
   const form = useForm<AssessmentRequestValues>({
@@ -82,7 +80,7 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
       if (response.success) {
         toast({
           title: 'Assessment Request Submitted',
-          description: 'Would you like to schedule a call with our security experts?',
+          description: 'Thank you for your interest. Our team will be in touch shortly.',
         });
         
         setIsSubmitted(true);
@@ -103,7 +101,7 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
   }
 
   return (
-    <div className="bg-card/30 backdrop-blur-sm border border-[hsl(var(--secondary))]/10 rounded-xl overflow-hidden p-8">
+    <div className={`bg-card/30 backdrop-blur-sm border border-[hsl(var(--secondary))]/10 rounded-xl overflow-hidden p-8 ${className}`}>
       {!isSubmitted ? (
         <>
           <h2 className="text-2xl font-bold mb-6">Request Security Assessment</h2>
@@ -257,28 +255,8 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             Thank you for your interest in our security assessment. Our team will review your request and contact you shortly.
           </p>
-          <div className="space-y-4">
-            <p className="font-semibold">Would you like to schedule a call with one of our security experts?</p>
-            <Button
-              onClick={() => setShowCalendly(true)}
-              className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-6 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center"
-            >
-              Schedule a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
         </div>
       )}
-      
-      {/* Calendly integration */}
-      <CalendlyPopup
-        url={calendlyUrl}
-        buttonText="Schedule a Call"
-        buttonClassName="hidden" // We're controlling visibility separately
-        prefill={{
-          name: form.getValues("name"),
-          email: form.getValues("email"),
-        }}
-      />
     </div>
   );
 }

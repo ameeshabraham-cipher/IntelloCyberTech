@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useScrollReveal } from '@/lib/animations';
 import { Shield, CheckCircle, Lock } from 'lucide-react';
 import AssessmentRequestForm from '@/components/AssessmentRequestForm';
+import CalendlyPopupCTA from '@/components/CalendlyPopupCTA';
 
 const AssessmentPage = () => {
   useScrollReveal();
@@ -10,6 +11,8 @@ const AssessmentPage = () => {
   useEffect(() => {
     document.title = 'Security Assessment | Intello.';
   }, []);
+  
+  const calendlyUrl = "https://calendly.com/ameesh-intellome";
   
   return (
     <div className="min-h-screen pt-24">
@@ -40,7 +43,25 @@ const AssessmentPage = () => {
       {/* Assessment Form */}
       <section className="py-16 bg-card/20">
         <div className="container mx-auto px-4">
-          <AssessmentRequestForm calendlyUrl="https://calendly.com/ameesh-intellome" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <AssessmentRequestForm />
+            
+            <div className="flex flex-col justify-center items-center bg-card/30 backdrop-blur-sm border border-[hsl(var(--secondary))]/10 rounded-xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-center">Prefer to Talk Directly?</h2>
+              <p className="text-center text-muted-foreground mb-8">
+                Schedule a call with one of our security experts for a personalized consultation and assessment.
+              </p>
+              <div className="w-full h-[400px] rounded-lg overflow-hidden">
+                <iframe 
+                  src={`${calendlyUrl}?embed_domain=${window.location.host}&embed_type=Inline`}
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0"
+                  title="Schedule a call with Intello"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       
@@ -68,6 +89,14 @@ const AssessmentPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating CTA Button */}
+      <CalendlyPopupCTA 
+        url={calendlyUrl}
+        buttonText="Schedule a Consultation"
+        position="bottom-right"
+        autoOpen={false}
+      />
     </div>
   );
 };

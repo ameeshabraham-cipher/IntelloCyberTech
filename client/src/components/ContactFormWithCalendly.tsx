@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CalendlyPopup } from './CalendlyBooking';
 import { apiRequest } from '@/lib/queryClient';
 
 import {
@@ -24,7 +23,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowRight, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -41,21 +40,18 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 // Props definition
-interface ContactFormWithCalendlyProps {
-  calendlyUrl: string;
+interface ContactFormProps {
   defaultService?: string;
   showServiceField?: boolean;
 }
 
-export default function ContactFormWithCalendly({
-  calendlyUrl,
+export default function ContactForm({
   defaultService,
   showServiceField = false,
-}: ContactFormWithCalendlyProps) {
+}: ContactFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showCalendly, setShowCalendly] = useState(false);
 
   // Initialize form
   const form = useForm<ContactFormValues>({
@@ -281,28 +277,8 @@ export default function ContactFormWithCalendly({
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             Thank you for reaching out to us. We've received your message and will get back to you as soon as possible.
           </p>
-          <div className="space-y-4">
-            <p className="font-semibold">Would you like to schedule a call with our team?</p>
-            <Button
-              onClick={() => setShowCalendly(true)}
-              className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center"
-            >
-              Schedule a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
         </div>
       )}
-      
-      {/* Calendly integration */}
-      <CalendlyPopup
-        url={calendlyUrl}
-        buttonText="Schedule a Call"
-        buttonClassName="hidden" // We're controlling visibility separately
-        prefill={{
-          name: form.getValues("name"),
-          email: form.getValues("email"),
-        }}
-      />
     </div>
   );
 }
