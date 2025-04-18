@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <Link href="/" className="text-white font-montserrat font-bold text-2xl">
-                <span className="text-[hsl(var(--secondary))]">INTELLO</span> CYBER
+                <span className="text-[hsl(var(--secondary))]">INTELLO.</span>
               </Link>
             </div>
             <p className="text-muted-foreground mb-6">
