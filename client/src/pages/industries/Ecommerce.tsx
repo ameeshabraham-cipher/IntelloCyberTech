@@ -86,7 +86,7 @@ const EcommercePage = () => {
       caseStudy={{
         clientType: "Major Regional E-Commerce Marketplace",
         challenge: "The company experienced significant growth but faced increasing fraud attempts, several minor security incidents, and challenges meeting PCI DSS requirements across their complex technology stack. They needed a comprehensive security solution that would protect customer data and payment information without creating friction in the shopping experience.",
-        solution: "Intello Cyber designed a complete e-commerce security program including PCI DSS compliance implementation, secure payment processing with tokenization, customer data protection controls, and a risk-based fraud detection system. We also implemented customer account protection measures and security monitoring for their multicloud infrastructure.",
+        solution: "Intello. designed a complete e-commerce security program including PCI DSS compliance implementation, secure payment processing with tokenization, customer data protection controls, and a risk-based fraud detection system. We also implemented customer account protection measures and security monitoring for their multicloud infrastructure.",
         results: [
           "Achieved PCI DSS Level 1 compliance certification with no critical findings",
           "Reduced payment fraud by 64% while maintaining a 98% transaction approval rate",
