@@ -74,6 +74,10 @@ import GovernmentPage from "@/pages/industries/Government";
 import EcommercePage from "@/pages/industries/Ecommerce";
 import SmePage from "@/pages/industries/Sme";
 import LogisticsPage from "@/pages/industries/Logistics";
+import MoneyExchangesPage from "@/pages/industries/MoneyExchanges";
+import InsuranceCompaniesPage from "@/pages/industries/InsuranceCompanies";
+import ArchitecturalFirmsPage from "@/pages/industries/ArchitecturalFirms";
+import TechnologyCompaniesPage from "@/pages/industries/TechnologyCompanies";
 
 function Router() {
   return (
@@ -146,6 +150,10 @@ function Router() {
           <Route path="/industries/ecommerce" component={EcommercePage} />
           <Route path="/industries/sme" component={SmePage} />
           <Route path="/industries/logistics" component={LogisticsPage} />
+          <Route path="/industries/money-exchanges" component={MoneyExchangesPage} />
+          <Route path="/industries/insurance-companies" component={InsuranceCompaniesPage} />
+          <Route path="/industries/architectural-firms" component={ArchitecturalFirmsPage} />
+          <Route path="/industries/technology-companies" component={TechnologyCompaniesPage} />
           
           {/* Component Demo Pages */}
           <Route path="/components/tech-tooltips" component={TooltipDemo} />
