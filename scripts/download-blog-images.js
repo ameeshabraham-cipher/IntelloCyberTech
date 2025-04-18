@@ -62,134 +62,93 @@ function downloadImage(url, filename) {
 
 // Blog Images Configuration - maps image names to appropriate themed Unsplash URLs
 const blogImages = [
-  {
-    name: 'iso-27001.png',
-    url: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
+  // Fixed URLs for images that failed to download
   {
     name: 'gdpr.png',
-    url: 'https://images.unsplash.com/photo-1563674644564-52c5ac2fe726?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'uae-pdpl.png',
-    url: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'soc2.png',
-    url: 'https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'apt.png',
-    url: 'https://images.unsplash.com/photo-1624969862293-b084f804a4f2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'cloud-security.png',
-    url: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'security-assessment.png',
-    url: 'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'web3-security.png',
-    url: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'vciso.png',
-    url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'zero-trust.png',
-    url: 'https://images.unsplash.com/photo-1551808525-51a94da548ce?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'data-transfers.png',
-    url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'multi-cloud.png',
-    url: 'https://images.unsplash.com/photo-1560732488-7b5f5684471a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'ai-compliance.png',
-    url: 'https://images.unsplash.com/photo-1677442135136-20525f674ec2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
-    name: 'ethical-ai.png',
     url: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
-    name: 'ml-threat-detection.png',
-    url: 'https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
-  },
-  {
     name: 'autonomous-security.png',
-    url: 'https://images.unsplash.com/photo-1631032032190-ca7a005dd811?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'healthcare-security.png',
-    url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1516841273335-e39b37888115?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'digital-banking.png',
-    url: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'government-security.png',
-    url: 'https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1589262804704-c5aa9e6def89?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'ecommerce-security.png',
-    url: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'blog-placeholder.png',
-    url: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'banking.png',
-    url: 'https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1541354329998-f4175d495f52?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'government.png',
-    url: 'https://images.unsplash.com/photo-1604938500036-ef7492ab8859?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1551696785-927d4ac2d35b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'healthcare.png',
-    url: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'ecommerce.png',
-    url: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1550565118-3a14e8d0386f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'ai-ethics.png',
-    url: 'https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'machine-learning.png',
-    url: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'incident-response.png',
-    url: 'https://images.unsplash.com/photo-1631029718786-8c9293cf1d9d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1585241936939-be4099591252?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   },
   {
     name: 'data-privacy.png',
-    url: 'https://images.unsplash.com/photo-1597733336794-12d05021d510?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
+    url: 'https://images.unsplash.com/photo-1595514535711-c31bb981c049?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=450'
   }
 ];
 
 // Download all images
 async function downloadAllImages() {
-  for (const image of blogImages) {
+  // Download only the government-security.png image to save time
+  const imageToDownload = blogImages.find(img => img.name === 'government-security.png');
+  if (imageToDownload) {
     try {
-      await downloadImage(image.url, image.name);
+      await downloadImage(imageToDownload.url, imageToDownload.name);
     } catch (error) {
-      console.error(`Error downloading ${image.name}: ${error.message}`);
+      console.error(`Error downloading ${imageToDownload.name}: ${error.message}`);
     }
   }
-  console.log('All images downloaded successfully!');
+  console.log('Image download completed!');
 }
 
 downloadAllImages().catch(err => {
