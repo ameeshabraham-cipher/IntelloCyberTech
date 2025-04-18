@@ -172,7 +172,7 @@ const navItems = [
 export default function NavbarModern() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('GRC Services');
+  const [hoveredCategory, setHoveredCategory] = useState('GRC Services');
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   
@@ -183,6 +183,8 @@ export default function NavbarModern() {
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpenMobileSubmenu(null);
+    // Reset the hover state for desktop menu
+    setHoveredCategory('GRC Services');
   }, [location]);
   
   const toggleMobileSubmenu = (menu: string) => {
@@ -224,9 +226,9 @@ export default function NavbarModern() {
                       {servicesMenuData.map((category, idx) => (
                         <button 
                           key={idx}
-                          onClick={() => setActiveCategory(category.category)}
+                          onMouseEnter={() => setHoveredCategory(category.category)}
                           className={`w-full text-left px-4 py-3 rounded-md mb-1 transition-all flex items-center gap-2 
-                            ${activeCategory === category.category 
+                            ${hoveredCategory === category.category 
                               ? 'bg-[hsl(var(--secondary))]/10 text-[hsl(var(--secondary))]' 
                               : 'hover:bg-background/40'}`
                           }
@@ -240,7 +242,7 @@ export default function NavbarModern() {
                     <div className="flex-1 p-3">
                       <AnimatePresence mode="wait">
                         {servicesMenuData.map((category, idx) => (
-                          activeCategory === category.category && (
+                          hoveredCategory === category.category && (
                             <motion.div
                               key={category.category}
                               initial={{ opacity: 0, y: 5 }}
