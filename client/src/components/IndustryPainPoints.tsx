@@ -70,10 +70,8 @@ const PainPoint = ({ industry, icon, painPoints, solutions, link, className, del
         </div>
       </div>
       
-      <Link href={link}>
-        <a className="text-[hsl(var(--secondary))] text-sm hover:text-[hsl(var(--primary))] transition-colors font-medium">
-          Explore Solutions →
-        </a>
+      <Link href={link} className="text-[hsl(var(--secondary))] text-sm hover:text-[hsl(var(--primary))] transition-colors font-medium">
+        Explore Solutions →
       </Link>
     </div>
   );
