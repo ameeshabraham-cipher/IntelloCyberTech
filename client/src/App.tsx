@@ -108,6 +108,10 @@ function Router() {
           <Route path="/services/uae-pdpl" component={UaePdplPage} />
           <Route path="/services/uae-ia" component={UaeIaPage} />
           <Route path="/services/uae-nesa" component={UaeNesaPage} />
+          <Route path="/services/ksa-pdpl" component={KsaPdplPage} />
+          <Route path="/services/bahrain-pdpl" component={BahrainPdplPage} />
+          <Route path="/services/sama" component={SamaPage} />
+          <Route path="/services/saudi-aramco" component={SaudiAramcoPage} />
           <Route path="/services/pci-dss" component={PciDssPage} />
           <Route path="/services/hipaa" component={HipaaPage} />
           <Route path="/services/internal-audit" component={InternalAuditPage} />
