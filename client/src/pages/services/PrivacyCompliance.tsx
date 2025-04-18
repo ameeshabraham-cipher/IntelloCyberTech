@@ -10,36 +10,32 @@ const PrivacyCompliancePage = () => {
       description="Our Privacy Compliance Implementation service helps organizations build comprehensive privacy programs that address regulatory requirements while enhancing customer trust. We guide you through the entire process from assessment to implementation of privacy controls across your data ecosystem."
       heroIcon={<Lock className="h-8 w-8" />}
       
-      overview={`
-        <p>Privacy regulations like GDPR, CCPA, and regional PDPA laws have transformed how organizations must handle personal data. Our service provides structured guidance through the complex process of building a compliant privacy program that addresses these requirements.</p>
-        
-        <p>We help you implement practical, sustainable privacy controls that protect personal data while enabling business operations. Our approach balances compliance requirements with operational efficiency, integrating privacy into your processes rather than treating it as a separate function.</p>
-      `}
+      overview="Privacy regulations like GDPR, CCPA, and regional PDPA laws have transformed how organizations must handle personal data. Our service provides structured guidance through the complex process of building a compliant privacy program that addresses these requirements. We help you implement practical, sustainable privacy controls that protect personal data while enabling business operations. Our approach balances compliance requirements with operational efficiency, integrating privacy into your processes rather than treating it as a separate function."
       
-      keyBenefits={[
+      benefits={[
         {
           title: "Achieve Multi-Framework Compliance",
-          description: "Meet requirements across multiple privacy regulations with an integrated approach that addresses all applicable laws.",
-          icon: <ClipboardCheck className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Meet requirements across multiple privacy regulations with an integrated approach that addresses all applicable laws."
         },
         {
           title: "Reduce Privacy Risks",
-          description: "Minimize the risk of data breaches, regulatory penalties, and reputation damage through robust privacy controls.",
-          icon: <Shield className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Minimize the risk of data breaches, regulatory penalties, and reputation damage through robust privacy controls."
         },
         {
           title: "Enhance Customer Trust",
-          description: "Demonstrate your commitment to protecting personal data, building stronger relationships with customers and partners.",
-          icon: <Users className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Demonstrate your commitment to protecting personal data, building stronger relationships with customers and partners."
         },
         {
           title: "Operationalize Privacy",
-          description: "Transform privacy from a compliance exercise into an integrated business function with clear processes and responsibilities.",
-          icon: <BookOpen className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Transform privacy from a compliance exercise into an integrated business function with clear processes and responsibilities."
+        },
+        {
+          title: "Enable International Data Transfers",
+          content: "Implement compliant mechanisms for transferring personal data across borders while meeting regulatory requirements."
         }
       ]}
       
-      processSteps={[
+      steps={[
         {
           title: "Privacy Assessment",
           description: "Evaluate current privacy practices, data handling activities, and compliance gaps against applicable regulations."
@@ -66,68 +62,99 @@ const PrivacyCompliancePage = () => {
         }
       ]}
       
-      features={[
+      deliverables={[
         {
           title: "Data Mapping & Inventory",
-          description: "Comprehensive identification and categorization of personal data across your organization with visualized data flows and processing activities.",
-          icon: <Database className="h-12 w-12 text-[hsl(var(--primary))]" />
+          description: "Comprehensive identification and categorization of personal data across your organization with visualized data flows and processing activities."
         },
         {
           title: "Privacy Impact Assessments",
-          description: "Structured evaluation of data processing activities to identify privacy risks and determine appropriate mitigation measures.",
-          icon: <Shield className="h-12 w-12 text-[hsl(var(--primary))]" />
+          description: "Structured evaluation of data processing activities to identify privacy risks and determine appropriate mitigation measures."
         },
         {
-          title: "Policy & Notice Development",
-          description: "Creation of privacy policies, notices, consent mechanisms, and other documentation required for regulatory compliance.",
-          icon: <FileText className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Privacy Policies & Notices",
+          description: "Creation of privacy policies, notices, consent mechanisms, and other documentation required for regulatory compliance."
         },
         {
-          title: "Data Subject Rights Management",
-          description: "Implementation of processes and technologies to fulfill data subject requests for access, deletion, portability, and other rights.",
-          icon: <Users className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Data Subject Rights Procedures",
+          description: "Implementation of processes and technologies to fulfill data subject requests for access, deletion, portability, and other rights."
         },
         {
-          title: "Third-Party Risk Management",
-          description: "Development of vendor assessment processes, contract clauses, and monitoring controls for data processors and other third parties.",
-          icon: <Network className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Third-Party Risk Framework",
+          description: "Development of vendor assessment processes, contract clauses, and monitoring controls for data processors and other third parties."
         },
         {
-          title: "Privacy Governance Framework",
-          description: "Establishment of roles, responsibilities, reporting structures, and oversight mechanisms for ongoing privacy management.",
-          icon: <Eye className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Privacy Governance Structure",
+          description: "Establishment of roles, responsibilities, reporting structures, and oversight mechanisms for ongoing privacy management."
         }
       ]}
       
-      faqs={[
-        {
-          question: "Which privacy regulations does your service address?",
-          answer: "Our service covers major global privacy regulations including GDPR (European Union), CCPA/CPRA (California), LGPD (Brazil), PIPL (China), and regional laws like UAE PDPL, KSA PDPL, Bahrain PDPL, and various other data protection laws. We take a harmonized approach that addresses common requirements across frameworks while accounting for region-specific variations."
-        },
-        {
-          question: "How long does it typically take to implement a privacy program?",
-          answer: "Implementation timelines vary based on organizational size, complexity, and current maturity level. A baseline program can typically be established in 3-6 months, with more comprehensive implementations taking 6-12 months. We develop phased implementation plans that prioritize high-risk areas and compliance fundamentals while building toward comprehensive coverage."
-        },
-        {
-          question: "How do you adapt privacy programs for specific industries?",
-          answer: "We tailor privacy programs to address industry-specific requirements, data types, and processing activities. For example, healthcare organizations need specialized controls for health data, financial institutions require specific safeguards for financial information, and technology companies often need robust frameworks for product privacy. Our approach incorporates industry best practices and regulatory guidance."
-        },
-        {
-          question: "What's your approach to technology implementation for privacy?",
-          answer: "We focus on practical solutions that leverage existing technologies where possible while identifying gaps that may require new tools. Our recommendations balance compliance requirements with operational efficiency, considering solutions for data discovery, classification, subject rights management, consent, and monitoring. We remain vendor-neutral while providing guidance on tool selection when needed."
-        },
-        {
-          question: "How do you ensure privacy programs remain up-to-date?",
-          answer: "We build sustainability into privacy programs through monitoring mechanisms, periodic reviews, and integration with change management processes. We help establish privacy impact assessment procedures for new initiatives, regular compliance checkpoints, and frameworks for addressing regulatory changes. Optional ongoing advisory services can provide updates on evolving requirements and best practices."
-        }
-      ]}
-      
-      cta={{
-        title: "Ready to Build Your Privacy Program?",
-        subtitle: "Implement comprehensive privacy compliance with expert guidance.",
-        buttonText: "Start Your Privacy Journey",
-        buttonLink: "/contact"
-      }}
+      animationSvg={
+        <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Privacy Shield Background */}
+          <rect x="120" y="80" width="360" height="240" rx="20" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
+          
+          {/* Shield Outline */}
+          <path d="M300 110 L390 145 L390 210 C390 270 340 310 300 330 C260 310 210 270 210 210 L210 145 L300 110Z" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
+          
+          {/* Lock Icon */}
+          <rect x="270" y="190" width="60" height="50" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1.5"/>
+          <circle cx="300" cy="180" r="15" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <path d="M295 180 L305 180" stroke="#00E5FF" strokeWidth="1.5"/>
+          <path d="M300 180 L300 200" stroke="#00E5FF" strokeWidth="1.5"/>
+          
+          {/* Data Flow Elements */}
+          <circle cx="180" cy="150" r="25" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="180" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Data</text>
+          
+          <circle cx="420" cy="150" r="25" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="420" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Users</text>
+          
+          <circle cx="180" cy="250" r="25" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="180" y="255" textAnchor="middle" fontSize="10" fill="#00E5FF">Systems</text>
+          
+          <circle cx="420" cy="250" r="25" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="420" y="255" textAnchor="middle" fontSize="10" fill="#00E5FF">Partners</text>
+          
+          {/* Data Flow Lines */}
+          <path d="M180 175 L210 200" stroke="#00E5FF" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M180 225 L210 210" stroke="#00E5FF" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M420 175 L390 200" stroke="#00E5FF" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M420 225 L390 210" stroke="#00E5FF" strokeWidth="1" strokeDasharray="3,2"/>
+          
+          {/* Regulations */}
+          <rect x="150" y="320" width="60" height="25" rx="5" fill="#0A1024" stroke="#EB3443" strokeWidth="1.5"/>
+          <text x="180" y="336" textAnchor="middle" fontSize="10" fill="#EB3443">GDPR</text>
+          
+          <rect x="220" y="320" width="60" height="25" rx="5" fill="#0A1024" stroke="#EB3443" strokeWidth="1.5"/>
+          <text x="250" y="336" textAnchor="middle" fontSize="10" fill="#EB3443">CCPA</text>
+          
+          <rect x="290" y="320" width="60" height="25" rx="5" fill="#0A1024" stroke="#EB3443" strokeWidth="1.5"/>
+          <text x="320" y="336" textAnchor="middle" fontSize="10" fill="#EB3443">LGPD</text>
+          
+          <rect x="360" y="320" width="60" height="25" rx="5" fill="#0A1024" stroke="#EB3443" strokeWidth="1.5"/>
+          <text x="390" y="336" textAnchor="middle" fontSize="10" fill="#EB3443">PDPA</text>
+          
+          {/* Connection to Privacy Shield */}
+          <path d="M180 320 L225 270" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M250 320 L250 270" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M320 320 L330 270" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M390 320 L360 270" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          
+          {/* Privacy Program Text */}
+          <text x="300" y="100" textAnchor="middle" fontSize="14" fill="#00E5FF">PRIVACY COMPLIANCE</text>
+          
+          {/* Animated Elements */}
+          <circle cx="300" cy="215" r="5" fill="#00E5FF" fillOpacity="0.8">
+            <animate attributeName="r" values="5;8;5" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          <path d="M210 145 L390 145" stroke="#00E5FF" strokeWidth="1" strokeDasharray="4,2">
+            <animate attributeName="stroke-opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/>
+          </path>
+        </svg>
+      }
       
       relatedServices={[
         {
