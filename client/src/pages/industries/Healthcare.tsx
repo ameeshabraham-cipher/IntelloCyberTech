@@ -18,7 +18,7 @@ const HealthcarePage = () => {
       title="Healthcare"
       subtitle="Cybersecurity"
       description="Specialized security and compliance solutions for healthcare providers, hospitals, pharmaceuticals, and medical technology companies facing unique data protection and privacy challenges."
-      overview="The healthcare industry faces an evolving threat landscape where patient data security, operational continuity, and regulatory compliance intersect. As medical devices become increasingly connected and telehealth adoption accelerates, healthcare organizations need robust security controls that protect sensitive patient information while enabling clinical innovation. Intello Cyber Technologies delivers healthcare-specific security solutions that address these unique challenges, balancing security requirements with the need for immediate data access in critical care scenarios."
+      overview="The healthcare industry faces an evolving threat landscape where patient data security, operational continuity, and regulatory compliance intersect. As medical devices become increasingly connected and telehealth adoption accelerates, healthcare organizations need robust security controls that protect sensitive patient information while enabling clinical innovation. Intello. delivers healthcare-specific security solutions that address these unique challenges, balancing security requirements with the need for immediate data access in critical care scenarios."
       challenges={[
         {
           title: "Patient Data Protection",
@@ -86,7 +86,7 @@ const HealthcarePage = () => {
       caseStudy={{
         clientType: "Regional Hospital System with 8 facilities",
         challenge: "The hospital system faced increasing cybersecurity threats, particularly ransomware, while struggling to maintain HIPAA compliance across a complex environment of clinical systems, connected medical devices, and third-party integrations. They needed a comprehensive security solution that would protect patient data without impeding clinical workflows.",
-        solution: "Intello Cyber implemented a healthcare-specific security program including HIPAA risk assessment and remediation, network segmentation to isolate clinical systems, medical device security monitoring, and a comprehensive ransomware protection strategy. We also provided security awareness training customized for clinical staff.",
+        solution: "Intello. implemented a healthcare-specific security program including HIPAA risk assessment and remediation, network segmentation to isolate clinical systems, medical device security monitoring, and a comprehensive ransomware protection strategy. We also provided security awareness training customized for clinical staff.",
         results: [
           "Achieved full HIPAA compliance with documented security controls and policies",
           "Implemented network segmentation that reduced the attack surface by 65%",
