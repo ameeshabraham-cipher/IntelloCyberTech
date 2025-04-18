@@ -3,10 +3,12 @@ import { createServer, type Server } from "http";
 import * as fs from 'fs';
 import * as path from 'path';
 import emailRouter from './api/email';
+import adminRouter from './api/admin';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Register API routers
   app.use('/api/email', emailRouter);
+  app.use('/api/admin', adminRouter);
 
   // Health check endpoint
   app.get('/api/health', (req, res) => {
