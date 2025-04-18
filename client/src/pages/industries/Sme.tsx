@@ -18,7 +18,7 @@ const SmePage = () => {
       title="SMEs & Enterprises"
       subtitle="Cybersecurity"
       description="Customized security and compliance solutions designed to scale with your business, from small and medium enterprises to large corporations, addressing unique operational requirements and risk profiles."
-      overview="Small and medium enterprises (SMEs) and larger corporate enterprises face cybersecurity challenges that evolve with their scale and complexity. While enterprises must manage sophisticated environments with extensive attack surfaces, SMEs face resource constraints that make it difficult to implement adequate security controls. Intello Cyber Technologies delivers scalable security solutions for organizations at every stage of growth, ensuring appropriate protection regardless of company size, complexity, or industry vertical."
+      overview="Small and medium enterprises (SMEs) and larger corporate enterprises face cybersecurity challenges that evolve with their scale and complexity. While enterprises must manage sophisticated environments with extensive attack surfaces, SMEs face resource constraints that make it difficult to implement adequate security controls. Intello. delivers scalable security solutions for organizations at every stage of growth, ensuring appropriate protection regardless of company size, complexity, or industry vertical."
       challenges={[
         {
           title: "Resource Constraints",
@@ -86,7 +86,7 @@ const SmePage = () => {
       caseStudy={{
         clientType: "Growing Mid-Size Enterprise (500+ employees)",
         challenge: "The company was rapidly expanding through both organic growth and acquisitions, creating a complex and disjointed IT environment with inconsistent security controls. They needed to establish a mature security program that would address increasing compliance requirements and protect sensitive intellectual property while enabling continued growth.",
-        solution: "Intello Cyber provided a comprehensive security transformation program that included security governance implementation, technical control standardization across business units, and risk-based compliance approach for multiple regulatory frameworks. We also delivered vCISO services to provide strategic security leadership during the transformation.",
+        solution: "Intello. provided a comprehensive security transformation program that included security governance implementation, technical control standardization across business units, and risk-based compliance approach for multiple regulatory frameworks. We also delivered vCISO services to provide strategic security leadership during the transformation.",
         results: [
           "Implemented unified security governance framework across previously siloed business units",
           "Achieved compliance with four distinct regulatory frameworks through harmonized controls approach",

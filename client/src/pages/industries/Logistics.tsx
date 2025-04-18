@@ -18,7 +18,7 @@ const LogisticsPage = () => {
       title="Logistics & Supply Chain"
       subtitle="Security"
       description="Specialized cybersecurity solutions for logistics providers, transportation companies, and supply chain networks facing unique operational technology challenges and global regulatory requirements."
-      overview="The logistics and supply chain industry faces distinctive cybersecurity challenges at the intersection of operational technology, information systems, and physical security. As global supply chains become increasingly digital and interconnected, they present expanded attack surfaces vulnerable to disruption that can have far-reaching consequences. Intello Cyber Technologies provides specialized security solutions for logistics and supply chain organizations, protecting critical transportation and logistics infrastructure while enabling digital transformation and operational efficiency."
+      overview="The logistics and supply chain industry faces distinctive cybersecurity challenges at the intersection of operational technology, information systems, and physical security. As global supply chains become increasingly digital and interconnected, they present expanded attack surfaces vulnerable to disruption that can have far-reaching consequences. Intello. provides specialized security solutions for logistics and supply chain organizations, protecting critical transportation and logistics infrastructure while enabling digital transformation and operational efficiency."
       challenges={[
         {
           title: "Complex Supply Chain Ecosystem",
@@ -86,7 +86,7 @@ const LogisticsPage = () => {
       caseStudy={{
         clientType: "Global Logistics Provider with operations in 15+ countries",
         challenge: "The company faced increasing security threats to their connected logistics systems while struggling to meet diverse regulatory requirements across different regions. They needed a comprehensive security solution that would protect their global operations without impacting critical shipping services and real-time visibility requirements.",
-        solution: "Intello Cyber designed a global logistics security program including supply chain risk management, transportation system protection, and OT security controls for warehouse automation systems. We implemented a unified compliance framework addressing multiple regulatory requirements and provided 24/7 security monitoring for critical logistics infrastructure.",
+        solution: "Intello. designed a global logistics security program including supply chain risk management, transportation system protection, and OT security controls for warehouse automation systems. We implemented a unified compliance framework addressing multiple regulatory requirements and provided 24/7 security monitoring for critical logistics infrastructure.",
         results: [
           "Implemented comprehensive security controls across 43 logistics facilities worldwide",
           "Successfully prevented operational disruption from a targeted ransomware campaign",
