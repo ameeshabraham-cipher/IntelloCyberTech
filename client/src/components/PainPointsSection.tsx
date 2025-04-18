@@ -174,19 +174,19 @@ const PainPointsSection = () => {
             </div>
           </div>
           
-          {/* Pain Point 5 - Industry-Specific Compliance */}
+          {/* Pain Point 5 - GCC Focused Compliance */}
           <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/10 hover:border-[hsl(var(--secondary))]/30 transition-all duration-300 reveal" data-delay="800">
             <div className="bg-card/50 w-14 h-14 rounded-full flex items-center justify-center mb-6">
               <Shield className="text-[hsl(var(--secondary))] h-6 w-6" />
             </div>
-            <h3 className="text-xl font-montserrat font-semibold mb-4">Industry-Specific Compliance</h3>
+            <h3 className="text-xl font-montserrat font-semibold mb-4">GCC Focused Compliance</h3>
             <p className="text-muted-foreground mb-6">
-              Meet the unique compliance requirements of your industry with tailored solutions for financial services, healthcare, government and more.
+              Specialized compliance solutions for Gulf Cooperation Council (GCC) regulatory requirements, helping businesses navigate regional standards.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <div className="flex items-center gap-2">
                 <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/uae-nesa" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
+                <Link href="/services/uae-pdpl" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE PDPL Compliance</Link>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
@@ -194,12 +194,28 @@ const PainPointsSection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/gdpr" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">GDPR Compliance</Link>
+                <Link href="/services/uae-nesa" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/ksa-pdpl" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">KSA PDPL Compliance</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/bahrain-pdpl" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Bahrain PDPL Compliance</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/sama" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">SAMA Compliance</Link>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="text-[hsl(var(--secondary))] h-4 w-4" />
+                <Link href="/services/saudi-aramco" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Saudi Aramco Cybersecurity</Link>
               </div>
             </div>
             <div className="flex items-center">
-              <Link href="/services/security-assessment" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
-                <span>Explore Industry Solutions</span>
+              <Link href="/solutions/gcc-compliance" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+                <span>Explore GCC Compliance Solutions</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
