@@ -218,7 +218,7 @@ const TooltipDemo = () => {
         <div className="p-6 bg-card rounded-lg border border-border">
           <h3 className="text-lg font-medium mb-3">Comprehensive Cybersecurity Solutions</h3>
           <p className="leading-relaxed text-muted-foreground mb-4">
-            At Intello Cyber Technologies, we provide a range of advanced security solutions designed to protect your digital assets. Our 
+            At Intello., we provide a range of advanced security solutions designed to protect your digital assets. Our 
             <InfoTechTooltip infoText="Penetration testing involves simulating cyberattacks to identify vulnerabilities in your systems before malicious actors can exploit them.">
               <span className="text-[hsl(var(--secondary))] cursor-pointer"> penetration testing </span>
             </InfoTechTooltip>
