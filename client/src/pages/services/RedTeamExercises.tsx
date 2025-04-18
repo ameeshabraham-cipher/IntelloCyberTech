@@ -5,41 +5,37 @@ import { Target, Shield, Users, Eye, Clock, FileText, Lock, AlertTriangle, Netwo
 const RedTeamExercisesPage = () => {
   return (
     <ServicePageLayout
-      icon={<Target className="h-10 w-10" />}
       title="Red Team Exercises"
-      subtitle="Advanced Simulated Cyber Attacks to Test Defense Effectiveness"
+      category="Cybersecurity Services"
       description="Our Red Team Exercises service provides comprehensive security assessments through simulated, real-world cyber attacks. Our elite offensive security experts test your defenses, detection capabilities, and response procedures through carefully controlled adversarial simulations."
+      heroIcon={<Target className="h-8 w-8" />}
       
-      overview={`
-        <p>Traditional security testing has limitations in assessing how well your organization can defend against sophisticated threat actors. Red Team Exercises address this gap by simulating the tactics, techniques, and procedures (TTPs) used by advanced adversaries in a controlled, realistic manner.</p>
-        
-        <p>Unlike standard penetration testing, red team exercises are objective-based, focusing on specific scenarios like data theft, business disruption, or compromise of critical systems. Our experts emulate real threat actors targeting your organization while working within defined safety parameters to provide maximum insight with minimal risk.</p>
-      `}
+      overview="Traditional security testing has limitations in assessing how well your organization can defend against sophisticated threat actors. Red Team Exercises address this gap by simulating the tactics, techniques, and procedures (TTPs) used by advanced adversaries in a controlled, realistic manner. Unlike standard penetration testing, red team exercises are objective-based, focusing on specific scenarios like data theft, business disruption, or compromise of critical systems. Our experts emulate real threat actors targeting your organization while working within defined safety parameters to provide maximum insight with minimal risk."
       
-      keyBenefits={[
+      benefits={[
         {
           title: "Test Security Effectiveness",
-          description: "Evaluate the real-world effectiveness of your security controls, monitoring, and response capabilities.",
-          icon: <Shield className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Evaluate the real-world effectiveness of your security controls, monitoring, and response capabilities."
         },
         {
           title: "Exercise Response Teams",
-          description: "Train and assess your security operations and incident response teams under realistic conditions.",
-          icon: <Users className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Train and assess your security operations and incident response teams under realistic conditions."
         },
         {
           title: "Identify Security Gaps",
-          description: "Discover weaknesses in your security architecture, technology, procedures, or team capabilities.",
-          icon: <Eye className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Discover weaknesses in your security architecture, technology, procedures, or team capabilities."
         },
         {
           title: "Demonstrate Real Risk",
-          description: "Provide concrete evidence of security risks in business terms that executives can understand.",
-          icon: <AlertTriangle className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Provide concrete evidence of security risks in business terms that executives can understand."
+        },
+        {
+          title: "Validate Security Investments",
+          content: "Determine the real-world effectiveness of your security technology investments and identify areas for improvement."
         }
       ]}
       
-      processSteps={[
+      steps={[
         {
           title: "Engagement Planning",
           description: "Define exercise objectives, scope, timelines, safety measures, and success criteria in collaboration with stakeholders."
@@ -66,68 +62,123 @@ const RedTeamExercisesPage = () => {
         }
       ]}
       
-      features={[
+      deliverables={[
         {
-          title: "Multi-Vector Attack Simulation",
-          description: "Coordinated attack scenarios combining technical exploits, social engineering, physical security testing, and other relevant vectors.",
-          icon: <Network className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Exercise Planning Document",
+          description: "Detailed plan outlining exercise objectives, scope, rules of engagement, timelines, and safety controls."
         },
         {
-          title: "Advanced Persistent Threat Emulation",
-          description: "Long-duration engagements simulating sophisticated threat actors who maintain persistent access and operate stealthily.",
-          icon: <Clock className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Attack Narrative Report",
+          description: "Comprehensive documentation of attack paths, tactics used, and detailed technical findings."
         },
         {
-          title: "Evasion Techniques",
-          description: "Use of advanced tactics to bypass security controls and avoid detection, similar to those employed by real adversaries.",
-          icon: <Eye className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Evidence Package",
+          description: "Collection of artifacts demonstrating successful attack elements, including screenshots and logs."
         },
         {
-          title: "Objective-Based Testing",
-          description: "Focused assessment based on specific, realistic objectives such as data theft, business disruption, or system compromise.",
-          icon: <Target className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Executive Summary",
+          description: "Business-focused overview of exercise results, key findings, and strategic recommendations."
         },
         {
-          title: "Custom Tool Development",
-          description: "Creation of specialized tools and exploits to test defenses against unique threats and advanced techniques.",
-          icon: <Lock className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Technical Remediation Guide",
+          description: "Detailed technical recommendations to address identified vulnerabilities and improve security controls."
         },
         {
-          title: "Purple Team Integration",
-          description: "Optional collaboration with your defense team to maximize learning opportunities and security improvements.",
-          icon: <Shield className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Detection & Response Improvements",
+          description: "Specific guidance to enhance monitoring capabilities and incident response procedures."
         }
       ]}
       
-      faqs={[
-        {
-          question: "How is a red team exercise different from penetration testing?",
-          answer: "Penetration testing focuses on identifying and exploiting vulnerabilities within a defined scope and timeframe. Red team exercises are more comprehensive, goal-oriented assessments that simulate real adversaries using multiple attack vectors over extended periods. Red teams focus on achieving specific objectives (like accessing sensitive data) rather than finding as many vulnerabilities as possible, and often operate without the knowledge of security teams to test detection capabilities."
-        },
-        {
-          question: "How do you ensure red team exercises don't disrupt our business?",
-          answer: "We implement stringent safety measures including detailed pre-engagement planning, continuous risk assessment, restricted hours for high-impact testing, explicit rules of engagement, emergency communication channels, and controlled exploitation techniques. Our red team experts are trained to balance realistic testing with operational safety and can rapidly pause or adjust operations if needed."
-        },
-        {
-          question: "When is the right time for a red team exercise?",
-          answer: "Red team exercises are most valuable for organizations with mature security programs that have already addressed basic security hygiene and conducted standard security assessments. They're particularly useful after implementing new security controls or detection capabilities, before major changes to your security architecture, or as part of an advanced security assurance program."
-        },
-        {
-          question: "How do you measure success in a red team exercise?",
-          answer: "Success is measured against the defined objectives established during planning. This might include whether the red team achieved their attack goals, how long they remained undetected, which security controls were effective, and what valuable insights were gained. The ultimate measure is whether the exercise leads to meaningful security improvements that enhance your defense capabilities against real threats."
-        },
-        {
-          question: "Can a red team exercise be tailored to simulate specific threats?",
-          answer: "Yes, our red team exercises are highly customizable. We can emulate specific threat actors known to target your industry, focus on particular attack vectors of concern, test specific crown jewel assets, or simulate attacks against new or critical systems. We work closely with you to design scenarios that provide the most value based on your security priorities and risk profile."
-        }
-      ]}
-      
-      cta={{
-        title: "Ready to Test Your Cyber Defenses?",
-        subtitle: "Challenge your security with realistic adversarial simulations.",
-        buttonText: "Request Red Team Exercise",
-        buttonLink: "/contact"
-      }}
+      animationSvg={
+        <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Corporate Network */}
+          <rect x="300" y="100" width="200" height="160" rx="10" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
+          <text x="400" y="90" textAnchor="middle" fontSize="14" fill="#00E5FF">Target Organization</text>
+          
+          {/* Internal Systems */}
+          <rect x="320" y="120" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="340" y="140" textAnchor="middle" fontSize="10" fill="#00E5FF">Server</text>
+          
+          <rect x="370" y="120" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="390" y="140" textAnchor="middle" fontSize="10" fill="#00E5FF">Server</text>
+          
+          <rect x="420" y="120" width="60" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="450" y="140" textAnchor="middle" fontSize="10" fill="#00E5FF">Database</text>
+          
+          <rect x="320" y="170" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="340" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">User</text>
+          
+          <rect x="370" y="170" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="390" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">User</text>
+          
+          <rect x="420" y="170" width="60" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="450" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">Admin</text>
+          
+          <rect x="340" y="220" width="120" height="20" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="400" y="234" textAnchor="middle" fontSize="10" fill="#00E5FF">Network Infrastructure</text>
+          
+          {/* Security Team */}
+          <rect x="440" y="290" width="120" height="60" rx="5" fill="#0A1024" stroke="#00E5FF" strokeWidth="1.5"/>
+          <text x="500" y="310" textAnchor="middle" fontSize="11" fill="#00E5FF">Security Team</text>
+          <text x="500" y="330" textAnchor="middle" fontSize="9" fill="#00E5FF">(Unaware of Testing)</text>
+          
+          {/* Red Team */}
+          <rect x="100" y="150" width="120" height="80" rx="10" fill="#0A1024" stroke="#EB3443" strokeWidth="2"/>
+          <text x="160" y="140" textAnchor="middle" fontSize="14" fill="#EB3443">Red Team</text>
+          
+          {/* Attack Vectors */}
+          <path d="M220 170 L300 135" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="4,2">
+            <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <text x="240" y="145" textAnchor="middle" fontSize="9" fill="#EB3443">Technical Exploit</text>
+          
+          <path d="M220 190 L320 185" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="4,2">
+            <animate attributeName="stroke-dashoffset" values="0;12" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <text x="240" y="175" textAnchor="middle" fontSize="9" fill="#EB3443">Social Engineering</text>
+          
+          <path d="M220 210 L340 220" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="4,2">
+            <animate attributeName="stroke-dashoffset" values="0;12" dur="4s" repeatCount="indefinite"/>
+          </path>
+          <text x="240" y="205" textAnchor="middle" fontSize="9" fill="#EB3443">Physical Access</text>
+          
+          {/* Elements inside Red Team */}
+          <rect x="110" y="165" width="100" height="15" rx="2" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="160" y="177" textAnchor="middle" fontSize="8" fill="#EB3443">Custom Exploits</text>
+          
+          <rect x="110" y="185" width="100" height="15" rx="2" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="160" y="197" textAnchor="middle" fontSize="8" fill="#EB3443">Evasion Techniques</text>
+          
+          <rect x="110" y="205" width="100" height="15" rx="2" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="160" y="217" textAnchor="middle" fontSize="8" fill="#EB3443">Intel-Based TTPs</text>
+          
+          {/* Objective */}
+          <circle cx="450" cy="120" r="15" fill="none" stroke="#EB3443" strokeWidth="1" strokeOpacity="0.5" strokeDasharray="3,1">
+            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          {/* Animated Elements */}
+          <circle cx="230" cy="170" r="3" fill="#EB3443">
+            <animate attributeName="cx" values="220;295;295" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="170;135;135" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="1;0.5;0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="230" cy="190" r="3" fill="#EB3443">
+            <animate attributeName="cx" values="220;315;315" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="190;185;185" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="1;0.5;0" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          
+          {/* Report */}
+          <rect x="200" y="290" width="120" height="60" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="260" y="310" textAnchor="middle" fontSize="11" fill="#00B2A9">Findings &</text>
+          <text x="260" y="330" textAnchor="middle" fontSize="11" fill="#00B2A9">Recommendations</text>
+          
+          <path d="M160 230 L220 290" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M400 260 L290 290" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+        </svg>
+      }
       
       relatedServices={[
         {
