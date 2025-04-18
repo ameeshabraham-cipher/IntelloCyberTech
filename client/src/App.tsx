@@ -73,6 +73,11 @@ import IncidentResponsePlanningPage from "@/pages/services/IncidentResponsePlann
 import RedTeamExercisesPage from "@/pages/services/RedTeamExercises";
 import PrivacyCompliancePage from "@/pages/services/PrivacyCompliance";
 
+// IT Managed Services
+import ItAmcPage from "@/pages/services/ItAmc";
+import ManagedItProjectPage from "@/pages/services/ManagedItProject";
+import MicrosoftServicesPage from "@/pages/services/MicrosoftServices";
+
 // Industry Pages
 import BfsiPage from "@/pages/industries/Bfsi";
 import HealthcarePage from "@/pages/industries/Healthcare";
@@ -154,6 +159,11 @@ function Router() {
           <Route path="/services/incident-response-planning" component={IncidentResponsePlanningPage} />
           <Route path="/services/red-team-exercises" component={RedTeamExercisesPage} />
           <Route path="/services/privacy-compliance" component={PrivacyCompliancePage} />
+          
+          {/* IT Managed Services */}
+          <Route path="/services/it-amc" component={ItAmcPage} />
+          <Route path="/services/managed-it-project" component={ManagedItProjectPage} />
+          <Route path="/services/microsoft-services" component={MicrosoftServicesPage} />
           
           {/* Industry Pages */}
           <Route path="/industries/bfsi" component={BfsiPage} />
