@@ -243,8 +243,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-montserrat font-semibold mb-2">Office Location</h3>
                       <p className="text-muted-foreground">
-                        Office 26, First Gulf Business Center,<br />
-                        Madina Mall, Al Qusais, Dubai, UAE
+                        Madina Mall, Muhaisnah 4,<br />
+                        Dubai, UAE (79JX+Q8 Dubai)
                       </p>
                     </div>
                   </div>
@@ -293,13 +293,13 @@ const Contact = () => {
                 <h2 className="text-2xl font-montserrat font-bold mb-6">Find Us</h2>
                 <div className="rounded-lg overflow-hidden h-[300px] relative">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1785070521243!2d55.2708378!3d25.1857568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d0255b890b%3A0x9d3a5e5308ae096d!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1642344234242!5m2!1sen!2sae" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.7045338040174!2d55.389926576248286!3d25.289204427765935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d605dc885b3%3A0x9f0d8ea2e8e03012!2sMadina%20Mall!5e0!3m2!1sen!2sae!4v1713170511364!5m2!1sen!2sae" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
                     allowFullScreen={true} 
                     loading="lazy"
-                    title="Intello. Office Location"
+                    title="Intello. Office Location - Madina Mall, Muhaisnah 4, Dubai"
                   ></iframe>
                 </div>
               </div>

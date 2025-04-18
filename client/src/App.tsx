@@ -11,6 +11,7 @@ import InsightPost from "@/pages/InsightPost";
 import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeInitializer } from "@/components/ThemeToggle";
 
@@ -70,6 +71,7 @@ function Router() {
   return (
     <div className="relative">
       <Navbar />
+      <WhatsAppButton />
       <main>
         <Switch>
           {/* Main Pages */}
