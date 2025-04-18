@@ -57,7 +57,7 @@ const ClientLogosCarousel = () => {
                   {logo.name}
                 </div>
               )}
-              <div className="text-gray-500 text-[10px] text-center">Trusted Partner</div>
+
             </div>
           </CarouselItem>
         ))}
