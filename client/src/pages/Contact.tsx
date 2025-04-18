@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useScrollReveal } from '@/lib/animations';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import ContactFormWithCalendly from '@/components/ContactFormWithCalendly';
+import ContactForm from '@/components/ContactFormWithCalendly'; // Keeping the import name for compatibility
+import CalendlyPopupCTA from '@/components/CalendlyPopupCTA';
 
 const Contact = () => {
   useScrollReveal();
@@ -10,6 +11,8 @@ const Contact = () => {
   useEffect(() => {
     document.title = 'Contact Us | Intello.';
   }, []);
+
+  const calendlyUrl = "https://calendly.com/ameesh-intellome";
 
   return (
     <div className="min-h-screen pt-24">
@@ -38,8 +41,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="reveal">
-              <ContactFormWithCalendly 
-                calendlyUrl="https://calendly.com/ameesh-intellome" 
+              <ContactForm 
                 showServiceField={true}
               />
             </div>
@@ -99,6 +101,23 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Calendly Integration */}
+              <div className="bg-background/50 backdrop-blur-sm p-8 rounded-2xl border border-[hsl(var(--secondary))]/20 mb-8">
+                <h2 className="text-2xl font-montserrat font-bold mb-6">Schedule a Call</h2>
+                <p className="text-muted-foreground mb-6">
+                  Book a convenient time to speak directly with one of our security experts.
+                </p>
+                <div className="h-[400px] rounded-lg overflow-hidden">
+                  <iframe 
+                    src={`${calendlyUrl}?embed_domain=${window.location.host}&embed_type=Inline`}
+                    width="100%" 
+                    height="100%" 
+                    frameBorder="0"
+                    title="Schedule a call with Intello"
+                  ></iframe>
                 </div>
               </div>
               
@@ -168,6 +187,14 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
+      {/* Floating CTA Button */}
+      <CalendlyPopupCTA 
+        url={calendlyUrl}
+        buttonText="Schedule a Call"
+        position="bottom-right"
+        autoOpen={false}
+      />
     </div>
   );
 };
