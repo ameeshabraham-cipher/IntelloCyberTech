@@ -91,59 +91,104 @@ const ClientLogosCarousel = () => {
 const NewHeroSection = () => {
   useScrollReveal();
   
+  // Calculate years of experience since 2003
+  const establishedYear = 2003;
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - establishedYear;
+  
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
-      {/* Animated background gradient */}
+      {/* Enhanced animated background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background to-background"></div>
       
-      {/* Cyber grid pattern overlay */}
+      {/* Animated particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-[hsl(var(--secondary))]/40 rounded-full animate-float-particle"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${5 + Math.random() * 10}s`
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Enhanced cyber grid pattern overlay */}
       <div className="absolute inset-0" style={{
         backgroundImage: `linear-gradient(rgba(235, 52, 67, 0.03) 1px, transparent 1px), 
                           linear-gradient(90deg, rgba(235, 52, 67, 0.03) 1px, transparent 1px)`,
         backgroundSize: '30px 30px'
       }}></div>
       
-      {/* Red glow effects */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-[100px]"></div>
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-[100px]"></div>
+      {/* Enhanced red glow effects */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-[100px] animate-pulse-slow animate-delay-2"></div>
+      <div className="absolute bottom-40 left-1/4 w-64 h-64 bg-[hsl(var(--secondary))]/5 rounded-full blur-[80px] animate-pulse-slow animate-delay-3"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+          {/* Left Column - Enhanced Text Content */}
           <div className="reveal">
-            {/* Removed Intello Logo text */}
-            <div className="mb-6">
-              <div className="flex flex-col mb-8 mt-4">
-              </div>
+            {/* Badge with years of experience */}
+            <div className="inline-flex items-center bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6 gap-2">
+              <span className="text-[hsl(var(--secondary))] font-medium flex items-center gap-2">
+                <span className="h-2 w-2 bg-[hsl(var(--secondary))] rounded-full animate-ping absolute inline-flex opacity-75"></span>
+                <span className="h-2 w-2 bg-[hsl(var(--secondary))] rounded-full relative inline-flex"></span>
+                <span>Established 2003 • {yearsOfExperience}+ Years of Excellence</span>
+              </span>
             </div>
-            <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
-              <span className="text-[hsl(var(--secondary))] font-medium">Compliance & Cybersecurity Experts</span>
-            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Compliance Solutions</span> for Modern Enterprises
+              <span className="block">Secure Your</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] block">Digital Future</span>
+              <span className="text-xl md:text-2xl text-muted-foreground block mt-2">With Strategic Cyber Solutions</span>
             </h1>
+            
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Intello. combines regulatory expertise with AI-powered analytics to deliver 
-              comprehensive compliance and security solutions for today's complex regulatory landscape.
+              Intello combines {yearsOfExperience}+ years of regulatory expertise with cutting-edge AI-powered 
+              analytics to deliver comprehensive compliance and security solutions for today's 
+              complex regulatory landscape.
             </p>
+            
+            {/* Enhanced CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Link href="/assessment">
                 <Button
-                  className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover flex items-center"
+                  className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover flex items-center group"
                 >
                   <span>Get a Free Assessment</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/solutions">
                 <Button
                   variant="outline"
-                  className="bg-transparent border border-[hsl(var(--secondary))]/30 text-white font-medium py-3 px-8 rounded-full hover:bg-[hsl(var(--secondary))]/10 transition-all duration-300 flex items-center"
+                  className="bg-transparent border border-[hsl(var(--secondary))]/30 text-white font-medium py-3 px-8 rounded-full hover:bg-[hsl(var(--secondary))]/10 transition-all duration-300 flex items-center group"
                 >
                   <span>Our Solutions</span>
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
+            </div>
+            
+            {/* Key stats section */}
+            <div className="grid grid-cols-3 gap-4 mt-10">
+              <div className="bg-card/30 border border-[hsl(var(--secondary))]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                <div className="text-[hsl(var(--secondary))] text-2xl font-bold">{yearsOfExperience}+</div>
+                <div className="text-xs text-muted-foreground">Years of Experience</div>
+              </div>
+              <div className="bg-card/30 border border-[hsl(var(--secondary))]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                <div className="text-[hsl(var(--secondary))] text-2xl font-bold">500+</div>
+                <div className="text-xs text-muted-foreground">Successful Projects</div>
+              </div>
+              <div className="bg-card/30 border border-[hsl(var(--secondary))]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                <div className="text-[hsl(var(--secondary))] text-2xl font-bold">99%</div>
+                <div className="text-xs text-muted-foreground">Client Satisfaction</div>
+              </div>
             </div>
           </div>
           
