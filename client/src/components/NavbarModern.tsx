@@ -112,7 +112,7 @@ const servicesMenuData = [
   {
     category: 'IT Managed Services',
     items: [
-      { label: 'Cloud/On-Prem Infrastructure Design', path: '/services/cloud-on-prem-infrastructure', icon: <Cloud className="h-4 w-4" /> },
+      { label: 'Cloud/On-Prem Infrastructure Design', path: '/services/cloud-onprem-infrastructure', icon: <Cloud className="h-4 w-4" /> },
       { label: 'IT Annual Maintenance Contract', path: '/services/it-amc', icon: <Laptop className="h-4 w-4" /> },
       { label: 'Managed IT Project Management', path: '/services/managed-it-project', icon: <BarChart2 className="h-4 w-4" /> },
       { label: 'Microsoft Services', path: '/services/microsoft-services', icon: <Globe className="h-4 w-4" /> },
