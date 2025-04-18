@@ -9,7 +9,7 @@ import Contact from "@/pages/Contact";
 import Insights from "@/pages/Insights";
 import InsightPost from "@/pages/InsightPost";
 import NotFound from "@/pages/not-found";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/NavbarModern";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CalendlyFloatingButton from "@/components/CalendlyFloatingButton";

@@ -18,15 +18,202 @@ import {
   Briefcase,
   ShoppingBag,
   Users,
-  Truck
+  Truck,
+  Layers,
+  X,
+  BookOpen,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// Theme toggle removed as we're now using dark mode only
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Define missing Lucide icons since they aren't in the lucide-react package
+const Globe = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
+const Network = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="6" cy="18" r="2" />
+    <circle cx="6" cy="6" r="2" />
+    <circle cx="18" cy="18" r="2" />
+    <circle cx="18" cy="6" r="2" />
+    <line x1="6" y1="8" x2="6" y2="16" />
+    <line x1="18" y1="8" x2="18" y2="16" />
+    <line x1="8" y1="6" x2="16" y2="6" />
+    <line x1="8" y1="18" x2="16" y2="18" />
+  </svg>
+);
+
+const Cloud = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+  </svg>
+);
+
+const Mail = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+);
+
+const Laptop = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+  </svg>
+);
+
+// Interface for menu items
+interface MenuItemChild {
+  label: string;
+  path?: string;
+  icon?: React.ReactNode;
+}
+
+interface CategoryItem {
+  category: string;
+  icon?: React.ReactNode;
+  children: MenuItemChild[];
+}
+
+interface MenuItem {
+  label: string;
+  icon?: React.ReactNode;
+  path?: string;
+  children?: (MenuItem | CategoryItem)[];
+}
+
+// Menu data structure
+const menuItems: MenuItem[] = [
+  {
+    label: 'Services',
+    icon: <Shield className="h-5 w-5" />,
+    children: [
+      {
+        label: 'GRC Services',
+        category: 'GRC Services',
+        children: [
+          { label: 'ISO 27001 Certification', path: '/services/iso27001', icon: <Shield className="h-4 w-4" /> },
+          { label: 'ISO 42001 AI Management', path: '/services/iso42001', icon: <Bot className="h-4 w-4" /> },
+          { label: 'SOC 2 Compliance', path: '/services/soc2', icon: <CheckCircle className="h-4 w-4" /> },
+          { label: 'GDPR Compliance', path: '/services/gdpr', icon: <Lock className="h-4 w-4" /> },
+          { label: 'PCI DSS Compliance', path: '/services/pci-dss', icon: <ShieldCheck className="h-4 w-4" /> },
+          { label: 'HIPAA Compliance', path: '/services/hipaa', icon: <Hospital className="h-4 w-4" /> },
+          { label: 'Internal Audit & Gap Analysis', path: '/services/internal-audit', icon: <FileText className="h-4 w-4" /> },
+          { label: 'Risk Management Frameworks', path: '/services/risk-frameworks', icon: <BarChart2 className="h-4 w-4" /> }
+        ]
+      },
+      {
+        label: 'GCC Focused Compliance',
+        category: 'GCC Focused Compliance',
+        children: [
+          { label: 'UAE PDPL Compliance', path: '/services/uae-pdpl', icon: <Lock className="h-4 w-4" /> },
+          { label: 'UAE IA Compliance', path: '/services/uae-ia', icon: <ShieldCheck className="h-4 w-4" /> },
+          { label: 'UAE NESA Compliance', path: '/services/uae-nesa', icon: <Shield className="h-4 w-4" /> },
+          { label: 'KSA PDPL Compliance', path: '/services/ksa-pdpl', icon: <Lock className="h-4 w-4" /> },
+          { label: 'Bahrain PDPL Compliance', path: '/services/bahrain-pdpl', icon: <Lock className="h-4 w-4" /> },
+          { label: 'SAMA Compliance', path: '/services/sama', icon: <Building className="h-4 w-4" /> },
+          { label: 'Saudi Aramco Cybersecurity', path: '/services/saudi-aramco', icon: <Shield className="h-4 w-4" /> }
+        ]
+      },
+      {
+        label: 'IT Security & Audit',
+        category: 'IT Security & Audit',
+        children: [
+          { label: 'IT Security Audit', path: '/services/it-security-audit', icon: <FileText className="h-4 w-4" /> },
+          { label: 'Security Assessment', path: '/services/security-assessment', icon: <CheckCircle className="h-4 w-4" /> },
+          { label: 'Policy Development', path: '/services/policy-development', icon: <FileText className="h-4 w-4" /> }
+        ]
+      },
+      {
+        label: 'Offensive Security',
+        category: 'Offensive Security',
+        children: [
+          { label: 'Penetration Testing', path: '/services/penetration-testing', icon: <Shield className="h-4 w-4" /> },
+          { label: 'Web App Penetration Testing', path: '/services/web-pen-testing', icon: <Globe className="h-4 w-4" /> },
+          { label: 'Network Penetration Testing', path: '/services/network-pentesting', icon: <Network className="h-4 w-4" /> },
+          { label: 'Vulnerability Assessment & Pen Testing', path: '/services/vapt', icon: <Search className="h-4 w-4" /> }
+        ]
+      },
+      {
+        label: 'Cybersecurity Solutions',
+        category: 'Cybersecurity Solutions',
+        children: [
+          { label: 'Cloud Security', path: '/services/cloud-security', icon: <Cloud className="h-4 w-4" /> },
+          { label: 'vCISO Services', path: '/services/vciso', icon: <UserCheck className="h-4 w-4" /> },
+          { label: 'Data Privacy Consultation', path: '/services/data-privacy', icon: <Lock className="h-4 w-4" /> },
+          { label: 'Email Security', path: '/solutions/email-security', icon: <Mail className="h-4 w-4" /> },
+          { label: 'Endpoint Detection & Response', path: '/solutions/edr', icon: <Laptop className="h-4 w-4" /> }
+        ]
+      }
+    ]
+  },
+  {
+    label: 'Solutions',
+    icon: <Layers className="h-5 w-5" />,
+    children: [
+      {
+        label: 'AI-Powered Solutions',
+        category: 'AI-Powered Solutions',
+        children: [
+          { label: 'AI-Driven Compliance Tools', path: '/solutions/ai-compliance', icon: <Bot className="h-4 w-4" /> },
+          { label: 'GRC Automation Platforms', path: '/solutions/grc-automation', icon: <BarChart2 className="h-4 w-4" /> },
+          { label: 'Risk Management Tools', path: '/solutions/risk-management', icon: <BarChart2 className="h-4 w-4" /> },
+          { label: 'Vulnerability Management', path: '/solutions/vulnerability-management', icon: <Search className="h-4 w-4" /> },
+          { label: 'Cybersecurity Frameworks', path: '/solutions/cybersecurity-frameworks', icon: <Layers className="h-4 w-4" /> }
+        ]
+      },
+      {
+        label: 'Security Technology Solutions',
+        category: 'Security Technology Solutions',
+        children: [
+          { label: 'Email Security Solutions', path: '/solutions/email-security', icon: <Mail className="h-4 w-4" /> },
+          { label: 'Endpoint Detection & Response', path: '/solutions/edr', icon: <Laptop className="h-4 w-4" /> },
+          { label: 'SIEM Solutions', path: '/solutions/siem', icon: <Layers className="h-4 w-4" /> },
+          { label: 'Data Loss Prevention', path: '/solutions/dlp', icon: <Shield className="h-4 w-4" /> }
+        ]
+      }
+    ]
+  },
+  {
+    label: 'Industries',
+    icon: <Building className="h-5 w-5" />,
+    children: [
+      { label: 'BFSI', path: '/industries/bfsi', icon: <Briefcase className="h-4 w-4" /> },
+      { label: 'Healthcare', path: '/industries/healthcare', icon: <Hospital className="h-4 w-4" /> },
+      { label: 'Government', path: '/industries/government', icon: <Building className="h-4 w-4" /> },
+      { label: 'E-Commerce', path: '/industries/ecommerce', icon: <ShoppingBag className="h-4 w-4" /> },
+      { label: 'SMEs & Enterprises', path: '/industries/sme', icon: <Users className="h-4 w-4" /> },
+      { label: 'Logistics', path: '/industries/logistics', icon: <Truck className="h-4 w-4" /> }
+    ]
+  },
+  {
+    label: 'About Us',
+    icon: <Users className="h-5 w-5" />,
+    path: '/about'
+  },
+  {
+    label: 'Insights',
+    icon: <BookOpen className="h-5 w-5" />,
+    path: '/insights'
+  },
+  {
+    label: 'Contact',
+    icon: <Mail className="h-5 w-5" />,
+    path: '/contact'
+  }
+];
 
 const Navbar = () => {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   
   // Apply navbar background change on scroll
   useNavbarScroll();
@@ -42,15 +229,20 @@ const Navbar = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setActiveItem(null);
   }, [location]);
   
-  const toggleSubmenu = (submenu: string) => {
-    setOpenSubmenu(openSubmenu === submenu ? null : submenu);
+  const toggleActiveItem = (item: string) => {
+    if (activeItem === item) {
+      setActiveItem(null);
+    } else {
+      setActiveItem(item);
+    }
   };
   
   return (
     <header id="navbar" className="fixed w-full z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
@@ -65,116 +257,145 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8">
-            {/* Services Dropdown */}
-            <div className="group relative">
-              <button className="text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center">
-                Services <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[700px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-card border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-6 grid grid-cols-3 gap-4">
-                <div>
-                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">GRC Services</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/services/iso27001" className="hover:text-[hsl(var(--secondary))] transition">ISO 27001 Certification</Link></li>
-                    <li><Link href="/services/iso42001" className="hover:text-[hsl(var(--secondary))] transition">ISO 42001 AI Management</Link></li>
-                    <li><Link href="/services/soc2" className="hover:text-[hsl(var(--secondary))] transition">SOC 2 Compliance</Link></li>
-                    <li><Link href="/services/gdpr" className="hover:text-[hsl(var(--secondary))] transition">GDPR Compliance</Link></li>
-                    <li><Link href="/services/pci-dss" className="hover:text-[hsl(var(--secondary))] transition">PCI DSS Compliance</Link></li>
-                    <li><Link href="/services/hipaa" className="hover:text-[hsl(var(--secondary))] transition">HIPAA Compliance</Link></li>
-                    <li><Link href="/services/internal-audit" className="hover:text-[hsl(var(--secondary))] transition">Internal Audit & Gap Analysis</Link></li>
-                    <li><Link href="/services/risk-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Frameworks</Link></li>
-                  </ul>
+          {/* Desktop Navigation - New Modern Design */}
+          <nav className="hidden lg:flex items-center">
+            <div className="flex space-x-1 bg-background/40 backdrop-blur-sm rounded-full p-1 border border-white/10">
+              {menuItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="relative"
+                  onMouseEnter={() => item.children && setHoveredItem(item.label)}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  {item.path ? (
+                    <Link href={item.path}>
+                      <button className="px-4 py-2 rounded-full text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center gap-1 hover:bg-white/5">
+                        {item.icon && <span className="mr-1">{item.icon}</span>}
+                        {item.label}
+                      </button>
+                    </Link>
+                  ) : (
+                    <button className="px-4 py-2 rounded-full text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center gap-1 hover:bg-white/5">
+                      {item.icon && <span className="mr-1">{item.icon}</span>}
+                      {item.label}
+                      <ChevronDown className="h-4 w-4 ml-1" />
+                    </button>
+                  )}
                   
-                  <h4 className="text-[hsl(var(--secondary))] mt-4 mb-3 font-semibold">GCC Focused Compliance</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/services/uae-pdpl" className="hover:text-[hsl(var(--secondary))] transition">UAE PDPL Compliance</Link></li>
-                    <li><Link href="/services/uae-ia" className="hover:text-[hsl(var(--secondary))] transition">UAE IA Compliance</Link></li>
-                    <li><Link href="/services/uae-nesa" className="hover:text-[hsl(var(--secondary))] transition">UAE NESA Compliance</Link></li>
-                    <li><Link href="/services/ksa-pdpl" className="hover:text-[hsl(var(--secondary))] transition">KSA PDPL Compliance</Link></li>
-                    <li><Link href="/services/bahrain-pdpl" className="hover:text-[hsl(var(--secondary))] transition">Bahrain PDPL Compliance</Link></li>
-                    <li><Link href="/services/sama" className="hover:text-[hsl(var(--secondary))] transition">SAMA Compliance</Link></li>
-                    <li><Link href="/services/saudi-aramco" className="hover:text-[hsl(var(--secondary))] transition">Saudi Aramco Cybersecurity</Link></li>
-                  </ul>
+                  {/* Mega Menu - modernized with tabbed interface */}
+                  {item.children && hoveredItem === item.label && (
+                    <div className="absolute left-0 top-full mt-2 opacity-100 visible transition-all duration-200 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden">
+                      {/* For Services - Tabbed mega menu */}
+                      {item.label === 'Services' && (
+                        <div className="w-[850px] p-1">
+                          <div className="flex">
+                            {/* Category Tabs */}
+                            <div className="w-[220px] border-r border-[hsl(var(--secondary))]/10 p-2">
+                              {item.children.map((category, catIndex) => (
+                                <button 
+                                  key={catIndex}
+                                  onMouseEnter={() => setActiveItem(category.category || '')}
+                                  className={`w-full text-left px-4 py-3 rounded-md mb-1 transition-all flex items-center gap-2 ${activeItem === category.category ? 'bg-[hsl(var(--secondary))]/10 text-[hsl(var(--secondary))]' : 'hover:bg-background/40'}`}
+                                >
+                                  {category.category}
+                                </button>
+                              ))}
+                            </div>
+                            
+                            {/* Tab Content */}
+                            <div className="flex-1 p-3">
+                              <AnimatePresence mode="wait">
+                                {item.children.map((category, catIndex) => (
+                                  (activeItem === category.category || (!activeItem && catIndex === 0)) && (
+                                    <motion.div
+                                      key={category.category}
+                                      initial={{ opacity: 0, y: 5 }}
+                                      animate={{ opacity: 1, y: 0 }}
+                                      exit={{ opacity: 0, y: -5 }}
+                                      transition={{ duration: 0.2 }}
+                                      className="grid grid-cols-3 gap-2"
+                                    >
+                                      {category.children?.map((subItem, subIndex) => (
+                                        <Link 
+                                          key={subIndex} 
+                                          href={subItem.path || '#'}
+                                          className="flex items-center gap-2 p-2 rounded-md hover:bg-[hsl(var(--secondary))]/10 transition-all group"
+                                        >
+                                          <span className="p-2 rounded-md bg-background/40 text-[hsl(var(--secondary))] group-hover:bg-[hsl(var(--secondary))]/20">
+                                            {subItem.icon}
+                                          </span>
+                                          <div>
+                                            <p className="font-medium">{subItem.label}</p>
+                                          </div>
+                                        </Link>
+                                      ))}
+                                    </motion.div>
+                                  )
+                                ))}
+                              </AnimatePresence>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* For Solutions - Simpler mega menu */}
+                      {item.label === 'Solutions' && (
+                        <div className="w-[600px] p-4">
+                          <div className="grid grid-cols-2 gap-4">
+                            {item.children.map((category, catIndex) => (
+                              <div key={catIndex}>
+                                <h4 className="text-[hsl(var(--secondary))] font-semibold mb-3 flex items-center">
+                                  {category.icon && <span className="mr-2">{category.icon}</span>}
+                                  {category.category}
+                                </h4>
+                                <ul className="space-y-1">
+                                  {category.children?.map((subItem, subIndex) => (
+                                    <li key={subIndex}>
+                                      <Link 
+                                        href={subItem.path || '#'}
+                                        className="flex items-center gap-2 py-2 px-3 rounded-md hover:bg-[hsl(var(--secondary))]/10 transition-all"
+                                      >
+                                        {subItem.icon}
+                                        <span>{subItem.label}</span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* For Industries - Card grid menu */}
+                      {item.label === 'Industries' && (
+                        <div className="w-[500px] p-4">
+                          <h4 className="text-[hsl(var(--secondary))] font-semibold mb-3">Industries We Serve</h4>
+                          <div className="grid grid-cols-2 gap-2">
+                            {item.children?.map((industry, indIndex) => (
+                              <Link 
+                                key={indIndex} 
+                                href={industry.path || '#'}
+                                className="flex items-center gap-3 p-3 rounded-md border border-[hsl(var(--secondary))]/10 hover:bg-[hsl(var(--secondary))]/10 transition-all group"
+                              >
+                                <span className="p-2 rounded-full bg-background/80 text-[hsl(var(--secondary))] group-hover:bg-[hsl(var(--secondary))]/20">
+                                  {industry.icon}
+                                </span>
+                                <span className="font-medium">{industry.label}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">IT Security & Audit</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/services/it-security-audit" className="hover:text-[hsl(var(--secondary))] transition">IT Security Audit</Link></li>
-                    <li><Link href="/services/security-assessment" className="hover:text-[hsl(var(--secondary))] transition">Security Assessment</Link></li>
-                    <li><Link href="/services/policy-development" className="hover:text-[hsl(var(--secondary))] transition">Policy Development</Link></li>
-                  </ul>
-                  <h4 className="text-[hsl(var(--secondary))] mt-5 mb-3 font-semibold">Offensive Security</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/services/penetration-testing" className="hover:text-[hsl(var(--secondary))] transition">Penetration Testing</Link></li>
-                    <li><Link href="/services/web-pen-testing" className="hover:text-[hsl(var(--secondary))] transition">Web App Penetration Testing</Link></li>
-                    <li><Link href="/services/network-pentesting" className="hover:text-[hsl(var(--secondary))] transition">Network Penetration Testing</Link></li>
-                    <li><Link href="/services/vapt" className="hover:text-[hsl(var(--secondary))] transition">Vulnerability Assessment & Pen Testing</Link></li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-[hsl(var(--secondary))] mb-3 font-semibold">Cybersecurity Solutions</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/services/cloud-security" className="hover:text-[hsl(var(--secondary))] transition">Cloud Security</Link></li>
-                    <li><Link href="/services/vciso" className="hover:text-[hsl(var(--secondary))] transition">vCISO Services</Link></li>
-                    <li><Link href="/services/data-privacy" className="hover:text-[hsl(var(--secondary))] transition">Data Privacy Consultation</Link></li>
-                    <li><Link href="/solutions/email-security" className="hover:text-[hsl(var(--secondary))] transition">Email Security</Link></li>
-                    <li><Link href="/solutions/edr" className="hover:text-[hsl(var(--secondary))] transition">Endpoint Detection & Response</Link></li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
-            
-            {/* Solutions Dropdown */}
-            <div className="group relative">
-              <button className="text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center">
-                Solutions <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[400px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-card border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-6">
-                <div className="grid grid-cols-1 gap-4">
-                  <h4 className="text-[hsl(var(--secondary))] mb-1 font-semibold">AI-Powered Solutions</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/solutions/ai-compliance" className="hover:text-[hsl(var(--secondary))] transition">AI-Driven Compliance Tools</Link></li>
-                    <li><Link href="/solutions/grc-automation" className="hover:text-[hsl(var(--secondary))] transition">GRC Automation Platforms</Link></li>
-                    <li><Link href="/solutions/risk-management" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Tools</Link></li>
-                    <li><Link href="/solutions/vulnerability-management" className="hover:text-[hsl(var(--secondary))] transition">Vulnerability Management</Link></li>
-                    <li><Link href="/solutions/cybersecurity-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Cybersecurity Frameworks</Link></li>
-                  </ul>
-                  <h4 className="text-[hsl(var(--secondary))] mt-4 mb-1 font-semibold">Security Technology Solutions</h4>
-                  <ul className="space-y-2">
-                    <li><Link href="/solutions/email-security" className="hover:text-[hsl(var(--secondary))] transition">Email Security Solutions</Link></li>
-                    <li><Link href="/solutions/edr" className="hover:text-[hsl(var(--secondary))] transition">Endpoint Detection & Response</Link></li>
-                    <li><Link href="/solutions/siem" className="hover:text-[hsl(var(--secondary))] transition">SIEM Solutions</Link></li>
-                    <li><Link href="/solutions/dlp" className="hover:text-[hsl(var(--secondary))] transition">Data Loss Prevention</Link></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            {/* Industries Dropdown */}
-            <div className="group relative">
-              <button className="text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center">
-                Industries <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[300px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-card border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-6">
-                <ul className="space-y-2">
-                  <li><Link href="/industries/bfsi" className="hover:text-[hsl(var(--secondary))] transition">BFSI</Link></li>
-                  <li><Link href="/industries/healthcare" className="hover:text-[hsl(var(--secondary))] transition">Healthcare</Link></li>
-                  <li><Link href="/industries/government" className="hover:text-[hsl(var(--secondary))] transition">Government</Link></li>
-                  <li><Link href="/industries/ecommerce" className="hover:text-[hsl(var(--secondary))] transition">E-Commerce</Link></li>
-                  <li><Link href="/industries/sme" className="hover:text-[hsl(var(--secondary))] transition">SMEs & Enterprises</Link></li>
-                  <li><Link href="/industries/logistics" className="hover:text-[hsl(var(--secondary))] transition">Logistics</Link></li>
-                </ul>
-              </div>
-            </div>
-            
-            <Link href="/about" className="text-white hover:text-[hsl(var(--secondary))] transition font-medium">About Us</Link>
-            <Link href="/insights" className="text-white hover:text-[hsl(var(--secondary))] transition font-medium">Insights</Link>
-            <Link href="/contact" className="text-white hover:text-[hsl(var(--secondary))] transition font-medium">Contact</Link>
           </nav>
           
           {/* CTA Button (Desktop) */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-4">
             <Link href="/assessment">
               <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-2 px-6 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
                 Get Assessment
@@ -184,11 +405,11 @@ const Navbar = () => {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden text-white" 
+            className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <Menu className="h-6 w-6" />
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -301,6 +522,127 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
+      
+      {/* Mobile Navigation Menu - Modernized with animations and better organization */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed inset-0 top-[4rem] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
+          >
+            <div className="container mx-auto px-4 py-8">
+              {/* Search for mobile */}
+              <div className="mb-6 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <input 
+                  type="text" 
+                  placeholder="Search services..."
+                  className="w-full rounded-lg bg-card py-3 pl-10 pr-4 border border-white/10 focus:border-[hsl(var(--secondary))] focus:outline-none"
+                />
+              </div>
+              
+              {/* Main mobile menu */}
+              <nav className="space-y-1">
+                {menuItems.map((item, index) => (
+                  <div key={index} className="border-b border-white/10">
+                    {item.path ? (
+                      <Link href={item.path}>
+                        <button className="flex items-center w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all">
+                          <span className="bg-[hsl(var(--secondary))]/10 p-2 rounded-md mr-3 text-[hsl(var(--secondary))]">
+                            {item.icon}
+                          </span>
+                          {item.label}
+                        </button>
+                      </Link>
+                    ) : (
+                      <>
+                        <button 
+                          className="flex items-center justify-between w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
+                          onClick={() => toggleActiveItem(item.label)}
+                        >
+                          <span className="flex items-center">
+                            <span className="bg-[hsl(var(--secondary))]/10 p-2 rounded-md mr-3 text-[hsl(var(--secondary))]">
+                              {item.icon}
+                            </span>
+                            {item.label}
+                          </span>
+                          <ChevronDown 
+                            className={`h-5 w-5 transition-transform ${activeItem === item.label ? 'rotate-180' : ''}`} 
+                          />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {activeItem === item.label && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-12 pb-3 space-y-3">
+                                {item.children?.map((category, catIndex) => (
+                                  <div key={catIndex} className="mb-3">
+                                    <h4 className="text-[hsl(var(--secondary))] font-semibold mb-2 flex items-center">
+                                      {category.icon && <span className="mr-2">{category.icon}</span>}
+                                      {category.category}
+                                    </h4>
+                                    <ul className="space-y-1 pl-2">
+                                      {category.children?.map((subItem, subIndex) => (
+                                        <li key={subIndex}>
+                                          <Link href={subItem.path || '#'}>
+                                            <span className="flex items-center py-2 text-muted-foreground hover:text-[hsl(var(--secondary))] transition">
+                                              <span className="mr-2">{subItem.icon}</span>
+                                              {subItem.label}
+                                            </span>
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
+                                
+                                {/* If no categories but direct children */}
+                                {!item.children[0].category && (
+                                  <ul className="space-y-2">
+                                    {item.children.map((subItem, subIndex) => (
+                                      <li key={subIndex}>
+                                        <Link href={subItem.path || '#'}>
+                                          <span className="flex items-center py-2 text-muted-foreground hover:text-[hsl(var(--secondary))] transition">
+                                            <span className="mr-2">{subItem.icon}</span>
+                                            {subItem.label}
+                                          </span>
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </nav>
+              
+              {/* CTA Button (Mobile) */}
+              <div className="mt-8">
+                <Link href="/assessment">
+                  <Button className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 rounded-lg hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300">
+                    Get Security Assessment
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
