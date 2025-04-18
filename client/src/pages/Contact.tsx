@@ -243,8 +243,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-montserrat font-semibold mb-2">Office Location</h3>
                       <p className="text-muted-foreground">
-                        Madina Mall, Muhaisnah 4,<br />
-                        Dubai, UAE (79JX+Q8 Dubai)
+                        Office 26, First Gulf Business Center,<br />
+                        Madina Mall, Muhaisnah 4, Dubai, UAE
                       </p>
                     </div>
                   </div>

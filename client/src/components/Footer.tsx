@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <Link href="/" className="text-white font-montserrat font-bold text-2xl">
-                <span className="text-[hsl(var(--secondary))]">INTELLO.</span>
+                <img src="/images/intello-logo.png" alt="Intello Logo" className="h-10" />
               </Link>
             </div>
             <p className="text-muted-foreground mb-6">
@@ -72,7 +72,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="text-[hsl(var(--secondary))] h-5 w-5 mt-1 mr-3" />
-                <span className="text-muted-foreground">Madina Mall, Muhaisnah 4, Dubai, UAE (79JX+Q8 Dubai)</span>
+                <span className="text-muted-foreground">Office 26, First Gulf Business Center, Madina Mall, Muhaisnah 4, Dubai, UAE</span>
               </li>
               <li className="flex items-center">
                 <Phone className="text-[hsl(var(--secondary))] h-5 w-5 mr-3" />
@@ -89,7 +89,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[hsl(var(--secondary))]/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Intello. All rights reserved.
+            © {new Date().getFullYear()} Intello Protect Technology. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="text-muted-foreground hover:text-[hsl(var(--secondary))] text-sm transition-colors">Privacy Policy</Link>
