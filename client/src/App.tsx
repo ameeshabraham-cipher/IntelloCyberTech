@@ -13,6 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CalendlyFloatingButton from "@/components/CalendlyFloatingButton";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeInitializer } from "@/components/ThemeToggle";
 
@@ -77,6 +78,8 @@ import LogisticsPage from "@/pages/industries/Logistics";
 function Router() {
   return (
     <div className="relative">
+      {/* ScrollToTop component will automatically scroll to top on route change */}
+      <ScrollToTop />
       <Navbar />
       <WhatsAppButton position="bottom-right" />
       <CalendlyFloatingButton url="https://calendly.com/ameesh-intellome" position="bottom-left" />
