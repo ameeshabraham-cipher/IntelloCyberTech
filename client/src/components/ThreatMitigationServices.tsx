@@ -34,10 +34,8 @@ const ServiceCard = ({ icon, title, description, link, delay = 0 }: ServiceCardP
       <p className="text-muted-foreground mb-4 text-sm">
         {description}
       </p>
-      <Link href={link}>
-        <a className="inline-flex items-center text-[hsl(var(--secondary))] text-sm font-medium group-hover:text-[hsl(var(--primary))] transition-colors duration-300">
-          Learn more <ArrowUpRight className="ml-1 h-4 w-4" />
-        </a>
+      <Link href={link} className="inline-flex items-center text-[hsl(var(--secondary))] text-sm font-medium group-hover:text-[hsl(var(--primary))] transition-colors duration-300">
+        Learn more <ArrowUpRight className="ml-1 h-4 w-4" />
       </Link>
     </div>
   );
