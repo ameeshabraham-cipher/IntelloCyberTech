@@ -12,6 +12,7 @@ import NotFound from "@/pages/not-found";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AutoCalendlyPopup from "@/components/AutoCalendlyPopup";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeInitializer } from "@/components/ThemeToggle";
 
@@ -166,6 +167,11 @@ function App() {
       <ThemeProvider>
         <Router />
         <Toaster />
+        <AutoCalendlyPopup 
+          url="https://calendly.com/intello-cyber/30min"
+          autoOpenDelay={8000}
+          disableForPaths={['/contact', '/assessment', '/admin']}
+        />
       </ThemeProvider>
     </>
   );
