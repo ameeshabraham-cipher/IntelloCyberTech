@@ -11,6 +11,7 @@ import IndustryPainPoints from '@/components/IndustryPainPoints';
 import BusinessGrowthServices from '@/components/BusinessGrowthServices';
 import ThreatMitigationServices from '@/components/ThreatMitigationServices';
 import IntelloVerticalsSection from '@/components/IntelloVerticalsSection';
+import AnniversaryBanner from '@/components/AnniversaryBanner';
 
 const Home = () => {
   // Set page title on mount
@@ -21,6 +22,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <NewHeroSection />
+      <AnniversaryBanner />
       <IntelloVerticalsSection />
       <TargetAudienceSection />
       <BusinessGrowthServices />
