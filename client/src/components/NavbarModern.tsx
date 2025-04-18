@@ -23,6 +23,7 @@ import {
   X,
   BookOpen,
   ExternalLink,
+  Target,
   Network as NetworkIcon,
   Mail as MailIcon,
   Globe as GlobeIcon,
@@ -112,6 +113,8 @@ const servicesMenuData = [
     category: 'Offensive Security',
     items: [
       { label: 'Penetration Testing', path: '/services/penetration-testing', icon: <Shield className="h-4 w-4" /> },
+      { label: 'Advanced Penetration Testing', path: '/services/advanced-penetration-testing', icon: <Shield className="h-4 w-4" /> },
+      { label: 'Red Team Exercises', path: '/services/red-team-exercises', icon: <Target className="h-4 w-4" /> },
       { label: 'Web App Penetration Testing', path: '/services/web-pen-testing', icon: <Globe className="h-4 w-4" /> },
       { label: 'Network Penetration Testing', path: '/services/network-pentesting', icon: <Network className="h-4 w-4" /> },
       { label: 'Vulnerability Assessment & Pen Testing', path: '/services/vapt', icon: <Search className="h-4 w-4" /> },
@@ -121,10 +124,13 @@ const servicesMenuData = [
     category: 'Cybersecurity Solutions',
     items: [
       { label: 'Cloud Security', path: '/services/cloud-security', icon: <Cloud className="h-4 w-4" /> },
+      { label: 'Cloud/On-Prem Infrastructure', path: '/services/cloud-on-prem-infrastructure', icon: <Cloud className="h-4 w-4" /> },
       { label: 'vCISO Services', path: '/services/vciso', icon: <UserCheck className="h-4 w-4" /> },
+      { label: 'Privacy Compliance', path: '/services/privacy-compliance', icon: <Lock className="h-4 w-4" /> },
+      { label: 'Threat Hunting', path: '/services/threat-hunting', icon: <Search className="h-4 w-4" /> },
+      { label: 'Incident Response Planning', path: '/services/incident-response-planning', icon: <Shield className="h-4 w-4" /> },
       { label: 'Data Privacy Consultation', path: '/services/data-privacy', icon: <Lock className="h-4 w-4" /> },
       { label: 'Email Security', path: '/solutions/email-security', icon: <Mail className="h-4 w-4" /> },
-      { label: 'Endpoint Detection & Response', path: '/solutions/edr', icon: <Laptop className="h-4 w-4" /> },
     ]
   }
 ];
@@ -155,9 +161,13 @@ const solutionsMenuData = [
 // Industries data
 const industriesData = [
   { label: 'BFSI', path: '/industries/bfsi', icon: <Briefcase className="h-4 w-4" /> },
+  { label: 'Money Exchanges', path: '/industries/money-exchanges', icon: <Briefcase className="h-4 w-4" /> },
+  { label: 'Insurance Companies', path: '/industries/insurance-companies', icon: <Briefcase className="h-4 w-4" /> },
   { label: 'Healthcare', path: '/industries/healthcare', icon: <Hospital className="h-4 w-4" /> },
   { label: 'Government', path: '/industries/government', icon: <Building className="h-4 w-4" /> },
   { label: 'E-Commerce', path: '/industries/ecommerce', icon: <ShoppingBag className="h-4 w-4" /> },
+  { label: 'Technology Companies', path: '/industries/technology-companies', icon: <Laptop className="h-4 w-4" /> },
+  { label: 'Architectural Firms', path: '/industries/architectural-firms', icon: <Building className="h-4 w-4" /> },
   { label: 'SMEs & Enterprises', path: '/industries/sme', icon: <Users className="h-4 w-4" /> },
   { label: 'Logistics', path: '/industries/logistics', icon: <Truck className="h-4 w-4" /> },
 ];
