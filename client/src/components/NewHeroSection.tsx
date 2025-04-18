@@ -103,10 +103,9 @@ const NewHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="reveal">
-            {/* Intello Logo */}
+            {/* Removed Intello Logo text */}
             <div className="mb-6">
               <div className="flex flex-col mb-8 mt-4">
-                <div className="text-3xl md:text-4xl font-bold tracking-wide">INTELLO.</div>
               </div>
             </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
