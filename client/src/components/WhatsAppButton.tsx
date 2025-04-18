@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 
-const WhatsAppButton = () => {
+interface WhatsAppButtonProps {
+  position?: 'bottom-right' | 'bottom-left';
+}
+
+const WhatsAppButton = ({ position = 'bottom-right' }: WhatsAppButtonProps) => {
   const phoneNumber = '+971553556787';
   const message = 'Hello, I would like to know more about your services.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Position styles
+  const positionStyles = {
+    'bottom-right': 'bottom-6 right-6',
+    'bottom-left': 'bottom-6 left-6',
+  };
 
   return (
     <a 
       href={whatsappUrl} 
       target="_blank" 
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-50 flex items-center justify-center ${isHovered ? 'bg-green-600' : 'bg-green-500'} text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+      className={`fixed ${positionStyles[position]} z-50 flex items-center justify-center ${isHovered ? 'bg-green-600' : 'bg-green-500'} text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
       title="Message us on WhatsApp"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

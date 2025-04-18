@@ -78,8 +78,8 @@ function Router() {
   return (
     <div className="relative">
       <Navbar />
-      <WhatsAppButton />
-      <CalendlyFloatingButton url="https://calendly.com/ameesh-intellome" />
+      <WhatsAppButton position="bottom-right" />
+      <CalendlyFloatingButton url="https://calendly.com/ameesh-intellome" position="bottom-left" />
       <main>
         <Switch>
           {/* Main Pages */}
