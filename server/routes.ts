@@ -4,8 +4,14 @@ import { storage } from "./storage";
 import { processContactForm, getAllFormSubmissions, getFormSubmissionById } from "./contactForm";
 import * as fs from 'fs';
 import * as path from 'path';
+import formsRouter from './api/forms';
+import appointmentsRouter from './api/appointments';
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Register API routers
+  app.use('/api/forms', formsRouter);
+  app.use('/api/appointments', appointmentsRouter);
+  
   // API routes
   
   // Contact form submission route
