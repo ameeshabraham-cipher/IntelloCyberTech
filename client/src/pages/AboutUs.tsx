@@ -18,7 +18,7 @@ const AboutUs = () => {
   
   // Set page title on mount
   useEffect(() => {
-    document.title = 'About Us | Intello Cyber Technologies';
+    document.title = 'About Us | Intello.';
   }, []);
 
   // Team members data
@@ -64,7 +64,7 @@ const AboutUs = () => {
               Pioneers in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Cybersecurity</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Compliance</span>
             </h1>
             <p className="text-muted-foreground text-lg mb-8">
-              Intello Cyber Technologies was founded with a mission to empower businesses with future-proof security solutions that protect against evolving threats while ensuring compliance with global standards.
+              Intello. was founded with a mission to empower businesses with future-proof security solutions that protect against evolving threats while ensuring compliance with global standards.
             </p>
           </div>
         </div>

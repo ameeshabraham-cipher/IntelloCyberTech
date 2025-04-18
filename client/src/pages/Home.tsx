@@ -10,7 +10,7 @@ import { HelpBubbleDemo } from '@/components/HelpBubbleDemo';
 const Home = () => {
   // Set page title on mount
   useEffect(() => {
-    document.title = 'Intello Cyber Technologies | Compliance, GRC, Audit & Cybersecurity Solutions';
+    document.title = 'Intello. | Compliance, GRC, Audit & Cybersecurity Solutions';
   }, []);
 
   return (
