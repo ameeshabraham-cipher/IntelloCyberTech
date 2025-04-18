@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getQueryFn } from '@/lib/queryClient';
+import AdminNav from '@/components/AdminNav';
 
 // Define the types for form data
 interface ContactFormData {
