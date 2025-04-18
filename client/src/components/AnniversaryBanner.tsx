@@ -164,9 +164,6 @@ const AnniversaryBanner = () => {
               </div>
               <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
                 <div className="bg-black/30 px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/10 text-white/80 text-sm">
-                  ISO 27001 Certified
-                </div>
-                <div className="bg-black/30 px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/10 text-white/80 text-sm">
                   Industry Leader
                 </div>
                 <div className="bg-black/30 px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/10 text-white/80 text-sm">
@@ -177,6 +174,9 @@ const AnniversaryBanner = () => {
                 </div>
                 <div className="bg-black/30 px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/10 text-white/80 text-sm">
                   AI-Powered Innovation
+                </div>
+                <div className="bg-black/30 px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/10 text-white/80 text-sm">
+                  Trusted Security Partner
                 </div>
               </div>
             </motion.div>
