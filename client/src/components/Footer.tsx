@@ -89,7 +89,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[hsl(var(--secondary))]/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Intello Protect Technology. All rights reserved.
+            © {new Date().getFullYear()} Intello Protect Technologies L.L.C. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="text-muted-foreground hover:text-[hsl(var(--secondary))] text-sm transition-colors">Privacy Policy</Link>
