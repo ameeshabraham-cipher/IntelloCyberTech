@@ -117,7 +117,7 @@ const NewHeroSection = () => {
               Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">Compliance Solutions</span> for Modern Enterprises
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Intello Cyber Technologies combines regulatory expertise with AI-powered analytics to deliver 
+              Intello. combines regulatory expertise with AI-powered analytics to deliver 
               comprehensive compliance and security solutions for today's complex regulatory landscape.
             </p>
             <div className="flex flex-wrap gap-4">
