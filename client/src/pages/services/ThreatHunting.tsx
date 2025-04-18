@@ -5,41 +5,37 @@ import { Shield, Search, AlertCircle, Eye, BarChart3, FileText, Zap, Database, N
 const ThreatHuntingPage = () => {
   return (
     <ServicePageLayout
-      icon={<Search className="h-10 w-10" />}
       title="Threat Hunting Services"
-      subtitle="Proactive Identification of Hidden Threats in Your Environment"
+      category="Cybersecurity Services"
       description="Our Threat Hunting service employs advanced techniques to proactively search for and identify hidden threats that have evaded traditional security controls. We combine expert analysis, advanced tooling, and threat intelligence to uncover sophisticated attackers before they can cause damage."
+      heroIcon={<Search className="h-8 w-8" />}
       
-      overview={`
-        <p>Traditional security monitoring often fails to detect sophisticated threats that bypass standard defenses. Threat hunting fills this gap through proactive, hypothesis-driven investigations led by experienced security professionals who understand advanced attacker techniques.</p>
-        
-        <p>Our threat hunting service combines human expertise with advanced analytics and threat intelligence to systematically search for indicators of compromise (IOCs) and suspicious behaviors that signal potential security breaches. We help you discover hidden threats before they can achieve their objectives.</p>
-      `}
+      overview="Traditional security monitoring often fails to detect sophisticated threats that bypass standard defenses. Threat hunting fills this gap through proactive, hypothesis-driven investigations led by experienced security professionals who understand advanced attacker techniques. Our threat hunting service combines human expertise with advanced analytics and threat intelligence to systematically search for indicators of compromise (IOCs) and suspicious behaviors that signal potential security breaches. We help you discover hidden threats before they can achieve their objectives."
       
-      keyBenefits={[
+      benefits={[
         {
           title: "Early Threat Detection",
-          description: "Identify sophisticated threats that have bypassed traditional security controls before they can cause significant damage.",
-          icon: <AlertCircle className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Identify sophisticated threats that have bypassed traditional security controls before they can cause significant damage."
         },
         {
           title: "Enhanced Security Visibility",
-          description: "Gain deeper insights into your security posture and discover blind spots in your existing monitoring capabilities.",
-          icon: <Eye className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Gain deeper insights into your security posture and discover blind spots in your existing monitoring capabilities."
         },
         {
           title: "Reduced Dwell Time",
-          description: "Minimize the time attackers remain undetected in your environment, significantly reducing potential damage.",
-          icon: <Zap className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Minimize the time attackers remain undetected in your environment, significantly reducing potential damage."
         },
         {
           title: "Improved Incident Response",
-          description: "Strengthen your security operations with refined detection rules and enhanced response procedures.",
-          icon: <Shield className="h-6 w-6 text-[hsl(var(--primary))]" />
+          content: "Strengthen your security operations with refined detection rules and enhanced response procedures."
+        },
+        {
+          title: "Continuous Security Evolution",
+          content: "Develop a proactive security posture that constantly evolves to address emerging threats and attack vectors."
         }
       ]}
       
-      processSteps={[
+      steps={[
         {
           title: "Threat Intelligence Analysis",
           description: "Review current threat landscape and attacker techniques relevant to your industry and organization."
@@ -66,68 +62,122 @@ const ThreatHuntingPage = () => {
         }
       ]}
       
-      features={[
+      deliverables={[
         {
-          title: "Hypothesis-Driven Hunting",
-          description: "Structured investigations based on specific threat hypotheses derived from current intelligence and attacker methodologies.",
-          icon: <Search className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Threat Hunt Report",
+          description: "Comprehensive documentation of hunt methodologies, findings, and evidence of any discovered adversary activities."
         },
         {
-          title: "Advanced Analytics",
-          description: "Combination of statistical analysis, machine learning, and behavior modeling to identify anomalous patterns indicative of threats.",
-          icon: <BarChart3 className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Indicators of Compromise",
+          description: "Technical indicators associated with identified threats for implementation in security monitoring tools."
         },
         {
-          title: "Log & Endpoint Analysis",
-          description: "Deep investigation of system logs, network traffic, and endpoint telemetry to identify signs of compromise.",
-          icon: <Database className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Enhanced Detection Rules",
+          description: "Custom detection logic and monitoring rules to address security gaps identified during hunting activities."
         },
         {
-          title: "Network Traffic Analysis",
-          description: "Examination of network communications to identify command and control traffic, data exfiltration, and other malicious activities.",
-          icon: <Network className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Threat Analysis Dashboards",
+          description: "Visualization tools for analyzing hunt data and identifying patterns across your security environment."
         },
         {
-          title: "MITRE ATT&CK Mapping",
-          description: "Alignment of hunting activities with the MITRE ATT&CK framework to ensure comprehensive coverage of attacker techniques.",
-          icon: <FileText className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Tactical Response Recommendations",
+          description: "Immediate actions to address any identified threats and minimize potential security impact."
         },
         {
-          title: "Threat Intelligence Integration",
-          description: "Incorporation of latest threat intelligence to focus hunting efforts on the most relevant and current threats.",
-          icon: <Zap className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Strategic Improvement Plan",
+          description: "Long-term recommendations to enhance visibility, detection capabilities, and overall security posture."
         }
       ]}
       
-      faqs={[
-        {
-          question: "How is threat hunting different from our existing security monitoring?",
-          answer: "Traditional security monitoring relies on known signatures and predefined rules to detect threats. Threat hunting is a proactive process where skilled analysts actively search for threats that have evaded these controls. Hunters use behavioral analysis, advanced analytics, and threat intelligence to identify subtle patterns that indicate malicious activity."
-        },
-        {
-          question: "What types of threats can hunting identify?",
-          answer: "Threat hunting excels at finding sophisticated threats including advanced persistent threats (APTs), insider threats, novel malware, living-off-the-land techniques, and credential-based attacks. These threats typically bypass traditional security controls by using legitimate tools, avoiding known malware signatures, and employing stealthy techniques."
-        },
-        {
-          question: "How frequently should we conduct threat hunting?",
-          answer: "The optimal frequency depends on your risk profile and industry. High-risk organizations or those in targeted industries may benefit from continuous hunting or monthly exercises. Others might implement quarterly or bi-annual hunting programs. We can help determine the right cadence based on your specific threat landscape."
-        },
-        {
-          question: "What data sources are required for effective threat hunting?",
-          answer: "Effective hunting requires diverse data sources including endpoint logs, network traffic, authentication logs, email logs, web proxy data, DNS records, and cloud service logs. The more comprehensive the data collection, the more effective the hunting. We can help identify gaps in your current logging and provide recommendations for improvement."
-        },
-        {
-          question: "How do you measure the success of threat hunting?",
-          answer: "Success metrics include threats discovered, reduction in dwell time, security control gaps identified, and improvements to detection capabilities. We track these metrics over time to demonstrate the ongoing value of the hunting program and continually refine our approach based on results."
-        }
-      ]}
-      
-      cta={{
-        title: "Ready to Hunt for Hidden Threats?",
-        subtitle: "Proactively secure your environment against sophisticated attackers.",
-        buttonText: "Schedule a Threat Hunt",
-        buttonLink: "/contact"
-      }}
+      animationSvg={
+        <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Environment Representation */}
+          <rect x="100" y="100" width="400" height="200" rx="10" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
+          <text x="300" y="90" textAnchor="middle" fontSize="14" fill="#00E5FF">Enterprise Environment</text>
+          
+          {/* Systems and Data */}
+          <rect x="130" y="130" width="50" height="40" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="155" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Servers</text>
+          
+          <rect x="200" y="130" width="50" height="40" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="225" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Endpoints</text>
+          
+          <rect x="270" y="130" width="50" height="40" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="295" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Network</text>
+          
+          <rect x="340" y="130" width="50" height="40" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="365" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Cloud</text>
+          
+          <rect x="410" y="130" width="60" height="40" rx="5" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="440" y="155" textAnchor="middle" fontSize="10" fill="#00E5FF">Applications</text>
+          
+          {/* Hunt Process Elements */}
+          <circle cx="155" cy="220" r="30" fill="none" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <text x="155" y="225" textAnchor="middle" fontSize="9" fill="#00E5FF">Data</text>
+          <text x="155" y="235" textAnchor="middle" fontSize="9" fill="#00E5FF">Collection</text>
+          
+          <circle cx="235" cy="220" r="30" fill="none" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <text x="235" y="225" textAnchor="middle" fontSize="9" fill="#00E5FF">Pattern</text>
+          <text x="235" y="235" textAnchor="middle" fontSize="9" fill="#00E5FF">Analysis</text>
+          
+          <circle cx="315" cy="220" r="30" fill="none" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <text x="315" y="225" textAnchor="middle" fontSize="9" fill="#00E5FF">Threat</text>
+          <text x="315" y="235" textAnchor="middle" fontSize="9" fill="#00E5FF">Detection</text>
+          
+          <circle cx="395" cy="220" r="30" fill="none" stroke="#00E5FF" strokeWidth="1.5" strokeDasharray="4,2"/>
+          <text x="395" y="225" textAnchor="middle" fontSize="9" fill="#00E5FF">Response</text>
+          <text x="395" y="235" textAnchor="middle" fontSize="9" fill="#00E5FF">Actions</text>
+          
+          {/* Connecting Flow */}
+          <path d="M185 220 L205 220" stroke="#00E5FF" strokeWidth="1"/>
+          <path d="M265 220 L285 220" stroke="#00E5FF" strokeWidth="1"/>
+          <path d="M345 220 L365 220" stroke="#00E5FF" strokeWidth="1"/>
+          
+          {/* Hidden Threats */}
+          <path d="M320 145 Q325 150, 330 145" stroke="#EB3443" strokeWidth="1" opacity="0.8"/>
+          <path d="M170 160 Q175 165, 180 160" stroke="#EB3443" strokeWidth="1" opacity="0.8"/>
+          <path d="M420 150 Q425 155, 430 150" stroke="#EB3443" strokeWidth="1" opacity="0.8"/>
+          
+          {/* Animated Hunting Elements */}
+          <circle cx="235" cy="145" r="3" fill="#00E5FF">
+            <animate attributeName="cx" values="150;450;150" dur="10s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="145;170;145" dur="10s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="1;0.5;1" dur="10s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="155" cy="220" r="33" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3">
+            <animate attributeName="r" values="33;35;33" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="235" cy="220" r="33" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3">
+            <animate attributeName="r" values="33;35;33" dur="3s" repeatCount="indefinite" begin="1s"/>
+            <animate attributeName="stroke-opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
+          </circle>
+          
+          <circle cx="315" cy="220" r="33" fill="none" stroke="#00E5FF" strokeWidth="1" strokeOpacity="0.3">
+            <animate attributeName="r" values="33;35;33" dur="3s" repeatCount="indefinite" begin="2s"/>
+            <animate attributeName="stroke-opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite" begin="2s"/>
+          </circle>
+          
+          {/* Threat Detection */}
+          <circle cx="320" cy="145" r="15" fill="none" stroke="#EB3443" strokeWidth="1" strokeOpacity="0" strokeDasharray="3,2">
+            <animate attributeName="stroke-opacity" values="0;1;0" dur="5s" begin="5s" repeatCount="indefinite"/>
+          </circle>
+          
+          <path d="M315 220 L320 145" stroke="#EB3443" strokeWidth="1" strokeOpacity="0" strokeDasharray="2,2">
+            <animate attributeName="stroke-opacity" values="0;1;0" dur="5s" begin="6s" repeatCount="indefinite"/>
+          </path>
+          
+          {/* Results */}
+          <rect x="250" y="290" width="100" height="40" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="300" y="310" textAnchor="middle" fontSize="10" fill="#00B2A9">Detection Rules</text>
+          <text x="300" y="322" textAnchor="middle" fontSize="10" fill="#00B2A9">& Response Plans</text>
+          
+          <path d="M315 250 L300 290" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M395 250 L300 290" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+        </svg>
+      }
       
       relatedServices={[
         {

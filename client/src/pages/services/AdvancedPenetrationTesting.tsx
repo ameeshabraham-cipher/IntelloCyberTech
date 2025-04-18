@@ -5,41 +5,13 @@ import { Shield, Bug, Code, Network, Lock, FileText, Target, Eye, AlertTriangle 
 const AdvancedPenetrationTestingPage = () => {
   return (
     <ServicePageLayout
-      icon={<Shield className="h-10 w-10" />}
       title="Advanced Penetration Testing"
-      subtitle="In-Depth Security Assessments Targeting Specific Threat Scenarios"
+      category="Cybersecurity Services"
       description="Our Advanced Penetration Testing service goes beyond standard testing methodologies to simulate sophisticated threat actors and complex attack scenarios. We identify critical vulnerabilities in your systems using advanced exploitation techniques that mimic real-world attackers."
+      heroIcon={<Shield className="h-8 w-8" />}
+      overview="Standard penetration testing often misses sophisticated vulnerabilities that advanced threat actors can exploit. Our Advanced Penetration Testing service addresses this gap by employing senior security experts who simulate real-world adversaries using the latest attack techniques. We conduct targeted assessments focused on your most critical assets and specific threat scenarios relevant to your industry. This approach provides deeper insights into your security posture and delivers actionable remediation guidance prioritized by business risk."
       
-      overview={`
-        <p>Standard penetration testing often misses sophisticated vulnerabilities that advanced threat actors can exploit. Our Advanced Penetration Testing service addresses this gap by employing senior security experts who simulate real-world adversaries using the latest attack techniques.</p>
-        
-        <p>We conduct targeted assessments focused on your most critical assets and specific threat scenarios relevant to your industry. This approach provides deeper insights into your security posture and delivers actionable remediation guidance prioritized by business risk.</p>
-      `}
-      
-      keyBenefits={[
-        {
-          title: "Identify Sophisticated Vulnerabilities",
-          description: "Uncover complex security flaws that standard automated tools and basic penetration testing would miss.",
-          icon: <Bug className="h-6 w-6 text-[hsl(var(--primary))]" />
-        },
-        {
-          title: "Realistic Threat Simulation",
-          description: "Experience attacks that mirror the tactics, techniques, and procedures (TTPs) of advanced threat actors targeting your industry.",
-          icon: <Target className="h-6 w-6 text-[hsl(var(--primary))]" />
-        },
-        {
-          title: "Business-Focused Reporting",
-          description: "Receive detailed reports that translate technical vulnerabilities into business risks with clear remediation priorities.",
-          icon: <FileText className="h-6 w-6 text-[hsl(var(--primary))]" />
-        },
-        {
-          title: "Strengthen Security Posture",
-          description: "Build stronger defenses based on insights from realistic attack simulations and expert recommendations.",
-          icon: <Lock className="h-6 w-6 text-[hsl(var(--primary))]" />
-        }
-      ]}
-      
-      processSteps={[
+      steps={[
         {
           title: "Threat Modeling & Scoping",
           description: "Define test objectives based on your specific threat landscape, industry risk factors, and critical assets."
@@ -66,68 +38,139 @@ const AdvancedPenetrationTestingPage = () => {
         }
       ]}
       
-      features={[
+      benefits={[
         {
-          title: "Targeted Attack Scenarios",
-          description: "Custom assessment scenarios designed to test defenses against threats specific to your industry and business model.",
-          icon: <Target className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Identify Sophisticated Vulnerabilities",
+          content: "Uncover complex security flaws that standard automated tools and basic penetration testing would miss."
         },
         {
-          title: "Red Team Assessments",
-          description: "Extended engagements that simulate persistent attackers attempting to achieve specific objectives within your environment.",
-          icon: <Eye className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Realistic Threat Simulation",
+          content: "Experience attacks that mirror the tactics, techniques, and procedures (TTPs) of advanced threat actors targeting your industry."
         },
         {
-          title: "Custom Exploit Development",
-          description: "Creation of specialized tools and exploits to test defenses against zero-day vulnerabilities and advanced attack techniques.",
-          icon: <Code className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Business-Focused Reporting",
+          content: "Receive detailed reports that translate technical vulnerabilities into business risks with clear remediation priorities."
         },
         {
-          title: "Critical Systems Testing",
-          description: "Specialized assessment methodologies for high-value systems including SCADA/ICS environments, financial platforms, and healthcare systems.",
-          icon: <AlertTriangle className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Strengthen Security Posture",
+          content: "Build stronger defenses based on insights from realistic attack simulations and expert recommendations."
         },
         {
-          title: "Social Engineering",
-          description: "Advanced psychological manipulation techniques to test human defenses through targeted phishing, vishing, and physical security assessments.",
-          icon: <Network className="h-12 w-12 text-[hsl(var(--primary))]" />
-        },
-        {
-          title: "Supply Chain Assessment",
-          description: "Evaluation of security risks introduced through third-party vendors, software components, and business partnerships.",
-          icon: <Shield className="h-12 w-12 text-[hsl(var(--primary))]" />
+          title: "Compliance Validation",
+          content: "Verify the effectiveness of security controls required by various compliance frameworks and regulatory requirements."
         }
       ]}
       
-      faqs={[
+      deliverables={[
         {
-          question: "How is advanced penetration testing different from standard penetration testing?",
-          answer: "Standard penetration testing typically focuses on identifying known vulnerabilities using common tools and methodologies. Advanced penetration testing employs senior security experts who simulate sophisticated threat actors, develop custom exploits, chain multiple vulnerabilities together, and demonstrate real-world attack paths that could compromise critical assets."
+          title: "Executive Summary Report",
+          description: "High-level overview of findings, business impact, and strategic recommendations designed for executive stakeholders."
         },
         {
-          question: "How do you ensure testing doesn't disrupt our operations?",
-          description: "We implement stringent controls including detailed pre-engagement planning, continuous communication, exploitation safeguards, testing windows for high-risk activities, and immediate escalation procedures. Our experts are trained to balance thorough testing with operational safety."
+          title: "Detailed Technical Report",
+          description: "Comprehensive documentation of all identified vulnerabilities, including technical details, proof of concept, and exploitation steps."
         },
         {
-          question: "What deliverables should we expect?",
-          answer: "You'll receive a comprehensive report documenting all identified vulnerabilities with severity ratings, detailed technical findings, exploitation proof, business impact assessments, and prioritized remediation recommendations. We also provide an executive summary translating technical findings into business risk terms."
+          title: "Attack Narrative",
+          description: "Detailed walkthrough of attack paths followed during testing, demonstrating how multiple vulnerabilities can be chained together."
         },
         {
-          question: "How do you measure the success of an advanced penetration test?",
-          answer: "Success is measured by the quality of security insights provided, the identification of previously unknown vulnerabilities, the accuracy of business impact assessments, and the actionability of remediation guidance. The ultimate measure is whether the assessment helps you measurably improve your security posture against advanced threats."
+          title: "Remediation Roadmap",
+          description: "Prioritized action plan for addressing identified vulnerabilities with specific technical recommendations and timelines."
         },
         {
-          question: "Can you focus on specific threat actors or attack scenarios?",
-          answer: "Yes, we can design tests around specific threat actors relevant to your industry or custom attack scenarios that concern your organization. This might include simulating nation-state attackers, insider threats, or attacks targeting specific high-value assets within your environment."
+          title: "Security Control Recommendations",
+          description: "Strategic guidance for improving defensive controls and detection capabilities based on testing results."
+        },
+        {
+          title: "Evidence Package",
+          description: "Collection of screenshots, logs, and other artifacts demonstrating the impact of identified security issues."
         }
       ]}
       
-      cta={{
-        title: "Ready for an Advanced Security Assessment?",
-        subtitle: "Discover vulnerabilities that traditional testing might miss.",
-        buttonText: "Request Advanced Testing",
-        buttonLink: "/contact"
-      }}
+      animationSvg={
+        <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Target System */}
+          <rect x="320" y="150" width="200" height="120" rx="10" fill="#0A1024" stroke="#00E5FF" strokeWidth="2"/>
+          <text x="420" y="140" textAnchor="middle" fontSize="14" fill="#00E5FF">Target System</text>
+          
+          {/* Target Components */}
+          <rect x="340" y="170" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="360" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">Web App</text>
+          
+          <rect x="390" y="170" width="40" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="410" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">API</text>
+          
+          <rect x="440" y="170" width="60" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="470" y="190" textAnchor="middle" fontSize="10" fill="#00E5FF">Database</text>
+          
+          <rect x="360" y="220" width="120" height="30" rx="3" fill="#00B2A9" fillOpacity="0.2" stroke="#00E5FF" strokeWidth="1"/>
+          <text x="420" y="240" textAnchor="middle" fontSize="10" fill="#00E5FF">Infrastructure</text>
+          
+          {/* Attacker */}
+          <rect x="80" y="150" width="120" height="120" rx="10" fill="#0A1024" stroke="#EB3443" strokeWidth="2"/>
+          <text x="140" y="140" textAnchor="middle" fontSize="14" fill="#EB3443">Advanced Attacker</text>
+          
+          {/* Attack Tools */}
+          <rect x="100" y="170" width="80" height="20" rx="3" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="140" y="184" textAnchor="middle" fontSize="10" fill="#EB3443">Custom Exploits</text>
+          
+          <rect x="100" y="200" width="80" height="20" rx="3" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="140" y="214" textAnchor="middle" fontSize="10" fill="#EB3443">OSINT Tools</text>
+          
+          <rect x="100" y="230" width="80" height="20" rx="3" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
+          <text x="140" y="244" textAnchor="middle" fontSize="10" fill="#EB3443">Post-Exploit Tools</text>
+          
+          {/* Attack Paths */}
+          <path d="M200 180 L320 180" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="5,3">
+            <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <text x="260" y="170" textAnchor="middle" fontSize="10" fill="#EB3443">Web Exploit</text>
+          
+          <path d="M200 210 L320 210" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="5,3">
+            <animate attributeName="stroke-dashoffset" values="0;20" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <text x="260" y="200" textAnchor="middle" fontSize="10" fill="#EB3443">API Attack</text>
+          
+          <path d="M200 240 L320 240" stroke="#EB3443" strokeWidth="1.5" strokeDasharray="5,3">
+            <animate attributeName="stroke-dashoffset" values="0;20" dur="4s" repeatCount="indefinite"/>
+          </path>
+          <text x="260" y="230" textAnchor="middle" fontSize="10" fill="#EB3443">Infrastructure</text>
+          
+          {/* Security Controls */}
+          <circle cx="320" cy="180" r="5" fill="#00E5FF">
+            <animate attributeName="fill-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="320" cy="210" r="5" fill="#00E5FF">
+            <animate attributeName="fill-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+          </circle>
+          
+          <circle cx="320" cy="240" r="5" fill="#00E5FF">
+            <animate attributeName="fill-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" begin="1s"/>
+          </circle>
+          
+          {/* Breach Animation */}
+          <circle cx="270" cy="180" r="3" fill="#EB3443">
+            <animate attributeName="cx" values="200;310;310" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="1;0.5;0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          
+          <circle cx="240" cy="210" r="3" fill="#EB3443">
+            <animate attributeName="cx" values="200;310;310" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="fill-opacity" values="1;0.5;0" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          
+          {/* Report Section */}
+          <rect x="220" y="290" width="160" height="60" rx="5" fill="#0A1024" stroke="#00B2A9" strokeWidth="1.5"/>
+          <text x="300" y="315" textAnchor="middle" fontSize="12" fill="#00B2A9">Comprehensive Report</text>
+          <text x="300" y="335" textAnchor="middle" fontSize="10" fill="#00B2A9">Vulnerabilities + Remediation</text>
+          
+          {/* Connecting Lines */}
+          <path d="M140 270 L220 315" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+          <path d="M420 270 L340 315" stroke="#00B2A9" strokeWidth="1" strokeDasharray="3,2"/>
+        </svg>
+      }
       
       relatedServices={[
         {
