@@ -103,69 +103,169 @@ const VaptPage = () => {
       ]}
       animationSvg={
         <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="max-w-lg mx-auto">
+          {/* Background cybersecurity elements */}
           <g className="animate-pulse" style={{ animationDuration: '3s' }}>
-            <circle cx="400" cy="300" r="200" stroke="hsl(var(--secondary))" strokeWidth="2" strokeDasharray="10 5" />
+            <circle cx="400" cy="300" r="210" stroke="hsl(var(--secondary) / 0.2)" strokeWidth="1" strokeDasharray="10 5" />
           </g>
-          <g className="animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }}>
-            <circle cx="400" cy="300" r="150" stroke="hsl(var(--secondary))" strokeWidth="1.5" strokeDasharray="8 4" />
+          <g className="animate-pulse" style={{ animationDuration: '5s', animationDelay: '0.5s' }}>
+            <circle cx="400" cy="300" r="160" stroke="hsl(var(--secondary) / 0.3)" strokeWidth="1.5" strokeDasharray="8 4" />
           </g>
-          <g className="animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }}>
-            <circle cx="400" cy="300" r="100" stroke="hsl(var(--secondary))" strokeWidth="1" strokeDasharray="6 3" />
-          </g>
-          <g className="animate-pulse" style={{ animationDuration: '2s' }}>
-            {/* Scanning lines */}
-            <line x1="300" y1="300" x2="500" y2="300" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-            <line x1="400" y1="200" x2="400" y2="400" stroke="hsl(var(--primary))" strokeWidth="1.5" />
-          </g>
+          
+          {/* Hexagonal security network */}
           <g>
-            {/* Target system */}
-            <rect x="370" y="270" width="60" height="60" rx="5" fill="transparent" stroke="hsl(var(--secondary))" strokeWidth="2" />
-            <rect x="380" y="280" width="40" height="10" rx="2" fill="hsl(var(--secondary))" />
-            <rect x="380" y="295" width="40" height="10" rx="2" fill="hsl(var(--secondary))" />
-            <rect x="380" y="310" width="40" height="10" rx="2" fill="hsl(var(--secondary))" />
+            {/* Six border nodes */}
+            <g className="animate-pulse" style={{ animationDuration: '3s', animationDelay: '0s' }}>
+              <circle cx="400" cy="140" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+              <circle cx="400" cy="460" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+              <circle cx="230" cy="220" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+              <circle cx="230" cy="380" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+              <circle cx="570" cy="220" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+              <circle cx="570" cy="380" r="15" fill="hsl(var(--secondary) / 0.1)" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+            </g>
+            
+            {/* Network connections */}
+            <path d="M400,155 L400,285" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" />
+            <path d="M400,315 L400,445" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.2s' }} />
+            <path d="M244,227 L370,285" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.3s' }} />
+            <path d="M244,373 L370,315" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.4s' }} />
+            <path d="M556,227 L430,285" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.5s' }} />
+            <path d="M556,373 L430,315" stroke="hsl(var(--secondary) / 0.6)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.6s' }} />
+            
+            {/* Hexagon connections */}
+            <path d="M244,227 L244,373" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.7s' }} />
+            <path d="M556,227 L556,373" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.8s' }} />
+            <path d="M230,220 L400,140" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '0.9s' }} />
+            <path d="M400,140 L570,220" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '1.0s' }} />
+            <path d="M230,380 L400,460" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '1.1s' }} />
+            <path d="M400,460 L570,380" stroke="hsl(var(--secondary) / 0.4)" strokeWidth="1" strokeDasharray="5,5" className="animate-networkPath" style={{ animationDelay: '1.2s' }} />
           </g>
-          {/* Scanning/attack vectors */}
+          
+          {/* Central target system - server */}
+          <g className="animate-pulse" style={{ animationDuration: '4s' }}>
+            <rect x="365" y="265" width="70" height="70" rx="5" fill="transparent" stroke="hsl(var(--secondary))" strokeWidth="2" />
+            
+            {/* Server details */}
+            <rect x="375" y="275" width="50" height="10" rx="2" fill="hsl(var(--secondary))" />
+            <rect x="375" y="290" width="50" height="10" rx="2" fill="hsl(var(--secondary))" />
+            <rect x="375" y="305" width="50" height="10" rx="2" fill="hsl(var(--secondary))" />
+            <rect x="375" y="320" width="30" height="5" rx="1" fill="hsl(var(--secondary))" />
+          </g>
+          
+          {/* Vulnerability scanning elements */}
           <g>
-            <path 
-              d="M250,250 L370,270" 
-              stroke="hsl(var(--primary))" 
+            {/* Radar scan effect */}
+            <path
+              d="M400,300 L600,200"
+              stroke="hsl(var(--primary) / 0.5)"
               strokeWidth="1.5"
-              strokeDasharray="5,5"
-              className="animate-dash"
+              className="animate-radar"
             />
-            <path 
-              d="M250,350 L370,330" 
-              stroke="hsl(var(--primary))" 
+            <path
+              d="M400,300 L600,400"
+              stroke="hsl(var(--primary) / 0.5)"
               strokeWidth="1.5"
-              strokeDasharray="5,5"
-              className="animate-dash"
-              style={{ animationDelay: '0.2s' }}
+              className="animate-radar"
+              style={{ animationDelay: "1s" }}
             />
-            <path 
-              d="M550,250 L430,270" 
-              stroke="hsl(var(--primary))" 
+            <path
+              d="M400,300 L200,200"
+              stroke="hsl(var(--primary) / 0.5)"
               strokeWidth="1.5"
-              strokeDasharray="5,5"
-              className="animate-dash"
-              style={{ animationDelay: '0.4s' }}
+              className="animate-radar"
+              style={{ animationDelay: "2s" }}
             />
-            <path 
-              d="M550,350 L430,330" 
-              stroke="hsl(var(--primary))" 
+            <path
+              d="M400,300 L200,400"
+              stroke="hsl(var(--primary) / 0.5)"
               strokeWidth="1.5"
-              strokeDasharray="5,5"
-              className="animate-dash"
-              style={{ animationDelay: '0.6s' }}
+              className="animate-radar"
+              style={{ animationDelay: "3s" }}
             />
           </g>
+          
+          {/* Attack vectors and penetration testing visualization */}
+          <g>
+            {/* Multiple attack vectors with data packets */}
+            <g className="animate-packet" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }}>
+              <path 
+                d="M180,180 L365,265" 
+                stroke="hsl(var(--primary))" 
+                strokeWidth="1.5"
+                strokeDasharray="5,5"
+              />
+              <circle cx="270" cy="220" r="5" fill="hsl(var(--primary))" />
+            </g>
+            
+            <g className="animate-packet" style={{ animationDuration: '2.5s', animationDelay: '0.5s', animationIterationCount: 'infinite' }}>
+              <path 
+                d="M180,420 L365,335" 
+                stroke="hsl(var(--primary))" 
+                strokeWidth="1.5"
+                strokeDasharray="5,5"
+              />
+              <circle cx="270" cy="380" r="5" fill="hsl(var(--primary))" />
+            </g>
+            
+            <g className="animate-packet" style={{ animationDuration: '1.8s', animationDelay: '0.3s', animationIterationCount: 'infinite' }}>
+              <path 
+                d="M620,180 L435,265" 
+                stroke="hsl(var(--primary))" 
+                strokeWidth="1.5"
+                strokeDasharray="5,5"
+              />
+              <circle cx="530" cy="220" r="5" fill="hsl(var(--primary))" />
+            </g>
+            
+            <g className="animate-packet" style={{ animationDuration: '2.2s', animationDelay: '0.7s', animationIterationCount: 'infinite' }}>
+              <path 
+                d="M620,420 L435,335" 
+                stroke="hsl(var(--primary))" 
+                strokeWidth="1.5"
+                strokeDasharray="5,5"
+              />
+              <circle cx="530" cy="380" r="5" fill="hsl(var(--primary))" />
+            </g>
+          </g>
+          
+          {/* "Vulnerabilities" being found */}
+          <g>
+            <circle cx="405" cy="280" r="3" fill="hsl(var(--destructive))" className="animate-vulnerability" />
+            <circle cx="390" cy="305" r="3" fill="hsl(var(--destructive))" className="animate-vulnerability" style={{ animationDelay: '1s' }} />
+            <circle cx="420" cy="315" r="3" fill="hsl(var(--destructive))" className="animate-vulnerability" style={{ animationDelay: '2s' }} />
+            <circle cx="400" cy="330" r="3" fill="hsl(var(--destructive))" className="animate-vulnerability" style={{ animationDelay: '1.5s' }} />
+          </g>
+          
+          {/* VAPT Report being generated */}
+          <g className="animate-report" style={{ animationDelay: '2s' }}>
+            <rect x="450" y="360" width="30" height="40" rx="2" fill="transparent" stroke="hsl(var(--secondary))" strokeWidth="1.5" />
+            <path d="M455,370 L475,370" stroke="hsl(var(--secondary))" strokeWidth="1" />
+            <path d="M455,375 L470,375" stroke="hsl(var(--secondary))" strokeWidth="1" />
+            <path d="M455,380 L475,380" stroke="hsl(var(--secondary))" strokeWidth="1" />
+            <path d="M455,385 L465,385" stroke="hsl(var(--secondary))" strokeWidth="1" />
+            <circle cx="460" cy="365" r="2" fill="hsl(var(--destructive))" />
+          </g>
+          
+          {/* Shield protection effect after vulnerabilities are identified */}
+          <g className="animate-shield" style={{ animationDelay: '4s' }}>
+            <path 
+              d="M400,300 m-45,0 a45,45 0 1,0 90,0 a45,45 0 1,0 -90,0" 
+              stroke="hsl(var(--secondary))" 
+              strokeWidth="2" 
+              fill="transparent" 
+              strokeDasharray="8,4"
+            />
+            <path 
+              d="M400,285 l-20,15 l20,15 l20,-15 z" 
+              fill="transparent" 
+              stroke="hsl(var(--secondary))" 
+              strokeWidth="1.5"
+            />
+          </g>
+          
+          {/* Animation styles now maintained in global CSS */}
           <style jsx>{`
-            @keyframes dash {
-              to {
-                stroke-dashoffset: 100;
-              }
-            }
-            .animate-dash {
-              animation: dash 3s linear infinite;
+            .animate-radar {
+              transform-origin: 400px 300px;
             }
           `}</style>
         </svg>
