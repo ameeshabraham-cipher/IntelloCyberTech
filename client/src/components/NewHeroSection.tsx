@@ -106,8 +106,7 @@ const NewHeroSection = () => {
             {/* Intello Logo */}
             <div className="mb-6">
               <div className="flex flex-col mb-8 mt-4">
-                <div className="text-3xl md:text-4xl font-bold tracking-wide">INTELLO CYBER</div>
-                <div className="text-sm bg-[hsl(var(--primary))] text-white px-1 py-0.5 rounded inline-block w-fit">TECHNOLOGIES</div>
+                <div className="text-3xl md:text-4xl font-bold tracking-wide">INTELLO.</div>
               </div>
             </div>
             <div className="inline-block bg-card/50 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--secondary))]/20 mb-6">
