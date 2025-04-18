@@ -66,6 +66,12 @@ import CloudSecurityPage from "@/pages/services/CloudSecurity";
 import CloudSecurityAssessmentPage from "@/pages/services/CloudSecurityAssessment";
 import VcisoPage from "@/pages/services/Vciso";
 import DataPrivacyPage from "@/pages/services/DataPrivacy";
+import CloudOnPremInfrastructurePage from "@/pages/services/CloudOnPremInfrastructure";
+import AdvancedPenetrationTestingPage from "@/pages/services/AdvancedPenetrationTesting";
+import ThreatHuntingPage from "@/pages/services/ThreatHunting";
+import IncidentResponsePlanningPage from "@/pages/services/IncidentResponsePlanning";
+import RedTeamExercisesPage from "@/pages/services/RedTeamExercises";
+import PrivacyCompliancePage from "@/pages/services/PrivacyCompliance";
 
 // Industry Pages
 import BfsiPage from "@/pages/industries/Bfsi";
@@ -142,6 +148,12 @@ function Router() {
           <Route path="/services/cloud-security-assessment" component={CloudSecurityAssessmentPage} />
           <Route path="/services/vciso" component={VcisoPage} />
           <Route path="/services/data-privacy" component={DataPrivacyPage} />
+          <Route path="/services/cloud-onprem-infrastructure" component={CloudOnPremInfrastructurePage} />
+          <Route path="/services/advanced-penetration-testing" component={AdvancedPenetrationTestingPage} />
+          <Route path="/services/threat-hunting" component={ThreatHuntingPage} />
+          <Route path="/services/incident-response-planning" component={IncidentResponsePlanningPage} />
+          <Route path="/services/red-team-exercises" component={RedTeamExercisesPage} />
+          <Route path="/services/privacy-compliance" component={PrivacyCompliancePage} />
           
           {/* Industry Pages */}
           <Route path="/industries/bfsi" component={BfsiPage} />
