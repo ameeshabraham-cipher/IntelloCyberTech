@@ -99,10 +99,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link href="/services/iso-27001" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">ISO 27001 Compliance</Link></li>
               <li><Link href="/services/soc-2" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">SOC 2 Compliance</Link></li>
-              <li><Link href="/services/gdpr" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">GDPR Compliance</Link></li>
-              <li><Link href="/services/uae-pdpl" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">UAE PDPL Compliance</Link></li>
-              <li><Link href="/services/security-audit" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">IT Security Audit</Link></li>
-              <li><Link href="/services/vciso" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">vCISO Services</Link></li>
+              <li><Link href="/services/cloud-on-prem-infrastructure" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">Cloud/On-Prem Infrastructure</Link></li>
+              <li><Link href="/services/it-amc" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">IT Annual Maintenance</Link></li>
+              <li><Link href="/services/threat-hunting" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">Threat Hunting</Link></li>
+              <li><Link href="/services/privacy-compliance" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">Privacy Compliance</Link></li>
+              <li><Link href="/services/red-team-exercises" className="text-muted-foreground hover:text-[hsl(var(--secondary))] transition-colors">Red Team Exercises</Link></li>
             </ul>
           </div>
           
