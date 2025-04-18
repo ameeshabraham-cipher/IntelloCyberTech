@@ -5,91 +5,11 @@ import ContactFormWithCalendly from '@/components/ContactFormWithCalendly';
 
 const Contact = () => {
   useScrollReveal();
-  const { toast } = useToast();
   
   // Set page title on mount
   useEffect(() => {
     document.title = 'Contact Us | Intello.';
   }, []);
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setFormData({
-      ...formData,
-      [id]: value
-    });
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing information",
-        description: "Please fill in all the required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    try {
-      // For static site deployment, you would use an external form service like Formspree
-      // Replace this URL with your actual Formspree form ID when you set it up
-      const formspreeEndpoint = 'https://formspree.io/f/your-form-id';
-      
-      const response = await fetch(formspreeEndpoint, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      
-      if (response.ok) {
-        toast({
-          title: "Message Sent Successfully",
-          description: "We'll get back to you shortly."
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      
-      // For static deployment without backend, provide alternative contact method
-      toast({
-        title: "Form Submission Error",
-        description: "Please email us directly at info@intellome.com",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen pt-24">
@@ -118,111 +38,10 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="reveal">
-              <div className="bg-background/50 backdrop-blur-sm p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
-                <h2 className="text-2xl font-montserrat font-bold mb-6 flex items-center">
-                  <Send className="mr-3 text-[hsl(var(--secondary))] h-5 w-5" /> 
-                  Send Us a Message
-                </h2>
-                
-                <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <Label htmlFor="name" className="text-sm text-muted-foreground block mb-2">
-                        Full Name <span className="text-[hsl(var(--secondary))]">*</span>
-                      </Label>
-                      <Input 
-                        type="text" 
-                        id="name" 
-                        className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email" className="text-sm text-muted-foreground block mb-2">
-                        Email Address <span className="text-[hsl(var(--secondary))]">*</span>
-                      </Label>
-                      <Input 
-                        type="email" 
-                        id="email" 
-                        className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <Label htmlFor="phone" className="text-sm text-muted-foreground block mb-2">
-                        Phone Number
-                      </Label>
-                      <Input 
-                        type="tel" 
-                        id="phone" 
-                        className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                        placeholder="+1 234 567 8900"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="company" className="text-sm text-muted-foreground block mb-2">
-                        Company Name
-                      </Label>
-                      <Input 
-                        type="text" 
-                        id="company" 
-                        className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                        placeholder="Your Company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <Label htmlFor="subject" className="text-sm text-muted-foreground block mb-2">
-                      Subject
-                    </Label>
-                    <Input 
-                      type="text" 
-                      id="subject" 
-                      className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                      placeholder="How can we help you?"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  
-                  <div className="mb-6">
-                    <Label htmlFor="message" className="text-sm text-muted-foreground block mb-2">
-                      Message <span className="text-[hsl(var(--secondary))]">*</span>
-                    </Label>
-                    <Textarea 
-                      id="message" 
-                      rows={5} 
-                      className="w-full bg-card/50 border border-[hsl(var(--secondary))]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[hsl(var(--secondary))] transition-colors" 
-                      placeholder="Please describe your inquiry in detail"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </div>
+              <ContactFormWithCalendly 
+                calendlyUrl="https://calendly.com/ameesh-intellome" 
+                showServiceField={true}
+              />
             </div>
             
             {/* Contact Information */}

@@ -104,26 +104,19 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
   async function onSubmit(data: AssessmentRequestValues) {
     setIsSubmitting(true);
     try {
-      const response = await apiRequest('/api/forms/assessment', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest(
+        'POST',
+        '/api/forms/assessment',
+        data
+      );
       
-      if (response.ok) {
-        setSubmitSuccess(true);
-        form.reset();
-        toast({
-          title: "Assessment request submitted",
-          description: "We'll review your request and contact you shortly to discuss the next steps.",
-          variant: "default",
-        });
-      } else {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Form submission failed');
-      }
+      setSubmitSuccess(true);
+      form.reset();
+      toast({
+        title: "Assessment request submitted",
+        description: "We'll review your request and contact you shortly to discuss the next steps.",
+        variant: "default",
+      });
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
