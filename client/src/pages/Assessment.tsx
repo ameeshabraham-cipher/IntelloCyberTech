@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useScrollReveal } from '@/lib/animations';
-import { Shield, CheckCircle, Lock } from 'lucide-react';
+import { Shield, CheckCircle, Lock, Calendar } from 'lucide-react';
 import AssessmentRequestForm from '@/components/AssessmentRequestForm';
-import CalendlyPopupCTA from '@/components/CalendlyPopupCTA';
+import { Button } from '@/components/ui/button';
 
 const AssessmentPage = () => {
   useScrollReveal();
@@ -90,13 +90,20 @@ const AssessmentPage = () => {
         </div>
       </section>
       
-      {/* Floating CTA Button */}
-      <CalendlyPopupCTA 
-        url={calendlyUrl}
-        buttonText="Schedule a Consultation"
-        position="bottom-right"
-        autoOpen={false}
-      />
+      {/* "Get Assessment" Button Section */}
+      <section className="py-10 bg-card/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Strengthen Your Security?</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+            Click below to schedule your free cybersecurity assessment with our expert team.
+          </p>
+          <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] hover:shadow-lg">
+              <Calendar className="mr-2 h-5 w-5" /> Get Assessment
+            </Button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
