@@ -116,7 +116,7 @@ const TechnologyCompaniesPage = () => {
         {
           title: "Vulnerability Discovery",
           value: "80%",
-          context: "of critical vulnerabilities could be prevented with secure development practices"
+          context: "of critical vulnerabilities could be prevented with proper security assessments"
         },
         {
           title: "Compliance Impact",
@@ -127,8 +127,8 @@ const TechnologyCompaniesPage = () => {
       
       relatedServices={[
         {
-          title: "Secure Product Development",
-          link: "/services/secure-product-development"
+          title: "Product Security Assessment",
+          link: "/services/product-security-assessment"
         },
         {
           title: "API Security Assessment",

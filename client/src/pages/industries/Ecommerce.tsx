@@ -18,7 +18,7 @@ const EcommercePage = () => {
       title="E-Commerce"
       subtitle="Security"
       description="Specialized security and compliance solutions for online retailers, marketplaces, and digital commerce platforms balancing frictionless customer experience with robust security controls."
-      overview="E-commerce businesses face unique cybersecurity challenges at the intersection of payment security, customer data protection, and business continuity. As digital commerce platforms evolve with increasingly sophisticated features, they present a broader attack surface and more complex security requirements. Intello. provides specialized e-commerce security solutions that protect critical business assets while maintaining the seamless shopping experience customers expect, helping online retailers build trust without sacrificing conversion rates."
+      overview="E-commerce businesses face unique cybersecurity challenges at the intersection of payment security, customer data protection, and business continuity. As digital commerce platforms evolve with increasingly sophisticated features, they present a broader attack surface and more complex security requirements. Intello. provides specialized e-commerce security solutions that protect critical business assets while maintaining the seamless shopping experience customers expect, helping online retailers enhance trust without sacrificing conversion rates."
       challenges={[
         {
           title: "Payment Card Security",
@@ -79,7 +79,7 @@ const EcommercePage = () => {
         },
         {
           title: "Customer Trust Solutions",
-          description: "Implementation of visible security measures that build customer confidence, including trust badges, secure checkout indicators, and transparent privacy practices.",
+          description: "Implementation of visible security measures that establish customer confidence, including trust badges, secure checkout indicators, and transparent privacy practices.",
           icon: <Shield className="h-6 w-6" />
         }
       ]}
