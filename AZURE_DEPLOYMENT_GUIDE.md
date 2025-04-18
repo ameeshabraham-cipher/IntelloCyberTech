@@ -245,6 +245,8 @@ After deployment completes:
 3. Under "Application settings", click "+ New application setting"
 4. Add these settings one by one (click "OK" after each):
    
+   **Option 1: Using DATABASE_URL (Recommended)**
+   
    | Name | Value |
    |------|-------|
    | DATABASE_URL | postgres://intello_admin:YourPassword@intello-db-server.postgres.database.azure.com:5432/intello_db |
@@ -253,10 +255,27 @@ After deployment completes:
    | SENDGRID_API_KEY | [Your SendGrid API Key] |
 
    > Replace "YourPassword" with the actual password you created for your database.
+   
+   **Option 2: Using Individual PostgreSQL Variables**
+   
+   If you prefer to set individual database variables instead:
+   
+   | Name | Value |
+   |------|-------|
+   | PGHOST | intello-db-server.postgres.database.azure.com |
+   | PGUSER | intello_admin |
+   | PGPASSWORD | [Your Database Password] |
+   | PGDATABASE | intello_db |
+   | PGPORT | 5432 |
+   | NODE_ENV | production |
+   | PORT | 8080 |
+   | SENDGRID_API_KEY | [Your SendGrid API Key] |
 
 5. Click "Save" at the top of the page
 
 **Expected Time**: 5 minutes
+
+> **Note**: The application will automatically construct the DATABASE_URL from the individual PostgreSQL variables if they are provided, or use the DATABASE_URL directly if it's available.
 
 ### 4. Deploy Backend Code
 
@@ -423,7 +442,10 @@ After deployment is complete, verify that everything is working properly:
 #### Form Submissions Not Working
 - Verify the backend API is running
 - Check the API configuration in staticwebapp.config.json
-- Review the database connection settings
+- Review the database connection settings:
+  - Either DATABASE_URL must be set correctly, OR
+  - All PostgreSQL variables (PGHOST, PGUSER, PGPASSWORD, PGDATABASE, PGPORT) must be set
+- Check the Application Service logs to see if there are any database connection errors
 
 #### Email Notifications Not Sending
 - Verify the SendGrid API key is correct
@@ -470,6 +492,9 @@ Before considering the deployment complete, verify:
 - [ ] Email notifications are working
 - [ ] WhatsApp and Calendly buttons function properly
 - [ ] SSL is working (site loads as https://)
+- [ ] Database is properly connected (check form submissions work)
+
+For more detailed database setup instructions, refer to the supplementary guide: DATABASE_DEPLOYMENT_GUIDE.md
 
 ---
 

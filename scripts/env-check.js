@@ -43,6 +43,11 @@ if (missingVars.length > 0) {
     console.error('\nTo fix this issue:');
     console.error('1. Set DATABASE_URL directly, OR');
     console.error('2. Set all PostgreSQL variables (PGHOST, PGUSER, PGPASSWORD, PGDATABASE, PGPORT)');
+    console.error('\nFor deployment environments:');
+    console.error('- In Azure: Configure these in App Service > Configuration > Application settings');
+    console.error('- In Vercel: Add these in Project Settings > Environment Variables');
+    console.error('- In GitHub Actions: Set these as repository secrets');
+    console.error('\nSee DATABASE_DEPLOYMENT_GUIDE.md for detailed instructions');
   }
   
   process.exit(1);
