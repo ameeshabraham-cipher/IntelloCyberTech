@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { InlineWidget, PopupWidget, PopupButton } from 'react-calendly';
 import { Button } from '@/components/ui/button';
-import { Calendar, X } from 'lucide-react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '@/components/ui/dialog';
 
 interface CalendlyButtonProps {
   url: string;
@@ -17,21 +23,35 @@ interface CalendlyButtonProps {
 
 export function CalendlyButton({ 
   url, 
-  text = "Schedule a Consultation", 
+  text = "Schedule a Meeting",
   className = "", 
   prefill 
 }: CalendlyButtonProps) {
-  // Using PopupButton from react-calendly but with custom styling
+  const handleClick = () => {
+    // Construct the Calendly URL with prefill parameters if any
+    let calendlyUrl = url;
+    if (prefill) {
+      const params = new URLSearchParams();
+      if (prefill.email) params.append('email', prefill.email);
+      if (prefill.firstName) params.append('firstName', prefill.firstName);
+      if (prefill.lastName) params.append('lastName', prefill.lastName);
+      if (prefill.name) params.append('name', prefill.name);
+      
+      if (params.toString()) {
+        calendlyUrl += `?${params.toString()}`;
+      }
+    }
+    
+    window.open(calendlyUrl, '_blank');
+  };
+  
   return (
-    <div className="relative inline-block">
-      <PopupButton 
-        url={url}
-        rootElement={document.getElementById('root')!}
-        text={text}
-        prefill={prefill}
-        className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center justify-center ${className}`}
-      />
-    </div>
+    <Button 
+      onClick={handleClick}
+      className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 ${className}`}
+    >
+      {text}
+    </Button>
   );
 }
 
@@ -48,30 +68,27 @@ interface CalendlyModalProps {
 }
 
 export function CalendlyModal({ url, isOpen, onClose, prefill }: CalendlyModalProps) {
-  if (!isOpen) return null;
-  
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="relative w-full max-w-4xl h-[80vh] bg-card rounded-xl shadow-xl">
-        <Button 
-          variant="ghost" 
-          className="absolute right-2 top-2 z-10 rounded-full p-2" 
-          onClick={onClose}
-        >
-          <X className="h-5 w-5" />
-        </Button>
-        <div className="h-full overflow-hidden rounded-xl">
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-3xl h-[80vh] p-0 overflow-hidden">
+        <DialogHeader className="p-4 bg-card border-b border-border">
+          <DialogTitle>Schedule Appointment</DialogTitle>
+          <DialogDescription>
+            Choose a convenient time for your consultation
+          </DialogDescription>
+        </DialogHeader>
+        <div className="h-full w-full">
           <InlineWidget 
             url={url}
             prefill={prefill}
             styles={{
-              height: '100%',
+              height: 'calc(80vh - 80px)',
               width: '100%',
             }}
           />
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -89,29 +106,25 @@ interface CalendlyPopupProps {
 
 export function CalendlyPopup({ 
   url, 
-  buttonText = "Book a Consultation", 
+  buttonText = "Schedule a Meeting", 
   buttonClassName = "",
   prefill
 }: CalendlyPopupProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const openCalendly = () => setIsOpen(true);
-  const closeCalendly = () => setIsOpen(false);
+  const [showModal, setShowModal] = useState(false);
   
   return (
     <>
       <Button 
-        onClick={openCalendly}
-        className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover flex items-center ${buttonClassName}`}
+        onClick={() => setShowModal(true)}
+        className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 ${buttonClassName}`}
       >
-        <Calendar className="mr-2 h-5 w-5" />
-        <span>{buttonText}</span>
+        {buttonText}
       </Button>
       
       <CalendlyModal 
         url={url} 
-        isOpen={isOpen} 
-        onClose={closeCalendly}
+        isOpen={showModal} 
+        onClose={() => setShowModal(false)}
         prefill={prefill}
       />
     </>
@@ -125,7 +138,7 @@ interface CalendlyWidgetProps {
 
 export function CalendlyWidget({ url, className = "" }: CalendlyWidgetProps) {
   return (
-    <div className={`w-full h-[600px] rounded-xl overflow-hidden border border-[hsl(var(--secondary))]/20 ${className}`}>
+    <div className={`w-full h-[630px] rounded-lg overflow-hidden shadow-lg ${className}`}>
       <InlineWidget 
         url={url}
         styles={{
@@ -141,9 +154,9 @@ export function CalendlyPopupWidget({ url }: { url: string }) {
   return (
     <PopupWidget 
       url={url}
-      rootElement={document.getElementById('root')!}
-      text="Schedule Assessment"
-      textColor="#FFFFFF"
+      rootElement={document.getElementById('root') as HTMLElement}
+      text="Schedule Appointment"
+      textColor="#ffffff"
       color="#eb3443"
     />
   );

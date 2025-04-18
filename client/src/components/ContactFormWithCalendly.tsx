@@ -62,26 +62,19 @@ export default function ContactFormWithCalendly({
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      const response = await apiRequest('/api/forms/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest(
+        'POST',
+        '/api/forms/contact',
+        data
+      );
       
-      if (response.ok) {
-        setSubmitSuccess(true);
-        form.reset();
-        toast({
-          title: "Form submitted successfully",
-          description: "We've received your message and will get back to you soon.",
-          variant: "default",
-        });
-      } else {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Form submission failed');
-      }
+      setSubmitSuccess(true);
+      form.reset();
+      toast({
+        title: "Form submitted successfully",
+        description: "We've received your message and will get back to you soon.",
+        variant: "default",
+      });
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
