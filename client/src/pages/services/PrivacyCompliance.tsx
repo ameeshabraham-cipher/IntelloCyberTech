@@ -5,10 +5,10 @@ import { Shield, FileText, Lock, Users, ClipboardCheck, BookOpen, Database, Netw
 const PrivacyCompliancePage = () => {
   return (
     <ServicePageLayout
-      icon={<Lock className="h-10 w-10" />}
       title="Privacy Compliance Implementation"
-      subtitle="Comprehensive Privacy Program Development (GDPR, CCPA, PDPA)"
+      category="Governance & Compliance"
       description="Our Privacy Compliance Implementation service helps organizations build comprehensive privacy programs that address regulatory requirements while enhancing customer trust. We guide you through the entire process from assessment to implementation of privacy controls across your data ecosystem."
+      heroIcon={<Lock className="h-8 w-8" />}
       
       overview={`
         <p>Privacy regulations like GDPR, CCPA, and regional PDPA laws have transformed how organizations must handle personal data. Our service provides structured guidance through the complex process of building a compliant privacy program that addresses these requirements.</p>
