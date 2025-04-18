@@ -39,8 +39,8 @@ export default function AutoCalendlyPopup({
   }, [autoOpenDelay, sessionStorageKey, disableForPaths]);
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-[700px] h-[650px] p-0">
+    <Dialog open={open} onOpenChange={setOpen} aria-labelledby="calendly-dialog-title">
+      <DialogContent className="sm:max-w-[700px] h-[650px] p-0" aria-describedby="calendly-description">
         <div className="h-full relative">
           <Button 
             variant="ghost" 
@@ -48,12 +48,13 @@ export default function AutoCalendlyPopup({
             onClick={() => setOpen(false)}
           >
             <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
           </Button>
           
           <div className="relative z-10 bg-[#111] text-white p-4 flex justify-between items-center">
             <div>
-              <h3 className="font-bold text-lg">Ready to enhance your cybersecurity posture?</h3>
-              <p className="text-sm opacity-90">Book a free consultation with our experts</p>
+              <h3 className="font-bold text-lg" id="calendly-dialog-title">Ready to enhance your cybersecurity posture?</h3>
+              <p className="text-sm opacity-90" id="calendly-description">Book a free consultation with our experts</p>
             </div>
           </div>
           
