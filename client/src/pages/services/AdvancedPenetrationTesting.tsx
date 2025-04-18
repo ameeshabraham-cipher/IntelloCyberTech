@@ -26,7 +26,7 @@ const AdvancedPenetrationTestingPage = () => {
         },
         {
           title: "Exploitation",
-          description: "Attempt controlled exploitation of discovered vulnerabilities, including custom exploit development for unique scenarios."
+          description: "Attempt controlled exploitation of discovered vulnerabilities, including advanced exploitation techniques for unique scenarios."
         },
         {
           title: "Post-Exploitation",
@@ -53,7 +53,7 @@ const AdvancedPenetrationTestingPage = () => {
         },
         {
           title: "Strengthen Security Posture",
-          content: "Build stronger defenses based on insights from realistic attack simulations and expert recommendations."
+          content: "Develop stronger defenses based on insights from realistic attack simulations and expert recommendations."
         },
         {
           title: "Compliance Validation",
@@ -113,7 +113,7 @@ const AdvancedPenetrationTestingPage = () => {
           
           {/* Attack Tools */}
           <rect x="100" y="170" width="80" height="20" rx="3" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
-          <text x="140" y="184" textAnchor="middle" fontSize="10" fill="#EB3443">Custom Exploits</text>
+          <text x="140" y="184" textAnchor="middle" fontSize="10" fill="#EB3443">Advanced Exploits</text>
           
           <rect x="100" y="200" width="80" height="20" rx="3" fill="rgba(235, 52, 67, 0.2)" stroke="#EB3443" strokeWidth="1"/>
           <text x="140" y="214" textAnchor="middle" fontSize="10" fill="#EB3443">OSINT Tools</text>
