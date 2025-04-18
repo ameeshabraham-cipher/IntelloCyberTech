@@ -40,9 +40,9 @@ const IntelloVerticalsSection = () => {
     <section className="py-12 bg-card border-t border-b border-border">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Our Main Verticals</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Pillars of Cyber Excellence</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Intello specializes in these core service areas to deliver comprehensive technology solutions
+            Our four strategic domains of expertise that form the foundation of Intello's holistic cybersecurity approach
           </p>
         </div>
 
