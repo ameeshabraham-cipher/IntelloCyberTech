@@ -1,200 +1,146 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { CalendlyPopup } from './CalendlyBooking';
+import { apiRequest } from '@/lib/queryClient';
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { 
+import { Button } from '@/components/ui/button';
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormMessage 
-} from '@/components/ui/form';
-import { CalendlyPopup } from './CalendlyBooking';
 import { useToast } from '@/hooks/use-toast';
-import { apiRequest } from '@/lib/queryClient';
+import { ArrowRight, Send } from 'lucide-react';
 
-// Create schema for form validation
+// Form validation schema
 const assessmentRequestSchema = z.object({
-  companyName: z.string().min(2, { message: 'Company name must be at least 2 characters' }),
-  contactName: z.string().min(2, { message: 'Contact name must be at least 2 characters' }),
-  email: z.string().email({ message: 'Please enter a valid email address' }),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Valid email is required"),
   phone: z.string().optional(),
-  industry: z.string().min(1, { message: 'Please select an industry' }),
-  companySize: z.string().min(1, { message: 'Please select company size' }),
-  assessmentType: z.string().min(1, { message: 'Please select assessment type' }),
-  additionalInfo: z.string().optional(),
+  company: z.string().min(1, "Company name is required"),
+  industry: z.string().optional(),
+  message: z.string().optional(),
 });
 
+// Type from the schema
 type AssessmentRequestValues = z.infer<typeof assessmentRequestSchema>;
 
+// Props definition
 interface AssessmentRequestFormProps {
   calendlyUrl: string;
 }
 
 export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequestFormProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
   const { toast } = useToast();
-  
-  // Industry options
-  const industries = [
-    { value: 'banking', label: 'Banking & Finance' },
-    { value: 'healthcare', label: 'Healthcare' },
-    { value: 'government', label: 'Government' },
-    { value: 'retail', label: 'Retail & E-commerce' },
-    { value: 'energy', label: 'Energy & Utilities' },
-    { value: 'technology', label: 'Technology & IT' },
-    { value: 'manufacturing', label: 'Manufacturing' },
-    { value: 'telecom', label: 'Telecommunications' },
-    { value: 'insurance', label: 'Insurance' },
-    { value: 'education', label: 'Education' },
-    { value: 'transport', label: 'Transportation & Logistics' },
-    { value: 'other', label: 'Other' },
-  ];
-  
-  // Company size options
-  const companySizes = [
-    { value: '1-10', label: '1-10 employees' },
-    { value: '11-50', label: '11-50 employees' },
-    { value: '51-200', label: '51-200 employees' },
-    { value: '201-500', label: '201-500 employees' },
-    { value: '501-1000', label: '501-1000 employees' },
-    { value: '1000+', label: 'More than 1000 employees' },
-  ];
-  
-  // Assessment type options
-  const assessmentTypes = [
-    { value: 'security', label: 'Security Assessment' },
-    { value: 'compliance', label: 'Compliance Gap Analysis' },
-    { value: 'penetration', label: 'Penetration Testing' },
-    { value: 'risk', label: 'Risk Assessment' },
-    { value: 'governance', label: 'Governance Assessment' },
-    { value: 'vendor', label: 'Vendor Security Assessment' },
-    { value: 'cloud', label: 'Cloud Security Assessment' },
-    { value: 'application', label: 'Application Security Assessment' },
-    { value: 'other', label: 'Other' },
-  ];
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
+
   // Initialize form
   const form = useForm<AssessmentRequestValues>({
     resolver: zodResolver(assessmentRequestSchema),
     defaultValues: {
-      companyName: '',
-      contactName: '',
+      name: '',
       email: '',
       phone: '',
+      company: '',
       industry: '',
-      companySize: '',
-      assessmentType: '',
-      additionalInfo: '',
+      message: '',
     },
   });
-  
+
   async function onSubmit(data: AssessmentRequestValues) {
     setIsSubmitting(true);
+    
     try {
-      const response = await apiRequest(
-        'POST',
-        '/api/forms/assessment',
-        data
-      );
+      // Add service identifier
+      const requestData = {
+        ...data,
+        service: 'assessment',
+      };
       
-      setSubmitSuccess(true);
-      form.reset();
-      toast({
-        title: "Assessment request submitted",
-        description: "We'll review your request and contact you shortly to discuss the next steps.",
-        variant: "default",
+      // Submit to our email API endpoint
+      const response = await apiRequest('/api/email/assessment-request', {
+        method: 'POST',
+        body: JSON.stringify(requestData),
       });
+
+      if (response.success) {
+        toast({
+          title: 'Assessment Request Submitted',
+          description: 'Would you like to schedule a call with our security experts?',
+        });
+        
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        throw new Error(response.message || 'Error submitting assessment request');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
-        title: "Request submission failed",
-        description: error instanceof Error ? error.message : "There was an error submitting your request. Please try again.",
-        variant: "destructive",
+        title: 'Submission Error',
+        description: 'There was a problem submitting your request. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
     }
   }
-  
+
   return (
-    <div className="bg-card/30 backdrop-blur-sm p-8 rounded-xl border border-[hsl(var(--secondary))]/20 shadow-lg">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-2">Security & Compliance Assessment Request</h2>
-        <p className="text-muted-foreground">
-          Complete the form below to request an assessment or schedule a consultation to discuss your needs.
-        </p>
-      </div>
-      
-      <div className="grid md:grid-cols-5 gap-8">
-        <div className="md:col-span-3">
+    <div className="bg-card/30 backdrop-blur-sm border border-[hsl(var(--secondary))]/10 rounded-xl overflow-hidden p-8">
+      {!isSubmitted ? (
+        <>
+          <h2 className="text-2xl font-bold mb-6">Request Security Assessment</h2>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
-                  name="companyName"
+                  name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company Name</FormLabel>
+                      <FormLabel>Your Name <span className="text-[hsl(var(--secondary))]">*</span></FormLabel>
                       <FormControl>
-                        <Input placeholder="Your company name" {...field} />
+                        <Input 
+                          placeholder="Full Name" 
+                          className="bg-card/50 border border-[hsl(var(--secondary))]/20" 
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
                 
-                <FormField
-                  control={form.control}
-                  name="contactName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Contact Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>Email Address <span className="text-[hsl(var(--secondary))]">*</span></FormLabel>
                       <FormControl>
-                        <Input placeholder="Your email" type="email" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone (Optional)</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your phone number" {...field} />
+                        <Input 
+                          placeholder="your@email.com" 
+                          type="email" 
+                          className="bg-card/50 border border-[hsl(var(--secondary))]/20" 
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -205,27 +151,18 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
-                  name="industry"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Industry</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select industry" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {industries.map((industry) => (
-                            <SelectItem key={industry.value} value={industry.value}>
-                              {industry.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="+1 234 567 8900" 
+                          type="tel" 
+                          className="bg-card/50 border border-[hsl(var(--secondary))]/20" 
+                          {...field} 
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -233,27 +170,17 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
                 
                 <FormField
                   control={form.control}
-                  name="companySize"
+                  name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company Size</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select company size" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {companySizes.map((size) => (
-                            <SelectItem key={size.value} value={size.value}>
-                              {size.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <FormLabel>Company Name <span className="text-[hsl(var(--secondary))]">*</span></FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Company Name" 
+                          className="bg-card/50 border border-[hsl(var(--secondary))]/20" 
+                          {...field} 
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -262,25 +189,29 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
               
               <FormField
                 control={form.control}
-                name="assessmentType"
+                name="industry"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Assessment Type</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
+                    <FormLabel>Industry</FormLabel>
+                    <Select 
+                      onValueChange={field.onChange} 
                       defaultValue={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select assessment type" />
+                        <SelectTrigger className="bg-card/50 border border-[hsl(var(--secondary))]/20">
+                          <SelectValue placeholder="Select your industry" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {assessmentTypes.map((type) => (
-                          <SelectItem key={type.value} value={type.value}>
-                            {type.label}
-                          </SelectItem>
-                        ))}
+                        <SelectItem value="finance">Banking & Finance</SelectItem>
+                        <SelectItem value="healthcare">Healthcare</SelectItem>
+                        <SelectItem value="government">Government</SelectItem>
+                        <SelectItem value="ecommerce">E-Commerce & Retail</SelectItem>
+                        <SelectItem value="technology">Technology</SelectItem>
+                        <SelectItem value="education">Education</SelectItem>
+                        <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                        <SelectItem value="logistics">Logistics & Transportation</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -290,14 +221,14 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
               
               <FormField
                 control={form.control}
-                name="additionalInfo"
+                name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Additional Information (Optional)</FormLabel>
+                    <FormLabel>Tell us about your security needs</FormLabel>
                     <FormControl>
                       <Textarea 
-                        placeholder="Please provide any additional details about your assessment needs" 
-                        className="min-h-32"
+                        placeholder="Please describe your current security challenges or requirements" 
+                        className="bg-card/50 border border-[hsl(var(--secondary))]/20 min-h-[120px]" 
                         {...field} 
                       />
                     </FormControl>
@@ -308,51 +239,46 @@ export default function AssessmentRequestForm({ calendlyUrl }: AssessmentRequest
               
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300"
                 disabled={isSubmitting}
+                className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-6 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center"
               >
-                {isSubmitting ? 'Submitting...' : 'Request Assessment'}
+                <Send className="mr-2 h-4 w-4" />
+                {isSubmitting ? "Submitting..." : "Submit Assessment Request"}
               </Button>
             </form>
           </Form>
-        </div>
-        
-        <div className="md:col-span-2 flex flex-col justify-center">
-          <div className="bg-card/50 p-6 rounded-lg border border-[hsl(var(--secondary))]/20 shadow-sm mb-8">
-            <h4 className="text-xl font-semibold mb-4">Schedule a Consultation</h4>
-            <p className="text-muted-foreground mb-6">
-              Would you prefer to discuss your assessment needs directly with our experts? Book a convenient time slot for a personalized consultation.
-            </p>
-            <CalendlyPopup 
-              url={calendlyUrl}
-              buttonText="Schedule a Meeting"
-              buttonClassName="w-full"
-            />
+        </>
+      ) : (
+        <div className="text-center py-8">
+          <div className="bg-[hsl(var(--primary))]/10 rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+            <Send className="h-10 w-10 text-[hsl(var(--secondary))]" />
           </div>
-          
-          <div className="bg-card/50 p-6 rounded-lg border border-[hsl(var(--secondary))]/20 shadow-sm">
-            <h4 className="text-xl font-semibold mb-4">Why Request an Assessment?</h4>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start">
-                <span className="text-[hsl(var(--secondary))] mr-2">•</span>
-                <span>Identify security vulnerabilities & compliance gaps</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[hsl(var(--secondary))] mr-2">•</span>
-                <span>Get customized recommendations & remediation plans</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[hsl(var(--secondary))] mr-2">•</span>
-                <span>Meet regulatory requirements & industry standards</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[hsl(var(--secondary))] mr-2">•</span>
-                <span>Strengthen your overall security posture</span>
-              </li>
-            </ul>
+          <h2 className="text-2xl font-bold mb-4">Request Received!</h2>
+          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+            Thank you for your interest in our security assessment. Our team will review your request and contact you shortly.
+          </p>
+          <div className="space-y-4">
+            <p className="font-semibold">Would you like to schedule a call with one of our security experts?</p>
+            <Button
+              onClick={() => setShowCalendly(true)}
+              className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-6 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center"
+            >
+              Schedule a Call <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
-      </div>
+      )}
+      
+      {/* Calendly integration */}
+      <CalendlyPopup
+        url={calendlyUrl}
+        buttonText="Schedule a Call"
+        buttonClassName="hidden" // We're controlling visibility separately
+        prefill={{
+          name: form.getValues("name"),
+          email: form.getValues("email"),
+        }}
+      />
     </div>
   );
 }
