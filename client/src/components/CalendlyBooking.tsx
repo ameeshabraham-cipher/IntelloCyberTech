@@ -1,13 +1,7 @@
-import { useState } from 'react';
-import { InlineWidget, PopupWidget, PopupButton } from 'react-calendly';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription
-} from '@/components/ui/dialog';
+import { InlineWidget, PopupModal, PopupButton, useCalendlyEventListener } from 'react-calendly';
+import { Calendar } from 'lucide-react';
 
 interface CalendlyButtonProps {
   url: string;
@@ -23,35 +17,29 @@ interface CalendlyButtonProps {
 
 export function CalendlyButton({ 
   url, 
-  text = "Schedule a Meeting",
-  className = "", 
-  prefill 
+  text = "Schedule a Meeting", 
+  className = "bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 flex items-center",
+  prefill
 }: CalendlyButtonProps) {
-  const handleClick = () => {
-    // Construct the Calendly URL with prefill parameters if any
-    let calendlyUrl = url;
-    if (prefill) {
-      const params = new URLSearchParams();
-      if (prefill.email) params.append('email', prefill.email);
-      if (prefill.firstName) params.append('firstName', prefill.firstName);
-      if (prefill.lastName) params.append('lastName', prefill.lastName);
-      if (prefill.name) params.append('name', prefill.name);
-      
-      if (params.toString()) {
-        calendlyUrl += `?${params.toString()}`;
-      }
-    }
-    
-    window.open(calendlyUrl, '_blank');
-  };
-  
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Button 
-      onClick={handleClick}
-      className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 ${className}`}
-    >
-      {text}
-    </Button>
+    <>
+      <Button 
+        onClick={() => setIsOpen(true)} 
+        className={className}
+      >
+        <Calendar className="mr-2 h-4 w-4" /> {text}
+      </Button>
+
+      <PopupModal 
+        url={url}
+        prefill={prefill}
+        onModalClose={() => setIsOpen(false)}
+        open={isOpen}
+        rootElement={document.getElementById('root') as HTMLElement}
+      />
+    </>
   );
 }
 
@@ -68,27 +56,22 @@ interface CalendlyModalProps {
 }
 
 export function CalendlyModal({ url, isOpen, onClose, prefill }: CalendlyModalProps) {
+  useCalendlyEventListener({
+    onEventScheduled: () => {
+      setTimeout(() => {
+        onClose();
+      }, 1000);
+    },
+  });
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl h-[80vh] p-0 overflow-hidden">
-        <DialogHeader className="p-4 bg-card border-b border-border">
-          <DialogTitle>Schedule Appointment</DialogTitle>
-          <DialogDescription>
-            Choose a convenient time for your consultation
-          </DialogDescription>
-        </DialogHeader>
-        <div className="h-full w-full">
-          <InlineWidget 
-            url={url}
-            prefill={prefill}
-            styles={{
-              height: 'calc(80vh - 80px)',
-              width: '100%',
-            }}
-          />
-        </div>
-      </DialogContent>
-    </Dialog>
+    <PopupModal 
+      url={url}
+      prefill={prefill}
+      onModalClose={onClose}
+      open={isOpen}
+      rootElement={document.getElementById('root') as HTMLElement}
+    />
   );
 }
 
@@ -106,28 +89,18 @@ interface CalendlyPopupProps {
 
 export function CalendlyPopup({ 
   url, 
-  buttonText = "Schedule a Meeting", 
-  buttonClassName = "",
+  buttonText = "Schedule a Call", 
+  buttonClassName,
   prefill
 }: CalendlyPopupProps) {
-  const [showModal, setShowModal] = useState(false);
-  
   return (
-    <>
-      <Button 
-        onClick={() => setShowModal(true)}
-        className={`bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 ${buttonClassName}`}
-      >
-        {buttonText}
-      </Button>
-      
-      <CalendlyModal 
-        url={url} 
-        isOpen={showModal} 
-        onClose={() => setShowModal(false)}
-        prefill={prefill}
-      />
-    </>
+    <PopupButton 
+      url={url}
+      text={buttonText}
+      prefill={prefill}
+      className={buttonClassName}
+      rootElement={document.getElementById('root') as HTMLElement}
+    />
   );
 }
 
@@ -138,26 +111,49 @@ interface CalendlyWidgetProps {
 
 export function CalendlyWidget({ url, className = "" }: CalendlyWidgetProps) {
   return (
-    <div className={`w-full h-[630px] rounded-lg overflow-hidden shadow-lg ${className}`}>
-      <InlineWidget 
-        url={url}
-        styles={{
-          height: '100%',
-          width: '100%',
-        }}
-      />
+    <div className={`calendly-inline-widget ${className}`}>
+      <InlineWidget url={url} />
     </div>
   );
 }
 
 export function CalendlyPopupWidget({ url }: { url: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    // Automatically open Calendly after a short delay
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useCalendlyEventListener({
+    onEventScheduled: () => {
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 1000);
+    },
+  });
+
   return (
-    <PopupWidget 
-      url={url}
-      rootElement={document.getElementById('root') as HTMLElement}
-      text="Schedule Appointment"
-      textColor="#ffffff"
-      color="#eb3443"
-    />
+    <>
+      <Button 
+        ref={buttonRef}
+        onClick={() => setIsOpen(true)} 
+        className="hidden"
+      >
+        Open Calendly
+      </Button>
+
+      <PopupModal 
+        url={url}
+        onModalClose={() => setIsOpen(false)}
+        open={isOpen}
+        rootElement={document.getElementById('root') as HTMLElement}
+      />
+    </>
   );
 }

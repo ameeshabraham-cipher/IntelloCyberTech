@@ -31,15 +31,19 @@ type AssessmentRequestData = z.infer<typeof assessmentRequestSchema>;
 const contactFormSubmissions: ContactFormData[] = [];
 const assessmentRequests: AssessmentRequestData[] = [];
 
-// Function to send email (will replace with actual email sending)
+// Function to log email (to be replaced with SendGrid integration later)
 async function sendEmail(to: string, subject: string, body: string): Promise<boolean> {
-  // In a production environment, we would integrate with SendGrid or another email service
-  console.log(`Sending email to: ${to}`);
-  console.log(`Subject: ${subject}`);
-  console.log(`Body: ${body}`);
+  // For now, we'll just log form submissions to the console
+  console.log(`
+====== FORM SUBMISSION ======
+To: ${to}
+Subject: ${subject}
+Body: 
+${body}
+============================
+  `);
   
-  // For demo purposes, we'll just log and return success
-  // In production, this would use SMTP or an email API
+  // Always return success for now
   return true;
 }
 
