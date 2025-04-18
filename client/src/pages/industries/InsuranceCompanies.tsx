@@ -56,8 +56,8 @@ const InsuranceCompaniesPage = () => {
           icon: <ClipboardCheck className="h-10 w-10 text-[hsl(var(--primary))]" />
         },
         {
-          title: "Secure Agent/Broker Portal",
-          description: "Build secure platforms for agent and broker interactions with multi-factor authentication, access controls, and encrypted communications.",
+          title: "Secure Agent/Broker Portal Assessment",
+          description: "Evaluate and enhance security for agent and broker portals with recommendations for multi-factor authentication, robust access controls, and encrypted communications.",
           icon: <Users className="h-10 w-10 text-[hsl(var(--primary))]" />
         },
         {
