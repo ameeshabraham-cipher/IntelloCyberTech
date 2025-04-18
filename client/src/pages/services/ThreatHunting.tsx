@@ -31,7 +31,7 @@ const ThreatHuntingPage = () => {
         },
         {
           title: "Continuous Security Evolution",
-          content: "Develop a proactive security posture that constantly evolves to address emerging threats and attack vectors."
+          content: "Establish a proactive security posture that constantly evolves to address emerging threats and attack vectors."
         }
       ]}
       
