@@ -1,12 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useScrollReveal } from '@/lib/animations';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { apiRequest } from '@/lib/queryClient';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import ContactFormWithCalendly from '@/components/ContactFormWithCalendly';
 
 const Contact = () => {
   useScrollReveal();
