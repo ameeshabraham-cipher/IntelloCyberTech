@@ -46,26 +46,24 @@ export type ContactForm = typeof contactForms.$inferSelect;
 // Assessment requests
 export const assessmentRequests = pgTable("assessment_requests", {
   id: serial("id").primaryKey(),
-  companyName: text("company_name").notNull(),
-  contactName: text("contact_name").notNull(),
+  name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone"),
-  industry: text("industry").notNull(),
-  companySize: text("company_size").notNull(),
-  assessmentType: text("assessment_type").notNull(),
-  additionalInfo: text("additional_info"),
+  company: text("company").notNull(),
+  industry: text("industry"),
+  message: text("message"),
+  service: text("service"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const insertAssessmentRequestSchema = createInsertSchema(assessmentRequests).pick({
-  companyName: true,
-  contactName: true,
+  name: true,
   email: true,
   phone: true,
+  company: true,
   industry: true,
-  companySize: true,
-  assessmentType: true,
-  additionalInfo: true,
+  message: true,
+  service: true,
 });
 
 export type InsertAssessmentRequest = z.infer<typeof insertAssessmentRequestSchema>;
