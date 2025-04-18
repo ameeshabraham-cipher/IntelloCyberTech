@@ -57,7 +57,7 @@ const Navbar = () => {
             <Link href="/" className="text-white">
               <div className="flex items-center">
                 <img 
-                  src="/images/intello-logo.png" 
+                  src="/images/intello-new-logo.png" 
                   alt="Intello." 
                   className="h-12 w-auto"
                 />

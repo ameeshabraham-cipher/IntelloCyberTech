@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <Link href="/" className="text-white font-montserrat font-bold text-2xl">
-                <img src="/images/intello-logo.png" alt="Intello Logo" className="h-10" />
+                <img src="/images/intello-new-logo.png" alt="Intello Logo" className="h-10" />
               </Link>
             </div>
             <p className="text-muted-foreground mb-6">
