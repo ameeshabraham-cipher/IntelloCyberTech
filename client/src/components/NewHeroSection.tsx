@@ -45,36 +45,52 @@ const ClientLogosCarousel = () => {
       <CarouselContent className="py-4">
         {logos.map((logo, index) => (
           <CarouselItem key={index} className="basis-1/4 pl-4">
-            <div className="relative h-32 rounded-lg border border-gray-200 bg-white flex flex-col items-center justify-center p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <div className="relative h-32 rounded-lg border border-gray-200 bg-white flex flex-col items-center justify-center p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-lg group">
+              {/* Decorative corner accents with Arabic-inspired design */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#eb3443]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#eb3443]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#eb3443]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#eb3443]/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
               {logo.imagePath ? (
                 <img 
                   src={logo.imagePath} 
                   alt={`${logo.name} logo`} 
-                  className="h-16 object-contain mb-2 filter grayscale hover:filter-none transition-all duration-300"
+                  className="h-16 object-contain mb-2 filter grayscale group-hover:filter-none transition-all duration-300"
                 />
               ) : (
-                <div className="text-gray-600 font-semibold text-xl text-center mb-2 grayscale hover:grayscale-0 transition-all duration-300">
+                <div className="text-gray-600 font-semibold text-xl text-center mb-2 grayscale group-hover:grayscale-0 transition-all duration-300">
                   {logo.name}
                 </div>
               )}
-              <div className="text-gray-500 text-xs text-center">Trusted Partner</div>
+              <div className="text-gray-500 text-xs text-center group-hover:text-[#eb3443] transition-colors duration-300">Trusted Partner</div>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex items-center justify-center mt-4 gap-2">
-        <CarouselPrevious variant="outline" size="sm" className="static bg-white text-gray-600 hover:bg-gray-100 border-gray-200" />
-        <div className="flex items-center justify-center gap-1">
+      <div className="flex items-center justify-center mt-6 gap-3">
+        <CarouselPrevious 
+          variant="outline" 
+          size="sm" 
+          className="static bg-white text-gray-600 hover:bg-[#eb3443]/10 hover:text-[#eb3443] border-gray-200 hover:border-[#eb3443]/20 transition-colors duration-300" 
+        />
+        <div className="flex items-center justify-center gap-2 px-3 py-1 bg-gray-50 rounded-full">
           {Array.from({ length: count }).map((_, i) => (
             <div
               key={i}
-              className={`h-1.5 w-1.5 rounded-full ${
-                current === i ? "bg-gray-800" : "bg-gray-300"
-              }`}
+              className={`h-2 w-2 ${
+                current === i 
+                  ? "bg-[#eb3443]" 
+                  : "bg-gray-300 hover:bg-[#eb3443]/30"
+              } rounded-full transition-all duration-300`}
             />
           ))}
         </div>
-        <CarouselNext variant="outline" size="sm" className="static bg-white text-gray-600 hover:bg-gray-100 border-gray-200" />
+        <CarouselNext 
+          variant="outline" 
+          size="sm" 
+          className="static bg-white text-gray-600 hover:bg-[#eb3443]/10 hover:text-[#eb3443] border-gray-200 hover:border-[#eb3443]/20 transition-colors duration-300" 
+        />
       </div>
     </Carousel>
   );
@@ -408,12 +424,39 @@ const NewHeroSection = () => {
           </div>
         </div>
         
-        {/* Client Logos Carousel */}
+        {/* Client Logos Carousel with Arabic Pattern Background */}
         <div className="mt-20 reveal" data-delay="600">
-          <div className="bg-white py-10 rounded-lg">
-            <p className="text-center text-gray-600 text-sm uppercase tracking-wider mb-6 font-medium">Trusted by Leading Organizations</p>
+          <div className="relative bg-white py-10 rounded-lg overflow-hidden">
+            {/* Arabic Pattern Background Overlay */}
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 29.84l-25.38 14.67v29.34L60 88.52l25.38-14.67V44.51L60 29.84zm0-9.46l30 17.32v34.64L60 89.66l-30-17.32V37.7l30-17.32zm0 69.83l20.38-11.76v-23.5L60 66.71l-20.38-11.76v23.5L60 90.21zm0-27.73l11.52-6.65v-13.3L60 35.87l-11.52 6.66v13.3L60 62.48z' fill='%23eb3443' fill-opacity='0.7' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+              backgroundSize: '120px 120px'
+            }}></div>
             
-            <div className="w-full px-4 md:px-8 lg:px-12">
+            {/* Decorative Arabic-inspired Corner Elements */}
+            <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden opacity-20">
+              <div className="absolute top-0 right-0 w-32 h-32 border-8 border-[#eb3443]/40 rounded-full"></div>
+            </div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 overflow-hidden opacity-20">
+              <div className="absolute bottom-0 left-0 w-32 h-32 border-8 border-[#eb3443]/40 rounded-full"></div>
+            </div>
+            
+            {/* Horizontal decorative elements */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#eb3443]/10 via-[#eb3443]/30 to-[#eb3443]/10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#eb3443]/10 via-[#eb3443]/30 to-[#eb3443]/10"></div>
+            
+            {/* Arabic-inspired arc decorations */}
+            <div className="absolute top-3 left-1/4 w-1/2 h-1.5 bg-gradient-to-r from-transparent via-[#eb3443]/20 to-transparent"></div>
+            <div className="absolute bottom-3 left-1/4 w-1/2 h-1.5 bg-gradient-to-r from-transparent via-[#eb3443]/20 to-transparent"></div>
+            
+            {/* Subtle vertical accent lines */}
+            <div className="absolute top-10 bottom-10 left-6 w-px bg-gradient-to-b from-transparent via-[#eb3443]/15 to-transparent"></div>
+            <div className="absolute top-10 bottom-10 right-6 w-px bg-gradient-to-b from-transparent via-[#eb3443]/15 to-transparent"></div>
+            
+            <h3 className="text-center text-gray-700 text-xl font-bold mb-1">Trusted by Leading Organizations</h3>
+            <p className="text-center text-gray-500 text-sm mb-8 italic">Excellence in Service & Delivery</p>
+            
+            <div className="w-full px-4 md:px-8 lg:px-12 relative z-10">
               <ClientLogosCarousel />
             </div>
           </div>
