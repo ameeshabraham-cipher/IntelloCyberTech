@@ -18,27 +18,6 @@ interface AudienceTabProps {
 
 const audienceData: AudienceTabProps[] = [
   {
-    id: 'executives',
-    icon: <Users className="h-5 w-5" />,
-    title: 'For Business Owners',
-    painPoints: [
-      'Balancing innovation with security and compliance requirements',
-      'Navigating complex regulatory landscapes in the GCC region',
-      'Quantifying cybersecurity ROI and reporting to the board',
-      'Strategic planning for digital transformation initiatives'
-    ],
-    solutions: [
-      'Executive-focused advisory on cybersecurity and compliance strategy',
-      'Business-centric roadmaps that align with organizational objectives',
-      'Risk quantification and executive reporting frameworks',
-      'Strategic guidance on technology investments with security by design'
-    ],
-    cta: {
-      text: 'Executive Advisory Services',
-      link: '/services/executive-advisory'
-    }
-  },
-  {
     id: 'ciso',
     icon: <ShieldAlert className="h-5 w-5" />,
     title: 'For CISOs & Security Teams',
@@ -146,7 +125,7 @@ const audienceData: AudienceTabProps[] = [
 ];
 
 const TargetAudienceSection = () => {
-  const [activeTab, setActiveTab] = useState('executives');
+  const [activeTab, setActiveTab] = useState('ciso');
   
   const activeData = audienceData.find(item => item.id === activeTab) || audienceData[0];
 
