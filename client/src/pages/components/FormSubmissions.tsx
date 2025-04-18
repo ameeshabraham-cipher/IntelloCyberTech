@@ -118,6 +118,8 @@ const FormSubmissionsPage = () => {
                 ? 'View and manage contact form submissions from the website.' 
                 : 'Detailed information about the selected form submission.'}
             </p>
+            
+            {viewMode === 'list' && <AdminNav />}
           </div>
         </div>
       </section>
