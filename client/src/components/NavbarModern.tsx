@@ -193,6 +193,9 @@ export default function NavbarModern() {
   const [hoveredCategory, setHoveredCategory] = useState('GRC Services');
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const [clickedCategory, setClickedCategory] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<number | null>(null);
   
   // Apply navbar background change on scroll
   useNavbarScroll();
@@ -201,9 +204,49 @@ export default function NavbarModern() {
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpenMobileSubmenu(null);
+    setClickedCategory(null);
     // Reset the hover state for desktop menu
     setHoveredCategory('GRC Services');
   }, [location]);
+  
+  // Handle hover with a delay to prevent accidental switching
+  const handleCategoryHover = (category: string) => {
+    if (clickedCategory) return; // Don't change if a category is clicked/locked
+    
+    // Clear any existing timeout
+    if (hoverTimeoutRef.current) {
+      window.clearTimeout(hoverTimeoutRef.current);
+    }
+    
+    // Set a new timeout for 200ms
+    hoverTimeoutRef.current = window.setTimeout(() => {
+      setHoveredCategory(category);
+    }, 200);
+  };
+  
+  // Handle click to "lock" a category
+  const handleCategoryClick = (category: string) => {
+    setClickedCategory(clickedCategory === category ? null : category);
+    setHoveredCategory(category);
+  };
+  
+  // Add event listener to close the locked category when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (clickedCategory && !(event.target as Element).closest('.service-menu-dropdown')) {
+        setClickedCategory(null);
+      }
+    }
+    
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      if (hoverTimeoutRef.current) {
+        window.clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, [clickedCategory]);
   
   const toggleMobileSubmenu = (menu: string) => {
     setOpenMobileSubmenu(openMobileSubmenu === menu ? null : menu);
@@ -237,21 +280,49 @@ export default function NavbarModern() {
                   <ChevronDown className="h-4 w-4 ml-1" />
                 </button>
                 
-                <div className="absolute left-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden w-[850px]">
+                <div 
+                  className={`service-menu-dropdown absolute left-0 top-full mt-2 ${clickedCategory ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'} transition-all duration-200 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden w-[850px]`}
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <div className="flex p-1">
+                    {/* Usage hint - only show initially */}
+                    {!clickedCategory && (
+                      <div className="absolute right-3 top-3 bg-[hsl(var(--secondary))]/10 text-[hsl(var(--secondary))] text-xs px-3 py-1.5 rounded-full animate-pulse">
+                        <span className="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                          </svg>
+                          Click a category to lock it
+                        </span>
+                      </div>
+                    )}
                     {/* Category Tabs */}
                     <div className="w-[220px] border-r border-[hsl(var(--secondary))]/10 p-2">
                       {servicesMenuData.map((category, idx) => (
                         <button 
                           key={idx}
-                          onMouseEnter={() => setHoveredCategory(category.category)}
+                          onMouseEnter={() => handleCategoryHover(category.category)}
+                          onClick={() => handleCategoryClick(category.category)}
                           className={`w-full text-left px-4 py-3 rounded-md mb-1 transition-all flex items-center gap-2 
                             ${hoveredCategory === category.category 
                               ? 'bg-[hsl(var(--secondary))]/10 text-[hsl(var(--secondary))]' 
-                              : 'hover:bg-background/40'}`
+                              : 'hover:bg-background/40'}
+                            ${clickedCategory === category.category 
+                              ? 'ring-2 ring-[hsl(var(--secondary))] bg-[hsl(var(--secondary))]/15' 
+                              : ''}`
                           }
                         >
                           {category.category}
+                          {clickedCategory === category.category && (
+                            <span className="ml-auto">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                              </svg>
+                            </span>
+                          )}
                         </button>
                       ))}
                     </div>
