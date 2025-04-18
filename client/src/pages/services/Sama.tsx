@@ -1,7 +1,7 @@
 import { 
   FileText, 
   Shield, 
-  Bank,
+  Building,
   Lock,
   ClipboardList,
   CheckCircle,
@@ -15,7 +15,7 @@ const SamaPage = () => {
       title="SAMA Compliance"
       category="GCC Services"
       description="Achieve compliance with Saudi Central Bank (SAMA) Cybersecurity Framework through our comprehensive assessment and implementation services tailored for financial organizations operating in the Kingdom of Saudi Arabia."
-      heroIcon={<Bank className="h-8 w-8" />}
+      heroIcon={<Building className="h-8 w-8" />}
       overview="The Saudi Central Bank (SAMA) Cybersecurity Framework establishes comprehensive requirements for financial institutions in Saudi Arabia. Our SAMA compliance service provides expert guidance through the entire compliance journey, from initial assessment to implementation of required controls, helping financial organizations protect data and systems while meeting regulatory obligations."
       steps={[
         {

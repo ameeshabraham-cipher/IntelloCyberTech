@@ -80,13 +80,21 @@ const Navbar = () => {
                     <li><Link href="/services/iso42001" className="hover:text-[hsl(var(--secondary))] transition">ISO 42001 AI Management</Link></li>
                     <li><Link href="/services/soc2" className="hover:text-[hsl(var(--secondary))] transition">SOC 2 Compliance</Link></li>
                     <li><Link href="/services/gdpr" className="hover:text-[hsl(var(--secondary))] transition">GDPR Compliance</Link></li>
-                    <li><Link href="/services/uae-pdpl" className="hover:text-[hsl(var(--secondary))] transition">UAE PDPL Compliance</Link></li>
-                    <li><Link href="/services/uae-ia" className="hover:text-[hsl(var(--secondary))] transition">UAE IA Compliance</Link></li>
-                    <li><Link href="/services/uae-nesa" className="hover:text-[hsl(var(--secondary))] transition">UAE NESA Compliance</Link></li>
                     <li><Link href="/services/pci-dss" className="hover:text-[hsl(var(--secondary))] transition">PCI DSS Compliance</Link></li>
                     <li><Link href="/services/hipaa" className="hover:text-[hsl(var(--secondary))] transition">HIPAA Compliance</Link></li>
                     <li><Link href="/services/internal-audit" className="hover:text-[hsl(var(--secondary))] transition">Internal Audit & Gap Analysis</Link></li>
                     <li><Link href="/services/risk-frameworks" className="hover:text-[hsl(var(--secondary))] transition">Risk Management Frameworks</Link></li>
+                  </ul>
+                  
+                  <h4 className="text-[hsl(var(--secondary))] mt-4 mb-3 font-semibold">GCC Focused Compliance</h4>
+                  <ul className="space-y-2">
+                    <li><Link href="/services/uae-pdpl" className="hover:text-[hsl(var(--secondary))] transition">UAE PDPL Compliance</Link></li>
+                    <li><Link href="/services/uae-ia" className="hover:text-[hsl(var(--secondary))] transition">UAE IA Compliance</Link></li>
+                    <li><Link href="/services/uae-nesa" className="hover:text-[hsl(var(--secondary))] transition">UAE NESA Compliance</Link></li>
+                    <li><Link href="/services/ksa-pdpl" className="hover:text-[hsl(var(--secondary))] transition">KSA PDPL Compliance</Link></li>
+                    <li><Link href="/services/bahrain-pdpl" className="hover:text-[hsl(var(--secondary))] transition">Bahrain PDPL Compliance</Link></li>
+                    <li><Link href="/services/sama" className="hover:text-[hsl(var(--secondary))] transition">SAMA Compliance</Link></li>
+                    <li><Link href="/services/saudi-aramco" className="hover:text-[hsl(var(--secondary))] transition">Saudi Aramco Cybersecurity</Link></li>
                   </ul>
                 </div>
                 <div>
@@ -206,14 +214,20 @@ const Navbar = () => {
                 <Link href="/services/iso42001" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">ISO 42001 AI Management</Link>
                 <Link href="/services/soc2" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SOC 2 Compliance</Link>
                 <Link href="/services/gdpr" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">GDPR Compliance</Link>
-                <Link href="/services/uae-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE PDPL Compliance</Link>
-                <Link href="/services/uae-ia" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE IA Compliance</Link>
-                <Link href="/services/uae-nesa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
                 <Link href="/services/pci-dss" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">PCI DSS Compliance</Link>
                 <Link href="/services/hipaa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">HIPAA Compliance</Link>
                 <Link href="/services/internal-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Internal Audit & Gap Analysis</Link>
                 <Link href="/services/risk-frameworks" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Risk Management Frameworks</Link>
                 <Link href="/services/policy-development" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Policy Development</Link>
+                
+                <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-4 pb-1">GCC Focused Compliance</p>
+                <Link href="/services/uae-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE PDPL Compliance</Link>
+                <Link href="/services/uae-ia" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE IA Compliance</Link>
+                <Link href="/services/uae-nesa" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">UAE NESA Compliance</Link>
+                <Link href="/services/ksa-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">KSA PDPL Compliance</Link>
+                <Link href="/services/bahrain-pdpl" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Bahrain PDPL Compliance</Link>
+                <Link href="/services/sama" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">SAMA Compliance</Link>
+                <Link href="/services/saudi-aramco" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Saudi Aramco Cybersecurity</Link>
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">IT Security & Audit</p>
                 <Link href="/services/it-security-audit" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">IT Security Audit</Link>
