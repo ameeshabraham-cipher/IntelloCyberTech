@@ -6,6 +6,10 @@ import AISolutionsSection from '@/components/AISolutionsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CallToAction from '@/components/CallToAction';
 import { HelpBubbleDemo } from '@/components/HelpBubbleDemo';
+import TargetAudienceSection from '@/components/TargetAudienceSection';
+import IndustryPainPoints from '@/components/IndustryPainPoints';
+import BusinessGrowthServices from '@/components/BusinessGrowthServices';
+import ThreatMitigationServices from '@/components/ThreatMitigationServices';
 
 const Home = () => {
   // Set page title on mount
@@ -16,6 +20,10 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <NewHeroSection />
+      <TargetAudienceSection />
+      <BusinessGrowthServices />
+      <ThreatMitigationServices />
+      <IndustryPainPoints />
       <PainPointsSection />
       <ServicesShowcase />
       <AISolutionsSection />
