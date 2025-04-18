@@ -35,7 +35,7 @@ const ClientLogosCarousel = () => {
 
   return (
     <Carousel
-      className="w-full max-w-4xl mx-auto"
+      className="w-full max-w-5xl mx-auto"
       setApi={setApi}
       opts={{
         align: "start",
@@ -44,37 +44,37 @@ const ClientLogosCarousel = () => {
     >
       <CarouselContent className="py-4">
         {logos.map((logo, index) => (
-          <CarouselItem key={index} className="basis-1/3 pl-4">
-            <div className="relative h-32 rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm flex flex-col items-center justify-center p-6 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/5">
+          <CarouselItem key={index} className="basis-1/4 pl-4">
+            <div className="relative h-32 rounded-lg border border-gray-200 bg-white flex flex-col items-center justify-center p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               {logo.imagePath ? (
                 <img 
                   src={logo.imagePath} 
                   alt={`${logo.name} logo`} 
-                  className="h-16 object-contain mb-2"
+                  className="h-16 object-contain mb-2 filter grayscale hover:filter-none transition-all duration-300"
                 />
               ) : (
-                <div className="text-primary font-semibold text-xl text-center mb-2">
+                <div className="text-gray-600 font-semibold text-xl text-center mb-2 grayscale hover:grayscale-0 transition-all duration-300">
                   {logo.name}
                 </div>
               )}
-              <div className="text-muted-foreground text-xs text-center">Trusted Partner</div>
+              <div className="text-gray-500 text-xs text-center">Trusted Partner</div>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
       <div className="flex items-center justify-center mt-4 gap-2">
-        <CarouselPrevious variant="outline" size="sm" className="static" />
+        <CarouselPrevious variant="outline" size="sm" className="static bg-white text-gray-600 hover:bg-gray-100 border-gray-200" />
         <div className="flex items-center justify-center gap-1">
           {Array.from({ length: count }).map((_, i) => (
             <div
               key={i}
               className={`h-1.5 w-1.5 rounded-full ${
-                current === i ? "bg-primary" : "bg-primary/30"
+                current === i ? "bg-gray-800" : "bg-gray-300"
               }`}
             />
           ))}
         </div>
-        <CarouselNext variant="outline" size="sm" className="static" />
+        <CarouselNext variant="outline" size="sm" className="static bg-white text-gray-600 hover:bg-gray-100 border-gray-200" />
       </div>
     </Carousel>
   );
@@ -410,10 +410,12 @@ const NewHeroSection = () => {
         
         {/* Client Logos Carousel */}
         <div className="mt-20 reveal" data-delay="600">
-          <p className="text-center text-muted-foreground text-sm uppercase tracking-wider mb-6">Trusted by Leading Organizations</p>
-          
-          <div className="w-full px-4 md:px-8 lg:px-12">
-            <ClientLogosCarousel />
+          <div className="bg-white py-10 rounded-lg">
+            <p className="text-center text-gray-600 text-sm uppercase tracking-wider mb-6 font-medium">Trusted by Leading Organizations</p>
+            
+            <div className="w-full px-4 md:px-8 lg:px-12">
+              <ClientLogosCarousel />
+            </div>
           </div>
         </div>
       </div>
