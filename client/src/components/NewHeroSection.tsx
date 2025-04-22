@@ -539,26 +539,20 @@ const NewHeroSection = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-indigo-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                       
-                      <div className="relative bg-gray-800/80 backdrop-blur border border-white/10 shadow-xl rounded-xl overflow-hidden
+                      <div className="relative bg-gray-600/80 backdrop-blur border border-white/10 shadow-xl rounded-xl overflow-hidden
                                      p-5 flex items-center justify-center
-                                     transform transition-all duration-500
-                                     group-hover:shadow-2xl group-hover:border-white/20 group-hover:scale-105">
+                                     transform transition-all duration-500 shadow-[inset_0_0_15px_rgba(255,255,255,0.2)]
+                                     group-hover:shadow-2xl group-hover:border-white/20 group-hover:scale-105 group-hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.3)]">
                         <div className="relative z-10 p-2">
                           <img 
                             src={`/images/client-images/client${i+1}.png`}
                             alt={`Client ${i+1} logo`} 
                             className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 
-                                     filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
+                                     group-hover:scale-110" 
                           />
                         </div>
                       </div>
-                      
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1
-                                    bg-gray-800/70 border border-white/10 shadow-lg rounded-full
-                                    opacity-0 group-hover:opacity-100 group-hover:-translate-y-2
-                                    transition-all duration-300">
-                        <span className="text-xs font-medium text-white">Partner</span>
-                      </div>
+
                     </div>
                   ))}
                 </div>
