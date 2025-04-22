@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
+
 import { useScrollReveal } from '@/lib/animations';
 import { ChevronRight, ArrowRight, Shield, Lock, Zap, Server, ChevronLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -499,29 +500,77 @@ const NewHeroSection = () => {
           </div>
         </div>
         
-        {/* Client Logos Section - Creative Design */}
+        {/* Client Logos Section - Ultra Modern 3D Style Design */}
         <div className="mt-20 reveal" data-delay="600">
-          <div className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+          <div className="relative py-16 sm:py-24 md:py-28 overflow-hidden bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800">
             {/* Background effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(235,52,67,0.05),transparent_70%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,0,0,0.03),transparent_70%)]"></div>
+            <div className="absolute inset-0 overflow-hidden opacity-20">
+              <div className="absolute h-full w-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            </div>
+
+            {/* Glowing orbs */}
+            <div className="absolute top-1/4 left-1/5 w-64 h-64 rounded-full bg-primary/20 filter blur-[100px]"></div>
+            <div className="absolute bottom-1/4 right-1/5 w-64 h-64 rounded-full bg-indigo-500/10 filter blur-[100px]"></div>
             
             {/* Content */}
-            <div className="relative z-10">
-              <h3 className="text-center text-gray-800 text-xl sm:text-2xl font-bold mb-2">Trusted by Leading Organizations</h3>
-              <p className="text-center text-gray-600 text-sm mb-12">Excellence in Service & Delivery</p>
-              
-              {/* Angled dividers */}
-              <div className="absolute top-24 left-0 w-full overflow-hidden h-4 -z-10">
-                <div className="absolute h-4 w-full transform translate-x-[-10%] bg-gray-100 rotate-1"></div>
+            <div className="relative z-10 max-w-7xl mx-auto px-4">
+              {/* Header with high contrast */}
+              <div className="text-center mb-16">
+                <h3 className="inline-block text-white text-3xl sm:text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-300">
+                  Trusted by Industry Leaders
+                </h3>
+                <div className="h-1 w-24 bg-primary mx-auto mt-2 rounded-full"></div>
+                <p className="text-gray-300 text-sm mt-4 max-w-md mx-auto opacity-80">
+                  Delivering world-class security solutions to organizations worldwide
+                </p>
               </div>
-              <div className="absolute top-28 left-0 w-full overflow-hidden h-4 -z-10">
-                <div className="absolute h-4 w-full transform translate-x-[5%] bg-primary/5 -rotate-1"></div>
+
+              {/* 3D Perspective Grid for Logos */}
+              <div className="relative perspective-[1000px] mx-auto max-w-5xl">
+                <div className="transform-gpu grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8" style={{ transform: 'rotateX(12deg)' }}>
+                  {[...Array(10)].map((_, i) => i < 10 && (
+                    <div 
+                      key={i}
+                      className="group relative"
+                      style={{
+                        transform: `translateY(${10 * Math.cos(i * 0.5)}px)`,
+                        transition: 'transform 0.5s ease-out'
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-indigo-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      
+                      <div className="relative bg-gray-800/80 backdrop-blur border border-white/10 shadow-xl rounded-xl overflow-hidden
+                                     p-5 flex items-center justify-center
+                                     transform transition-all duration-500
+                                     group-hover:shadow-2xl group-hover:border-white/20 group-hover:scale-105">
+                        <div className="relative z-10 p-2">
+                          <img 
+                            src={`/images/client-images/client${i+1}.png`}
+                            alt={`Client ${i+1} logo`} 
+                            className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 
+                                     filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1
+                                    bg-gray-800/70 border border-white/10 shadow-lg rounded-full
+                                    opacity-0 group-hover:opacity-100 group-hover:-translate-y-2
+                                    transition-all duration-300">
+                        <span className="text-xs font-medium text-white">Partner</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Reflective Surface Below */}
+                <div className="relative h-20 w-full bg-gradient-to-b from-gray-700/20 to-transparent mt-10 rounded-lg transform-gpu scale-y-50 blur-sm" style={{ transform: 'rotateX(-80deg)' }}></div>
               </div>
               
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 relative pb-8 pt-4">
-                <ClientLogosCarousel />
+              {/* Accent Line with Glow */}
+              <div className="relative h-px w-full max-w-xl mx-auto mt-20 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-primary/30 blur-sm"></div>
               </div>
             </div>
           </div>
