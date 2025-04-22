@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { apiRequest } from '@/lib/queryClient';
+// Remove apiRequest import - we'll use formspree directly
 
 import {
   Form,
@@ -67,17 +67,26 @@ export default function ContactForm({
     },
   });
 
+  // Replace with your actual Formspree form ID
+  const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
+  
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     
     try {
-      // Submit to our email API endpoint
-      const response = await apiRequest('/api/email/contact', {
+      // Submit to Formspree
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
         method: 'POST',
-        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
-
-      if (response.success) {
+      
+      const responseData = await response.json();
+      
+      if (response.ok) {
         toast({
           title: 'Message Sent',
           description: 'Thank you for your message. We\'ll be in touch soon.',
@@ -86,7 +95,7 @@ export default function ContactForm({
         setIsSubmitted(true);
         form.reset();
       } else {
-        throw new Error(response.message || 'Error sending message');
+        throw new Error(responseData.error || 'Error sending message');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
