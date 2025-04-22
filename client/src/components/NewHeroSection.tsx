@@ -527,7 +527,7 @@ const NewHeroSection = () => {
 
               {/* 3D Perspective Grid for Logos */}
               <div className="relative perspective-[1000px] mx-auto max-w-5xl">
-                <div className="transform-gpu grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-x-4 gap-y-6 md:gap-x-6 md:gap-y-8 place-items-center" style={{ transform: 'rotateX(12deg)' }}>
+                <div className="transform-gpu grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-x-2 gap-y-4 sm:gap-x-4 sm:gap-y-6 md:gap-x-6 md:gap-y-8 place-items-center" style={{ transform: 'rotateX(12deg)' }}>
                   {[...Array(15)].map((_, i) => i < 15 && (
                     <div 
                       key={i}
@@ -539,7 +539,7 @@ const NewHeroSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-indigo-500/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                       
                       <div className="relative bg-white backdrop-blur border border-white/20 shadow-md rounded-xl overflow-hidden
-                                     p-2 flex items-center justify-center w-full aspect-[4/3] max-w-[85%]
+                                     p-3 flex items-center justify-center w-full aspect-[4/3] max-w-[90%]
                                      transform transition-all duration-500
                                      group-hover:shadow-2xl group-hover:border-primary/20 group-hover:scale-105 group-hover:translate-y-[-5px]
                                      group-hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.2)]">
@@ -547,7 +547,7 @@ const NewHeroSection = () => {
                           <img 
                             src={`/images/client-images/client${i+1}.png`}
                             alt={`Client ${i+1} logo`} 
-                            className="h-12 sm:h-16 md:h-20 w-auto max-w-[80%] object-contain transition-all duration-300 
+                            className="h-14 sm:h-18 md:h-20 w-auto max-w-[90%] object-contain transition-all duration-300 
                                      filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
