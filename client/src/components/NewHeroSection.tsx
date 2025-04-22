@@ -156,14 +156,6 @@ const NewHeroSection = () => {
             
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Link href="/assessment">
-                <Button
-                  className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover flex items-center group"
-                >
-                  <span>Get a Free Assessment</span>
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
               <Link href="/solutions">
                 <Button
                   variant="outline"
