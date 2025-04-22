@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/Home";
 import AboutUs from "@/pages/AboutUs";
@@ -14,6 +14,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CalendlyFloatingButton from "@/components/CalendlyFloatingButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeInitializer } from "@/components/ThemeToggle";
 
@@ -91,8 +93,46 @@ import ArchitecturalFirmsPage from "@/pages/industries/ArchitecturalFirms";
 import TechnologyCompaniesPage from "@/pages/industries/TechnologyCompanies";
 
 function Router() {
+  const [location] = useLocation();
+  
+  // Organization structured data for search engines
+  const organizationData = {
+    name: "Intello Cyber Technologies",
+    url: "https://intellome.com",
+    logo: "https://intellome.com/images/intello-new-logo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+971 55 355 6787",
+      email: "info@intellome.com",
+      contactType: "customer service"
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/intellocyber",
+      "https://twitter.com/intellocyber"
+    ],
+    description: "Leading provider of Cybersecurity, GRC, and IT Managed Services, specializing in ISO 27001, SOC 2, GDPR, UAE PDPL, and AI-powered compliance automation solutions."
+  };
+  
+  // Website structured data for search engines
+  const websiteData = {
+    name: "Intello Cyber Technologies",
+    url: "https://intellome.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://intellome.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+  
   return (
     <div className="relative">
+      {/* Global SEO component that updates meta tags based on current route */}
+      <SEO />
+      
+      {/* JSON-LD structured data for search engines */}
+      <StructuredData type="Organization" data={organizationData} />
+      <StructuredData type="WebSite" data={websiteData} />
+      
       {/* ScrollToTop component will automatically scroll to top on route change */}
       <ScrollToTop />
       <Navbar />
