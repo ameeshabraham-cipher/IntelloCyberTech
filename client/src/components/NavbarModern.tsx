@@ -443,7 +443,7 @@ export default function NavbarModern() {
           {/* CTA Button (Desktop) */}
           <div className="hidden lg:flex items-center ml-4">
             <Link href="/assessment">
-              <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-2 px-6 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
+              <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium py-2 px-6 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
                 Get Assessment
               </Button>
             </Link>
@@ -477,7 +477,8 @@ export default function NavbarModern() {
                 <input 
                   type="text" 
                   placeholder="Search services..."
-                  className="w-full rounded-lg bg-card py-3 pl-10 pr-4 border border-white/10 focus:border-[hsl(var(--secondary))] focus:outline-none"
+                  aria-label="Search services"
+                  className="w-full rounded-lg bg-card py-3 pl-10 pr-4 border border-white/10 focus:border-[hsl(var(--secondary))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]/20"
                 />
               </div>
               
@@ -613,12 +614,12 @@ export default function NavbarModern() {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-12 pb-3 grid grid-cols-2 gap-2">
+                        <div className="pl-12 pb-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {industriesData.map((industry, idx) => (
                             <Link 
                               key={idx} 
                               href={industry.path}
-                              className="flex items-center p-2 rounded-md hover:bg-white/5 transition-all"
+                              className="flex items-center p-3 sm:p-4 rounded-md hover:bg-white/5 transition-all text-base sm:text-lg"
                             >
                               <span className="mr-2 text-[hsl(var(--secondary))]">{industry.icon}</span>
                               <span>{industry.label}</span>
@@ -634,7 +635,7 @@ export default function NavbarModern() {
                 {navItems.map((item, idx) => (
                   <div key={idx} className="border-b border-white/10">
                     <Link href={item.path}>
-                      <button className="flex items-center w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all">
+                      <button className="flex items-center w-full p-4 sm:p-5 text-lg font-medium hover:bg-white/5 rounded-md transition-all">
                         <span className="bg-[hsl(var(--secondary))]/10 p-2 rounded-md mr-3 text-[hsl(var(--secondary))]">
                           {item.icon}
                         </span>
@@ -646,10 +647,10 @@ export default function NavbarModern() {
               </nav>
               
               {/* CTA Button (Mobile) */}
-              <div className="mt-8">
+              <div className="mt-8 px-2">
                 <Link href="/assessment">
-                  <Button className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-card font-medium py-3 rounded-lg hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300">
-                    Get Security Assessment
+                  <Button className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium py-4 rounded-lg hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 text-base sm:text-lg">
+                    Get Free Security Assessment
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
