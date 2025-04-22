@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-// Remove apiRequest import - we'll use formspree directly
 
 import {
   Form,
@@ -23,7 +22,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Send } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -52,6 +51,7 @@ export default function ContactForm({
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   // Initialize form
   const form = useForm<ContactFormValues>({
@@ -67,11 +67,12 @@ export default function ContactForm({
     },
   });
 
-  // Replace with your actual Formspree form ID
-  const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
+  // Replace with your actual Formspree form ID from your Formspree account
+  const FORMSPREE_FORM_ID = 'xgejpkwy'; // Replace with your actual ID
   
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
+    setFormError(null);
     
     try {
       // Submit to Formspree
@@ -81,7 +82,11 @@ export default function ContactForm({
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+          ...data,
+          _subject: data.subject || `New contact from ${data.name}`,
+          service: data.service || "Not specified"
+        })
       });
       
       const responseData = await response.json();
@@ -99,6 +104,7 @@ export default function ContactForm({
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setFormError('There was a problem sending your message. Please try again.');
       toast({
         title: 'Submission Error',
         description: 'There was a problem sending your message. Please try again.',
@@ -279,13 +285,22 @@ export default function ContactForm({
         </>
       ) : (
         <div className="text-center py-8">
-          <div className="bg-[hsl(var(--primary))]/10 rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-            <Send className="h-10 w-10 text-[hsl(var(--secondary))]" />
+          <div className="relative mx-auto w-24 h-24 mb-6">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] opacity-20 animate-pulse"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <CheckCircle className="h-12 w-12 text-[hsl(var(--secondary))]" />
+            </div>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Message Sent Successfully!</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Thank you for reaching out to us. We've received your message and will get back to you as soon as possible.
+          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] bg-clip-text text-transparent">Message Sent Successfully!</h2>
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+            Thank you for reaching out to Intello Cyber Technologies. We've received your message and will get back to you as soon as possible.
           </p>
+          <div className="border border-[hsl(var(--secondary))]/10 rounded-lg p-4 bg-background/50 backdrop-blur-sm max-w-md mx-auto">
+            <p className="text-sm text-muted-foreground">
+              <span className="block font-semibold text-foreground mb-1">What happens next?</span>
+              Our team typically responds within 24-48 business hours. For urgent matters, please contact us directly at <span className="text-[hsl(var(--secondary))]">+971 55 355 6787</span>.
+            </p>
+          </div>
         </div>
       )}
     </div>
