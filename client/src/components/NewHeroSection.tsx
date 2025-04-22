@@ -505,7 +505,7 @@ const NewHeroSection = () => {
             <h3 className="text-center text-gray-800 text-xl sm:text-2xl font-bold mb-2">Trusted by Leading Organizations</h3>
             <p className="text-center text-gray-600 text-sm mb-10">Excellence in Service & Delivery</p>
             
-            <div className="w-full px-4 md:px-8 lg:px-12 relative z-10">
+            <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 relative z-10 pb-10">
               <ClientLogosCarousel />
             </div>
           </div>
