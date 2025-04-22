@@ -382,22 +382,7 @@ const NewHeroSection = () => {
                     </g>
                   </g>
                   
-                  {/* Security Analytics Dashboards */}
-                  <g transform="translate(110, 50)">
-                    <rect width="150" height="28" rx="6" fill="#0A1024" stroke="rgba(235, 52, 67, 0.5)" strokeWidth="1" />
-                    <text x="10" y="18" fill="rgba(235, 52, 67, 0.9)" fontSize="12">Security Score</text>
-                    <rect x="110" y="9" width="30" height="10" rx="5" fill="#0A1024" stroke="rgba(235, 52, 67, 0.5)" strokeWidth="1" />
-                    <rect x="110" y="9" width="0" height="10" rx="5" fill="rgba(235, 52, 67, 0.7)">
-                      <animate attributeName="width" from="0" to="27" dur="1.5s" begin="0.5s" fill="freeze" />
-                    </rect>
-                    <text x="145" y="18" fill="white" fontSize="10" textAnchor="end">94%</text>
-                  </g>
-                  
-                  <g transform="translate(340, 50)">
-                    <rect width="150" height="28" rx="6" fill="#0A1024" stroke="rgba(235, 52, 67, 0.5)" strokeWidth="1" />
-                    <text x="10" y="18" fill="rgba(235, 52, 67, 0.9)" fontSize="12">Threats Mitigated</text>
-                    <text x="140" y="18" fill="white" fontSize="10" textAnchor="end">2,547</text>
-                  </g>
+                  {/* Security Analytics Dashboards - Removed */}
                   
                   {/* Binary Code Background */}
                   <g opacity="0.2">
@@ -491,15 +476,7 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Bottom Right - Threats Mitigated */}
-                <div className="absolute bottom-8 right-8">
-                  <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
-                    <div className="flex items-center space-x-2">
-                      <div className="h-3 w-3 rounded-full bg-[hsl(var(--primary))] animate-pulse"></div>
-                      <span className="text-sm font-medium">Threats Mitigated: <span className="font-semibold">36</span></span>
-                    </div>
-                  </div>
-                </div>
+                {/* Bottom Right card removed */}
                 
                 {/* Help bubbles - Moved to center to avoid overlapping with corner cards */}
                 <div className="absolute top-[55%] left-[40%] transform -translate-y-1/2 translate-x-[-50%]">
