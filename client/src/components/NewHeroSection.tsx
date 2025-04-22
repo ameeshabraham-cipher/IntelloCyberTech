@@ -527,8 +527,8 @@ const NewHeroSection = () => {
 
               {/* 3D Perspective Grid for Logos */}
               <div className="relative perspective-[1000px] mx-auto max-w-5xl">
-                <div className="transform-gpu grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8" style={{ transform: 'rotateX(12deg)' }}>
-                  {[...Array(10)].map((_, i) => i < 10 && (
+                <div className="transform-gpu grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-5 lg:gap-6" style={{ transform: 'rotateX(12deg)' }}>
+                  {[...Array(15)].map((_, i) => i < 15 && (
                     <div 
                       key={i}
                       className="group relative"
@@ -546,10 +546,14 @@ const NewHeroSection = () => {
                                      group-hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.2)]">
                         <div className="relative z-10">
                           <img 
-                            src={`/images/client-images/client${i+1}.png`}
+                            src={i < 10 ? `/images/client-images/client${i+1}.png` : `/images/client-images/client${(i % 10) + 1}.png`}
                             alt={`Client ${i+1} logo`} 
                             className="h-14 sm:h-18 md:h-24 w-auto object-contain transition-all duration-300 
                                      filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = "/images/client-images/client1.png"; // Fallback to first logo
+                            }}
                           />
                         </div>
                       </div>
