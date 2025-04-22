@@ -5,9 +5,9 @@ import path from 'path';
 // Create a build script for static deployment
 console.log('📦 Starting static build process for Intello Cyber Technologies website...');
 
-// Step 1: Build the static site with Vite
-console.log('🔨 Building with Vite...');
-exec('npx vite build --outDir dist', (err, stdout, stderr) => {
+// Step 1: Build the static site with Vite using our static-specific config
+console.log('🔨 Building with Vite using static site configuration...');
+exec('npx vite build --config vite.static.config.ts', (err, stdout, stderr) => {
   if (err) {
     console.error('❌ Build failed:', err);
     return;

@@ -41,9 +41,10 @@ node build-static.js
 ```
 
 This script will:
-1. Build the static site with Vite
-2. Create necessary configuration files for different hosting platforms
-3. Generate a `dist` folder with your static website
+1. Build the static site with Vite using our specialized static configuration (`vite.static.config.ts`)
+2. Create necessary configuration files for different hosting platforms (Vercel, Netlify, GitHub Pages)
+3. Generate a `dist` folder with your static website optimized for deployment
+4. Add SPA routing support to ensure your React app works correctly when deployed statically
 
 ## Step 3: Deploy the Static Site
 
