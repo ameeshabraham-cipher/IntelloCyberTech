@@ -191,8 +191,8 @@ const NewHeroSection = () => {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl"></div>
               
               {/* 3D Cybersecurity Digital Twin Animation */}
-              <div className="relative h-[400px] w-full overflow-hidden rounded-xl bg-background/50 backdrop-blur-md">
-                <svg className="w-full h-full" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="relative h-[450px] w-full overflow-hidden rounded-xl bg-background/50 backdrop-blur-md">
+                <svg className="w-full h-full" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
                   {/* 3D Logo Effect */}
                   <g className="digital-twin-animation">
                     {/* Intello Dynamic Logo */}
@@ -405,11 +405,57 @@ const NewHeroSection = () => {
                     <text x="40" y="375" fill="rgba(235, 52, 67, 0.8)" fontSize="8">01000011 01011001 01000010 01000101 01010010 01010100 01000101 01000011 01001000</text>
                     <text x="340" y="360" fill="rgba(235, 52, 67, 0.8)" fontSize="8">10110101 00101010 11010111 00101101</text>
                     <text x="340" y="375" fill="rgba(235, 52, 67, 0.8)" fontSize="8">01100111 10011010 10000110 11100101</text>
+                    <text x="40" y="390" fill="rgba(235, 52, 67, 0.8)" fontSize="8">01010011 01000101 01000011 01010101 01010010 01001001 01010100 01011001</text>
+                    <text x="340" y="390" fill="rgba(235, 52, 67, 0.8)" fontSize="8">01001001 01010011 01001111 00110010 00110111 00110000 00110000 00110001</text>
+                  </g>
+                  
+                  {/* Human Figure - Cybersecurity Expert */}
+                  <g transform="translate(480, 280)">
+                    {/* Head */}
+                    <circle cx="0" cy="-60" r="22" fill="#1a1a2e" stroke="rgba(235, 52, 67, 0.7)" strokeWidth="1" />
+                    <path d="M-10,-65 C-5,-70 5,-70 10,-65" stroke="white" strokeWidth="1" fill="none" />
+                    <circle cx="-8" cy="-60" r="2" fill="white" />
+                    <circle cx="8" cy="-60" r="2" fill="white" />
+                    
+                    {/* Body */}
+                    <path d="M0,-38 L0,20" stroke="rgba(235, 52, 67, 0.9)" strokeWidth="22" strokeLinecap="round" />
+                    <rect x="-20" y="-25" width="40" height="45" rx="5" fill="#1a1a2e" stroke="rgba(235, 52, 67, 0.5)" strokeWidth="1" />
+                    
+                    {/* Arms */}
+                    <path d="M0,-15 L-35,5" stroke="#1a1a2e" strokeWidth="8" strokeLinecap="round" />
+                    <path d="M-35,5 L-45,25" stroke="#1a1a2e" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M0,-15 L30,-10" stroke="#1a1a2e" strokeWidth="8" strokeLinecap="round" />
+                    <path d="M30,-10 L40,0" stroke="#1a1a2e" strokeWidth="6" strokeLinecap="round" />
+                    
+                    {/* Holographic Interface */}
+                    <rect x="-45" y="25" width="30" height="20" rx="2" fill="rgba(235, 52, 67, 0.2)" stroke="rgba(235, 52, 67, 0.8)" strokeWidth="1" />
+                    <line x1="-40" y1="30" x2="-20" y2="30" stroke="rgba(235, 52, 67, 0.8)" strokeWidth="1" />
+                    <line x1="-40" y1="35" x2="-25" y2="35" stroke="rgba(235, 52, 67, 0.8)" strokeWidth="1" />
+                    <line x1="-40" y1="40" x2="-30" y2="40" stroke="rgba(235, 52, 67, 0.8)" strokeWidth="1" />
+                    
+                    {/* Digital Interface */}
+                    <circle cx="40" cy="0" r="10" fill="transparent" stroke="rgba(30, 144, 255, 0.8)" strokeWidth="1" />
+                    <circle cx="40" cy="0" r="5" fill="rgba(30, 144, 255, 0.3)" />
+                    <circle cx="40" cy="0" r="10" fill="transparent" stroke="rgba(30, 144, 255, 0.4)" strokeWidth="1" strokeDasharray="15,5">
+                      <animateTransform 
+                        attributeName="transform" 
+                        type="rotate" 
+                        from="0 40 0" 
+                        to="360 40 0" 
+                        dur="8s" 
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    
+                    {/* Connection from Human to Core System */}
+                    <path d="M-20,0 C-80,-50 -120,100 -180,0" stroke="rgba(235, 52, 67, 0.4)" strokeWidth="1" strokeDasharray="5,3" fill="none">
+                      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+                    </path>
                   </g>
                 </svg>
                 
-                {/* Floating Information Cards */}
-                <div className="absolute bottom-5 right-5">
+                {/* Floating Information Cards - Rearranged for better balance */}
+                <div className="absolute bottom-6 right-6">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
@@ -418,7 +464,7 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                <div className="absolute top-5 left-5">
+                <div className="absolute top-6 left-6">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg max-w-[150px]">
                     <div className="flex items-center space-x-2 mb-1">
                       <div className="h-2 w-2 rounded-full bg-blue-400"></div>
@@ -432,8 +478,18 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Help bubbles - repositioned for better balance */}
-                <div className="absolute top-1/2 right-5 transform -translate-y-1/2">
+                {/* New Threat Detection Indicator */}
+                <div className="absolute top-6 right-6">
+                  <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded-full bg-yellow-500 animate-pulse"></div>
+                      <span className="text-sm font-medium">Real-time Monitoring</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Help bubbles - Repositioned for better visual balance */}
+                <div className="absolute top-[55%] right-6 transform -translate-y-1/2">
                   <HelpBubble
                     type="security"
                     title="Intello Shield"
@@ -441,7 +497,7 @@ const NewHeroSection = () => {
                   />
                 </div>
                 
-                <div className="absolute top-1/2 left-5 transform -translate-y-1/2 mt-16">
+                <div className="absolute top-[35%] left-6 transform -translate-y-1/2">
                   <HelpBubble
                     type="compliance"
                     title="Compliance Framework"
