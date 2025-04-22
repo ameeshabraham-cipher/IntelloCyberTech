@@ -537,18 +537,19 @@ const NewHeroSection = () => {
                         transition: 'transform 0.5s ease-out'
                       }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-indigo-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-indigo-500/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                       
-                      <div className="relative bg-gray-600/80 backdrop-blur border border-white/10 shadow-xl rounded-xl overflow-hidden
-                                     p-5 flex items-center justify-center
-                                     transform transition-all duration-500 shadow-[inset_0_0_15px_rgba(255,255,255,0.2)]
-                                     group-hover:shadow-2xl group-hover:border-white/20 group-hover:scale-105 group-hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.3)]">
-                        <div className="relative z-10 p-2">
+                      <div className="relative bg-white backdrop-blur border border-white/20 shadow-md rounded-xl overflow-hidden
+                                     p-2 flex items-center justify-center
+                                     transform transition-all duration-500
+                                     group-hover:shadow-2xl group-hover:border-primary/20 group-hover:scale-105 group-hover:translate-y-[-5px]
+                                     group-hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.2)]">
+                        <div className="relative z-10">
                           <img 
                             src={`/images/client-images/client${i+1}.png`}
                             alt={`Client ${i+1} logo`} 
-                            className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 
-                                     group-hover:scale-110" 
+                            className="h-14 sm:h-18 md:h-24 w-auto object-contain transition-all duration-300 
+                                     filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
                           />
                         </div>
                       </div>
