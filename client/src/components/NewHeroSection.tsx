@@ -545,13 +545,23 @@ const NewHeroSection = () => {
                                      group-hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.2)]">
                         <div className="relative z-10">
                           <img 
-                            src={i < 10 ? `/images/client-images/client${i+1}.png` : `/images/client-images/client${(i % 10) + 1}.png`}
+                            src={i < 10 ? 
+                              `/images/client-images/client${i+1}.png` : 
+                              `/images/client-images/client${(i % 10) + 1}.png`
+                            }
                             alt={`Client ${i+1} logo`} 
                             className="h-12 sm:h-16 md:h-20 w-auto max-w-[80%] object-contain transition-all duration-300 
                                      filter grayscale group-hover:grayscale-0 group-hover:scale-110" 
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
-                              target.src = "/images/client-images/client1.png"; // Fallback to first logo
+                              // Try loading SVG version if PNG fails
+                              if (target.src.endsWith('.png')) {
+                                const svgPath = target.src.replace('.png', '.svg');
+                                target.src = svgPath;
+                              } else {
+                                // If SVG also fails, use the first logo as fallback
+                                target.src = "/images/client-images/client1.png";
+                              }
                             }}
                           />
                         </div>
