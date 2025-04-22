@@ -499,11 +499,11 @@ const NewHeroSection = () => {
           </div>
         </div>
         
-        {/* Client Logos Carousel with Clean White Background */}
+        {/* Client Logos Carousel - No Boxes, Improved for Mobile */}
         <div className="mt-20 reveal" data-delay="600">
-          <div className="relative bg-white py-10 rounded-lg overflow-hidden">
-            <h3 className="text-center text-gray-700 text-xl font-bold mb-1">Trusted by Leading Organizations</h3>
-            <p className="text-center text-gray-500 text-sm mb-8">Excellence in Service & Delivery</p>
+          <div className="relative bg-gradient-to-b from-white/90 to-white/100 py-12 sm:py-14 md:py-16 overflow-hidden">
+            <h3 className="text-center text-gray-800 text-xl sm:text-2xl font-bold mb-2">Trusted by Leading Organizations</h3>
+            <p className="text-center text-gray-600 text-sm mb-10">Excellence in Service & Delivery</p>
             
             <div className="w-full px-4 md:px-8 lg:px-12 relative z-10">
               <ClientLogosCarousel />
