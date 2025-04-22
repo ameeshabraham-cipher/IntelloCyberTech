@@ -28,7 +28,7 @@ export function ClientLogosCarousel() {
 
   return (
     <div className="overflow-hidden w-full">
-      <div className="flex items-center justify-center flex-wrap gap-6 sm:gap-8 md:gap-10 px-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12 px-2 place-items-center">
         {clientLogos.map((logo, index) => (
           <motion.div
             key={index}
@@ -40,7 +40,7 @@ export function ClientLogosCarousel() {
             <img 
               src={logo.imagePath} 
               alt={`${logo.name} logo`} 
-              className="h-12 sm:h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" 
+              className="h-16 sm:h-20 md:h-24 w-auto min-w-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300" 
             />
           </motion.div>
         ))}
