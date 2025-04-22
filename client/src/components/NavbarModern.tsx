@@ -254,7 +254,7 @@ export default function NavbarModern() {
   
   return (
     <header id="navbar" className="fixed w-full z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-2">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
@@ -451,7 +451,7 @@ export default function NavbarModern() {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition" 
+            className="lg:hidden text-white p-2.5 rounded-md hover:bg-white/10 transition-all focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]/50" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -468,9 +468,9 @@ export default function NavbarModern() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-[4rem] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
+            className="lg:hidden fixed inset-0 top-[calc(4rem+_0.25rem)] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
           >
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
               {/* Search for mobile */}
               <div className="mb-6 relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
@@ -486,7 +486,7 @@ export default function NavbarModern() {
                 {/* Services */}
                 <div className="border-b border-white/10">
                   <button 
-                    className="flex items-center justify-between w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
+                    className="flex items-center justify-between w-full p-4 sm:p-5 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
                     onClick={() => toggleMobileSubmenu('services')}
                   >
                     <span className="flex items-center">
@@ -538,7 +538,7 @@ export default function NavbarModern() {
                 {/* Solutions */}
                 <div className="border-b border-white/10">
                   <button 
-                    className="flex items-center justify-between w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
+                    className="flex items-center justify-between w-full p-4 sm:p-5 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
                     onClick={() => toggleMobileSubmenu('solutions')}
                   >
                     <span className="flex items-center">
@@ -590,7 +590,7 @@ export default function NavbarModern() {
                 {/* Industries */}
                 <div className="border-b border-white/10">
                   <button 
-                    className="flex items-center justify-between w-full p-4 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
+                    className="flex items-center justify-between w-full p-4 sm:p-5 text-lg font-medium hover:bg-white/5 rounded-md transition-all"
                     onClick={() => toggleMobileSubmenu('industries')}
                   >
                     <span className="flex items-center">
