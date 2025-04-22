@@ -10,27 +10,29 @@ This guide walks you through converting the Intello website to a fully static si
    - One for the assessment request form
 3. Get the form IDs for both forms (they look like `xgejpkwy`)
 
-## Step 1: Update Form Components with Formspree IDs
+## Form Components with Formspree Integration
+
+Both forms are already configured with your Formspree form ID:
 
 ### Contact Form
 
-In `client/src/components/ContactFormWithCalendly.tsx`, locate the line:
+The contact form in `client/src/components/ContactFormWithCalendly.tsx` is configured with your Formspree ID:
 
 ```javascript
-const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
+const FORMSPREE_FORM_ID = 'mwpokerg';
 ```
-
-Replace `YOUR_FORMSPREE_FORM_ID` with your contact form ID from Formspree.
 
 ### Assessment Request Form
 
-In `client/src/components/AssessmentRequestForm.tsx`, locate the line:
+The assessment request form in `client/src/components/AssessmentRequestForm.tsx` is also configured:
 
 ```javascript
-const FORMSPREE_ASSESSMENT_FORM_ID = 'YOUR_ASSESSMENT_FORM_ID';
+const FORMSPREE_ASSESSMENT_FORM_ID = 'mwpokerg';
 ```
 
-Replace `YOUR_ASSESSMENT_FORM_ID` with your assessment form ID from Formspree.
+### Formspree Configuration
+
+If you need to modify your form configuration or set up email notifications, log in to the Formspree dashboard at [formspree.io](https://formspree.io) and manage your form settings there.
 
 ## Step 2: Generate the Static Build
 
