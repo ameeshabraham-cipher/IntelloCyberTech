@@ -454,8 +454,8 @@ const NewHeroSection = () => {
                   </g>
                 </svg>
                 
-                {/* Floating Information Cards - Rearranged for better balance */}
-                <div className="absolute bottom-6 right-6">
+                {/* Floating Information Cards - Optimized positioning for better balance */}
+                <div className="absolute bottom-8 left-[20%]">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
@@ -464,7 +464,7 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                <div className="absolute top-6 left-6">
+                <div className="absolute top-8 left-[15%]">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg max-w-[150px]">
                     <div className="flex items-center space-x-2 mb-1">
                       <div className="h-2 w-2 rounded-full bg-blue-400"></div>
@@ -478,8 +478,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* New Threat Detection Indicator */}
-                <div className="absolute top-6 right-6">
+                {/* Real-time Monitoring Indicator */}
+                <div className="absolute top-8 right-[15%]">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-500 animate-pulse"></div>
@@ -488,8 +488,18 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
+                {/* Threat Detection Counter */}
+                <div className="absolute bottom-8 right-[20%]">
+                  <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded-full bg-[hsl(var(--primary))] animate-pulse"></div>
+                      <span className="text-sm font-medium">Threats Mitigated: <span className="font-semibold">36</span></span>
+                    </div>
+                  </div>
+                </div>
+                
                 {/* Help bubbles - Repositioned for better visual balance */}
-                <div className="absolute top-[55%] right-6 transform -translate-y-1/2">
+                <div className="absolute top-[60%] right-[10%] transform -translate-y-1/2">
                   <HelpBubble
                     type="security"
                     title="Intello Shield"
@@ -497,7 +507,7 @@ const NewHeroSection = () => {
                   />
                 </div>
                 
-                <div className="absolute top-[35%] left-6 transform -translate-y-1/2">
+                <div className="absolute top-[45%] left-[10%] transform -translate-y-1/2">
                   <HelpBubble
                     type="compliance"
                     title="Compliance Framework"
