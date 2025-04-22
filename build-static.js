@@ -42,6 +42,11 @@ exec('npx vite build --config vite.static.config.ts', (err, stdout, stderr) => {
     fs.writeFileSync('dist/.nojekyll', '');
     console.log('✅ Created .nojekyll for GitHub Pages');
     
+    // Create .htaccess file for Apache servers like GoDaddy
+    const htaccessContent = fs.readFileSync('htaccess-template', 'utf8');
+    fs.writeFileSync('dist/.htaccess', htaccessContent);
+    console.log('✅ Created .htaccess for GoDaddy hosting');
+    
     // Step 3: Create a deployment info file
     const deploymentInfo = `# Intello Cyber Technologies Static Website
 
@@ -74,10 +79,19 @@ You can deploy this static website to any of the following platforms:
 
 ### Azure Static Web Apps
 1. Follow the steps in AZURE_DEPLOYMENT_GUIDE.md
+
+### GoDaddy Web Hosting
+1. Follow the steps in GODADDY_DEPLOYMENT_GUIDE.md
 `;
     
     fs.writeFileSync('dist/DEPLOYMENT.md', deploymentInfo);
     console.log('✅ Created deployment info file');
+    
+    // Copy the GoDaddy deployment guide
+    if (fs.existsSync('GODADDY_DEPLOYMENT_GUIDE.md')) {
+      fs.copyFileSync('GODADDY_DEPLOYMENT_GUIDE.md', 'dist/GODADDY_DEPLOYMENT_GUIDE.md');
+      console.log('✅ Copied GoDaddy deployment guide')
+    }
     
     console.log('🎉 Build completed successfully!');
     console.log('');
@@ -88,6 +102,7 @@ You can deploy this static website to any of the following platforms:
     console.log('2. Netlify: Upload the dist folder or connect your repository');
     console.log('3. GitHub Pages: Push the dist folder to the gh-pages branch');
     console.log('4. Azure Static Web Apps: Follow the Azure guide');
+    console.log('5. GoDaddy Web Hosting: Follow the GoDaddy guide in GODADDY_DEPLOYMENT_GUIDE.md');
     console.log('');
     console.log('⚠️ Important: Before deploying, make sure to update the Formspree form IDs');
     console.log('   in the ContactFormWithCalendly.tsx and AssessmentRequestForm.tsx files.');
