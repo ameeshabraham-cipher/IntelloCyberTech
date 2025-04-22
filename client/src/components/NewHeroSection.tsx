@@ -502,7 +502,7 @@ const NewHeroSection = () => {
         
         {/* Client Logos Section - Ultra Modern 3D Style Design */}
         <div className="mt-20 reveal" data-delay="600">
-          <div className="relative py-16 sm:py-24 md:py-28 overflow-hidden bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800">
+          <div className="relative pt-16 pb-8 sm:pt-20 sm:pb-12 md:pt-24 md:pb-16 overflow-hidden bg-gradient-to-b from-gray-800 via-gray-900 to-gray-800">
             {/* Background effects */}
             <div className="absolute inset-0 overflow-hidden opacity-20">
               <div className="absolute h-full w-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
@@ -563,7 +563,7 @@ const NewHeroSection = () => {
               </div>
               
               {/* Accent Line with Glow */}
-              <div className="relative h-px w-full max-w-xl mx-auto mt-20 overflow-hidden">
+              <div className="relative h-px w-full max-w-xl mx-auto mt-10 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
                 <div className="absolute inset-0 bg-primary/30 blur-sm"></div>
               </div>
