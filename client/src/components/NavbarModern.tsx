@@ -254,7 +254,7 @@ export default function NavbarModern() {
   
   return (
     <header id="navbar" className="fixed w-full z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
@@ -440,14 +440,7 @@ export default function NavbarModern() {
             </div>
           </nav>
           
-          {/* CTA Button (Desktop) */}
-          <div className="hidden lg:flex items-center ml-4">
-            <Link href="/assessment">
-              <Button className="bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-medium py-2 px-6 rounded-full hover:shadow-lg hover:shadow-[hsl(var(--secondary))]/20 transition-all duration-300 glow-hover">
-                Get Assessment
-              </Button>
-            </Link>
-          </div>
+{/* Removed Assessment Button */}
           
           {/* Mobile Menu Toggle */}
           <button 
@@ -468,7 +461,7 @@ export default function NavbarModern() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-[calc(4rem+_0.25rem)] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
+            className="lg:hidden fixed inset-0 top-[calc(5rem+_0.5rem)] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
           >
             <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
               {/* Search for mobile */}
