@@ -1,27 +1,51 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
-// https://vitejs.dev/config/
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Modified Vite configuration specifically for static site builds
 export default defineConfig({
-  // Base path for GitHub Pages - IMPORTANT: must match your repository name
-  base: '/Intello/', 
   plugins: [
     react(),
+    themePlugin(),
   ],
-  root: 'client', // Set the root to the client directory
-  publicDir: '../public', // Set the public directory relative to the root
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client/src'),
-      '@shared': path.resolve(__dirname, './shared'),
+      "@": path.resolve(__dirname, "client", "src"),
+      "@shared": path.resolve(__dirname, "shared"),
     },
   },
+  root: path.resolve(__dirname, "client"),
   build: {
-    outDir: '../dist',  // Output to the root dist folder
-    sourcemap: false,
-    minify: 'esbuild', // Faster than terser
-    assetsDir: 'assets',
-    emptyOutDir: true
+    outDir: path.resolve(__dirname, "dist"),
+    emptyOutDir: true,
+    // Use hashed file names for better cache control
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          shadcn: [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-alert-dialog',
+            '@radix-ui/react-avatar',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-label',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-select',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-toast',
+          ],
+        },
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   },
 });
