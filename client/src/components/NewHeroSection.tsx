@@ -499,14 +499,30 @@ const NewHeroSection = () => {
           </div>
         </div>
         
-        {/* Client Logos Carousel - No Boxes, Improved for Mobile */}
+        {/* Client Logos Section - Creative Design */}
         <div className="mt-20 reveal" data-delay="600">
-          <div className="relative bg-gradient-to-b from-white/90 to-white/100 py-12 sm:py-14 md:py-16 overflow-hidden">
-            <h3 className="text-center text-gray-800 text-xl sm:text-2xl font-bold mb-2">Trusted by Leading Organizations</h3>
-            <p className="text-center text-gray-600 text-sm mb-10">Excellence in Service & Delivery</p>
+          <div className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+            {/* Background effects */}
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(235,52,67,0.05),transparent_70%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,0,0,0.03),transparent_70%)]"></div>
             
-            <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 relative z-10 pb-10">
-              <ClientLogosCarousel />
+            {/* Content */}
+            <div className="relative z-10">
+              <h3 className="text-center text-gray-800 text-xl sm:text-2xl font-bold mb-2">Trusted by Leading Organizations</h3>
+              <p className="text-center text-gray-600 text-sm mb-12">Excellence in Service & Delivery</p>
+              
+              {/* Angled dividers */}
+              <div className="absolute top-24 left-0 w-full overflow-hidden h-4 -z-10">
+                <div className="absolute h-4 w-full transform translate-x-[-10%] bg-gray-100 rotate-1"></div>
+              </div>
+              <div className="absolute top-28 left-0 w-full overflow-hidden h-4 -z-10">
+                <div className="absolute h-4 w-full transform translate-x-[5%] bg-primary/5 -rotate-1"></div>
+              </div>
+              
+              <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 relative pb-8 pt-4">
+                <ClientLogosCarousel />
+              </div>
             </div>
           </div>
         </div>
