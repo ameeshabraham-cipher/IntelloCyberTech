@@ -454,18 +454,10 @@ const NewHeroSection = () => {
                   </g>
                 </svg>
                 
-                {/* Floating Information Cards - Optimized positioning for better balance */}
-                <div className="absolute bottom-8 left-[20%]">
-                  <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
-                    <div className="flex items-center space-x-2">
-                      <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
-                      <span className="text-sm font-medium">System Protected</span>
-                    </div>
-                  </div>
-                </div>
+                {/* Four corner information cards */}
                 
-                {/* Compliance Status - Moved to middle left */}
-                <div className="absolute top-[50%] left-[30%] transform -translate-y-[80%]">
+                {/* Top Left - Compliance Status */}
+                <div className="absolute top-8 left-8">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg max-w-[150px]">
                     <div className="flex items-center space-x-2 mb-1">
                       <div className="h-2 w-2 rounded-full bg-blue-400"></div>
@@ -479,8 +471,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Real-time Monitoring Indicator - Moved to middle right */}
-                <div className="absolute top-[50%] right-[30%] transform -translate-y-[80%]">
+                {/* Top Right - Real-time Monitoring */}
+                <div className="absolute top-8 right-8">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-500 animate-pulse"></div>
@@ -489,8 +481,18 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Threat Detection Counter */}
-                <div className="absolute bottom-8 right-[20%]">
+                {/* Bottom Left - System Protected */}
+                <div className="absolute bottom-8 left-8">
+                  <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
+                      <span className="text-sm font-medium">System Protected</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Bottom Right - Threats Mitigated */}
+                <div className="absolute bottom-8 right-8">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-[hsl(var(--primary))] animate-pulse"></div>
@@ -499,8 +501,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Help bubbles - Repositioned to enhance the middle elements */}
-                <div className="absolute top-[75%] left-[35%] transform -translate-y-1/2">
+                {/* Help bubbles - Moved to center to avoid overlapping with corner cards */}
+                <div className="absolute top-[55%] left-[40%] transform -translate-y-1/2 translate-x-[-50%]">
                   <HelpBubble
                     type="security"
                     title="Intello Shield"
@@ -508,7 +510,7 @@ const NewHeroSection = () => {
                   />
                 </div>
                 
-                <div className="absolute top-[25%] right-[35%] transform -translate-y-1/2">
+                <div className="absolute top-[45%] right-[40%] transform -translate-y-1/2 translate-x-[50%]">
                   <HelpBubble
                     type="compliance"
                     title="Compliance Framework"
