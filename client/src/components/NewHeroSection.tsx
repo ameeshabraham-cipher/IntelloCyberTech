@@ -464,7 +464,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                <div className="absolute top-8 left-[15%]">
+                {/* Compliance Status - Moved to middle left */}
+                <div className="absolute top-[50%] left-[30%] transform -translate-y-[80%]">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg max-w-[150px]">
                     <div className="flex items-center space-x-2 mb-1">
                       <div className="h-2 w-2 rounded-full bg-blue-400"></div>
@@ -478,8 +479,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Real-time Monitoring Indicator */}
-                <div className="absolute top-8 right-[15%]">
+                {/* Real-time Monitoring Indicator - Moved to middle right */}
+                <div className="absolute top-[50%] right-[30%] transform -translate-y-[80%]">
                   <div className="bg-card/70 backdrop-blur-lg border border-[hsl(var(--secondary))]/20 rounded-lg p-3 shadow-lg">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-500 animate-pulse"></div>
@@ -498,8 +499,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Help bubbles - Repositioned for better visual balance */}
-                <div className="absolute top-[60%] right-[10%] transform -translate-y-1/2">
+                {/* Help bubbles - Repositioned to enhance the middle elements */}
+                <div className="absolute top-[75%] left-[35%] transform -translate-y-1/2">
                   <HelpBubble
                     type="security"
                     title="Intello Shield"
@@ -507,7 +508,7 @@ const NewHeroSection = () => {
                   />
                 </div>
                 
-                <div className="absolute top-[45%] left-[10%] transform -translate-y-1/2">
+                <div className="absolute top-[25%] right-[35%] transform -translate-y-1/2">
                   <HelpBubble
                     type="compliance"
                     title="Compliance Framework"
