@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { apiRequest } from '@/lib/queryClient';
+// Remove apiRequest import - we'll use formspree directly
 
 import {
   Form,
@@ -61,6 +61,9 @@ export default function AssessmentRequestForm({ className = "" }: AssessmentRequ
     },
   });
 
+  // Replace with your actual Formspree form ID for the assessment form
+  const FORMSPREE_ASSESSMENT_FORM_ID = 'YOUR_ASSESSMENT_FORM_ID';
+  
   async function onSubmit(data: AssessmentRequestValues) {
     setIsSubmitting(true);
     
@@ -71,13 +74,19 @@ export default function AssessmentRequestForm({ className = "" }: AssessmentRequ
         service: 'assessment',
       };
       
-      // Submit to our email API endpoint
-      const response = await apiRequest('/api/email/assessment-request', {
+      // Submit to Formspree
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ASSESSMENT_FORM_ID}`, {
         method: 'POST',
-        body: JSON.stringify(requestData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
       });
-
-      if (response.success) {
+      
+      const responseData = await response.json();
+      
+      if (response.ok) {
         toast({
           title: 'Assessment Request Submitted',
           description: 'Thank you for your interest. Our team will be in touch shortly.',
@@ -86,7 +95,7 @@ export default function AssessmentRequestForm({ className = "" }: AssessmentRequ
         setIsSubmitted(true);
         form.reset();
       } else {
-        throw new Error(response.message || 'Error submitting assessment request');
+        throw new Error(responseData.error || 'Error submitting assessment request');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
