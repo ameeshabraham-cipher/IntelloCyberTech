@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://intellome.com/</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Navigation Pages -->
+  <url>
+    <loc>https://intellome.com/about</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/solutions</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/insights</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/contact</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/assessment</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Services Pages -->
+  <url>
+    <loc>https://intellome.com/services/governance-risk-compliance</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services/security-consulting</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services/security-assessment</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services/managed-security</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services/cloud-security</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services/compliance-automation</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Industries Pages -->
+  <url>
+    <loc>https://intellome.com/industries/healthcare</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/industries/financial</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/industries/government</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/industries/retail</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Solutions Pages -->
+  <url>
+    <loc>https://intellome.com/solutions/virtual-ciso</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/solutions/compliance-automation</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/solutions/security-assessment</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts (add all your blog posts here) -->
+  <url>
+    <loc>https://intellome.com/insights/ai-compliance</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/insights/cloud-security</loc>
+    <lastmod>2024-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

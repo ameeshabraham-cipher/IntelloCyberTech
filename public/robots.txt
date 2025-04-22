@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Important: Replace with your actual domain
+Sitemap: https://intellome.com/sitemap.xml
+
+# Block access to admin areas if you have any
+Disallow: /admin/
+Disallow: /wp-admin/
