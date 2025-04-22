@@ -47,7 +47,66 @@ exec('npx vite build --config vite.static.config.ts', (err, stdout, stderr) => {
     fs.writeFileSync('dist/.htaccess', htaccessContent);
     console.log('✅ Created .htaccess for GoDaddy hosting');
     
-    // Step 3: Create a deployment info file
+    // Step 3: Copy SEO-related files
+    console.log('🔍 Setting up SEO files...');
+    
+    // Copy robots.txt from public folder
+    if (fs.existsSync('public/robots.txt')) {
+      fs.copyFileSync('public/robots.txt', 'dist/robots.txt');
+      console.log('✅ Copied robots.txt file');
+    } else {
+      // Create robots.txt if it doesn't exist
+      const robotsTxt = `User-agent: *
+Allow: /
+
+# Important: Replace with your actual domain
+Sitemap: https://intellome.com/sitemap.xml
+
+# Block access to admin areas if you have any
+Disallow: /admin/
+Disallow: /wp-admin/`;
+      fs.writeFileSync('dist/robots.txt', robotsTxt);
+      console.log('✅ Created robots.txt file');
+    }
+    
+    // Copy sitemap.xml from public folder
+    if (fs.existsSync('public/sitemap.xml')) {
+      fs.copyFileSync('public/sitemap.xml', 'dist/sitemap.xml');
+      console.log('✅ Copied sitemap.xml file');
+    } else {
+      // Basic sitemap if one doesn't exist
+      const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://intellome.com/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/about</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/services</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://intellome.com/contact</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>`;
+      fs.writeFileSync('dist/sitemap.xml', sitemapXml);
+      console.log('✅ Created sitemap.xml file');
+    }
+
+    // Step 4: Create a deployment info file
     const deploymentInfo = `# Intello Cyber Technologies Static Website
 
 This is a statically generated website for Intello Cyber Technologies. 
