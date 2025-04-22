@@ -432,8 +432,8 @@ const NewHeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Help bubbles */}
-                <div className="absolute top-16 right-5">
+                {/* Help bubbles - repositioned for better balance */}
+                <div className="absolute top-1/2 right-5 transform -translate-y-1/2">
                   <HelpBubble
                     type="security"
                     title="Intello Shield"
@@ -441,7 +441,7 @@ const NewHeroSection = () => {
                   />
                 </div>
                 
-                <div className="absolute bottom-20 left-5">
+                <div className="absolute top-1/2 left-5 transform -translate-y-1/2 mt-16">
                   <HelpBubble
                     type="compliance"
                     title="Compliance Framework"

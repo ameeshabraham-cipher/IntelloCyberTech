@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select } from '@/components/ui/select';
-import { apiRequest } from '@/lib/queryClient';
 
 const CallToAction = () => {
   useScrollReveal();
@@ -45,7 +44,19 @@ const CallToAction = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest('POST', '/api/contact', formData);
+      // Using Formspree instead of API since this is a static site
+      const FORMSPREE_ID = 'mwpokerg'; // Using the same Formspree ID
+      
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const responseData = await response.json();
       
       if (response.ok) {
         toast({
