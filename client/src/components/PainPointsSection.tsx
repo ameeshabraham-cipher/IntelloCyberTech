@@ -409,7 +409,7 @@ const PainPointsSection = () => {
           
           {/* Stat 3 */}
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-montserrat font-bold text-[hsl(var(--secondary))] mb-2">15+</p>
+            <p className="text-3xl md:text-4xl font-montserrat font-bold text-[hsl(var(--secondary))] mb-2">22+</p>
             <p className="text-muted-foreground">Years of Experience</p>
           </div>
           
