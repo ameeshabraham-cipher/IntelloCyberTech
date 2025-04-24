@@ -61,7 +61,7 @@ const VcisoPage = () => {
       benefits={[
         {
           title: "Strategic Executive Expertise Without Full-Time Costs",
-          content: "Gain immediate access to seasoned, board-ready security leadership with 15+ years of diverse experience across multiple industries, regulations, and security domains at a fraction of the cost of a full-time CISO (typically 30-50% of the total compensation package)—eliminating recruitment challenges, onboarding delays, and the significant overhead costs associated with a permanent executive while still benefiting from strategic security leadership that would otherwise be unattainable for many organizations."
+          content: "Gain immediate access to seasoned, board-ready security leadership with 22+ years of diverse experience across multiple industries, regulations, and security domains at a fraction of the cost of a full-time CISO (typically 30-50% of the total compensation package)—eliminating recruitment challenges, onboarding delays, and the significant overhead costs associated with a permanent executive while still benefiting from strategic security leadership that would otherwise be unattainable for many organizations."
         },
         {
           title: "Accelerated Security Program Maturity",
