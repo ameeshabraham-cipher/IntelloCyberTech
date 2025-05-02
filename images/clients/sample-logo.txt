@@ -1,2 +1,0 @@
-This is just a placeholder file. 
-To add real logos, you should upload PNG or SVG files to this directory.
