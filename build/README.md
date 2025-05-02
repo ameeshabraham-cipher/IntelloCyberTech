@@ -9,6 +9,7 @@ This directory contains build scripts and tools for generating the static versio
 - `build-static.js` - Full static site builder (resource-intensive)
 - `build-static-light.js` - Lightweight static site builder designed to work within Replit's limitations
 - `download-static-site.js` - Script to download the built static site
+- `static-build.sh` - Shell script for building on Unix/Linux systems
 - `intello-website.zip` - Pre-built website package ready for deployment
 
 ## Build Options
