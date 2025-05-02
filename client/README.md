@@ -6,16 +6,16 @@ This directory contains the frontend React application for the Intello Cyber Tec
 
 ## Directory Structure
 
-- `/src` - Source code
-  - `/components` - Reusable UI components
-  - `/hooks` - Custom React hooks
-  - `/lib` - Utility functions and shared code
-  - `/pages` - Page components
+- `/src` - Source code ([Source README](./src/README.md))
+  - `/components` - Reusable UI components ([Components README](./src/components/README.md))
+  - `/hooks` - Custom React hooks ([Hooks README](./src/hooks/README.md))
+  - `/lib` - Utility functions and shared code ([Library README](./src/lib/README.md))
+  - `/pages` - Page components ([Pages README](./src/pages/README.md))
     - `/components` - Page-specific components
     - `/industries` - Industry-specific pages
     - `/services` - Service-specific pages
     - `/solutions` - Solution-specific pages
-- `/public` - Static assets
+- `/public` - Static assets ([Public README](../public/README.md))
 - `index.html` - Main HTML entry point
 
 ## Key Components
