@@ -196,6 +196,8 @@ export default function NavbarModern() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const [clickedCategory, setClickedCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<Array<{label: string; path: string; icon: React.ReactNode; category?: string}>>([]);
   const hoverTimeoutRef = useRef<number | null>(null);
   
   // Apply navbar background change on scroll
@@ -251,6 +253,47 @@ export default function NavbarModern() {
   
   const toggleMobileSubmenu = (menu: string) => {
     setOpenMobileSubmenu(openMobileSubmenu === menu ? null : menu);
+  };
+
+  // Handle search functionality
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    
+    if (!query.trim()) {
+      setSearchResults([]);
+      return;
+    }
+    
+    const searchTerms = query.toLowerCase().trim();
+    
+    // Search through all service categories and items
+    const serviceResults = servicesMenuData.flatMap(category => 
+      category.items
+        .filter(item => 
+          item.label.toLowerCase().includes(searchTerms) ||
+          category.category.toLowerCase().includes(searchTerms)
+        )
+        .map(item => ({ ...item, category: category.category }))
+    );
+    
+    // Search through solutions
+    const solutionResults = solutionsMenuData.flatMap(category => 
+      category.items
+        .filter(item => 
+          item.label.toLowerCase().includes(searchTerms) ||
+          category.category.toLowerCase().includes(searchTerms)
+        )
+        .map(item => ({ ...item, category: category.category }))
+    );
+    
+    // Search through industries
+    const industryResults = industriesData
+      .filter(item => item.label.toLowerCase().includes(searchTerms))
+      .map(item => ({ ...item, category: 'Industries' }));
+    
+    // Combine all results and limit to top 10
+    const allResults = [...serviceResults, ...solutionResults, ...industryResults].slice(0, 10);
+    setSearchResults(allResults);
   };
   
   return (
@@ -472,8 +515,49 @@ export default function NavbarModern() {
                   type="text" 
                   placeholder="Search services..."
                   aria-label="Search services"
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
                   className="w-full rounded-lg bg-card py-3 pl-10 pr-4 border border-white/10 focus:border-[hsl(var(--secondary))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]/20"
                 />
+                
+                {/* Search Results */}
+                {searchResults.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden z-50">
+                    <div className="p-2">
+                      <h3 className="text-sm font-medium text-[hsl(var(--secondary))] p-2 border-b border-[hsl(var(--secondary))]/10">Search Results</h3>
+                      <ul className="max-h-[50vh] overflow-y-auto">
+                        {searchResults.map((result, idx) => (
+                          <li key={idx}>
+                            <Link 
+                              href={result.path}
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setSearchQuery('');
+                                setSearchResults([]);
+                              }}
+                              className="flex items-center gap-2 p-3 hover:bg-[hsl(var(--secondary))]/10 transition-all"
+                            >
+                              <span className="p-1.5 rounded-md bg-background/60 text-[hsl(var(--secondary))]/80">
+                                {result.icon}
+                              </span>
+                              <div className="flex-1">
+                                <p className="font-medium">{result.label}</p>
+                                {result.category && <p className="text-xs text-muted-foreground">{result.category}</p>}
+                              </div>
+                              <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+                
+                {searchQuery && searchResults.length === 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-4 text-center">
+                    <p className="text-muted-foreground">No results found for "{searchQuery}"</p>
+                  </div>
+                )}
               </div>
               
               {/* Main mobile menu */}
