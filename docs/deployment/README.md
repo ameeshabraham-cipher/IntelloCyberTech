@@ -26,6 +26,7 @@ The **recommended deployment method** is to use the pre-built static package:
 
 ### Other Guides
 
+- [Apache .htaccess Guide](./HTACCESS_GUIDE.md) - Apache web server configuration for SPAs
 - [Blog Customization Guide](./BLOG_CUSTOMIZATION_GUIDE.md) - How to customize the blog/insights section
 - [Database Deployment Guide](./DATABASE_DEPLOYMENT_GUIDE.md) - Only needed if adding database functionality (not recommended)
 

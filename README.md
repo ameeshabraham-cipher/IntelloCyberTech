@@ -38,6 +38,8 @@ All project documentation is available in the `docs` directory:
 - `docs/ENVIRONMENT_VARIABLES.md` - Environment configuration details
 - `docs/SITEMAP.md` - Website structure and navigation
 - `docs/deployment/` - Hosting and deployment guides
+  - `docs/deployment/GODADDY_DEPLOYMENT_GUIDE.md` - GoDaddy-specific instructions
+  - `docs/deployment/HTACCESS_GUIDE.md` - Apache server configuration
 - `docs/assets/` - Asset information and guidelines
 
 ## Project Structure
