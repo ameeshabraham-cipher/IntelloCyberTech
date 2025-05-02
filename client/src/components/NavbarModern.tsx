@@ -183,6 +183,7 @@ const industriesData = [
 // Nav items
 const navItems = [
   { label: 'About Us', path: '/about', icon: <Users className="h-5 w-5" /> },
+  { label: 'Company Profile', path: '/company-profile', icon: <Briefcase className="h-5 w-5" /> },
   { label: 'Insights', path: '/insights', icon: <BookOpen className="h-5 w-5" /> },
   { label: 'Contact', path: '/contact', icon: <Mail className="h-5 w-5" /> },
 ];
