@@ -47,25 +47,31 @@ All project documentation is available in the `docs` directory:
 
 ```
 intello-website/
-├── client/            # Frontend React application
+├── client/            # Frontend React application (see client/README.md)
 │   ├── public/        # Client-side public assets
 │   ├── src/           # React source code
 │   │   ├── components/  # Reusable UI components
 │   │   ├── lib/         # Utility functions and helpers
 │   │   └── pages/       # Page components
-├── server/            # Express server (not used in static deployment)
-├── shared/            # Shared code between client and server
-├── build/             # Build scripts and static site generators
+├── server/            # Express server (see server/README.md)
+├── shared/            # Shared code between client and server (see shared/README.md)
+├── build/             # Build scripts and static site generators (see build/README.md)
 │   ├── build-static.js        # Full static site builder
 │   ├── build-static-light.js  # Lightweight builder
 │   └── intello-website.zip    # Pre-built website package
-├── public/            # Global static assets
-├── docs/              # Documentation
+├── public/            # Global static assets (see public/README.md)
+├── docs/              # Documentation (see docs/README.md)
 │   ├── deployment/    # Deployment guides
 │   └── assets/        # Asset documentation
-└── scripts/           # Utility scripts for maintenance
+└── scripts/           # Utility scripts for maintenance (see scripts/README.md)
     └── util/          # Helper utilities for scripts
 ```
+
+Each directory contains its own README.md with detailed information about its contents and usage.
+
+## Contributing
+
+Contributions to this project are welcome. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines on how to contribute.
 
 ## Contact
 
