@@ -271,46 +271,7 @@ export default function NavbarModern() {
     setOpenMobileSubmenu(openMobileSubmenu === menu ? null : menu);
   };
 
-  // Handle search functionality
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    
-    if (!query.trim()) {
-      setSearchResults([]);
-      return;
-    }
-    
-    const searchTerms = query.toLowerCase().trim();
-    
-    // Search through all service categories and items
-    const serviceResults = servicesMenuData.flatMap(category => 
-      category.items
-        .filter(item => 
-          item.label.toLowerCase().includes(searchTerms) ||
-          category.category.toLowerCase().includes(searchTerms)
-        )
-        .map(item => ({ ...item, category: category.category }))
-    );
-    
-    // Search through solutions
-    const solutionResults = solutionsMenuData.flatMap(category => 
-      category.items
-        .filter(item => 
-          item.label.toLowerCase().includes(searchTerms) ||
-          category.category.toLowerCase().includes(searchTerms)
-        )
-        .map(item => ({ ...item, category: category.category }))
-    );
-    
-    // Search through industries
-    const industryResults = industriesData
-      .filter(item => item.label.toLowerCase().includes(searchTerms))
-      .map(item => ({ ...item, category: 'Industries' }));
-    
-    // Combine all results and limit to top 10
-    const allResults = [...serviceResults, ...solutionResults, ...industryResults].slice(0, 10);
-    setSearchResults(allResults);
-  };
+  // Search functionality has been removed as requested
   
   return (
     <header id="navbar" className="fixed w-full z-50 transition-all duration-300">

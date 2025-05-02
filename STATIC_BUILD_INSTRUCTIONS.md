@@ -1,73 +1,97 @@
-# How to Build the Intello Static Website with Recent Changes
-
-This guide will walk you through the process of creating a static build of the Intello website that includes the recent changes (removing Company Profile page and search functionality).
+# Static Build Instructions for Intello Website
 
 ## Prerequisites
 
-- Node.js installed on your local machine
-- Git installed (optional, for downloading the repository)
+- Node.js (version 16 or higher)
+- npm (comes with Node.js)
+- Git (optional, for cloning the repository)
 
 ## Step 1: Download the Project
 
-Download the entire project from Replit. You can do this by:
+### Option 1: Download ZIP from Replit
+1. In Replit, click on the three dots menu in the Files panel
+2. Select "Download as ZIP"
+3. Extract the ZIP file to a folder on your local machine
 
-1. Clicking the three dots in the top-right corner of the Replit interface
-2. Selecting "Download as ZIP"
-3. Extracting the ZIP file to a local folder
+### Option 2: Clone with Git (if you have the repository URL)
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
 
 ## Step 2: Install Dependencies
 
-Open a terminal or command prompt, navigate to the project folder, and run:
+Open a terminal in the project directory and run:
 
 ```bash
 npm install
 ```
 
-This will install all the necessary dependencies for the project.
+This will install all necessary dependencies defined in package.json.
 
-## Step 3: Build the Static Website
+## Step 3: Run the Static Build Script
 
-Run the build script by executing:
+The project includes a specialized build script for creating a static version of the website:
 
 ```bash
 node build-static.js
 ```
 
-This process might take a few minutes. It will create a `dist` folder containing all the static files for the website with the recent changes.
+This script:
+1. Builds the React application with static configurations
+2. Processes all assets and creates optimized files
+3. Generates routing configurations for static hosting
+4. Produces a complete static site in the `dist` directory
 
-## Step 4: Deploy to GoDaddy Hosting
+## Step 4: Verify the Build
 
-Follow the instructions in the GODADDY_DEPLOYMENT_GUIDE.md file to deploy the contents of the `dist` folder to your GoDaddy hosting account.
+After the build completes, you should have a `dist` directory containing:
+- index.html (main entry point)
+- assets/ (directory with CSS, JS, and media files)
+- .htaccess (for proper routing on Apache servers)
 
-## What Changed
+You can test the static build locally using a simple HTTP server:
 
-The following changes have been made to the website:
+```bash
+npx serve dist
+```
 
-1. Removed the Company Profile page:
-   - Removed from navbar navigation
-   - Removed the route and import in App.tsx
+This will serve the static site on a local port (usually 3000 or 5000).
 
-2. Removed the search functionality:
-   - Removed search bar from desktop navigation
-   - Removed search bar from mobile navigation
-   - Removed search-related state and handlers
+## Step 5: Prepare for Deployment
 
-## Testing After Deployment
+Zip the contents of the `dist` directory for easy upload:
 
-After deploying the website, make sure to check that:
+```bash
+cd dist
+zip -r ../intello-website.zip .
+```
 
-1. The Company Profile link no longer appears in the navigation menu
-2. There is no search bar in either desktop or mobile views
-3. All other functionality continues to work properly
+Or on Windows, right-click the dist folder and select "Send to > Compressed (zipped) folder".
 
 ## Troubleshooting
 
-If you encounter any issues during the build or deployment process:
+### If you encounter "Out of Memory" errors during build:
 
-1. Make sure Node.js is properly installed and updated to a recent version
-2. Check that all dependencies were installed correctly
-3. Review the error messages in the console for specific issues
-4. Ensure your GoDaddy hosting account has enough space for the website files
-5. Verify that the `.htaccess` file was uploaded and has the correct permissions
+On systems with limited RAM, you may need to increase Node's memory allocation:
 
-For any additional questions or issues, please contact your website developer.
+```bash
+node --max-old-space-size=4096 build-static.js
+```
+
+### If the build script fails with missing dependencies:
+
+Ensure you've installed all dependencies first:
+
+```bash
+npm install
+```
+
+Then try running the build again.
+
+## Important Notes
+
+- The build process may take several minutes depending on your machine's specifications
+- The final static site will have the Company Profile page and search functionality removed as requested
+- All assets will be properly linked with relative paths for deployment anywhere
+- The .htaccess file is crucial for proper routing on Apache servers (like GoDaddy)

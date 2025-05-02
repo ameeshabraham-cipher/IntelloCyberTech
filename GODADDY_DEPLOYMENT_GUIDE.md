@@ -1,109 +1,93 @@
-# Deploying to GoDaddy Web Hosting (Economy Plan)
-
-This guide will walk you through deploying the Intello Cyber Technologies website to a GoDaddy Economy web hosting plan.
+# GoDaddy Deployment Guide for Intello Website
 
 ## Prerequisites
 
-1. A GoDaddy web hosting account (Economy or higher plan)
-2. FTP credentials for your GoDaddy hosting account
-3. An FTP client like FileZilla or WinSCP
-4. Your domain is already set up and pointing to your GoDaddy hosting
+- A GoDaddy hosting account
+- FTP credentials for your GoDaddy hosting
+- An FTP client (such as FileZilla, Cyberduck, or WinSCP)
+- The static website build (created following the STATIC_BUILD_INSTRUCTIONS.md guide)
 
-## Step 1: Build the Static Version of the Website
+## Step 1: Prepare Your Static Website Build
 
-First, we need to create a static build of the website:
+Before deploying, ensure you have generated the static website build by following the instructions in the STATIC_BUILD_INSTRUCTIONS.md file. You should have a `dist` directory containing all the necessary files for your website.
 
-1. In your terminal, run:
-```bash
-node build-static.js
-```
+## Step 2: Backup Your Existing Website (if applicable)
 
-2. This will create a `dist` folder containing all the static files needed for your website.
+If you're updating an existing website, it's always a good practice to create a backup:
 
-## Step 2: Configure Your Forms
+1. Connect to your GoDaddy hosting using FTP
+2. Navigate to your web directory (usually public_html)
+3. Download a copy of all files to your local machine
+4. Create a timestamped backup folder (e.g., backup-20240501)
 
-Before uploading, make sure your forms are properly configured with Formspree:
+## Step 3: Connect to Your GoDaddy Hosting Using FTP
 
-1. Create a Formspree account at [formspree.io](https://formspree.io) if you don't have one already
-2. Create two forms (one for contact, one for assessment requests)
-3. Get your form IDs (they look like `xgejpkwy`)
-4. Update the form IDs in these files:
-   - `client/src/components/ContactFormWithCalendly.tsx` - Line 71
-   - `client/src/components/AssessmentRequestForm.tsx` - Line 71
-5. Rebuild the static version after making these changes
+1. Open your FTP client
+2. Enter your FTP credentials:
+   - Host: usually ftp.yourdomain.com (replace with your actual domain)
+   - Username: provided by GoDaddy (often your cPanel username)
+   - Password: your FTP password
+   - Port: 21 (default FTP port)
+3. Connect to the server
 
-## Step 3: Connect to Your GoDaddy Hosting via FTP
+## Step 4: Upload the Static Website
 
-1. Get your FTP credentials from your GoDaddy account dashboard
-   - Host: usually `ftp.yourdomain.com` or provided in your GoDaddy dashboard
-   - Username: provided by GoDaddy
-   - Password: your GoDaddy hosting password
+1. Navigate to your web directory on the server (usually public_html)
+2. Upload all files and folders from your local `dist` directory to this directory
+   - Make sure to include the .htaccess file, which is crucial for proper routing
+   - You can either upload the files directly or upload the zip file and extract it
+3. If you encounter file permission issues, set the correct permissions:
+   - Folders: 755 (drwxr-xr-x)
+   - Files: 644 (rw-r--r--)
 
-2. Connect using an FTP client like FileZilla:
-   - Open FileZilla
-   - Enter your FTP credentials
-   - Connect to your server
+## Step 5: Verify the Deployment
 
-## Step 4: Upload the Website Files
+After uploading all files:
 
-1. In your FTP client, navigate to the public web directory:
-   - This is usually `/public_html/` or `/www/`
-   - If you want to deploy to a subdirectory, navigate to that folder (e.g., `/public_html/newsite/`)
+1. Open your website in a browser to check if it loads correctly
+2. Test navigation to different pages
+3. Verify that the Company Profile page and search functionality have been removed
+4. Test any forms or interactive elements
 
-2. If you want to replace an existing website:
-   - Backup any existing files you want to keep
-   - Delete existing files (or move them to a backup folder)
+## Troubleshooting Common Issues
 
-3. Upload all contents of the `dist` folder to your web directory:
-   - Select all files in your local `dist` folder
-   - Drag and drop them to the remote server panel
-   - Wait for the upload to complete
+### Issue: Pages Not Found (404 errors) When Refreshing or Direct URL Access
 
-## Step 5: Set Up SPA Routing
+**Solution:** This is usually related to .htaccess configuration
 
-For single-page application routing to work properly, you'll need to set up server redirection rules:
+1. Make sure the .htaccess file was properly uploaded
+2. Verify it has the correct content for URL rewriting
+3. Ensure .htaccess files are allowed on your hosting (they should be on GoDaddy)
 
-1. In your FTP client, navigate to the root directory where your website files are located.
+### Issue: Missing Images or Assets
 
-2. Create or modify a `.htaccess` file with the following content:
-```
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-```
+**Solution:** Check file paths and permissions
 
-3. Upload this `.htaccess` file to the same directory as your `index.html` file.
+1. Ensure all assets were uploaded
+2. Check that the paths in the HTML are correct
+3. Verify that file permissions allow read access
 
-## Step 6: Verify Your Deployment
+### Issue: Website Not Updating After Upload
 
-1. Visit your website in a browser to make sure everything is working correctly.
-2. Check that:
-   - The homepage loads properly
-   - Navigation works (try different pages)
-   - Images and styles load correctly
-   - Submit a test form to verify Formspree integration
+**Solution:** Clear cache or force refresh
 
-## Troubleshooting
+1. Clear your browser cache
+2. Try a hard refresh (Ctrl+F5 or Cmd+Shift+R)
+3. Check if GoDaddy has a caching service that needs to be flushed
 
-### Routes Not Working (404 Errors)
-- Make sure the `.htaccess` file is properly uploaded and has the correct permissions
-- Some GoDaddy plans may require enabling the Apache mod_rewrite module in your hosting control panel
+## Additional Resources
 
-### Images or Assets Not Loading
-- Check that all file paths are correct
-- Ensure all assets were properly uploaded
-- Verify file permissions (usually 644 for files, 755 for directories)
+- [GoDaddy's FTP Help Documentation](https://www.godaddy.com/help/connect-to-a-hosting-account-via-ftp-000068)
+- [GoDaddy's File Manager Help](https://www.godaddy.com/help/file-manager-30272)
 
-### Forms Not Working
-- Verify your Formspree form IDs are correct
-- Check that the forms are active in your Formspree dashboard
-- Ensure you have proper CORS settings in Formspree (allow your domain in the dashboard)
+## After Deployment
 
-### For Additional Help
-- Contact GoDaddy support for hosting-specific issues
-- Check Formspree documentation for form-related problems
+After a successful deployment, consider:
+
+1. Testing all forms and user interaction points
+2. Submitting your sitemap to search engines for reindexing
+3. Clearing any CDN or server caches
+
+## Contact Information
+
+If you encounter any issues that you cannot resolve, please contact your website developer for assistance.
