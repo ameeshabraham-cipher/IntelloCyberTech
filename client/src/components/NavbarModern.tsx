@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { useNavbarScroll } from '@/lib/animations';
 import { 
   ChevronDown, 
+  ChevronRight,
   Menu, 
   Shield, 
   Lock, 
@@ -316,6 +317,58 @@ export default function NavbarModern() {
           {/* Desktop Navigation - Modern Design */}
           <nav className="hidden lg:flex items-center">
             <div className="flex space-x-1 bg-background/40 backdrop-blur-sm rounded-full p-1 border border-white/10">
+              {/* Desktop Search */}
+              <div className="relative mr-2">
+                <div className="flex items-center bg-background/60 rounded-full border border-white/10 overflow-hidden">
+                  <Search className="h-4 w-4 ml-3 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    className="bg-transparent border-none py-2 pl-2 pr-3 w-32 focus:w-48 transition-all duration-300 text-sm focus:outline-none"
+                    aria-label="Search services"
+                  />
+                </div>
+                
+                {/* Desktop Search Results */}
+                {searchResults.length > 0 && (
+                  <div className="absolute top-full right-0 mt-2 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden z-50 w-80">
+                    <div className="p-2">
+                      <h3 className="text-sm font-medium text-[hsl(var(--secondary))] p-2 border-b border-[hsl(var(--secondary))]/10">Search Results</h3>
+                      <ul className="max-h-[40vh] overflow-y-auto">
+                        {searchResults.map((result, idx) => (
+                          <li key={idx}>
+                            <Link 
+                              href={result.path}
+                              onClick={() => {
+                                setSearchQuery('');
+                                setSearchResults([]);
+                              }}
+                              className="flex items-center gap-2 p-3 hover:bg-[hsl(var(--secondary))]/10 transition-all"
+                            >
+                              <span className="p-1.5 rounded-md bg-background/60 text-[hsl(var(--secondary))]/80">
+                                {result.icon}
+                              </span>
+                              <div className="flex-1">
+                                <p className="font-medium">{result.label}</p>
+                                {result.category && <p className="text-xs text-muted-foreground">{result.category}</p>}
+                              </div>
+                              <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+                
+                {searchQuery && searchResults.length === 0 && (
+                  <div className="absolute top-full right-0 mt-2 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-4 text-center w-60">
+                    <p className="text-muted-foreground text-sm">No results found</p>
+                  </div>
+                )}
+              </div>
               {/* Services Mega Menu */}
               <div className="relative group">
                 <button className="px-4 py-2 rounded-full text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center gap-1 hover:bg-white/5">
