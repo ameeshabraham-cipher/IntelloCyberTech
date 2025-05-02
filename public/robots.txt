@@ -1,17 +1,9 @@
-# robots.txt for intellome.com
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Important: Replace with your actual domain
 Sitemap: https://intellome.com/sitemap.xml
 
-# Important resources (to ensure important files get crawled)
-Allow: /images/
-Allow: /services/
-Allow: /solutions/
-Allow: /industries/
-Allow: /insights/
-
-# Disallow admin pages (if they exist in the future)
+# Block access to admin areas if you have any
 Disallow: /admin/
-Disallow: */admin/*
+Disallow: /wp-admin/
