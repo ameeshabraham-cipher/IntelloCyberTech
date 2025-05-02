@@ -26,6 +26,11 @@ This is a modern, professional website for Intello., showcasing their expertise 
 The application follows a modular structure for easy maintenance:
 
 ```
+/build               - Build scripts and deployment packages
+  build-static.js    - Full static site builder (resource-intensive)
+  build-static-light.js - Lightweight static site builder
+  download-static-site.js - Script to download built site
+  intello-website.zip - Pre-built website package
 /client
   /src
     /components      - Reusable UI components
@@ -36,6 +41,9 @@ The application follows a modular structure for easy maintenance:
       /industries    - Industry-specific pages
       /services      - Service-specific pages 
       /solutions     - Solution-specific pages
+/docs                - Project documentation
+  /deployment        - Deployment and hosting guides
+  /assets            - Asset information and usage guidelines
 /server              - Backend server (optional, not needed for static deployment)
 /public              - Static assets
 /shared              - Shared types and schemas
@@ -47,18 +55,27 @@ The application follows a modular structure for easy maintenance:
 
 The website is configured for static deployment without backend dependencies:
 
-1. Forms use Formspree for processing submissions
+1. Forms use Formspree for processing submissions (ID: mwpokerg)
 2. No database dependencies
 3. Client-side routing with SPA configuration
-4. See `STATIC_DEPLOYMENT.md` for detailed deployment instructions
+4. See `docs/deployment/GODADDY_DEPLOYMENT_GUIDE.md` for hosting-specific instructions
+5. See `docs/deployment/STATIC_BUILD_INSTRUCTIONS.md` for build process details
 
-### Server Deployment (Alternative)
+### Lightweight Deployment Package
+
+Due to Replit resource constraints, a pre-built lightweight package is available:
+
+1. Find `intello-website.zip` in the `build` folder
+2. This contains all essential files for direct hosting upload
+3. See `docs/deployment/UPDATE_GODADDY_SITE.md` for update instructions
+
+### Server Deployment (Not Recommended)
 
 For applications requiring backend functionality:
 
-1. Node.js Express server included
-2. In-memory storage for form submissions
-3. API endpoints for retrieving form data
+1. Node.js Express server included but not necessary
+2. In-memory storage for form submissions (use Formspree instead)
+3. API endpoints available but not required
 
 ## Customization Guide
 
@@ -96,7 +113,7 @@ The website is designed to work with modern browsers including:
 
 ## Maintenance and Troubleshooting
 
-See the troubleshooting section in `STATIC_DEPLOYMENT.md` for common issues and their solutions.
+See the troubleshooting section in `docs/deployment/STATIC_BUILD_INSTRUCTIONS.md` for common issues and their solutions.
 
 ## License
 
