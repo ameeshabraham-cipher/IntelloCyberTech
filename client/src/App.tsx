@@ -2,7 +2,6 @@ import { Switch, Route, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/Home";
 import AboutUs from "@/pages/AboutUs";
-import CompanyProfile from "@/pages/CompanyProfile";
 import Services from "@/pages/Services";
 import Solutions from "@/pages/Solutions";
 import Assessment from "@/pages/Assessment";
@@ -144,7 +143,7 @@ function Router() {
           {/* Main Pages */}
           <Route path="/" component={Home} />
           <Route path="/about" component={AboutUs} />
-          <Route path="/company-profile" component={CompanyProfile} />
+
           <Route path="/services" component={Services} />
           <Route path="/solutions" component={Solutions} />
           <Route path="/assessment" component={Assessment} />

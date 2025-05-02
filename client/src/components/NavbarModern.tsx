@@ -184,7 +184,6 @@ const industriesData = [
 // Nav items
 const navItems = [
   { label: 'About Us', path: '/about', icon: <Users className="h-5 w-5" /> },
-  { label: 'Company Profile', path: '/company-profile', icon: <Briefcase className="h-5 w-5" /> },
   { label: 'Insights', path: '/insights', icon: <BookOpen className="h-5 w-5" /> },
   { label: 'Contact', path: '/contact', icon: <Mail className="h-5 w-5" /> },
 ];
@@ -215,8 +214,6 @@ export default function NavbarModern() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const [clickedCategory, setClickedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<Array<{label: string; path: string; icon: React.ReactNode; category?: string}>>([]);
   const hoverTimeoutRef = useRef<number | null>(null);
   
   // Apply navbar background change on scroll
@@ -335,58 +332,7 @@ export default function NavbarModern() {
           {/* Desktop Navigation - Modern Design */}
           <nav className="hidden lg:flex items-center">
             <div className="flex space-x-1 bg-background/40 backdrop-blur-sm rounded-full p-1 border border-white/10">
-              {/* Desktop Search */}
-              <div className="relative mr-2">
-                <div className="flex items-center bg-background/60 rounded-full border border-white/10 overflow-hidden">
-                  <Search className="h-4 w-4 ml-3 text-muted-foreground" />
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    className="bg-transparent border-none py-2 pl-2 pr-3 w-32 focus:w-48 transition-all duration-300 text-sm focus:outline-none"
-                    aria-label="Search services"
-                  />
-                </div>
-                
-                {/* Desktop Search Results */}
-                {searchResults.length > 0 && (
-                  <div className="absolute top-full right-0 mt-2 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden z-50 w-80">
-                    <div className="p-2">
-                      <h3 className="text-sm font-medium text-[hsl(var(--secondary))] p-2 border-b border-[hsl(var(--secondary))]/10">Search Results</h3>
-                      <ul className="max-h-[40vh] overflow-y-auto">
-                        {searchResults.map((result, idx) => (
-                          <li key={idx}>
-                            <Link 
-                              href={result.path}
-                              onClick={() => {
-                                setSearchQuery('');
-                                setSearchResults([]);
-                              }}
-                              className="flex items-center gap-2 p-3 hover:bg-[hsl(var(--secondary))]/10 transition-all"
-                            >
-                              <span className="p-1.5 rounded-md bg-background/60 text-[hsl(var(--secondary))]/80">
-                                {result.icon}
-                              </span>
-                              <div className="flex-1">
-                                <p className="font-medium">{result.label}</p>
-                                {result.category && <p className="text-xs text-muted-foreground">{result.category}</p>}
-                              </div>
-                              <CustomChevronRight />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-                
-                {searchQuery && searchResults.length === 0 && (
-                  <div className="absolute top-full right-0 mt-2 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-4 text-center w-60">
-                    <p className="text-muted-foreground text-sm">No results found</p>
-                  </div>
-                )}
-              </div>
+
               {/* Services Mega Menu */}
               <div className="relative group">
                 <button className="px-4 py-2 rounded-full text-white hover:text-[hsl(var(--secondary))] transition font-medium flex items-center gap-1 hover:bg-white/5">
@@ -579,57 +525,7 @@ export default function NavbarModern() {
             className="lg:hidden fixed inset-0 top-[calc(5rem+_0.5rem)] bg-background/95 backdrop-blur-md z-40 overflow-y-auto pb-20"
           >
             <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-              {/* Search for mobile */}
-              <div className="mb-6 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                <input 
-                  type="text" 
-                  placeholder="Search services..."
-                  aria-label="Search services"
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  className="w-full rounded-lg bg-card py-3 pl-10 pr-4 border border-white/10 focus:border-[hsl(var(--secondary))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--secondary))]/20"
-                />
-                
-                {/* Search Results */}
-                {searchResults.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl overflow-hidden z-50">
-                    <div className="p-2">
-                      <h3 className="text-sm font-medium text-[hsl(var(--secondary))] p-2 border-b border-[hsl(var(--secondary))]/10">Search Results</h3>
-                      <ul className="max-h-[50vh] overflow-y-auto">
-                        {searchResults.map((result, idx) => (
-                          <li key={idx}>
-                            <Link 
-                              href={result.path}
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setSearchQuery('');
-                                setSearchResults([]);
-                              }}
-                              className="flex items-center gap-2 p-3 hover:bg-[hsl(var(--secondary))]/10 transition-all"
-                            >
-                              <span className="p-1.5 rounded-md bg-background/60 text-[hsl(var(--secondary))]/80">
-                                {result.icon}
-                              </span>
-                              <div className="flex-1">
-                                <p className="font-medium">{result.label}</p>
-                                {result.category && <p className="text-xs text-muted-foreground">{result.category}</p>}
-                              </div>
-                              <CustomChevronRight />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-                
-                {searchQuery && searchResults.length === 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-card/95 backdrop-blur-md border border-[hsl(var(--secondary))]/20 rounded-lg shadow-xl p-4 text-center">
-                    <p className="text-muted-foreground">No results found for "{searchQuery}"</p>
-                  </div>
-                )}
-              </div>
+
               
               {/* Main mobile menu */}
               <nav className="space-y-1">
