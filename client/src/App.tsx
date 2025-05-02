@@ -150,7 +150,7 @@ function Router() {
           <Route path="/insights" component={Insights} />
           <Route path="/insights/:slug" component={InsightPost} />
           
-          {/* Solution Pages */}
+          {/* Solution Pages - Legacy paths - will redirect to services */}
           <Route path="/solutions/ai-compliance" component={AiCompliancePage} />
           <Route path="/solutions/grc-automation" component={GrcAutomationPage} />
           <Route path="/solutions/risk-management" component={RiskManagementPage} />
@@ -160,6 +160,17 @@ function Router() {
           <Route path="/solutions/edr" component={EdrPage} />
           <Route path="/solutions/siem" component={SiemPage} />
           <Route path="/solutions/dlp" component={DlpPage} />
+          
+          {/* New Solution Pages - Standard services path */}
+          <Route path="/services/ai-compliance" component={AiCompliancePage} />
+          <Route path="/services/grc-automation" component={GrcAutomationPage} />
+          <Route path="/services/risk-management" component={RiskManagementPage} />
+          <Route path="/services/vulnerability-management" component={VulnerabilityManagementPage} />
+          <Route path="/services/cybersecurity-frameworks" component={CybersecurityFrameworksPage} />
+          <Route path="/services/email-security" component={EmailSecurityPage} />
+          <Route path="/services/edr" component={EdrPage} />
+          <Route path="/services/siem" component={SiemPage} />
+          <Route path="/services/dlp" component={DlpPage} />
           
           {/* Service Pages */}
           {/* GRC Services */}
