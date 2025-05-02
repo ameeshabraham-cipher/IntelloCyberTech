@@ -76,4 +76,19 @@ When updating assets on the live site:
 
 ## Special Notes
 
-The `attached_assets/` directory contains development resources and references that are not part of the production build. These files are for reference only and should not be included in the final deployment package.
+### Reference Files
+
+- The `attached_assets/` directory contains development resources and references that are not part of the production build. These files are for reference only and should not be included in the final deployment package.
+
+- `docs/assets/intello-logo-reference.png` - Logo reference for design consistency
+
+- `docs/assets/logo_base64.txt` - Base64 encoded logo that can be embedded directly in HTML/CSS. This is useful for cases where you need to include the logo without an external file request, such as in emails or certain application environments.
+
+### Base64 Logo Usage
+
+To use the base64 encoded logo:
+
+1. Open the `logo_base64.txt` file
+2. Copy the entire contents
+3. Use in HTML with the format: `<img src="data:image/png;base64,PASTE_CONTENT_HERE" alt="Intello Logo">`
+4. Use in CSS with the format: `background-image: url("data:image/png;base64,PASTE_CONTENT_HERE");`
