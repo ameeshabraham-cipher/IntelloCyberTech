@@ -1,118 +1,108 @@
-# Updating Your GoDaddy-Hosted Static Website
+# Updating the Intello Cyber Technologies Website on GoDaddy
 
-## Introduction
-
-This guide outlines the process for updating your Intello Cyber Technologies website after it has been deployed to GoDaddy hosting. Follow these steps when you need to make content changes, design updates, or functionality improvements.
+This document provides step-by-step instructions for updating the Intello Cyber Technologies website that is hosted on GoDaddy.
 
 ## Prerequisites
 
-1. Access to the website's source code repository
-2. Node.js and NPM installed on your local machine
-3. FTP client (like FileZilla)
-4. Your GoDaddy FTP credentials
+- FTP credentials for your GoDaddy hosting account
+- FTP client software (e.g., FileZilla, Cyberduck)
+- The updated static website files (generated using the `build-static-site.js` script)
 
-## Step 1: Update the Source Code
+## Update Process
 
-1. Make the necessary changes to the website's source code
-2. Test the changes locally by running:
+### 1. Generate the Updated Static Website
+
+1. Open your project in Visual Studio Code
+2. Make any necessary changes to the content or design
+3. Run the static site generator script:
    ```bash
-   npm run dev
+   node build-static-site.js
    ```
-3. Ensure all features work correctly in the development environment
+4. Verify the updates in the `dist` directory
 
-## Step 2: Build the Updated Static Website
+### 2. Connect to GoDaddy via FTP
 
-1. Use the build script to generate the updated static website:
-   ```bash
-   node build/build-static.js
-   ```
-2. If you encounter memory issues, use the lightweight build script:
-   ```bash
-   node build/build-static-light.js
-   ```
-   Note: The lightweight build might not include all assets and will require additional steps
+1. Open your FTP client (e.g., FileZilla)
+2. Enter the following connection details:
+   - Host: Your FTP host (typically `ftp.yourdomain.com`)
+   - Username: Your FTP username (provided by GoDaddy)
+   - Password: Your FTP password
+   - Port: 21 (default FTP port)
+3. Click "Connect" to establish the FTP connection
 
-## Step 3: Backup Current Live Site (Recommended)
+### 3. Backup the Existing Website (Recommended)
 
-Before uploading new files, it's good practice to backup the current version:
+1. Navigate to the public_html directory (or wherever your website is hosted)
+2. Download a complete copy of the existing website to your local machine
+3. Store this backup in a safe location
 
-1. Connect to your GoDaddy hosting using FileZilla
-2. Navigate to the `public_html` directory or your website's subdirectory
-3. Download all files to a local backup folder
-4. Name the folder with the current date for easy reference
+### 4. Upload the Updated Files
 
-## Step 4: Upload Updated Files
+#### Option 1: Full Site Update
 
-### Option A: Full Upload (Recommended for Major Updates)
+1. In your FTP client, navigate to the public_html directory (or relevant directory)
+2. Delete all existing files (after ensuring you have a backup)
+3. Upload all files from your local `dist` directory to the server
 
-1. Connect to your GoDaddy hosting using FileZilla
-2. Navigate to the `public_html` directory or your website's subdirectory
-3. Delete all existing files and folders **EXCEPT**:
-   - Any custom server configuration files you might have added
-   - User-uploaded content (if any)
-   - Any database files (if applicable)
-4. Upload all files and folders from the newly built `dist` directory
+#### Option 2: Selective Update
 
-### Option B: Selective Upload (For Minor Updates)
+1. Navigate to the specific files or directories you want to update
+2. Upload only the changed files, replacing the existing ones
 
-1. Connect to your GoDaddy hosting using FileZilla
-2. Compare the new `dist` folder with the current live site
-3. Upload only the files that have changed
+### 5. Verify Special Files
 
-## Step 5: Verify .htaccess File
+Ensure these critical files are correctly uploaded and have appropriate permissions:
 
-The `.htaccess` file is critical for SPA routing. After uploading:
+1. **Hidden Files**:
+   - `.htaccess` - Make sure this file is uploaded and has read permissions
 
-1. Check if the `.htaccess` file is visible in your hosting directory
-2. If it's not visible, make sure your FTP client is showing hidden files
-3. If needed, manually upload the `.htaccess` file from the `dist` directory
+2. **Configuration Files**:
+   - Check that `robots.txt` and `sitemap.xml` are properly uploaded
+   - Verify that the domain in these files matches your actual domain
 
-## Step 6: Test the Updated Website
+3. **Assets**:
+   - Confirm that all assets, images, CSS, and JavaScript files were uploaded correctly
 
-1. Open your website in multiple browsers
-2. Test all navigation paths
-3. Verify that all new content and features work correctly
-4. Test responsive behavior on different device sizes
-5. Clear your browser cache if you're not seeing the expected changes
+### 6. Test the Website
 
-## Step 7: Monitor for Issues
+1. Open a web browser and navigate to your website
+2. Test all pages and functionality:
+   - Check that all pages load without errors
+   - Verify that images and styling appear correctly
+   - Test any forms to ensure they submit properly
+   - Check responsive design on different devices
 
-After updating:
+3. Clear your browser cache if necessary to see the updates
 
-1. Monitor the website for any issues or errors
-2. Check if forms are submitting correctly
-3. Verify that all links work as expected
+### 7. Troubleshooting Common Issues
 
-## Common Issues and Solutions
+1. **404 Errors**:
+   - Ensure the `.htaccess` file was uploaded correctly
+   - Check that file paths in HTML are correct
 
-### Cache-Related Issues
+2. **Missing Styles or Images**:
+   - Verify that all assets were uploaded to the correct directories
+   - Check for any case-sensitivity issues in file paths
 
-If changes aren't visible after updating:
+3. **Form Submission Problems**:
+   - Ensure the Formspree endpoint is correctly configured
+   - Check for any JavaScript errors in the console
 
-1. Clear your browser cache
-2. Try accessing the site in an incognito/private window
-3. Test on a different device or network
+4. **Permission Issues**:
+   - Set appropriate file permissions (typically 644 for files and 755 for directories)
 
-### Missing Assets
+## Regular Maintenance
 
-If images or files are missing:
+1. **Regular Backups**:
+   - Create backups before and after any significant changes
 
-1. Check that all asset folders were properly uploaded
-2. Verify file paths in the HTML/CSS
-3. Check case sensitivity (some servers are case-sensitive)
+2. **Content Updates**:
+   - For simple content updates, you can edit the HTML files directly using GoDaddy's file manager
 
-### Routing Problems
+3. **Security**:
+   - Regularly check for any unauthorized file changes
+   - Keep your FTP credentials secure
 
-If route navigation isn't working:
+---
 
-1. Verify the `.htaccess` file is properly uploaded
-2. Try accessing the problem route directly, and check the server response
-3. Contact GoDaddy support if you suspect a server configuration issue
-
-## Need Assistance?
-
-If you encounter issues during the update process that you cannot resolve, consider:
-
-1. Reviewing the documentation in the website repository
-2. Consulting with your development team
-3. Contacting GoDaddy support for hosting-related issues
+If you encounter any issues during the update process, contact your web development team or GoDaddy support for assistance.
