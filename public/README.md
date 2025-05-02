@@ -2,54 +2,44 @@
 
 ## Overview
 
-This directory contains public static assets for the Intello Cyber Technologies website. These files are served directly and include images, icons, fonts, and other static resources.
+This directory contains global static assets for the Intello Cyber Technologies website. These files are served directly from the root of the website and include common images, global resources, and site-wide assets.
 
-## Directory Structure
+## Contents
 
-- `images/` - Website imagery including logos, photos, and illustrations
-- `icons/` - UI icons and favicon files
-- `fonts/` - Custom web fonts (if not loaded from CDN)
-- `documents/` - Downloadable documents like whitepapers and brochures
+This directory includes:
+
+- Global images and icons used throughout the site
+- Favicon and browser icons
+- Site-wide resources (fonts, common styles)
+- Robots.txt and sitemap files
+- Manifest files for PWA capabilities
+
+## Usage in Production
+
+During the static site build process, these files are copied to the root of the output directory. This ensures that all assets are accessible from their expected paths.
+
+## Relationship to Client Assets
+
+This directory contains global assets that are used across the entire application, while client-specific assets are located in the `client/public/` directory. During the build process, both sets of assets are properly integrated into the final static site.
 
 ## Asset Guidelines
 
 ### Images
 
-- Use optimized formats (WebP where possible, with JPEG/PNG fallbacks)
-- Keep file sizes reasonable (typically under 200KB for large images)
-- Provide appropriate dimensions for responsive layouts
-- Use descriptive filenames (e.g., `cybersecurity-assessment-hero.webp`)
+- Use optimized formats (WebP where possible)
+- Compress images appropriately for web use
+- Use descriptive filenames
 
-### Icons
+### Organization
 
-- Prefer SVG format for scalable, crisp display
-- Optimize SVGs to remove unnecessary metadata
-- Use consistent styling across icon sets
-
-### Static Files
-
-- Ensure PDFs and other documents are optimized for web delivery
-- Use clear naming conventions
+- Group related assets in subdirectories (e.g., `/icons`, `/backgrounds`)
+- Maintain consistent naming patterns
 
 ## Adding New Assets
 
-When adding new assets:
+When adding new global assets:
 
-1. Place them in the appropriate subdirectory
+1. Ensure they belong in this global directory and not in `client/public/`
 2. Optimize for web delivery
-3. Use consistent naming conventions
+3. Use consistent naming patterns
 4. Update documentation if introducing new asset categories
-
-## Usage in Code
-
-Reference public assets with relative paths:
-
-```tsx
-// In React components
-<img src="/images/logo.png" alt="Intello Cyber Technologies Logo" />
-<link rel="icon" href="/icons/favicon.ico" />
-```
-
-## Build Process
-
-During the static site build process, these assets are copied to the appropriate output directory and all references are maintained.
