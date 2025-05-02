@@ -1,51 +1,41 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { resolve } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Modified Vite configuration specifically for static site builds
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    themePlugin(),
-  ],
+  plugins: [react(), tsconfigPaths()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
+      '@': resolve(__dirname, './client/src'),
+      '@components': resolve(__dirname, './client/src/components'),
+      '@lib': resolve(__dirname, './client/src/lib'),
+      '@pages': resolve(__dirname, './client/src/pages'),
+      '@shared': resolve(__dirname, './shared'),
     },
   },
-  root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: 'dist',
     emptyOutDir: true,
-    // Use hashed file names for better cache control
+    sourcemap: false,
+    minify: 'terser',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'client/index.html'),
+      },
+      external: [],
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          shadcn: [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-alert-dialog',
-            '@radix-ui/react-avatar',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-label',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-select',
-            '@radix-ui/react-slot',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-toast',
-          ],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
-      }
-    }
+      },
+    },
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
   },
 });
