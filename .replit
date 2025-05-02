@@ -11,6 +11,10 @@ run = ["sh", "-c", "NODE_ENV=production node dist/index.js"]
 build = ["sh", "-c", "npm run build && npx tsx ./scripts/db-init.ts"]
 
 [[ports]]
+localPort = 3000
+externalPort = 3001
+
+[[ports]]
 localPort = 3500
 externalPort = 3000
 
