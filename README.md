@@ -33,7 +33,10 @@ The website can be deployed using two main methods:
 
 All project documentation is available in the `docs` directory:
 
+- `docs/QUICK_START.md` - Fast track to deploying or modifying the site
 - `docs/PROJECT_DOCUMENTATION.md` - Comprehensive project guide
+- `docs/ENVIRONMENT_VARIABLES.md` - Environment configuration details
+- `docs/SITEMAP.md` - Website structure and navigation
 - `docs/deployment/` - Hosting and deployment guides
 - `docs/assets/` - Asset information and guidelines
 
