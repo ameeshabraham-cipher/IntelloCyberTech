@@ -138,7 +138,7 @@ const servicesMenuData = [
       { label: 'Threat Hunting', path: '/services/threat-hunting', icon: <Search className="h-4 w-4" /> },
       { label: 'Incident Response Planning', path: '/services/incident-response-planning', icon: <Shield className="h-4 w-4" /> },
       { label: 'Data Privacy Consultation', path: '/services/data-privacy', icon: <Lock className="h-4 w-4" /> },
-      { label: 'Email Security', path: '/solutions/email-security', icon: <Mail className="h-4 w-4" /> },
+      { label: 'Email Security', path: '/services/email-security', icon: <Mail className="h-4 w-4" /> },
     ]
   }
 ];
@@ -148,20 +148,20 @@ const solutionsMenuData = [
   {
     category: 'AI-Powered Solutions',
     items: [
-      { label: 'AI-Driven Compliance Tools', path: '/solutions/ai-compliance', icon: <Bot className="h-4 w-4" /> },
-      { label: 'GRC Automation Platforms', path: '/solutions/grc-automation', icon: <BarChart2 className="h-4 w-4" /> },
-      { label: 'Risk Management Tools', path: '/solutions/risk-management', icon: <BarChart2 className="h-4 w-4" /> },
-      { label: 'Vulnerability Management', path: '/solutions/vulnerability-management', icon: <Search className="h-4 w-4" /> },
-      { label: 'Cybersecurity Frameworks', path: '/solutions/cybersecurity-frameworks', icon: <Layers className="h-4 w-4" /> },
+      { label: 'AI-Driven Compliance Tools', path: '/services/ai-compliance', icon: <Bot className="h-4 w-4" /> },
+      { label: 'GRC Automation Platforms', path: '/services/grc-automation', icon: <BarChart2 className="h-4 w-4" /> },
+      { label: 'Risk Management Tools', path: '/services/risk-management', icon: <BarChart2 className="h-4 w-4" /> },
+      { label: 'Vulnerability Management', path: '/services/vulnerability-management', icon: <Search className="h-4 w-4" /> },
+      { label: 'Cybersecurity Frameworks', path: '/services/cybersecurity-frameworks', icon: <Layers className="h-4 w-4" /> },
     ]
   },
   {
     category: 'Security Technology Solutions',
     items: [
-      { label: 'Email Security Solutions', path: '/solutions/email-security', icon: <Mail className="h-4 w-4" /> },
-      { label: 'Endpoint Detection & Response', path: '/solutions/edr', icon: <Laptop className="h-4 w-4" /> },
-      { label: 'SIEM Solutions', path: '/solutions/siem', icon: <Layers className="h-4 w-4" /> },
-      { label: 'Data Loss Prevention', path: '/solutions/dlp', icon: <Shield className="h-4 w-4" /> },
+      { label: 'Email Security Solutions', path: '/services/email-security', icon: <Mail className="h-4 w-4" /> },
+      { label: 'Endpoint Detection & Response', path: '/services/edr', icon: <Laptop className="h-4 w-4" /> },
+      { label: 'SIEM Solutions', path: '/services/siem', icon: <Layers className="h-4 w-4" /> },
+      { label: 'Data Loss Prevention', path: '/services/dlp', icon: <Shield className="h-4 w-4" /> },
     ]
   }
 ];

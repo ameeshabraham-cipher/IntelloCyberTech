@@ -46,7 +46,7 @@ const Services = () => {
           icon: <CheckCircle className="h-6 w-6" />,
           title: "ISO 27001 Compliance",
           description: "Achieve and maintain ISO 27001 certification with our end-to-end implementation and audit preparation services.",
-          link: "/services/iso-27001",
+          link: "/services/iso27001",
           features: [
             "Gap analysis and readiness assessment",
             "ISMS documentation development",
@@ -59,7 +59,7 @@ const Services = () => {
           icon: <Lock className="h-6 w-6" />,
           title: "SOC 2 Compliance",
           description: "Build trust with your customers through SOC 2 compliance that demonstrates your commitment to security and privacy.",
-          link: "/services/soc-2",
+          link: "/services/soc2",
           features: [
             "SOC 2 readiness assessment",
             "Control implementation",
@@ -104,7 +104,7 @@ const Services = () => {
           icon: <Search className="h-6 w-6" />,
           title: "IT Security Audit",
           description: "Identify vulnerabilities and security gaps with our comprehensive security assessments and penetration testing.",
-          link: "/services/security-audit",
+          link: "/services/it-security-audit",
           features: [
             "Infrastructure security assessment",
             "Application penetration testing",
