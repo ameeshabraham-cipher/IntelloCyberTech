@@ -1,31 +1,48 @@
-# Server Components
+# Server
 
 ## Overview
 
-This directory contains the backend server components for the Intello Cyber Technologies website. For the recommended static site deployment, these server components are not needed, as all functionality is handled client-side or through third-party services like Formspree.
+This directory contains the server-side code for the Intello Cyber Technologies website. While the production deployment uses a static site approach, this server code is used during development and could be utilized for dynamic features if needed in the future.
 
-## Components
+## Structure
 
 - `index.ts` - Main server entry point
 - `routes.ts` - API route definitions
-- `db.ts` - Database connection management
-- `storage.ts` - Data storage interface
 - `contactForm.ts` - Contact form processing logic
-- `vite.ts` - Development server configuration
+- `db.ts` - Database connection and setup
+- `storage.ts` - Data storage interface and implementation
+- `vite.ts` - Vite development server integration
+- `api/` - API endpoint implementations
 
 ## API Endpoints
 
-The server provides several API endpoints for form submissions and other functionality:
+The server provides several API endpoints:
 
-- `/api/forms/contact` - Submit contact form data
-- `/api/forms/assessment` - Submit assessment request form data
+- `/api/contact` - Process contact form submissions
+- `/api/assessment` - Handle security assessment requests
+- `/api/appointments` - Manage appointment bookings
 
-## Usage in Development
+## Development
 
-During development, the server is started automatically with the `npm run dev` command. The server runs on port 5000 and serves both the API endpoints and the frontend application through Vite's development server.
+During development, the server runs alongside the Vite development server to provide API endpoints for the frontend.
 
-## Deployment Notes
+```bash
+npm run dev
+```
 
-For the recommended static site deployment, the server components are not used. All form submissions are handled through Formspree, which eliminates the need for server-side processing.
+## Static Deployment
 
-If server-side functionality is required, consider deploying to a platform that supports Node.js applications, such as Heroku, Vercel, or Azure App Service.
+For production deployment, the website is built as a static site without the need for a running server. The contact form functionality is provided by Formspree, eliminating the need for server-side processing.
+
+## Future Extensions
+
+If dynamic server functionality is needed in the future:
+
+1. Update the database schema in `shared/schema.ts`
+2. Add necessary routes in `routes.ts`
+3. Implement API handlers in the `api/` directory
+4. Set up proper database configuration in `db.ts`
+
+## Environment Variables
+
+The server relies on environment variables for configuration. See `docs/ENVIRONMENT_VARIABLES.md` for details.
