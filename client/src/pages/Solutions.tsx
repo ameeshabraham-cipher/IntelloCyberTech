@@ -16,19 +16,19 @@ const SolutionsPage = () => {
           icon: <Shield className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Compliance Automation",
           description: "AI-powered tools that streamline and automate compliance processes",
-          link: "/solutions/grc-automation"
+          link: "/services/grc-automation"
         },
         {
           icon: <Lock className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Risk Management Platform",
           description: "Comprehensive risk identification, assessment and management solution",
-          link: "/solutions/risk-management"
+          link: "/services/risk-management"
         },
         {
           icon: <Database className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Cybersecurity Frameworks",
           description: "Implementation of industry-standard security frameworks and controls",
-          link: "/solutions/cybersecurity-frameworks"
+          link: "/services/cybersecurity-frameworks"
         }
       ]
     },
@@ -46,13 +46,13 @@ const SolutionsPage = () => {
           icon: <Activity className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "SIEM Solutions",
           description: "Security Information and Event Management for real-time monitoring",
-          link: "/solutions/siem"
+          link: "/services/siem"
         },
         {
           icon: <Server className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Endpoint Protection",
           description: "Advanced endpoint detection and response capabilities",
-          link: "/solutions/edr"
+          link: "/services/edr"
         }
       ]
     },
@@ -64,19 +64,19 @@ const SolutionsPage = () => {
           icon: <Zap className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "AI-Driven Compliance",
           description: "Harness the power of AI to automate and enhance compliance efforts",
-          link: "/solutions/ai-compliance"
+          link: "/services/ai-compliance"
         },
         {
           icon: <Shield className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Vulnerability Management",
           description: "Proactive identification and remediation of security vulnerabilities",
-          link: "/solutions/vulnerability-management"
+          link: "/services/vulnerability-management"
         },
         {
           icon: <Lock className="h-10 w-10 text-[hsl(var(--primary))]" />,
           title: "Data Loss Prevention",
           description: "AI-enhanced data protection to prevent data leakage and theft",
-          link: "/solutions/dlp"
+          link: "/services/dlp"
         }
       ]
     }
