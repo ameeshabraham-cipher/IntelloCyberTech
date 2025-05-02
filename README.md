@@ -34,6 +34,7 @@ The website can be deployed using two main methods:
 All project documentation is available in the `docs` directory:
 
 - `docs/QUICK_START.md` - Fast track to deploying or modifying the site
+- `docs/INSTALLATION_GUIDE.md` - Setting up the project for local development
 - `docs/PROJECT_DOCUMENTATION.md` - Comprehensive project guide
 - `docs/ENVIRONMENT_VARIABLES.md` - Environment configuration details
 - `docs/SITEMAP.md` - Website structure and navigation
@@ -44,10 +45,27 @@ All project documentation is available in the `docs` directory:
 
 ## Project Structure
 
-- `client/` - Frontend React application
-- `build/` - Build scripts and tools
-- `public/` - Static assets
-- `docs/` - Documentation
+```
+intello-website/
+├── client/            # Frontend React application
+│   ├── public/        # Client-side public assets
+│   ├── src/           # React source code
+│   │   ├── components/  # Reusable UI components
+│   │   ├── lib/         # Utility functions and helpers
+│   │   └── pages/       # Page components
+├── server/            # Express server (not used in static deployment)
+├── shared/            # Shared code between client and server
+├── build/             # Build scripts and static site generators
+│   ├── build-static.js        # Full static site builder
+│   ├── build-static-light.js  # Lightweight builder
+│   └── intello-website.zip    # Pre-built website package
+├── public/            # Global static assets
+├── docs/              # Documentation
+│   ├── deployment/    # Deployment guides
+│   └── assets/        # Asset documentation
+└── scripts/           # Utility scripts for maintenance
+    └── util/          # Helper utilities for scripts
+```
 
 ## Contact
 
