@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
+import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/Home";
 import AboutUs from "@/pages/AboutUs";
 import Services from "@/pages/Services";
@@ -15,8 +16,82 @@ import CalendlyFloatingButton from "@/components/CalendlyFloatingButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import { ThemeProvider } from "@/hooks/use-theme";
+import { ThemeInitializer } from "@/components/ThemeToggle";
 
-// Lazy imports for all service and solution pages will be added here
+// Solution Pages
+import AiCompliancePage from "@/pages/solutions/AiCompliance";
+import GrcAutomationPage from "@/pages/solutions/GrcAutomation";
+import RiskManagementPage from "@/pages/solutions/RiskManagement";
+import VulnerabilityManagementPage from "@/pages/solutions/VulnerabilityManagement";
+import CybersecurityFrameworksPage from "@/pages/solutions/CybersecurityFrameworks";
+import EmailSecurityPage from "@/pages/solutions/EmailSecurity";
+import EdrPage from "@/pages/solutions/Edr";
+import SiemPage from "@/pages/solutions/Siem";
+import DlpPage from "@/pages/solutions/Dlp";
+
+// Service Pages
+// GRC Services
+import Iso27001Page from "@/pages/services/Iso27001";
+import Iso42001Page from "@/pages/services/Iso42001";
+import Soc2Page from "@/pages/services/Soc2";
+import GdprPage from "@/pages/services/Gdpr";
+import UaePdplPage from "@/pages/services/UaePdpl";
+import UaeIaPage from "@/pages/services/UaeIa";
+import UaeNesaPage from "@/pages/services/UaeNesa";
+import KsaPdplPage from "@/pages/services/KsaPdpl";
+import BahrainPdplPage from "@/pages/services/BahrainPdpl";
+import SamaPage from "@/pages/services/Sama";
+import SaudiAramcoPage from "@/pages/services/SaudiAramco";
+import PciDssPage from "@/pages/services/PciDss";
+import HipaaPage from "@/pages/services/Hipaa";
+import InternalAuditPage from "@/pages/services/InternalAudit";
+import RiskFrameworksPage from "@/pages/services/RiskFrameworks";
+import PolicyDevelopmentPage from "@/pages/services/PolicyDevelopment";
+
+// IT Security & Audit Services
+import ItSecurityAuditPage from "@/pages/services/ItSecurityAudit";
+import SecurityAssessmentPage from "@/pages/services/SecurityAssessment";
+import PenetrationTestingPage from "@/pages/services/PenetrationTesting";
+import WebPenTestingPage from "@/pages/services/WebPenTesting";
+import WebPenetrationTestingPage from "@/pages/services/WebPenetrationTesting";
+import NetworkPentestingPage from "@/pages/services/NetworkPentesting";
+import VaptPage from "@/pages/services/Vapt";
+
+// Cybersecurity Solutions
+import CloudSecurityPage from "@/pages/services/CloudSecurity";
+import CloudSecurityAssessmentPage from "@/pages/services/CloudSecurityAssessment";
+import VcisoPage from "@/pages/services/Vciso";
+import DataPrivacyPage from "@/pages/services/DataPrivacy";
+import CloudOnPremInfrastructurePage from "@/pages/services/CloudOnPremInfrastructure";
+import AdvancedPenetrationTestingPage from "@/pages/services/AdvancedPenetrationTesting";
+import ThreatHuntingPage from "@/pages/services/ThreatHunting";
+import IncidentResponsePlanningPage from "@/pages/services/IncidentResponsePlanning";
+import RedTeamExercisesPage from "@/pages/services/RedTeamExercises";
+import PrivacyCompliancePage from "@/pages/services/PrivacyCompliance";
+
+// IT Managed Services
+import ItAmcPage from "@/pages/services/ItAmc";
+import ManagedItProjectPage from "@/pages/services/ManagedItProject";
+import MicrosoftServicesPage from "@/pages/services/MicrosoftServices";
+
+// Industry Pages
+import BfsiPage from "@/pages/industries/Bfsi";
+import HealthcarePage from "@/pages/industries/Healthcare";
+import GovernmentPage from "@/pages/industries/Government";
+import EcommercePage from "@/pages/industries/Ecommerce";
+import SmePage from "@/pages/industries/Sme";
+import LogisticsPage from "@/pages/industries/Logistics";
+import MoneyExchangesPage from "@/pages/industries/MoneyExchanges";
+import InsuranceCompaniesPage from "@/pages/industries/InsuranceCompanies";
+import ArchitecturalFirmsPage from "@/pages/industries/ArchitecturalFirms";
+import TechnologyCompaniesPage from "@/pages/industries/TechnologyCompanies";
+
+// Component Demo Pages
+import TooltipDemo from "@/pages/components/TooltipDemo";
+import FormSubmissionsPage from "@/pages/components/FormSubmissions";
+import AssessmentSubmissionsPage from "@/pages/components/AssessmentSubmissions";
+import AdminDashboard from "@/pages/components/AdminDashboard";
 
 function Router() {
   const [location] = useLocation();
@@ -76,56 +151,90 @@ function Router() {
           <Route path="/insights" component={Insights} />
           <Route path="/insights/:slug" component={InsightPost} />
           
-          {/* Special Routes - Placeholders until we implement lazy loading */}
-          <Route path="/services/:serviceName">
-            {(params) => (
-              <div className="min-h-screen pt-24 pb-20">
-                <div className="container mx-auto px-4">
-                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
-                    <h1 className="text-3xl font-bold mb-4">Service: {params.serviceName}</h1>
-                    <p className="text-muted-foreground mb-6">
-                      This is a placeholder for the {params.serviceName} service page.
-                    </p>
-                    <p>In the complete implementation, this would dynamically load the appropriate service component.</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </Route>
+          {/* Solution Pages - Legacy paths - will redirect to services */}
+          <Route path="/solutions/ai-compliance" component={AiCompliancePage} />
+          <Route path="/solutions/grc-automation" component={GrcAutomationPage} />
+          <Route path="/solutions/risk-management" component={RiskManagementPage} />
+          <Route path="/solutions/vulnerability-management" component={VulnerabilityManagementPage} />
+          <Route path="/solutions/cybersecurity-frameworks" component={CybersecurityFrameworksPage} />
+          <Route path="/solutions/email-security" component={EmailSecurityPage} />
+          <Route path="/solutions/edr" component={EdrPage} />
+          <Route path="/solutions/siem" component={SiemPage} />
+          <Route path="/solutions/dlp" component={DlpPage} />
           
-          <Route path="/solutions/:solutionName">
-            {(params) => (
-              <div className="min-h-screen pt-24 pb-20">
-                <div className="container mx-auto px-4">
-                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
-                    <h1 className="text-3xl font-bold mb-4">Solution: {params.solutionName}</h1>
-                    <p className="text-muted-foreground mb-6">
-                      This is a placeholder for the {params.solutionName} solution page.
-                    </p>
-                    <p>In the complete implementation, this would dynamically load the appropriate solution component.</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </Route>
+          {/* New Solution Pages - Standard services path */}
+          <Route path="/services/ai-compliance" component={AiCompliancePage} />
+          <Route path="/services/grc-automation" component={GrcAutomationPage} />
+          <Route path="/services/risk-management" component={RiskManagementPage} />
+          <Route path="/services/vulnerability-management" component={VulnerabilityManagementPage} />
+          <Route path="/services/cybersecurity-frameworks" component={CybersecurityFrameworksPage} />
+          <Route path="/services/email-security" component={EmailSecurityPage} />
+          <Route path="/services/edr" component={EdrPage} />
+          <Route path="/services/siem" component={SiemPage} />
+          <Route path="/services/dlp" component={DlpPage} />
           
-          <Route path="/industries/:industryName">
-            {(params) => (
-              <div className="min-h-screen pt-24 pb-20">
-                <div className="container mx-auto px-4">
-                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
-                    <h1 className="text-3xl font-bold mb-4">Industry: {params.industryName}</h1>
-                    <p className="text-muted-foreground mb-6">
-                      This is a placeholder for the {params.industryName} industry page.
-                    </p>
-                    <p>In the complete implementation, this would dynamically load the appropriate industry component.</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </Route>
+          {/* Service Pages */}
+          {/* GRC Services */}
+          <Route path="/services/iso27001" component={Iso27001Page} />
+          <Route path="/services/iso42001" component={Iso42001Page} />
+          <Route path="/services/soc2" component={Soc2Page} />
+          <Route path="/services/gdpr" component={GdprPage} />
+          <Route path="/services/uae-pdpl" component={UaePdplPage} />
+          <Route path="/services/uae-ia" component={UaeIaPage} />
+          <Route path="/services/uae-nesa" component={UaeNesaPage} />
+          <Route path="/services/ksa-pdpl" component={KsaPdplPage} />
+          <Route path="/services/bahrain-pdpl" component={BahrainPdplPage} />
+          <Route path="/services/sama" component={SamaPage} />
+          <Route path="/services/saudi-aramco" component={SaudiAramcoPage} />
+          <Route path="/services/pci-dss" component={PciDssPage} />
+          <Route path="/services/hipaa" component={HipaaPage} />
+          <Route path="/services/internal-audit" component={InternalAuditPage} />
+          <Route path="/services/risk-frameworks" component={RiskFrameworksPage} />
+          <Route path="/services/policy-development" component={PolicyDevelopmentPage} />
+          
+          {/* IT Security & Audit Services */}
+          <Route path="/services/it-security-audit" component={ItSecurityAuditPage} />
+          <Route path="/services/security-assessment" component={SecurityAssessmentPage} />
+          <Route path="/services/penetration-testing" component={PenetrationTestingPage} />
+          <Route path="/services/web-penetration-testing" component={WebPenetrationTestingPage} />
+          <Route path="/services/web-pen-testing" component={WebPenTestingPage} />
+          <Route path="/services/network-pentesting" component={NetworkPentestingPage} />
+          <Route path="/services/vapt" component={VaptPage} />
+          
+          {/* Cybersecurity Solutions */}
+          <Route path="/services/cloud-security" component={CloudSecurityPage} />
+          <Route path="/services/cloud-security-assessment" component={CloudSecurityAssessmentPage} />
+          <Route path="/services/vciso" component={VcisoPage} />
+          <Route path="/services/data-privacy" component={DataPrivacyPage} />
+          <Route path="/services/cloud-onprem-infrastructure" component={CloudOnPremInfrastructurePage} />
+          <Route path="/services/advanced-penetration-testing" component={AdvancedPenetrationTestingPage} />
+          <Route path="/services/threat-hunting" component={ThreatHuntingPage} />
+          <Route path="/services/incident-response-planning" component={IncidentResponsePlanningPage} />
+          <Route path="/services/red-team-exercises" component={RedTeamExercisesPage} />
+          <Route path="/services/privacy-compliance" component={PrivacyCompliancePage} />
+          
+          {/* IT Managed Services */}
+          <Route path="/services/it-amc" component={ItAmcPage} />
+          <Route path="/services/managed-it-project" component={ManagedItProjectPage} />
+          <Route path="/services/microsoft-services" component={MicrosoftServicesPage} />
+          
+          {/* Industry Pages */}
+          <Route path="/industries/bfsi" component={BfsiPage} />
+          <Route path="/industries/healthcare" component={HealthcarePage} />
+          <Route path="/industries/government" component={GovernmentPage} />
+          <Route path="/industries/ecommerce" component={EcommercePage} />
+          <Route path="/industries/sme" component={SmePage} />
+          <Route path="/industries/logistics" component={LogisticsPage} />
+          <Route path="/industries/money-exchanges" component={MoneyExchangesPage} />
+          <Route path="/industries/insurance-companies" component={InsuranceCompaniesPage} />
+          <Route path="/industries/architectural-firms" component={ArchitecturalFirmsPage} />
+          <Route path="/industries/technology-companies" component={TechnologyCompaniesPage} />
+          
+          {/* Component Demo Pages */}
+          <Route path="/components/tech-tooltips" component={TooltipDemo} />
           
           {/* Admin Pages (Disabled in static site version) */}
+          {/* These routes would require backend access */}
           <Route path="/admin">
             {() => (
               <div className="min-h-screen pt-24 pb-20">
@@ -134,6 +243,32 @@ function Router() {
                     <h1 className="text-3xl font-bold mb-4">Admin Dashboard</h1>
                     <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
                     <p>The admin dashboard requires backend functionality that has been disabled in this frontend-only version.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Route>
+          <Route path="/admin/submissions">
+            {() => (
+              <div className="min-h-screen pt-24 pb-20">
+                <div className="container mx-auto px-4">
+                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
+                    <h1 className="text-3xl font-bold mb-4">Form Submissions</h1>
+                    <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
+                    <p>Form submissions are handled by Formspree in this frontend-only version. Please check your Formspree dashboard to view submissions.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Route>
+          <Route path="/admin/assessment-requests">
+            {() => (
+              <div className="min-h-screen pt-24 pb-20">
+                <div className="container mx-auto px-4">
+                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
+                    <h1 className="text-3xl font-bold mb-4">Assessment Requests</h1>
+                    <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
+                    <p>Assessment requests are handled by Formspree in this frontend-only version. Please check your Formspree dashboard to view submissions.</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +292,13 @@ if (typeof document !== 'undefined') {
 
 function App() {
   return (
-    <Router />
+    <>
+      <ThemeInitializer />
+      <ThemeProvider>
+        <Router />
+        <Toaster />
+      </ThemeProvider>
+    </>
   );
 }
 
