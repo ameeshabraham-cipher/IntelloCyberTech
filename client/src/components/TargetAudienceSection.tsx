@@ -34,7 +34,7 @@ const audienceData: AudienceTabProps[] = [
       'Advanced security testing and continuous monitoring solutions'
     ],
     cta: {
-      text: 'Security Enhancement Services',
+      text: 'Security Assessment Services',
       link: '/services/security-assessment'
     }
   },
@@ -55,8 +55,8 @@ const audienceData: AudienceTabProps[] = [
       'Technical security assessments and remediation guidance'
     ],
     cta: {
-      text: 'IT Security Services',
-      link: '/services/it-security'
+      text: 'IT Security Audit Services',
+      link: '/services/it-security-audit'
     }
   },
   {
@@ -76,8 +76,8 @@ const audienceData: AudienceTabProps[] = [
       'Compliance automation tools and techniques'
     ],
     cta: {
-      text: 'Compliance Advisory Services',
-      link: '/services/data-privacy'
+      text: 'UAE PDPL Compliance Services',
+      link: '/services/uae-pdpl'
     }
   },
   {
