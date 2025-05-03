@@ -9,6 +9,7 @@ This is a static frontend-only version of the Intello website, optimized for dep
 - Static form handling via Formspree
 - Appointment scheduling via Calendly integration
 - Complete cybersecurity services and solutions showcase
+- Comprehensive pages for all services, solutions, and industry verticals
 
 ## Getting Started
 
@@ -43,9 +44,24 @@ This will generate a `dist` directory with static files that can be deployed to 
 ## Project Structure
 
 - `src/components/`: Reusable UI components
+  - `ui/`: Shadcn UI components
+  - Other components like NavbarModern, Footer, etc.
 - `src/pages/`: Page components for different routes
+  - `services/`: Pages for individual service offerings
+  - `solutions/`: Pages for cybersecurity solutions
+  - `industries/`: Pages for industry-specific solutions
+  - `components/`: Demo and utility pages
 - `src/lib/`: Utility functions and configurations
 - `src/hooks/`: Custom React hooks
+- `scripts/`: Build and utility scripts
+  - `generate-pages.cjs`: Script to generate placeholder pages
+
+## Special Scripts
+
+- `npm run generate-pages`: Generates placeholder pages for all services, solutions, and industries
+- `npm run deploy`: Prepares the site for deployment
+- `npm run deploy:netlify`: Deploys the site to Netlify (requires Netlify CLI)
+- `npm run deploy:github`: Deploys the site to GitHub Pages (requires gh-pages)
 
 ## Deployment
 
@@ -55,3 +71,5 @@ This frontend-only version can be deployed to any static hosting service:
 2. Upload the contents of the `dist` directory to your web server or hosting service
 
 No server-side processing is required as all dynamic functionality is handled through external services.
+
+For detailed deployment instructions, see the `DEPLOYMENT.md` file in this directory.
