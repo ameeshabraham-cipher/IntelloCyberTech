@@ -60,6 +60,7 @@ import ItSecurityAuditPage from "@/pages/services/ItSecurityAudit";
 import SecurityAssessmentPage from "@/pages/services/SecurityAssessment";
 import PenetrationTestingPage from "@/pages/services/PenetrationTesting";
 import WebPenTestingPage from "@/pages/services/WebPenTesting";
+import WebPenetrationTestingPage from "@/pages/services/WebPenetrationTesting";
 import NetworkPentestingPage from "@/pages/services/NetworkPentesting";
 import VaptPage from "@/pages/services/Vapt";
 
@@ -196,6 +197,7 @@ function Router() {
           <Route path="/services/it-security-audit" component={ItSecurityAuditPage} />
           <Route path="/services/security-assessment" component={SecurityAssessmentPage} />
           <Route path="/services/penetration-testing" component={PenetrationTestingPage} />
+          <Route path="/services/web-penetration-testing" component={WebPenetrationTestingPage} />
           <Route path="/services/web-pen-testing" component={WebPenTestingPage} />
           <Route path="/services/network-pentesting" component={NetworkPentestingPage} />
           <Route path="/services/vapt" component={VaptPage} />
