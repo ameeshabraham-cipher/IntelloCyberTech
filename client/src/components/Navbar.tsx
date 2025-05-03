@@ -135,7 +135,7 @@ const menuItems: MenuItem[] = [
         category: 'Offensive Security',
         children: [
           { label: 'Penetration Testing', path: '/services/penetration-testing', icon: <Shield className="h-4 w-4" /> },
-          { label: 'Web App Penetration Testing', path: '/services/web-pen-testing', icon: <Globe className="h-4 w-4" /> },
+          { label: 'Web App Penetration Testing', path: '/services/web-penetration-testing', icon: <Globe className="h-4 w-4" /> },
           { label: 'Network Penetration Testing', path: '/services/network-pentesting', icon: <Network className="h-4 w-4" /> },
           { label: 'Vulnerability Assessment & Pen Testing', path: '/services/vapt', icon: <Search className="h-4 w-4" /> }
         ]
@@ -456,7 +456,7 @@ const Navbar = () => {
                 
                 <p className="text-[hsl(var(--secondary))] text-sm font-semibold pt-3 pb-1">Offensive Security</p>
                 <Link href="/services/penetration-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Penetration Testing</Link>
-                <Link href="/services/web-pen-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Web App Penetration Testing</Link>
+                <Link href="/services/web-penetration-testing" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Web App Penetration Testing</Link>
                 <Link href="/services/network-pentesting" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Network Penetration Testing</Link>
                 <Link href="/services/vapt" className="block text-muted-foreground hover:text-[hsl(var(--secondary))]">Vulnerability Assessment & Pen Testing</Link>
                 

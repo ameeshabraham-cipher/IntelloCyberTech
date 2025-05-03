@@ -288,7 +288,7 @@ const PainPointsSection = () => {
               </div>
             </div>
             <div className="flex items-center">
-              <Link href="/services/security-testing" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
+              <Link href="/services/penetration-testing" className="text-[hsl(var(--secondary))] hover:text-white flex items-center transition-colors">
                 <span>Explore Security Testing</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
