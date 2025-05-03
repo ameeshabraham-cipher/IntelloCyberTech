@@ -232,10 +232,47 @@ function Router() {
           {/* Component Demo Pages */}
           <Route path="/components/tech-tooltips" component={TooltipDemo} />
           
-          {/* Admin Pages */}
-          <Route path="/admin" component={AdminDashboard} />
-          <Route path="/admin/submissions" component={FormSubmissionsPage} />
-          <Route path="/admin/assessment-requests" component={AssessmentSubmissionsPage} />
+          {/* Admin Pages (Disabled in static site version) */}
+          {/* These routes would require backend access */}
+          <Route path="/admin">
+            {() => (
+              <div className="min-h-screen pt-24 pb-20">
+                <div className="container mx-auto px-4">
+                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
+                    <h1 className="text-3xl font-bold mb-4">Admin Dashboard</h1>
+                    <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
+                    <p>The admin dashboard requires backend functionality that has been disabled in this frontend-only version.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Route>
+          <Route path="/admin/submissions">
+            {() => (
+              <div className="min-h-screen pt-24 pb-20">
+                <div className="container mx-auto px-4">
+                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
+                    <h1 className="text-3xl font-bold mb-4">Form Submissions</h1>
+                    <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
+                    <p>Form submissions are handled by Formspree in this frontend-only version. Please check your Formspree dashboard to view submissions.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Route>
+          <Route path="/admin/assessment-requests">
+            {() => (
+              <div className="min-h-screen pt-24 pb-20">
+                <div className="container mx-auto px-4">
+                  <div className="bg-card/50 p-8 rounded-2xl border border-[hsl(var(--secondary))]/20">
+                    <h1 className="text-3xl font-bold mb-4">Assessment Requests</h1>
+                    <p className="text-muted-foreground mb-6">This feature is not available in the static website version.</p>
+                    <p>Assessment requests are handled by Formspree in this frontend-only version. Please check your Formspree dashboard to view submissions.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </Route>
           
           {/* 404 Page */}
           <Route component={NotFound} />

@@ -1,30 +1,19 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
-async function throwIfResNotOk(res: Response) {
-  if (!res.ok) {
-    const text = (await res.text()) || res.statusText;
-    throw new Error(`${res.status}: ${text}`);
-  }
-}
+/**
+ * STATIC SITE VERSION
+ * This is a frontend-only implementation without server API calls
+ * All query functions will return empty data or static fallback data
+ */
 
+// Simplified version that handles frontend-only usage
 export async function apiRequest(
   url: string,
   options?: RequestInit,
 ): Promise<any> {
-  const res = await fetch(url, {
-    method: options?.method || 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(options?.headers || {})
-    },
-    body: options?.body,
-    credentials: "include",
-    ...options
-  });
-
-  await throwIfResNotOk(res);
-  const data = await res.json();
-  return data;
+  console.log('Static site: API request to', url, 'intercepted and returning empty data');
+  // Return empty data as we don't have backend API endpoints
+  return { success: true, data: [] };
 }
 
 type UnauthorizedBehavior = "returnNull" | "throw";
@@ -33,16 +22,9 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
-      credentials: "include",
-    });
-
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
-    }
-
-    await throwIfResNotOk(res);
-    return await res.json();
+    console.log('Static site: Query to', queryKey[0], 'intercepted and returning empty data');
+    // For static site, return empty results for all queries
+    return { success: true, data: [] };
   };
 
 export const queryClient = new QueryClient({
