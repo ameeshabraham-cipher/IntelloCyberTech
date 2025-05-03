@@ -284,7 +284,7 @@ const PainPointsSection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <AlertTriangle className="text-[hsl(var(--secondary))] h-4 w-4" />
-                <Link href="/services/red-team" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Red Team Exercises</Link>
+                <Link href="/services/red-team-exercises" className="text-sm text-muted-foreground hover:text-[hsl(var(--secondary))]">Red Team Exercises</Link>
               </div>
             </div>
             <div className="flex items-center">
