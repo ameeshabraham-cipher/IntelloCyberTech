@@ -1,65 +1,38 @@
-# API Endpoints
+# API Directory (Simplified)
 
 ## Overview
 
-This directory contains the implementation of API endpoints for the Intello Cyber Technologies website. These endpoints handle various backend functionalities including form submissions, email notifications, and appointment management.
+This directory previously contained the API endpoint implementations for the Intello Cyber Technologies website. As part of the simplification to a static site approach, these endpoints have been moved to the backup directory.
 
-## Endpoints
+## Current State
 
-### `forms.ts`
+The original API endpoints have been simplified and are now defined directly in `server/routes.ts`:
 
-Handles form submissions from the website, including contact forms and assessment requests.
+- `GET /api/health`: Simple health check endpoint
+- `GET /api/client-logos`: Dynamic endpoint to fetch client logos from the filesystem
+- `POST /api/email/contact`: Mock endpoint for contact form (actual submissions go to Formspree)
+- `POST /api/email/assessment-request`: Mock endpoint for assessment requests (actual submissions go to Formspree)
 
-Key functions:
-- `submitContactForm` - Processes and stores contact form submissions
-- `submitAssessmentRequest` - Handles security assessment requests
+## External Services
 
-### `email.ts`
+The functionality previously handled by these API endpoints is now managed by external services:
 
-Manages email notifications for form submissions and other communications.
+- **Form submissions**: Now handled by Formspree (ID: mwpokerg)
+- **Appointment booking**: Now handled by Calendly (URL: https://calendly.com/ameesh-intellome)
 
-Key functions:
-- `sendEmail` - Sends emails using configured email service
-- `sendContactFormNotification` - Notifies administrators of new contact form submissions
-- `sendAssessmentRequestNotification` - Notifies administrators of new assessment requests
+## Backup
 
-### `appointments.ts`
+The original API implementation files have been moved to `server/backup/` for reference:
 
-Handles appointment booking and management functionality.
+- `forms.ts`: Form submission handling 
+- `email.ts`: Email notifications
+- `appointments.ts`: Appointment booking and management
+- `admin.ts`: Admin functionality for site management
 
-Key functions:
-- `createAppointment` - Books new appointments
-- `getAppointments` - Retrieves appointment information
-- `updateAppointmentStatus` - Updates the status of existing appointments
+## Development
 
-### `admin.ts`
-
-Provides admin-specific functionality for managing site content and user submissions.
-
-Key functions:
-- `getFormSubmissions` - Retrieves all form submissions
-- `getAssessmentRequests` - Retrieves all assessment requests
-
-## Usage in Development
-
-These API endpoints are active during development when running the server:
+During development, the minimal endpoints defined in `server/routes.ts` are available when running the server:  
 
 ```bash
 npm run dev
 ```
-
-## Static Site Deployment
-
-For the static site deployment, these API endpoints are not used. Instead:
-
-- Contact forms use Formspree (ID: mwpokerg)
-- Calendly integration handles appointments directly
-
-## Security Considerations
-
-If implementing these endpoints in a dynamic deployment:
-
-1. Add proper authentication and authorization
-2. Implement rate limiting to prevent abuse
-3. Add CSRF protection for form submissions
-4. Sanitize and validate all user inputs

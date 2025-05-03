@@ -1,48 +1,49 @@
-# Server
+# Simplified Express Server for Static Frontend
 
 ## Overview
 
-This directory contains the server-side code for the Intello Cyber Technologies website. While the production deployment uses a static site approach, this server code is used during development and could be utilized for dynamic features if needed in the future.
+This server has been simplified to focus on serving the static frontend application. The original database-backed functionality has been removed since the site now uses external services like Formspree for form handling and Calendly for appointment booking.
 
-## Structure
+## Server Structure
 
-- `index.ts` - Main server entry point
-- `routes.ts` - API route definitions
-- `contactForm.ts` - Contact form processing logic
-- `db.ts` - Database connection and setup
-- `storage.ts` - Data storage interface and implementation
-- `vite.ts` - Vite development server integration
-- `api/` - API endpoint implementations
+- **index.ts**: The main server file that sets up Express and handles requests
+- **routes.ts**: Defines API routes and sets up the HTTP server
+- **vite.ts**: Configures the development environment and static file serving
+- **db.ts**: A minimal mock database module (no actual database connection)
 
 ## API Endpoints
 
-The server provides several API endpoints:
+The server maintains a small set of API endpoints:
 
-- `/api/contact` - Process contact form submissions
-- `/api/assessment` - Handle security assessment requests
-- `/api/appointments` - Manage appointment bookings
+- `GET /api/health`: Simple health check endpoint
+- `GET /api/client-logos`: Dynamic endpoint to fetch client logos from the filesystem
+- `POST /api/email/contact`: Mock endpoint for contact form (actual submissions go to Formspree)
+- `POST /api/email/assessment-request`: Mock endpoint for assessment requests (actual submissions go to Formspree)
+
+## Development vs Production
+
+- In development, the server uses Vite middleware to serve the frontend
+- In production, the server serves static files from the build directory
+
+## External Services Integration
+
+The original backend functionality has been replaced with external services:
+
+- **Form submissions**: Now handled by Formspree (ID: mwpokerg)
+- **Appointment booking**: Now handled by Calendly (URL: https://calendly.com/ameesh-intellome)
+
+The database code remains as a non-functional mock to prevent errors in any code that might still reference it.
+
+## Backup Files
+
+Original files that are no longer needed are stored in the `server/backup/` directory for reference.
 
 ## Development
 
-During development, the server runs alongside the Vite development server to provide API endpoints for the frontend.
+During development, the server runs using:
 
 ```bash
 npm run dev
 ```
 
-## Static Deployment
-
-For production deployment, the website is built as a static site without the need for a running server. The contact form functionality is provided by Formspree, eliminating the need for server-side processing.
-
-## Future Extensions
-
-If dynamic server functionality is needed in the future:
-
-1. Update the database schema in `shared/schema.ts`
-2. Add necessary routes in `routes.ts`
-3. Implement API handlers in the `api/` directory
-4. Set up proper database configuration in `db.ts`
-
-## Environment Variables
-
-The server relies on environment variables for configuration. See `docs/ENVIRONMENT_VARIABLES.md` for details.
+This starts the Express server which handles both the API endpoints and serves the frontend using Vite's development server.

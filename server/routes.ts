@@ -1,24 +1,19 @@
-import type { Express } from "express";
+import { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import * as fs from 'fs';
 import * as path from 'path';
-import emailRouter from './api/email';
-import adminRouter from './api/admin';
+import { setupVite, serveStatic } from './vite';
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Register API routers
-  app.use('/api/email', emailRouter);
-  app.use('/api/admin', adminRouter);
-
-  // Health check endpoint
+  // Health check endpoint - keep this simple endpoint for monitoring
   app.get('/api/health', (req, res) => {
     res.status(200).json({ status: 'healthy' });
   });
   
   // Get all client logo images from the client-images directory
+  // This is still useful for displaying client logos dynamically
   app.get('/api/client-logos', (req, res) => {
     try {
-      // In Node.js environment with ES modules, __dirname is not directly available
       const rootDir = process.cwd();
       const clientImagesDir = path.join(rootDir, 'client/public/images/client-images');
       
@@ -37,7 +32,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       // Create client logo objects
-      const clientLogos = imageFiles.map((file, index) => {
+      const clientLogos = imageFiles.map((file) => {
         // Generate a name from the filename (remove extension, replace hyphens with spaces)
         const name = path.basename(file, path.extname(file))
           .replace(/[-_]/g, ' ')
@@ -60,6 +55,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Simple mock API for contact forms to prevent frontend errors
+  // These endpoints don't store data anymore since we're using Formspree
+  app.post('/api/email/contact', (req, res) => {
+    res.status(200).json({ 
+      success: true, 
+      message: "Contact form submitted. Using Formspree for actual submissions." 
+    });
+  });
+
+  app.post('/api/email/assessment-request', (req, res) => {
+    res.status(200).json({ 
+      success: true, 
+      message: "Assessment request submitted. Using Formspree for actual submissions." 
+    });
+  });
+
+  // Create the HTTP server
   const httpServer = createServer(app);
 
   return httpServer;
