@@ -24,7 +24,7 @@ export default function AiCompliancePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-block p-3 bg-primary/10 rounded-full mb-4">
-              <Robot className="h-8 w-8 text-primary" />
+              <Bot className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-3xl font-bold mb-4">Solution Overview</h2>
             <p className="text-lg text-muted-foreground">
