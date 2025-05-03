@@ -125,7 +125,7 @@ const servicesMenuData = [
       { label: 'Penetration Testing', path: '/services/penetration-testing', icon: <Shield className="h-4 w-4" /> },
       { label: 'Advanced Penetration Testing', path: '/services/advanced-penetration-testing', icon: <Shield className="h-4 w-4" /> },
       { label: 'Red Team Exercises', path: '/services/red-team-exercises', icon: <Target className="h-4 w-4" /> },
-      { label: 'Web App Penetration Testing', path: '/services/web-pen-testing', icon: <Globe className="h-4 w-4" /> },
+      { label: 'Web App Penetration Testing', path: '/services/web-penetration-testing', icon: <Globe className="h-4 w-4" /> },
       { label: 'Network Penetration Testing', path: '/services/network-pentesting', icon: <Network className="h-4 w-4" /> },
       { label: 'Vulnerability Assessment & Pen Testing', path: '/services/vapt', icon: <Search className="h-4 w-4" /> },
     ]
