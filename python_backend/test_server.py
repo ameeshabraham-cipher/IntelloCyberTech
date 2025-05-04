@@ -1,59 +1,93 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import unittest
 import requests
 import json
+import os
 
-# Test script to verify the API endpoints
+# Constants
+API_BASE_URL = 'http://localhost:5001/api'
 
-def test_health_endpoint():
-    try:
-        response = requests.get('http://localhost:5000/api/health')
-        print(f"Health endpoint: {response.status_code}")
-        print(response.json())
-        print("--------------------")
-    except Exception as e:
-        print(f"Health endpoint error: {e}")
-
-def test_client_logos_endpoint():
-    try:
-        response = requests.get('http://localhost:5000/api/client-logos')
-        print(f"Client logos endpoint: {response.status_code}")
-        print(json.dumps(response.json(), indent=2))
-        print("--------------------")
-    except Exception as e:
-        print(f"Client logos endpoint error: {e}")
-
-def test_contact_form_endpoint():
-    try:
-        data = {
+class TestPythonBackend(unittest.TestCase):
+    
+    def test_health_endpoint(self):
+        """Test the health check endpoint"""
+        response = requests.get(f'{API_BASE_URL}/health')
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertEqual(data['status'], 'healthy')
+        print('✓ Health check endpoint working')
+        
+    def test_client_logos_endpoint(self):
+        """Test the client logos endpoint"""
+        response = requests.get(f'{API_BASE_URL}/client-logos')
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertIsInstance(data, list)
+        print(f'✓ Client logos endpoint working - found {len(data)} logos')
+        if len(data) > 0:
+            print(f'  Sample logo: {data[0]["name"]} - {data[0]["imagePath"]}')
+        
+    def test_contact_form_endpoint(self):
+        """Test the contact form endpoint"""
+        form_data = {
             "name": "Test User",
             "email": "test@example.com",
             "message": "This is a test message"
         }
-        response = requests.post('http://localhost:5000/api/email/contact', json=data)
-        print(f"Contact form endpoint: {response.status_code}")
-        print(response.json())
-        print("--------------------")
-    except Exception as e:
-        print(f"Contact form endpoint error: {e}")
-
-def test_assessment_request_endpoint():
-    try:
-        data = {
+        response = requests.post(
+            f'{API_BASE_URL}/email/contact', 
+            json=form_data
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertTrue(data['success'])
+        print('✓ Contact form endpoint working')
+        
+    def test_assessment_request_endpoint(self):
+        """Test the assessment request endpoint"""
+        form_data = {
             "name": "Test User",
             "email": "test@example.com",
-            "company": "Test Company",
-            "service": "Security Assessment"
+            "companyName": "Test Company",
+            "phoneNumber": "1234567890",
+            "message": "This is a test assessment request"
         }
-        response = requests.post('http://localhost:5000/api/email/assessment-request', json=data)
-        print(f"Assessment request endpoint: {response.status_code}")
-        print(response.json())
-        print("--------------------")
-    except Exception as e:
-        print(f"Assessment request endpoint error: {e}")
+        response = requests.post(
+            f'{API_BASE_URL}/email/assessment-request', 
+            json=form_data
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertTrue(data['success'])
+        print('✓ Assessment request endpoint working')
 
-if __name__ == "__main__":
-    print("Testing Python backend API endpoints...")
-    test_health_endpoint()
-    test_client_logos_endpoint()
-    test_contact_form_endpoint()
-    test_assessment_request_endpoint()
-    print("Testing complete.")
+def run_tests():
+    # Run the server first, then run these tests
+    print('\nRunning API tests...')
+    print('Note: Make sure the Python server is running on port 5001 first!\n')
+    
+    try:
+        # Check if server is running
+        requests.get(f'{API_BASE_URL}/health')
+        
+        # Create test suite
+        suite = unittest.TestSuite()
+        suite.addTest(TestPythonBackend('test_health_endpoint'))
+        suite.addTest(TestPythonBackend('test_client_logos_endpoint'))
+        suite.addTest(TestPythonBackend('test_contact_form_endpoint'))
+        suite.addTest(TestPythonBackend('test_assessment_request_endpoint'))
+        
+        # Run tests
+        runner = unittest.TextTestRunner(verbosity=1)
+        runner.run(suite)
+        
+        print('\nAll tests completed successfully!')
+    except requests.exceptions.ConnectionError:
+        print('Error: Could not connect to the server.')
+        print('Make sure the Python server is running on port 5001:')
+        print('  cd python_backend && python app.py')
+
+if __name__ == '__main__':
+    run_tests()

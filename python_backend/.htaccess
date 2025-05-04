@@ -1,38 +1,26 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  
-  # Direct Formspree requests directly to Formspree
-  RewriteRule ^api/submit-form$ https://formspree.io/f/mwpokerg [P]
-  
-  # Don't rewrite static assets
-  RewriteCond %{REQUEST_URI} !(\.(css|jpg|jpeg|png|gif|ico|js|svg|woff|woff2|ttf|map))$
-  
-  # Handle API requests with Flask
-  RewriteCond %{REQUEST_URI} ^/api/.*$
-  RewriteRule .* /app.py [L]
-  
-  # For all other routes, serve index.html
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule .* /index.html [L]
-</IfModule>
+# Enable mod_rewrite
+RewriteEngine On
 
-# Cache static assets
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresDefault "access plus 1 month"
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-</IfModule>
+# Set base directory
+RewriteBase /
 
-# Set proper MIME types
-<IfModule mod_mime.c>
-  AddType application/javascript .js
-  AddType text/css .css
-  AddType image/svg+xml .svg
-</IfModule>
+# Allow direct access to assets and static files
+RewriteRule ^(build/client/assets|build/client/images|build/client/fonts|build/client/favicon\.ico|build/client/manifest\.json|robots\.txt)($|/) - [L]
+
+# Serve API endpoints through Python
+RewriteRule ^api(/.*)?$ /app.py [QSA,L]
+
+# Serve everything else through index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) /build/client/index.html [L]
+
+# Set specific headers
+<FilesMatch "\.(json|js|css|svg|ttf|woff|woff2|eot)$">
+  Header set Access-Control-Allow-Origin "*"
+  Header set Cache-Control "max-age=86400"
+</FilesMatch>
+
+<FilesMatch "\.(png|jpg|jpeg|gif|ico|webp)$">
+  Header set Cache-Control "max-age=604800"
+</FilesMatch>

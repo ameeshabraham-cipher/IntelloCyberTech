@@ -20,7 +20,7 @@ def health_check():
 @app.route('/api/client-logos')
 def client_logos():
     try:
-        client_images_dir = os.path.join(os.getcwd(), '../client/public/images/client-images')
+        client_images_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'client/public/images/client-images')
         
         # Check if directory exists
         if not os.path.exists(client_images_dir):
