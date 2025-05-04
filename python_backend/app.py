@@ -20,7 +20,26 @@ def health_check():
 @app.route('/api/client-logos')
 def client_logos():
     try:
-        client_images_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'client/public/images/client-images')
+        # Try several possible locations for client images
+        possible_dirs = [
+            # Development environment path
+            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'client/public/images/client-images'),
+            # Production build path
+            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'build/client/images/client-images'),
+            # cPanel common path structure
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build/client/images/client-images')
+        ]
+        
+        # Find the first directory that exists
+        client_images_dir = None
+        for dir_path in possible_dirs:
+            if os.path.exists(dir_path):
+                client_images_dir = dir_path
+                break
+                
+        # If no directory found, use the first one as default
+        if client_images_dir is None:
+            client_images_dir = possible_dirs[0]
         
         # Check if directory exists
         if not os.path.exists(client_images_dir):
