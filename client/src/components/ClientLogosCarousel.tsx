@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import SEOImage from './SEOImage';
 
 // Ultra-modern, stunning client logos showcase
 export function ClientLogosCarousel() {
@@ -135,11 +136,13 @@ const LogoItem = ({ logo, index }: LogoItemProps) => {
                      transform transition-all duration-500
                      group-hover:shadow-xl">
         <div className="relative z-10 p-2">
-          <img 
+          <SEOImage 
             src={logo.imagePath} 
-            alt={`${logo.name} logo`} 
+            alt={`${logo.name} logo - Intello client`} 
             className="h-10 sm:h-12 md:h-16 w-auto object-contain transition-all duration-300 
                      filter grayscale group-hover:grayscale-0" 
+            loading="lazy"
+            decoding="async"
           />
         </div>
         
