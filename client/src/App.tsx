@@ -96,34 +96,7 @@ import TechnologyCompaniesPage from "@/pages/industries/TechnologyCompanies";
 function Router() {
   const [location] = useLocation();
   
-  // Organization structured data for search engines
-  const organizationData = {
-    name: "Intello Cyber Technologies",
-    url: "https://intellome.com",
-    logo: "https://intellome.com/images/intello-new-logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+971 55 355 6787",
-      email: "info@intellome.com",
-      contactType: "customer service"
-    },
-    sameAs: [
-      "https://www.linkedin.com/company/intellocyber",
-      "https://twitter.com/intellocyber"
-    ],
-    description: "Leading provider of Cybersecurity, GRC, and IT Managed Services, specializing in ISO 27001, SOC 2, GDPR, UAE PDPL, and AI-powered compliance automation solutions."
-  };
-  
-  // Website structured data for search engines
-  const websiteData = {
-    name: "Intello Cyber Technologies",
-    url: "https://intellome.com",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://intellome.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
+  // The SchemaManager component now handles all structured data dynamically
   
   return (
     <div className="relative">
