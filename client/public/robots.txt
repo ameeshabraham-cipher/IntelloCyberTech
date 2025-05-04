@@ -1,10 +1,24 @@
-# robots.txt for Intello Cyber Technologies website
 User-agent: *
 Allow: /
-
-# Disallow admin paths
 Disallow: /admin/
-Disallow: /login/
+Disallow: /private/
+
+# Allow crawling of important content sections
+Allow: /services/
+Allow: /solutions/
+Allow: /industries/
+Allow: /insights/
+Allow: /about-us
+Allow: /contact
+Allow: /assessment
+
+# Temporarily limit crawling of dev areas
+Disallow: /beta/
+Disallow: /dev/
+Disallow: /test/
+
+# Optimize crawl rate
+Crawl-delay: 5
 
 # Sitemap location
 Sitemap: https://intellome.com/sitemap.xml
