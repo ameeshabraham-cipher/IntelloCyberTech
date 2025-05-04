@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Direct Formspree requests directly to Formspree
+  RewriteRule ^api/submit-form$ https://formspree.io/f/mwpokerg [P]
+  
+  # Don't rewrite static assets
+  RewriteCond %{REQUEST_URI} !(\.(css|jpg|jpeg|png|gif|ico|js|svg|woff|woff2|ttf|map))$
+  
+  # Handle API requests with Flask
+  RewriteCond %{REQUEST_URI} ^/api/.*$
+  RewriteRule .* /app.py [L]
+  
+  # For all other routes, serve index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule .* /index.html [L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Set proper MIME types
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/svg+xml .svg
+</IfModule>
