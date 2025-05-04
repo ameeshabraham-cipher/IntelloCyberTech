@@ -1,0 +1,10 @@
+# robots.txt for Intello Cyber Technologies website
+User-agent: *
+Allow: /
+
+# Disallow admin paths
+Disallow: /admin/
+Disallow: /login/
+
+# Sitemap location
+Sitemap: https://intellome.com/sitemap.xml
