@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/$USER/public_html/
-    # Replace $USER with your actual cPanel username in the line above
+    - export DEPLOYPATH=/home/a3m1i7j1hqi0/public_html/
+    # The path has been updated with your actual cPanel username
     - /bin/cp -R python_backend/* $DEPLOYPATH
     - /bin/cp python_backend/.htaccess $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/build/client
