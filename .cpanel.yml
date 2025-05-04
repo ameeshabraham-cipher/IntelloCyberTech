@@ -1,10 +1,12 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/a3m1i7j1hqi0/public_html/
-    # The path has been updated with your actual cPanel username
-    - /bin/cp -R python_backend/* $DEPLOYPATH
-    - /bin/cp python_backend/.htaccess $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/build/client
-    - /bin/cp -R build/* $DEPLOYPATH/build/
-    - /bin/cp -R client/public/* $DEPLOYPATH/build/client/
+    - export DEPLOYPATH=/home/a3m1i7j1hqi0/
+    # Deployed outside public_html due to GoDaddy restrictions
+    - /bin/mkdir -p $DEPLOYPATH/intello_deploy
+    - /bin/cp -R python_backend/* $DEPLOYPATH/intello_deploy/
+    - /bin/cp python_backend/.htaccess $DEPLOYPATH/intello_deploy/
+    - /bin/mkdir -p $DEPLOYPATH/intello_deploy/build/client
+    - /bin/cp -R build/* $DEPLOYPATH/intello_deploy/build/
+    - /bin/cp -R client/public/* $DEPLOYPATH/intello_deploy/build/client/
+    # After deployment, you'll need to manually move files to public_html using File Manager
