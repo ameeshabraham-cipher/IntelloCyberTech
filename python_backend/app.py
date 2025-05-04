@@ -9,7 +9,7 @@ from pathlib import Path
 app = Flask(__name__, static_folder='../build/client')
 CORS(app)
 
-print('Using simplified static site mode - no database connection required')
+print('Using simplified static site mode with Python backend - no database connection required')
 
 # Health check endpoint
 @app.route('/api/health')
@@ -81,4 +81,4 @@ def serve(path):
         return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
