@@ -15,7 +15,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import CalendlyFloatingButton from "@/components/CalendlyFloatingButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEO from "@/components/SEO";
-import StructuredData from "@/components/StructuredData";
+import SchemaManager from "@/components/SchemaManager";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemeInitializer } from "@/components/ThemeToggle";
 
@@ -131,8 +131,7 @@ function Router() {
       <SEO />
       
       {/* JSON-LD structured data for search engines */}
-      <StructuredData type="Organization" data={organizationData} />
-      <StructuredData type="WebSite" data={websiteData} />
+      <SchemaManager />
       
       {/* ScrollToTop component will automatically scroll to top on route change */}
       <ScrollToTop />
