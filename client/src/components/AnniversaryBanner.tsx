@@ -4,6 +4,7 @@ import {
   BadgeCheck, Sparkles, Award, Calendar, Clock, 
   Shield, Target, Star
 } from 'lucide-react';
+import LazyImage from './LazyImage';
 
 const AnniversaryBanner = () => {
   // Calculate years since 2003
@@ -92,6 +93,16 @@ const AnniversaryBanner = () => {
                     <Award className="h-12 w-12" />
                   </motion.div>
                 </div>
+              </div>
+              
+              {/* Add company anniversary logo with LazyImage for performance */}
+              <div className="mb-6">
+                <LazyImage 
+                  src="/images/intello-anniversary-logo.webp" 
+                  alt="Intello Cyber Technologies - 22 Years of Excellence"
+                  className="h-24 mx-auto"
+                  placeholderColor="#0f172a"
+                />              
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold text-white">
