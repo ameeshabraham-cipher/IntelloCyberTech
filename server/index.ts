@@ -2,9 +2,6 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
-// Load mock database for compatibility (doesn't actually connect to a database)
-import "./db";
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +20,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+console.log('Using simplified static site mode - no database connection required');
 
 (async () => {
   // Register routes and get the HTTP server
