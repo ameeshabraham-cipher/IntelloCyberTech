@@ -1,31 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import SEOImage from './SEOImage';
 
-// Ultra-modern, stunning client logos showcase
+// Ultra-modern, stunning client logos showcase with static data
 export function ClientLogosCarousel() {
-  const [clientLogos, setClientLogos] = useState<Array<{ name: string; imagePath: string }>>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchLogos = async () => {
-      try {
-        const response = await fetch('/api/client-logos');
-        const data = await response.json();
-        setClientLogos(data);
-      } catch (error) {
-        console.error('Failed to fetch client logos:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchLogos();
-  }, []);
-
-  if (loading) {
-    return <div className="flex justify-center p-8">Loading client logos...</div>;
-  }
+  // Static client logos data instead of fetching from API
+  const clientLogos = [
+    { name: "Client1", imagePath: "/images/client-images/client1.png" },
+    { name: "Client2", imagePath: "/images/client-images/client2.png" },
+    { name: "Client3", imagePath: "/images/client-images/client3.png" },
+    { name: "Client4", imagePath: "/images/client-images/client4.png" },
+    { name: "Client5", imagePath: "/images/client-images/client5.png" },
+    { name: "Client6", imagePath: "/images/client-images/client6.png" },
+    { name: "Client7", imagePath: "/images/client-images/client7.png" },
+    { name: "Client8", imagePath: "/images/client-images/client8.png" },
+    { name: "Client9", imagePath: "/images/client-images/client9.png" },
+    { name: "Client10", imagePath: "/images/client-images/client10.png" },
+    { name: "Client11", imagePath: "/images/client-images/client11.png" },
+    { name: "Client12", imagePath: "/images/client-images/client12.png" },
+    { name: "Client13", imagePath: "/images/client-images/client13.png" },
+    { name: "Client14", imagePath: "/images/client-images/client14.png" },
+    { name: "Client15", imagePath: "/images/client-images/client15.png" },
+    { name: "Client16", imagePath: "/images/client-images/client16.png" },
+    { name: "Client17", imagePath: "/images/client-images/client17.png" },
+    { name: "Client18", imagePath: "/images/client-images/client18.png" },
+    { name: "Client19", imagePath: "/images/client-images/client19.png" },
+    { name: "Client20", imagePath: "/images/client-images/client20.png" },
+    { name: "Client21", imagePath: "/images/client-images/client21.png" },
+    { name: "Test Client Logo", imagePath: "/images/client-images/test-client-logo.png" }
+  ];
 
   // Create a circular arrangement for desktop view
   const generateCircularPosition = (index: number, total: number) => {
