@@ -29,12 +29,17 @@ intello-website/
 │   │   ├── components/  # Reusable UI components
 │   │   ├── lib/         # Utility functions and helpers
 │   │   └── pages/       # Page components
-├── server/            # Express server
+├── server/            # Express server for API and static file serving
 ├── shared/            # Shared code between client and server
 ├── public/            # Global static assets
-└── scripts/           # Utility scripts for maintenance
-    └── util/          # Helper utilities for scripts
+├── scripts/           # Utility scripts for maintenance
+│   └── util/          # Helper utilities for scripts
+└── archive/           # Archived code (includes Python backend alternative)
 ```
+
+### Note on Backend Implementation
+
+The website uses a Node.js Express backend for serving the React application and providing minimal API functionality. A Python Flask alternative implementation has been archived in the `archive/` directory for reference.
 
 ## Running the Project
 
