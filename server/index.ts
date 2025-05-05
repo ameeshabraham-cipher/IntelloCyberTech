@@ -2,8 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
-// Load mock database for compatibility (doesn't actually connect to a database)
-import "./db";
+// No need to import database in static mode
 
 const app = express();
 app.use(express.json());
@@ -52,3 +51,6 @@ app.use((req, res, next) => {
     log(`serving on port ${port}`);
   });
 })();
+
+console.log('Running in static site mode - no dynamic API functionality');
+
